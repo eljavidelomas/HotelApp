@@ -1,0 +1,9 @@
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\bin\Release\Hoteles.exe.config
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\obj\Release\Hoteles.exe
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\obj\Release\Hoteles.pdb
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\bin\Release\Hoteles.exe
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\bin\Release\Hoteles.pdb
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\obj\Release\ResolveAssemblyReference.cache
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\obj\Release\Hoteles.fPrincipal.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\obj\Release\Hoteles.Properties.Resources.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelesV2\Hoteles\obj\Release\HotelesV2.csproj.GenerateResource.Cache
