@@ -49,7 +49,6 @@ namespace Hoteles
             SqlDataReader reader;
             int ultFila = 0;
 
-
             if (conn == null)
             {
                 conn = new SqlConnection();
@@ -61,13 +60,10 @@ namespace Hoteles
 
             if (conserjeActual == null)
             {
-
-                textUsuario.Visible = true;
-                
+                textUsuario.Visible = true;                
                 labelClave.Visible = true;
                 textClave.Visible = true;
-                textUsuario.Focus();
-                
+                textUsuario.Focus();                
             }
             else
             {
@@ -153,121 +149,26 @@ namespace Hoteles
                         col2.Rows[ultFila].DefaultCellStyle.Font = new Font(col2.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
                         col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Tomato;
                     }
-                }
+                }                
                 col2.Sort(new RowComparer(System.Windows.Forms.SortOrder.Descending));
-                col2.ClearSelection();
-                //DataGridViewCell celda = new myDGVCell();
-
-                //col2.CurrentRow.Cells[0] = celda;
-
+                col2.ClearSelection();            
             }
+
+            reader.Close();
             dataGridView1.Sort(new RowComparer(System.Windows.Forms.SortOrder.Descending));
-            dataGridView1.ClearSelection();
-            //col2.Sort(new RowComparer(System.Windows.Forms.SortOrder.Descending));
-            //this.tableLayoutPanel1.Controls.Add(col2,1,1);
-            //this.tableLayoutPanel1.SetRowSpan(col2, 1);
+            dataGridView1.ClearSelection();           
             dataGridView1.Enabled = true;
 
             //lAviso.Text = "Alarma !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - Alto: " + dataGridView1.RowTemplate.Height;
         }
 
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            //ControlPaint.DrawBorder(textClave.CreateGraphics(), new Rectangle(textClave.Location, new Size(textClave.Width, textClave.Height)), Color.Red, ButtonBorderStyle.Solid);
-            //e.Graphics.DrawRectangle(new Pen(Color.Red,2.0f), 0, 0, (textUsuario.Width + 1), (textUsuario.Height + 1));
-            //e.Graphics.DrawLine(new Pen(Color.Red, 2.0f), 0, 0, 600, 600);
-        }
-
-
-        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            //if(e.RowIndex == -1 && e.ColumnIndex == 2){
-            //    Image InfoIcon = Image.FromFile(@"C:\wamp\www\Hermes\assets\backend\images\trash.png"); 
-            //    e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
-            //    e.Graphics.DrawImage(InfoIcon, new Rectangle(e.CellBounds.Location.X, e.CellBounds.Location.Y, 20, 20));
-            //    e.Handled = true;
-            //}
-        }
-
-
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-
             if (GestorTeclado.ProcesarTecla(keyData, this))
                 return true;
             return base.ProcessCmdKey(ref msg, keyData);
-
         }
-
-        private void dataGridView1_Paint(object sender, PaintEventArgs e)
-        {
-
-            //if (!cuadricula)
-            //{
-            //    //cuadricula = true;
-            //    Rectangle rec = dataGridView1.Bounds;
-            //    using (Graphics gr = e.Graphics)//this.dataGridView1.CreateGraphics())
-            //    {
-            //        this.SuspendLayout();
-            //        gr.DrawLine(new Pen(Color.Black, 2), new Point(rec.Right - 1, rec.Top - dataGridView1.ColumnHeadersHeight), new Point(rec.Right - 1, rec.Bottom));
-            //        gr.DrawLine(new Pen(Color.Black, 2), new Point(rec.Left, rec.Top + 2 - dataGridView1.ColumnHeadersHeight), new Point(rec.Right + tableLayoutPanel1.Controls["col2"].Width, rec.Top + 2 - dataGridView1.ColumnHeadersHeight));
-            //        this.ResumeLayout(true);
-
-            //    }
-            //}
-            //if (e.IsLastVisibleRow)
-            //    cuadricula = true;
-            //Rectangle rec = e.ClipRectangle;
-            //this.SuspendLayout();
-
-            //using (Graphics gr = this.dataGridView1.CreateGraphics())
-            //{
-            //    gr.DrawLine(new Pen(Color.Black, 1), new Point(rec.Right-1, rec.Top), new Point(rec.Right-1, rec.Bottom));
-            //    //gr.DrawRectangle(Pens.Black, rec);
-            //    this.ResumeLayout(false);
-            //}
-        }
-
-        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            //if (!cuadricula)
-            //{
-            //    //cuadricula = true;
-            //    Rectangle rec = dataGridView1.Bounds;
-            //    rec.X = rec.Y = 0;
-            //    ControlPaint.DrawBorder(this.dataGridView1.CreateGraphics(), rec, Color.Black, ButtonBorderStyle.Solid);
-            //    //using (Graphics gr = this.dataGridView1.CreateGraphics())
-            //    //{
-
-            //    //    gr.DrawLine(new Pen(Color.Black, 2), new Point(rec.Right - 1, 0), new Point(rec.Right - 1, rec.Bottom));
-            //    //    //gr.DrawLine(new Pen(Color.Black, 2), new Point(rec.Left, rec.Top + 2 - dataGridView1.ColumnHeadersHeight), new Point(rec.Right + tableLayoutPanel1.Controls["col2"].Width, rec.Top + 2 - dataGridView1.ColumnHeadersHeight));
-
-            //    //}
-            //}
-            ////if (e.IsLastVisibleRow)
-            ////    cuadricula = true;
-
-        }
-
-
-
-        private void dataGridView1_CellPainting_1(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            //Rectangle rec = dataGridView1.Bounds;
-            //rec.X = rec.Y = 0;
-            //if(e.ColumnIndex==5)
-            //    ControlPaint.DrawBorder(this.dataGridView1.CreateGraphics(), rec, Color.Black, ButtonBorderStyle.Solid);
-        }
-
-        //private void dataGridView1_Paint_1(object sender, PaintEventArgs e)
-        //{
-        //    Rectangle rec = dataGridView1.Bounds;
-        //    rec.X = rec.Y = 0;
-
-        //        ControlPaint.DrawBorder(this.dataGridView1.CreateGraphics(), rec, Color.Black, ButtonBorderStyle.Solid);
-        //}
 
         private void timerHora_Tick(object sender, EventArgs e)
         {
@@ -297,7 +198,6 @@ namespace Hoteles
                     textUsuario.Text = "0";
                 if (textClave.Text == "" || int.TryParse(textClave.Text,out clave) == false)
                     textClave.Text = "0";
-
                 conserjeActual = Conserje.Login(usuario,clave);
                 if (conserjeActual == null)
                 {
@@ -377,3 +277,86 @@ class RowComparer : System.Collections.IComparer
 }
 
 
+
+
+//protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+//{
+//    base.OnPaint(e);
+//    //ControlPaint.DrawBorder(textClave.CreateGraphics(), new Rectangle(textClave.Location, new Size(textClave.Width, textClave.Height)), Color.Red, ButtonBorderStyle.Solid);
+//    //e.Graphics.DrawRectangle(new Pen(Color.Red,2.0f), 0, 0, (textUsuario.Width + 1), (textUsuario.Height + 1));
+//    //e.Graphics.DrawLine(new Pen(Color.Red, 2.0f), 0, 0, 600, 600);
+//}
+//private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+//{
+//    //if(e.RowIndex == -1 && e.ColumnIndex == 2){
+//    //    Image InfoIcon = Image.FromFile(@"C:\wamp\www\Hermes\assets\backend\images\trash.png"); 
+//    //    e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
+//    //    e.Graphics.DrawImage(InfoIcon, new Rectangle(e.CellBounds.Location.X, e.CellBounds.Location.Y, 20, 20));
+//    //    e.Handled = true;
+//    //}
+//}
+//private void dataGridView1_Paint(object sender, PaintEventArgs e)
+//{
+
+//    //if (!cuadricula)
+//    //{
+//    //    //cuadricula = true;
+//    //    Rectangle rec = dataGridView1.Bounds;
+//    //    using (Graphics gr = e.Graphics)//this.dataGridView1.CreateGraphics())
+//    //    {
+//    //        this.SuspendLayout();
+//    //        gr.DrawLine(new Pen(Color.Black, 2), new Point(rec.Right - 1, rec.Top - dataGridView1.ColumnHeadersHeight), new Point(rec.Right - 1, rec.Bottom));
+//    //        gr.DrawLine(new Pen(Color.Black, 2), new Point(rec.Left, rec.Top + 2 - dataGridView1.ColumnHeadersHeight), new Point(rec.Right + tableLayoutPanel1.Controls["col2"].Width, rec.Top + 2 - dataGridView1.ColumnHeadersHeight));
+//    //        this.ResumeLayout(true);
+
+//    //    }
+//    //}
+//    //if (e.IsLastVisibleRow)
+//    //    cuadricula = true;
+//    //Rectangle rec = e.ClipRectangle;
+//    //this.SuspendLayout();
+
+//    //using (Graphics gr = this.dataGridView1.CreateGraphics())
+//    //{
+//    //    gr.DrawLine(new Pen(Color.Black, 1), new Point(rec.Right-1, rec.Top), new Point(rec.Right-1, rec.Bottom));
+//    //    //gr.DrawRectangle(Pens.Black, rec);
+//    //    this.ResumeLayout(false);
+//    //}
+//}
+
+//private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+//{
+//    //if (!cuadricula)
+//    //{
+//    //    //cuadricula = true;
+//    //    Rectangle rec = dataGridView1.Bounds;
+//    //    rec.X = rec.Y = 0;
+//    //    ControlPaint.DrawBorder(this.dataGridView1.CreateGraphics(), rec, Color.Black, ButtonBorderStyle.Solid);
+//    //    //using (Graphics gr = this.dataGridView1.CreateGraphics())
+//    //    //{
+
+//    //    //    gr.DrawLine(new Pen(Color.Black, 2), new Point(rec.Right - 1, 0), new Point(rec.Right - 1, rec.Bottom));
+//    //    //    //gr.DrawLine(new Pen(Color.Black, 2), new Point(rec.Left, rec.Top + 2 - dataGridView1.ColumnHeadersHeight), new Point(rec.Right + tableLayoutPanel1.Controls["col2"].Width, rec.Top + 2 - dataGridView1.ColumnHeadersHeight));
+
+//    //    //}
+//    //}
+//    ////if (e.IsLastVisibleRow)
+//    ////    cuadricula = true;
+
+//}
+
+//private void dataGridView1_CellPainting_1(object sender, DataGridViewCellPaintingEventArgs e)
+//{
+//    //Rectangle rec = dataGridView1.Bounds;
+//    //rec.X = rec.Y = 0;
+//    //if(e.ColumnIndex==5)
+//    //    ControlPaint.DrawBorder(this.dataGridView1.CreateGraphics(), rec, Color.Black, ButtonBorderStyle.Solid);
+//}
+
+////private void dataGridView1_Paint_1(object sender, PaintEventArgs e)
+////{
+////    Rectangle rec = dataGridView1.Bounds;
+////    rec.X = rec.Y = 0;
+
+////        ControlPaint.DrawBorder(this.dataGridView1.CreateGraphics(), rec, Color.Black, ButtonBorderStyle.Solid);
+////}

@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Alarma.cs" />
+    <Compile Include="Entities\Descuento.cs" />
     <Compile Include="Entities\Conserje.cs" />
     <Compile Include="Entities\GestorTeclado.cs">
     </Compile>
@@ -92,6 +93,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAsignarHab.resx">
+      <DependentUpon>FormAsignarHab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="fPrincipal.resx">
       <DependentUpon>fPrincipal.cs</DependentUpon>
       <SubType>Designer</SubType>

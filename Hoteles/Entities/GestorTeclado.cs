@@ -60,9 +60,11 @@ namespace Hoteles.Entities
                         case Keys.F1:
                             funcion = "F1";
                             FormAsignarHab asignarHab = new FormAsignarHab();
+                            
                             asignarHab.Owner = formPrincipal;
                             //formPrincipal.AddOwnedForm(asignarHab);
                             asignarHab.Show();
+                            formPrincipal.Hide();
                             asignarHab.Activate();
                             
                             //formPrincipal.fIngresos.Size = new System.Drawing.Size(1,1);
