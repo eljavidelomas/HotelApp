@@ -70,7 +70,7 @@ namespace Hoteles.Entities
                             //formPrincipal.fIngresos.Size = new System.Drawing.Size(1,1);
                             ////formPrincipal.tableLayoutPanel1.Controls.Add(tools.crearFormIngreso(),1,2);
                             //formPrincipal.lTitulo.Text = "Asignación de Habitaciones";
-                            Habitacion.asignar(formPrincipal);
+                            //Habitacion.Asignar(formPrincipal);
                             //formPrincipal.lTitulo.Width = formPrincipal.lTitulo.Parent.Width;
                             break;
                         case Keys.F2:

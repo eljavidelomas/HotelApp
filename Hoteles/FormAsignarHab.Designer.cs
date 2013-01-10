@@ -31,13 +31,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
-            this.tbNroHab = new System.Windows.Forms.TextBox();
             this.panelOpElegidas = new System.Windows.Forms.Panel();
             this.tbIngPromo = new System.Windows.Forms.TextBox();
+            this.tbIngTipoPromo = new System.Windows.Forms.TextBox();
             this.labelIngPromo = new System.Windows.Forms.Label();
             this.flpPromos = new System.Windows.Forms.FlowLayoutPanel();
             this.labelPromo = new System.Windows.Forms.Label();
             this.labelNroHab = new System.Windows.Forms.Label();
+            this.tbNroHab = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.panelOpElegidas.SuspendLayout();
@@ -88,22 +89,11 @@
             this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.labelTitulo_Paint);
             // 
-            // tbNroHab
-            // 
-            this.tbNroHab.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbNroHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNroHab.Location = new System.Drawing.Point(645, 107);
-            this.tbNroHab.MaxLength = 5;
-            this.tbNroHab.Name = "tbNroHab";
-            this.tbNroHab.Size = new System.Drawing.Size(73, 35);
-            this.tbNroHab.TabIndex = 2;
-            this.tbNroHab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbNroHab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNroHab_KeyPress);
-            // 
             // panelOpElegidas
             // 
             this.panelOpElegidas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelOpElegidas.Controls.Add(this.tbIngPromo);
+            this.panelOpElegidas.Controls.Add(this.tbIngTipoPromo);
             this.panelOpElegidas.Controls.Add(this.labelIngPromo);
             this.panelOpElegidas.Location = new System.Drawing.Point(570, 99);
             this.panelOpElegidas.Name = "panelOpElegidas";
@@ -115,19 +105,32 @@
             // 
             this.tbIngPromo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbIngPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIngPromo.Location = new System.Drawing.Point(297, 26);
+            this.tbIngPromo.Location = new System.Drawing.Point(466, 21);
             this.tbIngPromo.MaxLength = 4;
             this.tbIngPromo.Name = "tbIngPromo";
             this.tbIngPromo.Size = new System.Drawing.Size(73, 35);
-            this.tbIngPromo.TabIndex = 7;
+            this.tbIngPromo.TabIndex = 9;
             this.tbIngPromo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbIngPromo.Visible = false;
             this.tbIngPromo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIngPromo_KeyPress);
+            // 
+            // tbIngTipoPromo
+            // 
+            this.tbIngTipoPromo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbIngTipoPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIngTipoPromo.Location = new System.Drawing.Point(390, 21);
+            this.tbIngTipoPromo.MaxLength = 4;
+            this.tbIngTipoPromo.Name = "tbIngTipoPromo";
+            this.tbIngTipoPromo.Size = new System.Drawing.Size(73, 35);
+            this.tbIngTipoPromo.TabIndex = 7;
+            this.tbIngTipoPromo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbIngTipoPromo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIngTipoPromo_KeyPress);
             // 
             // labelIngPromo
             // 
             this.labelIngPromo.AutoSize = true;
             this.labelIngPromo.Font = new System.Drawing.Font("Book Antiqua", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIngPromo.Location = new System.Drawing.Point(17, 27);
+            this.labelIngPromo.Location = new System.Drawing.Point(113, 23);
             this.labelIngPromo.Name = "labelIngPromo";
             this.labelIngPromo.Size = new System.Drawing.Size(276, 28);
             this.labelIngPromo.TabIndex = 0;
@@ -165,6 +168,18 @@
             this.labelNroHab.Size = new System.Drawing.Size(222, 28);
             this.labelNroHab.TabIndex = 3;
             this.labelNroHab.Text = "Ingresar Habitación";
+            // 
+            // tbNroHab
+            // 
+            this.tbNroHab.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbNroHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNroHab.Location = new System.Drawing.Point(645, 107);
+            this.tbNroHab.MaxLength = 5;
+            this.tbNroHab.Name = "tbNroHab";
+            this.tbNroHab.Size = new System.Drawing.Size(73, 35);
+            this.tbNroHab.TabIndex = 2;
+            this.tbNroHab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNroHab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNroHab_KeyPress);
             // 
             // tableLayoutPanel1
             // 
@@ -217,6 +232,7 @@
         private System.Windows.Forms.Label labelPromo;
         private System.Windows.Forms.Panel panelOpElegidas;
         private System.Windows.Forms.Label labelIngPromo;
+        private System.Windows.Forms.TextBox tbIngTipoPromo;
         private System.Windows.Forms.TextBox tbIngPromo;
     }
 }

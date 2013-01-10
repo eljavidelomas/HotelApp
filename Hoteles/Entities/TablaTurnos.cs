@@ -5,6 +5,7 @@ using System.Text;
 
 using System.Windows.Forms;
 using Hoteles.Properties;
+using System.Data.SqlClient;
 
 namespace Hoteles.Entities
 {
@@ -181,5 +182,7 @@ namespace Hoteles.Entities
 
             return dataGridView1;
         }
+
+        
     }
 }

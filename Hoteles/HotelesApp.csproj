@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Entities\Alarma.cs" />
     <Compile Include="Entities\Descuento.cs" />
+    <Compile Include="Entities\TipoDescuento.cs" />
     <Compile Include="Entities\Conserje.cs" />
     <Compile Include="Entities\GestorTeclado.cs">
     </Compile>
