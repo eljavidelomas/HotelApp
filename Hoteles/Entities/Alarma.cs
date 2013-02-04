@@ -11,9 +11,10 @@ namespace Hoteles.Entities
     {
         static Label lAviso;
         static Timer timer ;
+        public static bool prendida = false;
         
 
-        static public Label activar(fPrincipal fPrincipal)
+        static public Label activar(fPrincipal fPrincipal,string mensaje)
         {
             if (lAviso == null)
             {
@@ -40,7 +41,8 @@ namespace Hoteles.Entities
                 fPrincipal.tableLayoutPanel1.Controls.Add(lAviso, 0, 0);
 
             }
-            lAviso.Text = "Alarma !!!!!!!!!!" + " Alto:"+(fPrincipal.tableLayoutPanel1.RowStyles[0].Height * fPrincipal.tableLayoutPanel1.Height )/100;
+            lAviso.Text = mensaje;// " Alto:" + (fPrincipal.tableLayoutPanel1.RowStyles[0].Height * fPrincipal.tableLayoutPanel1.Height) / 100;
+            prendida = true;
 
             return lAviso;
         }
@@ -54,6 +56,7 @@ namespace Hoteles.Entities
                 lAviso.Visible = false;
                 lAviso.Dispose();
                 lAviso = null;
+                prendida = false;
             }
         }
 

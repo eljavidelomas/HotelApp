@@ -177,7 +177,8 @@ namespace Hoteles.Entities
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridView1.RowTemplate.Height = 23;
             dataGridView1.RowTemplate.Resizable = DataGridViewTriState.False;
-            dataGridView1.ScrollBars = ScrollBars.None;            
+            dataGridView1.ScrollBars = ScrollBars.None;
+            dataGridView1.DataSource = null;
             
 
             return dataGridView1;

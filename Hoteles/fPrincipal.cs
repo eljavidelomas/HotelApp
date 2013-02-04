@@ -11,6 +11,8 @@ using Hoteles.Properties;
 using Hoteles.Entities;
 using System.Threading;
 
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+
 namespace Hoteles
 {
     public partial class fPrincipal : Form
@@ -20,13 +22,30 @@ namespace Hoteles
         static bool cuadricula = false;
         public static SqlConnection conn;
         public Conserje conserjeActual;
+        public List<int> alarmas = new List<int>();
         public int maxFilas;
         public int cantHab;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public Dictionary<int, int> estadoHabitaciones = new Dictionary<int, int>();
 
         public fPrincipal()
         {
+            log.Info("Comienzo - Aplicacion Hotel");
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             InitializeComponent();
             GoFullscreen(true);
+            for (int i = 107; i < 121; i++)
+            {
+
+                estadoHabitaciones.Add(i, 0);
+            }
+            estadoHabitaciones.Add(101, 0);
+            estadoHabitaciones.Add(102, 1);
+            estadoHabitaciones.Add(103, 1);
+            estadoHabitaciones.Add(104, 1);
+            estadoHabitaciones.Add(105, 0);
+            estadoHabitaciones.Add(106, 1);
         }
 
         private void GoFullscreen(bool fullscreen)
@@ -61,10 +80,10 @@ namespace Hoteles
 
             if (conserjeActual == null)
             {
-                textUsuario.Visible = true;                
+                textUsuario.Visible = true;
                 labelClave.Visible = true;
                 textClave.Visible = true;
-                textUsuario.Focus();                
+                textUsuario.Focus();
             }
             else
             {
@@ -95,22 +114,24 @@ namespace Hoteles
             dataGridView1.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", tamFuente, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
 
-            dibujar(maxFilas, (int) cantHab.Value, reader);            
+            dibujar(maxFilas, (int)cantHab.Value, reader);
 
             //dataGridView1.Sort(new RowComparer(System.Windows.Forms.SortOrder.Descending));
-            
+
             dataGridView1.Enabled = true;
+
+            dataGridView1.SuspendLayout();
 
             //lAviso.Text = "Alarma !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - Alto: " + dataGridView1.RowTemplate.Height;
         }
 
 
-        public void dibujar(int maxFilas,int cantHab,SqlDataReader reader)
+        public void dibujar(int maxFilas, int cantHab, SqlDataReader reader)
         {
             if (dataGridView1.Rows.Count > 0)
             {
                 dataGridView1.Rows.Clear();
-                
+
             }
             if (col2 != null)
             {
@@ -131,7 +152,8 @@ namespace Hoteles
                     dataGridView1.Rows[ultFila].Cells["estado"].Value = "D";
                     dataGridView1.Rows[ultFila].Cells["salida"].Value = "";
                     dataGridView1.Rows[ultFila].Cells["bar"].Value = ((System.Drawing.Image)Resources.vacio);
-                    dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Green;
+                    //dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Green;
+                    dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                 }
                 else if (reader["estado"].ToString() == "A")
                 {
@@ -139,17 +161,19 @@ namespace Hoteles
                     dataGridView1.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
                     dataGridView1.Rows[ultFila].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Bold);
                     dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Orange;
+                    dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                 }
                 else
                 {
                     dataGridView1.Rows[ultFila].Cells["estado"].Value = "O";
                     dataGridView1.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.luzOn);
-                    dataGridView1.Rows[ultFila].Cells["bar"].Value = ((System.Drawing.Image)Resources.bar);
-                    dataGridView1.Rows[ultFila].Cells["aac"].Value = ((System.Drawing.Image)Resources.aac);
+                    //dataGridView1.Rows[ultFila].Cells["bar"].Value = ((System.Drawing.Image)Resources.bar);
+                    //dataGridView1.Rows[ultFila].Cells["aac"].Value = ((System.Drawing.Image)Resources.aac);
                     dataGridView1.Rows[ultFila].Cells["alarma"].Value = ((System.Drawing.Image)Resources.relojdespertador);
                     dataGridView1.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
                     dataGridView1.Rows[ultFila].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Bold); //dataGridView1.ColumnHeadersDefaultCellStyle.Font;
-                    dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Tomato;
+                    //dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Tomato;
+                    dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Tomato;
                 }
             }
             if (cantHab > maxFilas)
@@ -173,7 +197,8 @@ namespace Hoteles
                         col2.Rows[ultFila].Cells["estado"].Value = "D";
                         col2.Rows[ultFila].Cells["salida"].Value = "";
                         col2.Rows[ultFila].Cells["bar"].Value = ((System.Drawing.Image)Resources.vacio);
-                        col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Green;
+                        //col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Green;
+                        col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                     }
                     else if (reader["estado"].ToString() == "A")
                     {
@@ -181,6 +206,7 @@ namespace Hoteles
                         col2.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
                         col2.Rows[ultFila].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Bold);
                         col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Orange;
+                        col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                     }
                     else
                     {
@@ -188,7 +214,8 @@ namespace Hoteles
                         col2.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.luzOn);
                         col2.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
                         col2.Rows[ultFila].DefaultCellStyle.Font = new Font(col2.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
-                        col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Tomato;
+                        // col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Tomato;
+                        col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Tomato;
                     }
                 }
                 //col2.Sort(new RowComparer(System.Windows.Forms.SortOrder.Descending));
@@ -200,9 +227,17 @@ namespace Hoteles
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (GestorTeclado.ProcesarTecla(keyData, this))
-                return true;
-            return base.ProcessCmdKey(ref msg, keyData);
+            try
+            {
+                if (GestorTeclado.ProcesarTecla(keyData, this))
+                    return true;
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+            catch (Exception ex)
+            {
+                log.Error("fPrincipal - ProcessCmdKey  = " + ex.Message);
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
         }
 
         private void timerHora_Tick(object sender, EventArgs e)
@@ -231,9 +266,9 @@ namespace Hoteles
             {
                 if (textUsuario.Text == "" || int.TryParse(textUsuario.Text, out usuario) == false)
                     textUsuario.Text = "0";
-                if (textClave.Text == "" || int.TryParse(textClave.Text,out clave) == false)
+                if (textClave.Text == "" || int.TryParse(textClave.Text, out clave) == false)
                     textClave.Text = "0";
-                conserjeActual = Conserje.Login(usuario,clave);
+                conserjeActual = Conserje.Login(usuario, clave);
                 if (conserjeActual == null)
                 {
                     textClave.Text = "";
@@ -258,9 +293,9 @@ namespace Hoteles
             {
                 textUsuario.Focus();
                 int ancho = 1;
-                e.Graphics.DrawRectangle(new Pen(Color.Chocolate, ancho+2), textUsuario.Bounds.X - ancho, textUsuario.Bounds.Y - ancho, textUsuario.Bounds.Width+ancho,textUsuario.Bounds.Height+ancho);
+                e.Graphics.DrawRectangle(new Pen(Color.Chocolate, ancho + 2), textUsuario.Bounds.X - ancho, textUsuario.Bounds.Y - ancho, textUsuario.Bounds.Width + ancho, textUsuario.Bounds.Height + ancho);
                 e.Graphics.DrawRectangle(new Pen(Color.Chocolate, ancho + 2), textClave.Bounds.X - ancho, textClave.Bounds.Y - ancho, textClave.Bounds.Width + ancho, textClave.Bounds.Height + ancho);
-                e.Graphics.DrawRectangle(new Pen(Color.Chocolate, ancho+2), textClave.Bounds);
+                e.Graphics.DrawRectangle(new Pen(Color.Chocolate, ancho + 2), textClave.Bounds);
             }
             else
             {
@@ -268,6 +303,105 @@ namespace Hoteles
             }
         }
 
+        private void timerParpadeo_Tick(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            {
+                if (fila.Cells["estado"].Value.ToString() == "A")
+                {
+                    if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 0)
+                    {
+                        if (fila.Cells["nroHab"].Style.BackColor == Color.Green)
+                            fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                        else
+                            fila.Cells["nroHab"].Style.BackColor = Color.Green;
+                    }
+                }
+                else if (fila.Cells["estado"].Value.ToString() == "D")
+                {
+                    if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 1)
+                    {
+                        if (fila.Cells["nroHab"].Style.BackColor == Color.Tomato)
+                            fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                        else
+                            fila.Cells["nroHab"].Style.BackColor = Color.Tomato;
+                    }
+                }
+            }
+            foreach (DataGridViewRow fila in col2.Rows)
+            {
+                if (fila.Cells["estado"].Value.ToString() == "A")
+                {
+                    if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 0)
+                    {
+                        if (fila.Cells["nroHab"].Style.BackColor == Color.Green)
+                            fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                        else
+                            fila.Cells["nroHab"].Style.BackColor = Color.Green;
+                    }
+                }
+                else if (fila.Cells["estado"].Value.ToString() == "D")
+                {
+                    if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 1)
+                    {
+                        if (fila.Cells["nroHab"].Style.BackColor == Color.Tomato)
+                            fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                        else
+                            fila.Cells["nroHab"].Style.BackColor = Color.Tomato;
+                    }
+                }
+            }
+        }
+
+        private void timerValidarAlarmas_Tick(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("habitacion_obtenerAlarmas", conn);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                dataAdapter.Fill(ds);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        alarmas.Add(int.Parse(row[0].ToString()));                        
+                    }
+                }
+                if (alarmas.Count > 0)
+                {
+                    if(!Alarma.prendida)
+                        Alarma.activar(this,"Alarma, Fin de turno de la Habitación Nro: "+alarmas[0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message + " - " + ex.StackTrace);
+                return;
+            }
+        }
+
+
+        internal void QuitarReloj(int nroHab)
+        {
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (int.Parse(row.Cells[0].Value.ToString()) == nroHab)
+                {
+                    row.Cells[4].Value = null;
+                    return;
+                }
+            }
+            foreach (DataGridViewRow row in col2.Rows)
+            {
+                if (int.Parse(row.Cells[0].Value.ToString()) == nroHab)
+                {
+                    row.Cells[4].Value = null;
+                    return;
+                }
+            }
+            
+        }
     }
 }
 
@@ -297,10 +431,10 @@ class RowComparer : System.Collections.IComparer
         // If the estado are equal, sort based on the salida horario.
         if (CompareResult == 0)
         {
-            object row2 = DataGridViewRow2.Cells["salida"].Value ;
-            object row1 = DataGridViewRow1.Cells["salida"].Value ;
+            object row2 = DataGridViewRow2.Cells["salida"].Value;
+            object row1 = DataGridViewRow1.Cells["salida"].Value;
             CompareResult = System.String.Compare(
-                row2.ToString(),row1.ToString());
+                row2.ToString(), row1.ToString());
             if (CompareResult == 0)
             {
                 CompareResult = System.String.CompareOrdinal(
@@ -311,6 +445,12 @@ class RowComparer : System.Collections.IComparer
         return CompareResult * sortOrderModifier;
     }
 }
+
+
+
+
+
+
 
 
 

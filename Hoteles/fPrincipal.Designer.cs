@@ -69,6 +69,8 @@ namespace Hoteles
             this.labelHora = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
+            this.timerParpadeo = new System.Windows.Forms.Timer(this.components);
+            this.timerValidarAlarmas = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panelFunciones.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -448,6 +450,18 @@ namespace Hoteles
             this.timerHora.Interval = 1000;
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
+            // timerParpadeo
+            // 
+            this.timerParpadeo.Enabled = true;
+            this.timerParpadeo.Interval = 1000;
+            this.timerParpadeo.Tick += new System.EventHandler(this.timerParpadeo_Tick);
+            // 
+            // timerValidarAlarmas
+            // 
+            this.timerValidarAlarmas.Enabled = true;
+            this.timerValidarAlarmas.Interval = 60000;
+            this.timerValidarAlarmas.Tick += new System.EventHandler(this.timerValidarAlarmas_Tick);
+            // 
             // fPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,6 +517,8 @@ namespace Hoteles
         private Label label2;
         private Label labelFuncBar;
         private Label labelFuncVarios;
+        private Timer timerParpadeo;
+        private Timer timerValidarAlarmas;
         
     }
 }

@@ -50,6 +50,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -64,7 +68,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Articulo.cs" />
+    <Compile Include="FormPedidoBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPedidoBar.Designer.cs">
+      <DependentUpon>FormPedidoBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdelantoDinero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdelantoDinero.Designer.cs">
+      <DependentUpon>FormAdelantoDinero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCancelarHab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCancelarHab.Designer.cs">
+      <DependentUpon>FormCancelarHab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Alarma.cs" />
+    <Compile Include="Entities\Socio.cs" />
+    <Compile Include="Entities\Tarifa.cs" />
     <Compile Include="Entities\Descuento.cs" />
     <Compile Include="Entities\TipoDescuento.cs" />
     <Compile Include="Entities\Conserje.cs" />
@@ -92,8 +117,25 @@
     <Compile Include="fPrincipal.Designer.cs">
       <DependentUpon>fPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="hotelDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hotelDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormPedidoBar.resx">
+      <DependentUpon>FormPedidoBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdelantoDinero.resx">
+      <DependentUpon>FormAdelantoDinero.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCancelarHab.resx">
+      <DependentUpon>FormCancelarHab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAsignarHab.resx">
       <DependentUpon>FormAsignarHab.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -173,6 +215,17 @@
     <None Include="Resources\reloj.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="hotelDataSet2.xsc">
+      <DependentUpon>hotelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="hotelDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hotelDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hotelDataSet2.xss">
+      <DependentUpon>hotelDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Resources\reloj-despertador.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

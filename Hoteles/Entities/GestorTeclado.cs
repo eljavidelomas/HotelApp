@@ -21,9 +21,9 @@ namespace Hoteles.Entities
             if (tecla == Keys.Escape)
             {
                 fPresionada = false;
-                //formPrincipal.fIngresos.Visible = false;
-                //formPrincipal.lTitulo.Text = "";
-                //formPrincipal.input1.Text = "";
+                Alarma.desactivar();
+                formPrincipal.QuitarReloj(formPrincipal.alarmas[0]);
+                formPrincipal.alarmas.RemoveAt(0);                
                 return true;
             }
             if(tecla == Keys.Alt)
@@ -60,38 +60,48 @@ namespace Hoteles.Entities
                         case Keys.F1:
                             funcion = "F1";
                             FormAsignarHab asignarHab = new FormAsignarHab();
-                            
-                            asignarHab.Owner = formPrincipal;
-                            //formPrincipal.AddOwnedForm(asignarHab);
+                            asignarHab.Owner = formPrincipal;                            
                             asignarHab.Show();
                             formPrincipal.Hide();
                             asignarHab.Activate();
+                            asignarHab.tbNroHab.Focus();
                             
-                            //formPrincipal.fIngresos.Size = new System.Drawing.Size(1,1);
-                            ////formPrincipal.tableLayoutPanel1.Controls.Add(tools.crearFormIngreso(),1,2);
-                            //formPrincipal.lTitulo.Text = "Asignación de Habitaciones";
-                            //Habitacion.Asignar(formPrincipal);
-                            //formPrincipal.lTitulo.Width = formPrincipal.lTitulo.Parent.Width;
+                            
                             break;
-                        case Keys.F2:
-                            //formPrincipal.lTitulo.Text = "Cancelacion de Habitaciones";
-                            Habitacion.cancelar(formPrincipal);
+                        case Keys.F2:                            
+                            FormCancelarHab cancelarHab = new FormCancelarHab();
+                            cancelarHab.Owner = formPrincipal;                            
+                            cancelarHab.Show();
+                            formPrincipal.Hide();
+                            cancelarHab.Activate();
+                            cancelarHab.tbNroHab.Focus();                            
                             break;
                         case Keys.F3:
-                            Alarma.activar(formPrincipal);
-                            //formPrincipal.tableLayoutPanel1.Controls.Add(formPrincipal.dataGridView1, 0, 1);
-                            //formPrincipal.tableLayoutPanel1.SetRowSpan(formPrincipal.dataGridView1, 2);
+                            FormAdelantoDinero fAdelantoDinero = new FormAdelantoDinero();
+                            fAdelantoDinero.Owner = formPrincipal;
+                            fAdelantoDinero.Show();
+                            formPrincipal.Hide();
+                            fAdelantoDinero.Activate();
+                            fAdelantoDinero.tbNroHab.Focus();
                             break;
                         case Keys.F4:
-                            Alarma.desactivar();
+                            
                             break;
                         case Keys.F5:
+                            FormPedidoBar pedidoBar = new FormPedidoBar();
+                            pedidoBar.Owner = formPrincipal;
+                            pedidoBar.Show();
+                            formPrincipal.Hide();
+                            pedidoBar.Activate();
+                            pedidoBar.tbNroHab.Focus();
                             break;
                         case Keys.F6:
                             break;
                         case Keys.F7:
+                            Alarma.activar(formPrincipal,"Alarma");
                             break;
                         case Keys.F8:
+                            Alarma.desactivar();
                             break;
                         case Keys.F9:
                             break;

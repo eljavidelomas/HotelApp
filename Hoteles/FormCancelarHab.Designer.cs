@@ -1,6 +1,6 @@
 ﻿namespace Hoteles
 {
-    partial class FormAsignarHab
+    partial class FormCancelarHab
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGlobal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvOpcionesElegidas = new System.Windows.Forms.DataGridView();
@@ -46,9 +44,6 @@
             this.tbNroHab = new System.Windows.Forms.TextBox();
             this.labelNroHab = new System.Windows.Forms.Label();
             this.panelPromos = new System.Windows.Forms.Panel();
-            this.dgvPromos = new System.Windows.Forms.DataGridView();
-            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.promociones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.panelGlobal.SuspendLayout();
@@ -57,8 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.opcionesAsignarHabitacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).BeginInit();
             this.panelIngresoDatos.SuspendLayout();
-            this.panelPromos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPromos)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,7 +176,7 @@
             this.labelTitulo.Padding = new System.Windows.Forms.Padding(10);
             this.labelTitulo.Size = new System.Drawing.Size(1143, 98);
             this.labelTitulo.TabIndex = 1;
-            this.labelTitulo.Text = "Asignar Habitacion";
+            this.labelTitulo.Text = "Cancelar Habitación";
             this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelMensaje
@@ -239,71 +232,12 @@
             // 
             // panelPromos
             // 
-            this.panelPromos.Controls.Add(this.dgvPromos);
             this.panelPromos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPromos.Location = new System.Drawing.Point(581, 113);
             this.panelPromos.Margin = new System.Windows.Forms.Padding(5);
             this.panelPromos.Name = "panelPromos";
             this.panelPromos.Size = new System.Drawing.Size(567, 423);
             this.panelPromos.TabIndex = 8;
-            // 
-            // dgvPromos
-            // 
-            this.dgvPromos.AllowUserToAddRows = false;
-            this.dgvPromos.AllowUserToDeleteRows = false;
-            this.dgvPromos.AllowUserToResizeColumns = false;
-            this.dgvPromos.AllowUserToResizeRows = false;
-            this.dgvPromos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPromos.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvPromos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPromos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPromos.ColumnHeadersHeight = 50;
-            this.dgvPromos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvPromos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nro,
-            this.promociones});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPromos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPromos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPromos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPromos.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvPromos.Location = new System.Drawing.Point(0, 0);
-            this.dgvPromos.Margin = new System.Windows.Forms.Padding(5);
-            this.dgvPromos.Name = "dgvPromos";
-            this.dgvPromos.ReadOnly = true;
-            this.dgvPromos.RowHeadersVisible = false;
-            this.dgvPromos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvPromos.RowTemplate.Height = 60;
-            this.dgvPromos.Size = new System.Drawing.Size(567, 423);
-            this.dgvPromos.TabIndex = 0;
-            this.dgvPromos.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvPromos_RowPostPaint);
-            // 
-            // nro
-            // 
-            this.nro.FillWeight = 20.30457F;
-            this.nro.HeaderText = "";
-            this.nro.Name = "nro";
-            this.nro.ReadOnly = true;
-            // 
-            // promociones
-            // 
-            this.promociones.FillWeight = 179.6954F;
-            this.promociones.HeaderText = "Promociones";
-            this.promociones.Name = "promociones";
-            this.promociones.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -328,14 +262,14 @@
             // 
             this.opcionesAsignarHabitacionTableAdapter.ClearBeforeFill = true;
             // 
-            // FormAsignarHab
+            // FormCancelarHab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1350, 730);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FormAsignarHab";
+            this.Name = "FormCancelarHab";
             this.Text = "FormAsignar";
             this.Load += new System.EventHandler(this.FormAsignarHab_Load);
             this.panelGlobal.ResumeLayout(false);
@@ -345,8 +279,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).EndInit();
             this.panelIngresoDatos.ResumeLayout(false);
             this.panelIngresoDatos.PerformLayout();
-            this.panelPromos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPromos)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -368,10 +300,7 @@
         private Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter opcionesAsignarHabitacionTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn detallesDelTurnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dgvPromos;
         public System.Windows.Forms.TextBox tbNroHab;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn promociones;
         
         
         

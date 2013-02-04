@@ -15,12 +15,16 @@ namespace Hoteles.Entities
         public decimal descuentoFijo;
         public int descuentoPorcentaje;
         public string pathImagen;
-        public int tipoDescuentoId;
-        public int claseArticuloId;
         public int cantidadArticulos;
-        public int puntaje;
+        public int acumulaPuntaje;
         public int tarifaId;
+        public int menuId;
 
+
+        public Descuento()
+        {
+            id = 0;
+        }
 
         private Descuento(DataRow dr)
         {
@@ -30,18 +34,20 @@ namespace Hoteles.Entities
             descuentoFijo = string.IsNullOrEmpty(dr["descuentoFijo"].ToString()) ? 0 : Decimal.Parse(dr["descuentoFijo"].ToString());
             descuentoPorcentaje = string.IsNullOrEmpty(dr["descuentoPorcentaje"].ToString()) ? 0 : int.Parse(dr["descuentoPorcentaje"].ToString());
             pathImagen = dr["pathImagen"].ToString();
-            tipoDescuentoId = string.IsNullOrEmpty(dr["tipoDescuento"].ToString())? 0 : int.Parse(dr["tipoDescuento"].ToString());
-            claseArticuloId = string.IsNullOrEmpty(dr["claseArticuloId"].ToString())?0 : int.Parse(dr["claseArticuloId"].ToString());
-            cantidadArticulos = string.IsNullOrEmpty(dr["cantidad"].ToString()) ? 0 : int.Parse(dr["cantidad"].ToString());
-            puntaje = string.IsNullOrEmpty( dr["puntaje"].ToString()) ? 0 : int.Parse(dr["puntaje"].ToString());
+            cantidadArticulos = string.IsNullOrEmpty(dr["cantidadArticulos"].ToString()) ? 0 : int.Parse(dr["cantidadArticulos"].ToString());
+            acumulaPuntaje = string.IsNullOrEmpty(dr["acumulaPuntaje"].ToString()) ? 0 : int.Parse(dr["acumulaPuntaje"].ToString());            
             tarifaId = String.IsNullOrEmpty( dr["tarifaId"].ToString() ) ? 0 : int.Parse(dr["tarifaId"].ToString());
+            menuId = string.IsNullOrEmpty(dr["menuId"].ToString()) ? 0 : int.Parse(dr["menuId"].ToString());
+            
         }
 
-        public static List<Descuento> obtenerDescuentoPorTipo(int tipoDescuentoId)
+        public static List<Descuento> obtenerDescuentos(int nroHab)
         {
             DataSet ds = new DataSet();
             List<Descuento> descuentos = new List<Descuento>();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from descuentos where tipoDescuento = " + tipoDescuentoId, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Descuentos_GetAll", fPrincipal.conn);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", nroHab);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.Fill(ds);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
