@@ -43,16 +43,16 @@
             this.labelNroHab = new System.Windows.Forms.Label();
             this.tbNroHab = new System.Windows.Forms.TextBox();
             this.panelPromos = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMedioPago = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mediosDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new Hoteles.hotelDataSet();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.opcionesAsignarHabitacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.mediosDePagoTableAdapter = new Hoteles.hotelDataSetTableAdapters.mediosDePagoTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -60,10 +60,10 @@
             this.panelIngresoDatos.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelPromos.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedioPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediosDePagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.opcionesAsignarHabitacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).BeginInit();
             this.SuspendLayout();
@@ -161,7 +161,7 @@
             this.labelTitulo.Padding = new System.Windows.Forms.Padding(10);
             this.labelTitulo.Size = new System.Drawing.Size(1143, 98);
             this.labelTitulo.TabIndex = 1;
-            this.labelTitulo.Text = "Adelanto de Dinero";
+            this.labelTitulo.Text = "Avisos Horarios";
             this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelMensaje
@@ -237,25 +237,6 @@
             this.panelPromos.TabIndex = 8;
             this.panelPromos.Visible = false;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.834101F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.78188F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.62519F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.605223F));
-            this.tableLayoutPanel1.Controls.Add(this.panelGlobal, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.804124F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.8866F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.94845F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.773196F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 730);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // dgvMedioPago
             // 
             this.dgvMedioPago.AllowUserToAddRows = false;
@@ -298,22 +279,6 @@
             this.dgvMedioPago.Size = new System.Drawing.Size(567, 423);
             this.dgvMedioPago.TabIndex = 0;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 25.38071F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.FillWeight = 174.6193F;
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Medios De Pago";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // mediosDePagoBindingSource
             // 
             this.mediosDePagoBindingSource.DataMember = "mediosDePago";
@@ -323,6 +288,25 @@
             // 
             this.hotelDataSet.DataSetName = "hotelDataSet";
             this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.834101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.78188F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.62519F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.605223F));
+            this.tableLayoutPanel1.Controls.Add(this.panelGlobal, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.804124F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.8866F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.94845F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.773196F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 730);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // opcionesAsignarHabitacionBindingSource
             // 
@@ -342,9 +326,25 @@
             // 
             this.mediosDePagoTableAdapter.ClearBeforeFill = true;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 25.38071F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.FillWeight = 174.6193F;
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Mensajes";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // detalles
             // 
-            this.detalles.HeaderText = "Detalles del Turno";
+            this.detalles.HeaderText = "Detalles Habitación";
             this.detalles.Name = "detalles";
             this.detalles.ReadOnly = true;
             // 
@@ -365,10 +365,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panelPromos.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedioPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediosDePagoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.opcionesAsignarHabitacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).EndInit();
             this.ResumeLayout(false);
@@ -395,9 +395,9 @@
         private hotelDataSet hotelDataSet;
         private System.Windows.Forms.BindingSource mediosDePagoBindingSource;
         private Hoteles.hotelDataSetTableAdapters.mediosDePagoTableAdapter mediosDePagoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalles;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalles;
         
         
         

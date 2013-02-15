@@ -96,6 +96,12 @@ namespace Hoteles.Entities
                             pedidoBar.tbNroHab.Focus();
                             break;
                         case Keys.F6:
+                            FormAnularPedidoBar anuPedidoBar = new FormAnularPedidoBar();                            
+                            anuPedidoBar.Show();
+                            anuPedidoBar.Owner = formPrincipal;
+                            formPrincipal.Hide();
+                            anuPedidoBar.Activate();
+                            anuPedidoBar.tbNroHab.Focus();
                             break;
                         case Keys.F7:
                             Alarma.activar(formPrincipal,"Alarma");

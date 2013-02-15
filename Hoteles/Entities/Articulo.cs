@@ -15,13 +15,15 @@ namespace Hoteles.Entities
         public int stock;
         public decimal precio;
         public bool promo;
+        public int cantidadConsumida;
 
 
-        public Articulo(int id, string nombre, decimal precio)
+        public Articulo(int id, string nombre, decimal precio,int cantidad)
         {
             this.id = id;
             this.nombre = nombre;
             this.precio = precio;
+            this.cantidadConsumida = cantidad;
         }
         static public DataTable obtenerListaArticulos()
         {
@@ -56,6 +58,28 @@ namespace Hoteles.Entities
             }
         }
 
+        static public Array obtenerNombrePrecioArticulo(int articuloId)
+        {
+            DataSet ds = new DataSet();
+            Array datos = Array.CreateInstance(typeof(Object), 2);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("articulos_obtenerNombre", fPrincipal.conn);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@artId", articuloId);
+            try
+            {
+                dataAdapter.Fill(ds);
+                datos.SetValue((ds.Tables[0].Rows[0][0]).ToString(), 0);
+                datos.SetValue(decimal.Parse((ds.Tables[0].Rows[0][1]).ToString()),1);
+                return datos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+
         static public bool generarPedidoBar(fPrincipal fPrincipal, Dictionary<int, int> pedido, int nroHab)
         {
             try
@@ -81,6 +105,37 @@ namespace Hoteles.Entities
                 return true;
             }
             catch(Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        static public bool anularPedidoBar(fPrincipal fPrincipal, Dictionary<int, int> pedido, int nroHab)
+        {
+            try
+            {
+                SqlCommand comm;
+                comm = new SqlCommand("articulos_anularPedido", fPrincipal.conn);
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@nroHab", nroHab);
+
+                foreach (int nroArt in pedido.Keys)
+                {
+                    comm.Parameters.AddWithValue("@nroArt", nroArt);
+                    comm.Parameters.AddWithValue("@cant", pedido[nroArt]);
+                    comm.ExecuteNonQuery();
+                    comm.Parameters.RemoveAt("@nroArt");
+                    comm.Parameters.RemoveAt("@cant");
+                }
+
+                comm.CommandText = "listaTurnos";
+                comm.Parameters.Clear();
+                fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
+
+                return true;
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }

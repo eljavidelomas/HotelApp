@@ -68,6 +68,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAvisosHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAvisosHorarios.Designer.cs">
+      <DependentUpon>FormAvisosHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Impresora.cs" />
+    <Compile Include="FormAnularPedidoBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnularPedidoBar.Designer.cs">
+      <DependentUpon>FormAnularPedidoBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Articulo.cs" />
     <Compile Include="FormPedidoBar.cs">
       <SubType>Form</SubType>
@@ -117,6 +130,11 @@
     <Compile Include="fPrincipal.Designer.cs">
       <DependentUpon>fPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="hotelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hotelDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="hotelDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +142,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAvisosHorarios.resx">
+      <DependentUpon>FormAvisosHorarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnularPedidoBar.resx">
+      <DependentUpon>FormAnularPedidoBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPedidoBar.resx">
       <DependentUpon>FormPedidoBar.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -215,6 +241,17 @@
     <None Include="Resources\reloj.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="hotelDataSet.xsc">
+      <DependentUpon>hotelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hotelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hotelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hotelDataSet.xss">
+      <DependentUpon>hotelDataSet.xsd</DependentUpon>
+    </None>
     <None Include="hotelDataSet2.xsc">
       <DependentUpon>hotelDataSet2.xsd</DependentUpon>
     </None>

@@ -13,5 +13,11 @@
     <Setting Name="Logo" Type="System.String" Scope="Application">
       <Value Profile="(Default)">resources/LogoHotel.png</Value>
     </Setting>
+    <Setting Name="archImprimir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">resources/impTemp.txt</Value>
+    </Setting>
+    <Setting Name="ticketCocina" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Fecha: ##FECHA Hora: ##HORA\rNro.Ticket: ##NRO\r ---------------------------------------\r\rNro.Habitacion: ##HAB\rCant    Articulo                   Precio\r</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

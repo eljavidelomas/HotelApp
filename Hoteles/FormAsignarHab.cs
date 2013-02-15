@@ -245,7 +245,8 @@ namespace Hoteles
                         break;
                 }
 
-                tbNroHab.SelectionStart = tbNroHab.TextLength;
+                tbNroHab.Select(0, tbNroHab.TextLength);
+                //tbNroHab.SelectionStart = tbNroHab.TextLength;
                 return;
             }
             if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != (char)Keys.Back)

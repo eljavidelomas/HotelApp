@@ -12,3 +12,4 @@ C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\bin\Debug
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormCancelarHab.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormAdelantoDinero.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormPedidoBar.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormAnularPedidoBar.resources

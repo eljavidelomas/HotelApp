@@ -38,6 +38,7 @@ namespace Hoteles.Entities
             {
                 Tarifa tarifaNoche;
                 decimal precioTotal = calcularPrecioConPernocte(nroHab, out tarifaNoche);
+                decimal precioExtra = precioTotal - tarifaNoche.precio;
                 if (precioTotal == 0)
                 {
                     return false;
@@ -46,7 +47,8 @@ namespace Hoteles.Entities
                 comm.CommandType = CommandType.StoredProcedure;
 
                 comm.Parameters.AddWithValue("@nroHab", nroHab);
-                comm.Parameters.AddWithValue("@precioTotal", precioTotal);
+                comm.Parameters.AddWithValue("@precioTotal", precioTotal - precioExtra);
+                comm.Parameters.AddWithValue("@precioExtras", precioExtra);
                 comm.Parameters.AddWithValue("@hasta", tarifaNoche.hasta);
                 if (descuentoId != 0)
                     comm.Parameters.AddWithValue("@descuentoId", descuentoId);
@@ -95,7 +97,7 @@ namespace Hoteles.Entities
                 tarifaNoche = tarifaActual;
                 return 0;
             }
-            if (tarifaActual.precioTN > 0)
+            if (tarifaActual.pernocte)
             {
                 tarifaNoche = tarifaActual;
                 return tarifaActual.precioTN;
@@ -106,13 +108,28 @@ namespace Hoteles.Entities
                 TimeSpan diferencia;
 
                 diferencia = tarifaActual.hasta.TimeOfDay - DateTime.Now.TimeOfDay;
-                precioTotal += (Decimal.Parse(diferencia.TotalMinutes.ToString()) * tarifaActual.precioMinuto);
+                decimal precioParcial = (Decimal.Parse(diferencia.TotalMinutes.ToString()) * tarifaActual.precioMinuto);
+                if (tarifaActual.precioTN != 0)
+                {
+                    precioTotal += (precioParcial > tarifaActual.precioTN ? tarifaActual.precioTN : precioParcial);
+                }
+                else
+                    precioTotal += precioParcial;
                 tarifaActual = Tarifa.obtenerTarifaActual(nroHab, tarifaActual.hasta);
                 int cont = 0; // este cont es para salir en caso de que no este bien configurado las tarifas, las franjas horarias
-                while (tarifaActual.precioTN == 0 && cont < 30)
+                while (tarifaActual.pernocte == false && cont < 30)
                 {
                     diferencia = tarifaActual.hasta.TimeOfDay - tarifaActual.desde.TimeOfDay;
-                    precioTotal += (Decimal.Parse(diferencia.TotalMinutes.ToString()) * tarifaActual.precioMinuto);
+                    precioParcial = (Decimal.Parse(diferencia.TotalMinutes.ToString()) * tarifaActual.precioMinuto);
+                    if (tarifaActual.precioTN != 0)
+                    {
+                        precioTotal += (precioParcial > tarifaActual.precioTN ? tarifaActual.precioTN : precioParcial);
+                    }
+                    else
+                        precioTotal += precioParcial;
+                    
+                    // HAY QUE REVISARLO..... !!!!!!!!!!!!!!!!!!
+
                     tarifaActual = Tarifa.obtenerTarifaActual(nroHab, tarifaActual.hasta);
                     cont++;
                 }
@@ -143,16 +160,14 @@ namespace Hoteles.Entities
             return;
         }
 
-        internal static void Adelanto(fPrincipal fPrincipal,int nroHab, decimal monto, string p)
+        internal static void Adelanto(fPrincipal fPrincipal,int nroHab, decimal monto, int mediopago)
         {            
             SqlCommand comm;
             comm = new SqlCommand("habitacion_adelanto", fPrincipal.conn);
             comm.CommandType = CommandType.StoredProcedure;
-            comm.Parameters.AddWithValue("@nroHab", nroHab);
-            if(p=="E")
-                comm.Parameters.AddWithValue("@montoEfectivo", monto);
-            if (p == "T")
-                comm.Parameters.AddWithValue("@montoTarjeta", monto);            
+            comm.Parameters.AddWithValue("@nroHab", nroHab);            
+            comm.Parameters.AddWithValue("@monto", monto);
+            comm.Parameters.AddWithValue("@medioPago", mediopago);            
 
             comm.ExecuteNonQuery();
             comm.CommandText = "listaTurnos";

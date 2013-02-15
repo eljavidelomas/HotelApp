@@ -52,6 +52,9 @@ namespace Hoteles
                 volverFormPrincipal();
                 return true;
             }
+            if (pasoAsignacion == "confirmar")
+                if (keyData == Keys.Enter)
+                    tbNroHab_KeyPress(this.tbNroHab, new KeyPressEventArgs((char)keyData));
            
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -97,12 +100,13 @@ namespace Hoteles
 
 
                             labelNroHab.Text = "¿Confirma Cancelar?";
-                            tbNroHab.Text = "0";
-                            pasoAsignacion = "cancelar";
+                            tbNroHab.Text = "1";
+                            tbNroHab.Visible = false;
+                            pasoAsignacion = "confirmar";
 
                             break;
 
-                        case "cancelar":
+                        case "confirmar":
 
                             if (string.IsNullOrEmpty(tbNroHab.Text))
                             {
@@ -129,7 +133,7 @@ namespace Hoteles
                         default:
                             break;
                     }
-                    tbNroHab.SelectionStart = tbNroHab.TextLength;
+                    tbNroHab.Select(0, tbNroHab.TextLength);
                     return;
                 }
                 if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != (char)Keys.Back)

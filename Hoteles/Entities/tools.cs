@@ -6,15 +6,17 @@ using System.Windows.Forms;
 
 namespace Hoteles.Entities
 {
-    public class tools
+    public static class tools
     {
+        public static int altoFilaBar = 35;
+
+
         public static int calcularAltoFila(fPrincipal form,int cantFilas,int maxFilas)
         {
             if(cantFilas>maxFilas)
                 cantFilas=maxFilas+1;
             return (form.dataGridView1.Height - form.dataGridView1.ColumnHeadersHeight) / cantFilas;
         }
-
 
         public static DataGridView CopyDataGridView(DataGridView dgv_in,DataGridView dgv_out)
         {

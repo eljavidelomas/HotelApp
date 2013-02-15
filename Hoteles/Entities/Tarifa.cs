@@ -19,6 +19,7 @@ namespace Hoteles.Entities
         public int duracion;
         public decimal precio;
         public decimal precioMinuto;
+        public bool pernocte;
         public int extension;
         public decimal precioTN;
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -44,6 +45,7 @@ namespace Hoteles.Entities
                 decimal.TryParse(dr["precioMinuto"].ToString(), out precioMinuto);
                 int.TryParse(dr["extension"].ToString(), out extension);
                 decimal.TryParse(dr["precioTN"].ToString(), out precioTN);
+                bool.TryParse(dr["pernocte"].ToString(), out pernocte);
             }
 
 

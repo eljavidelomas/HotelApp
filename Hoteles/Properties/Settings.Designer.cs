@@ -41,5 +41,24 @@ namespace Hoteles.Properties {
                 return ((string)(this["Logo"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("resources/impTemp.txt")]
+        public string archImprimir {
+            get {
+                return ((string)(this["archImprimir"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Fecha: ##FECHA Hora: ##HORA\\rNro.Ticket: ##NRO\\r --------------------------------" +
+            "-------\\r\\rNro.Habitacion: ##HAB\\rCant    Articulo                   Precio\\r")]
+        public string ticketCocina {
+            get {
+                return ((string)(this["ticketCocina"]));
+            }
+        }
     }
 }
