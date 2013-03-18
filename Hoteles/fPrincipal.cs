@@ -22,7 +22,7 @@ namespace Hoteles
         static bool cuadricula = false;
         public static SqlConnection conn;
         public Conserje conserjeActual;
-        public List<int> alarmas = new List<int>();
+        public List<Aviso> alarmas = new List<Aviso>();
         public int maxFilas;
         public int cantHab;
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -90,7 +90,7 @@ namespace Hoteles
                 labelConserje.Text = "Conserje:" + conserjeActual.nombre;
             }
 
-            labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm:ss");
+            labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm");
             labelFecha.Text = "Fecha: " + DateTime.Now.ToString("dd / MM / yyyy");
             SqlCommand comm = new SqlCommand("listaTurnos", conn);
             comm.CommandType = CommandType.StoredProcedure;
@@ -145,9 +145,10 @@ namespace Hoteles
                 DataGridViewRow row = new DataGridViewRow();
                 dataGridView1.Rows.Add(reader["nroHabitacion"], reader["categoria2"].ToString() == "" ? reader["categoria"] : reader["categoria2"]);
                 ultFila = dataGridView1.Rows.GetLastRow(DataGridViewElementStates.None);
+                
 
                 dataGridView1.Rows[ultFila].Cells["importe"].Value = String.Format("{0:C}", reader["importe"]);
-                if (reader["estado"].ToString() == "D")
+                if (reader["estado"].ToString() == "D") // Disponible
                 {
                     dataGridView1.Rows[ultFila].Cells["estado"].Value = "D";
                     dataGridView1.Rows[ultFila].Cells["salida"].Value = "";
@@ -155,25 +156,32 @@ namespace Hoteles
                     //dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Green;
                     dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                 }
-                else if (reader["estado"].ToString() == "A")
+                else if (reader["estado"].ToString() == "A") // Asignada
                 {
                     dataGridView1.Rows[ultFila].Cells["estado"].Value = "A";
                     dataGridView1.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
                     dataGridView1.Rows[ultFila].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Bold);
-                    dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Orange;
+                    //Si hay alarmas
+                    if(reader["aviso"].ToString()!="")
+                        dataGridView1.Rows[ultFila].Cells["alarma"].Value = ((System.Drawing.Image)Resources.relojdespertador);
+                    //dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Orange;
                     dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                 }
-                else
+                else if (reader["estado"].ToString() == "O") // Ocupada
                 {
                     dataGridView1.Rows[ultFila].Cells["estado"].Value = "O";
                     dataGridView1.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.luzOn);
-                    //dataGridView1.Rows[ultFila].Cells["bar"].Value = ((System.Drawing.Image)Resources.bar);
-                    //dataGridView1.Rows[ultFila].Cells["aac"].Value = ((System.Drawing.Image)Resources.aac);
-                    dataGridView1.Rows[ultFila].Cells["alarma"].Value = ((System.Drawing.Image)Resources.relojdespertador);
                     dataGridView1.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
-                    dataGridView1.Rows[ultFila].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Bold); //dataGridView1.ColumnHeadersDefaultCellStyle.Font;
-                    //dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Tomato;
+                    dataGridView1.Rows[ultFila].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Bold);
                     dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Tomato;
+                    if (reader["aviso"].ToString() != "")
+                        dataGridView1.Rows[ultFila].Cells["alarma"].Value = ((System.Drawing.Image)Resources.relojdespertador);
+                }
+                else 
+                {
+                    dataGridView1.Rows[ultFila].Cells["estado"].Value = "M"; // Mucama
+                    dataGridView1.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.luzOn);
+                    dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Yellow;
                 }
             }
             if (cantHab > maxFilas)
@@ -242,7 +250,7 @@ namespace Hoteles
 
         private void timerHora_Tick(object sender, EventArgs e)
         {
-            labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm:ss");
+            labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm");
             labelFecha.Text = "Fecha: " + DateTime.Now.ToString("dd / MM / yyyy");
         }
 
@@ -261,7 +269,7 @@ namespace Hoteles
         {
             int clave = 0;
             int usuario = 0;
-
+            
             if ((char)Keys.Enter == e.KeyChar)
             {
                 if (textUsuario.Text == "" || int.TryParse(textUsuario.Text, out usuario) == false)
@@ -289,6 +297,7 @@ namespace Hoteles
 
         private void panelDatosHotel_Paint(object sender, PaintEventArgs e)
         {
+            //Esta funcion es para el login del conserje la primera vez q entra
             if (textClave.Visible)
             {
                 textUsuario.Focus();
@@ -305,49 +314,52 @@ namespace Hoteles
 
         private void timerParpadeo_Tick(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            if (dataGridView1 != null && dataGridView1.Rows != null)
             {
-                if (fila.Cells["estado"].Value.ToString() == "A")
+                foreach (DataGridViewRow fila in dataGridView1.Rows)
                 {
-                    if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 0)
+                    if (fila.Cells["estado"].Value.ToString() == "A")
                     {
-                        if (fila.Cells["nroHab"].Style.BackColor == Color.Green)
-                            fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
-                        else
-                            fila.Cells["nroHab"].Style.BackColor = Color.Green;
+                        if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 0)
+                        {
+                            if (fila.Cells["nroHab"].Style.BackColor == Color.Green)
+                                fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                            else
+                                fila.Cells["nroHab"].Style.BackColor = Color.Green;
+                        }
+                    }
+                    else if (fila.Cells["estado"].Value.ToString() == "D")
+                    {
+                        if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 1)
+                        {
+                            if (fila.Cells["nroHab"].Style.BackColor == Color.Tomato)
+                                fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                            else
+                                fila.Cells["nroHab"].Style.BackColor = Color.Tomato;
+                        }
                     }
                 }
-                else if (fila.Cells["estado"].Value.ToString() == "D")
+                foreach (DataGridViewRow fila in col2.Rows)
                 {
-                    if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 1)
+                    if (fila.Cells["estado"].Value.ToString() == "A")
                     {
-                        if (fila.Cells["nroHab"].Style.BackColor == Color.Tomato)
-                            fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
-                        else
-                            fila.Cells["nroHab"].Style.BackColor = Color.Tomato;
+                        if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 0)
+                        {
+                            if (fila.Cells["nroHab"].Style.BackColor == Color.Green)
+                                fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                            else
+                                fila.Cells["nroHab"].Style.BackColor = Color.Green;
+                        }
                     }
-                }
-            }
-            foreach (DataGridViewRow fila in col2.Rows)
-            {
-                if (fila.Cells["estado"].Value.ToString() == "A")
-                {
-                    if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 0)
+                    else if (fila.Cells["estado"].Value.ToString() == "D")
                     {
-                        if (fila.Cells["nroHab"].Style.BackColor == Color.Green)
-                            fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
-                        else
-                            fila.Cells["nroHab"].Style.BackColor = Color.Green;
-                    }
-                }
-                else if (fila.Cells["estado"].Value.ToString() == "D")
-                {
-                    if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 1)
-                    {
-                        if (fila.Cells["nroHab"].Style.BackColor == Color.Tomato)
-                            fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
-                        else
-                            fila.Cells["nroHab"].Style.BackColor = Color.Tomato;
+                        if (estadoHabitaciones[int.Parse(fila.Cells["nroHab"].Value.ToString())] == 1)
+                        {
+                            if (fila.Cells["nroHab"].Style.BackColor == Color.Tomato)
+                                fila.Cells["nroHab"].Style.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                            else
+                                fila.Cells["nroHab"].Style.BackColor = Color.Tomato;
+                        }
                     }
                 }
             }
@@ -365,13 +377,13 @@ namespace Hoteles
                 {
                     foreach (DataRow row in ds.Tables[0].Rows)
                     {
-                        alarmas.Add(int.Parse(row[0].ToString()));                        
+                        alarmas.Add(new Aviso(int.Parse(row[0].ToString()), int.Parse(row[1].ToString()), row[2].ToString()));                        
                     }
                 }
                 if (alarmas.Count > 0)
                 {
                     if(!Alarma.prendida)
-                        Alarma.activar(this,"Alarma, Fin de turno de la Habitación Nro: "+alarmas[0]);
+                        Alarma.activar(this,"Alarma ! "+ alarmas[0].mensaje +"  Habitación Nro: "+alarmas[0].nroHab);
                 }
             }
             catch (Exception ex)
@@ -402,6 +414,7 @@ namespace Hoteles
             }
             
         }
+      
     }
 }
 

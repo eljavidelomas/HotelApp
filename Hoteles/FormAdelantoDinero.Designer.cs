@@ -1,4 +1,5 @@
-﻿namespace Hoteles
+﻿using Hoteles.Entities;
+namespace Hoteles
 {
     partial class FormAdelantoDinero
     {
@@ -33,9 +34,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGlobal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvOpcionesElegidas = new System.Windows.Forms.DataGridView();
+            this.detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelIngresoDatos = new System.Windows.Forms.Panel();
@@ -43,27 +48,26 @@
             this.labelNroHab = new System.Windows.Forms.Label();
             this.tbNroHab = new System.Windows.Forms.TextBox();
             this.panelPromos = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMedioPago = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mediosDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new Hoteles.hotelDataSet();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.opcionesAsignarHabitacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.mediosDePagoTableAdapter = new Hoteles.hotelDataSetTableAdapters.mediosDePagoTableAdapter();
-            this.detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas)).BeginInit();
             this.panelIngresoDatos.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelPromos.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedioPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediosDePagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.opcionesAsignarHabitacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +115,7 @@
             this.dgvOpcionesElegidas.AllowUserToResizeColumns = false;
             this.dgvOpcionesElegidas.AllowUserToResizeRows = false;
             this.dgvOpcionesElegidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -126,7 +130,7 @@
             this.dgvOpcionesElegidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.detalles});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -134,8 +138,9 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvOpcionesElegidas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOpcionesElegidas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOpcionesElegidas.GridColor = System.Drawing.Color.DimGray;
             this.dgvOpcionesElegidas.Location = new System.Drawing.Point(5, 113);
-            this.dgvOpcionesElegidas.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvOpcionesElegidas.Margin = new System.Windows.Forms.Padding(5, 5, 10, 5);
             this.dgvOpcionesElegidas.Name = "dgvOpcionesElegidas";
             this.dgvOpcionesElegidas.ReadOnly = true;
             this.dgvOpcionesElegidas.RowHeadersVisible = false;
@@ -144,8 +149,14 @@
             this.dgvOpcionesElegidas.RowTemplate.Height = 60;
             this.dgvOpcionesElegidas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOpcionesElegidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvOpcionesElegidas.Size = new System.Drawing.Size(566, 423);
+            this.dgvOpcionesElegidas.Size = new System.Drawing.Size(561, 423);
             this.dgvOpcionesElegidas.TabIndex = 0;
+            // 
+            // detalles
+            // 
+            this.detalles.HeaderText = "Detalles del Turno";
+            this.detalles.Name = "detalles";
+            this.detalles.ReadOnly = true;
             // 
             // labelTitulo
             // 
@@ -230,12 +241,67 @@
             // 
             this.panelPromos.Controls.Add(this.dgvMedioPago);
             this.panelPromos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPromos.Location = new System.Drawing.Point(581, 113);
-            this.panelPromos.Margin = new System.Windows.Forms.Padding(5);
+            this.panelPromos.Location = new System.Drawing.Point(586, 113);
+            this.panelPromos.Margin = new System.Windows.Forms.Padding(10, 5, 5, 5);
             this.panelPromos.Name = "panelPromos";
-            this.panelPromos.Size = new System.Drawing.Size(567, 423);
+            this.panelPromos.Size = new System.Drawing.Size(562, 423);
             this.panelPromos.TabIndex = 8;
             this.panelPromos.Visible = false;
+            // 
+            // dgvMedioPago
+            // 
+            this.dgvMedioPago.AllowUserToAddRows = false;
+            this.dgvMedioPago.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Lavender;
+            this.dgvMedioPago.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMedioPago.AutoGenerateColumns = false;
+            this.dgvMedioPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMedioPago.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvMedioPago.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedioPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMedioPago.ColumnHeadersHeight = 50;
+            this.dgvMedioPago.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn});
+            this.dgvMedioPago.DataSource = this.mediosDePagoBindingSource;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMedioPago.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvMedioPago.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMedioPago.Location = new System.Drawing.Point(0, 0);
+            this.dgvMedioPago.Name = "dgvMedioPago";
+            this.dgvMedioPago.ReadOnly = true;
+            this.dgvMedioPago.RowHeadersVisible = false;
+            this.dgvMedioPago.RowTemplate.Height = 60;
+            this.dgvMedioPago.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvMedioPago.ShowCellErrors = false;
+            this.dgvMedioPago.ShowCellToolTips = false;
+            this.dgvMedioPago.ShowEditingIcon = false;
+            this.dgvMedioPago.ShowRowErrors = false;
+            this.dgvMedioPago.Size = new System.Drawing.Size(562, 423);
+            this.dgvMedioPago.TabIndex = 0;
+            // 
+            // mediosDePagoBindingSource
+            // 
+            this.mediosDePagoBindingSource.DataMember = "mediosDePago";
+            this.mediosDePagoBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "hotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableLayoutPanel1
             // 
@@ -256,74 +322,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 730);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dgvMedioPago
-            // 
-            this.dgvMedioPago.AllowUserToAddRows = false;
-            this.dgvMedioPago.AllowUserToDeleteRows = false;
-            this.dgvMedioPago.AutoGenerateColumns = false;
-            this.dgvMedioPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMedioPago.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvMedioPago.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMedioPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvMedioPago.ColumnHeadersHeight = 50;
-            this.dgvMedioPago.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn});
-            this.dgvMedioPago.DataSource = this.mediosDePagoBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMedioPago.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvMedioPago.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMedioPago.Location = new System.Drawing.Point(0, 0);
-            this.dgvMedioPago.Name = "dgvMedioPago";
-            this.dgvMedioPago.ReadOnly = true;
-            this.dgvMedioPago.RowHeadersVisible = false;
-            this.dgvMedioPago.RowTemplate.Height = 60;
-            this.dgvMedioPago.ShowCellErrors = false;
-            this.dgvMedioPago.ShowCellToolTips = false;
-            this.dgvMedioPago.ShowEditingIcon = false;
-            this.dgvMedioPago.ShowRowErrors = false;
-            this.dgvMedioPago.Size = new System.Drawing.Size(567, 423);
-            this.dgvMedioPago.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 25.38071F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.FillWeight = 174.6193F;
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Medios De Pago";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mediosDePagoBindingSource
-            // 
-            this.mediosDePagoBindingSource.DataMember = "mediosDePago";
-            this.mediosDePagoBindingSource.DataSource = this.hotelDataSet;
-            // 
-            // hotelDataSet
-            // 
-            this.hotelDataSet.DataSetName = "hotelDataSet";
-            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // opcionesAsignarHabitacionBindingSource
             // 
             this.opcionesAsignarHabitacionBindingSource.DataMember = "OpcionesAsignarHabitacion";
@@ -342,11 +340,25 @@
             // 
             this.mediosDePagoTableAdapter.ClearBeforeFill = true;
             // 
-            // detalles
+            // idDataGridViewTextBoxColumn
             // 
-            this.detalles.HeaderText = "Detalles del Turno";
-            this.detalles.Name = "detalles";
-            this.detalles.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.idDataGridViewTextBoxColumn.FillWeight = 25.38071F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.nombreDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.nombreDataGridViewTextBoxColumn.FillWeight = 174.6193F;
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Medios De Pago";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormAdelantoDinero
             // 
@@ -365,10 +377,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panelPromos.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedioPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediosDePagoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.opcionesAsignarHabitacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).EndInit();
             this.ResumeLayout(false);
@@ -395,9 +407,9 @@
         private hotelDataSet hotelDataSet;
         private System.Windows.Forms.BindingSource mediosDePagoBindingSource;
         private Hoteles.hotelDataSetTableAdapters.mediosDePagoTableAdapter mediosDePagoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalles;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalles;
         
         
         

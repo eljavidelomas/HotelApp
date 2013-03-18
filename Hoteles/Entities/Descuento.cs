@@ -21,9 +21,10 @@ namespace Hoteles.Entities
         public int menuId;
 
 
-        public Descuento()
+        public Descuento(string nombre)
         {
             id = 0;
+            this.nombre = nombre;
         }
 
         private Descuento(DataRow dr)

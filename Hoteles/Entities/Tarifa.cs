@@ -38,7 +38,7 @@ namespace Hoteles.Entities
                 categoriaId = int.Parse(dr["catId"].ToString());
                 catOriginalId = int.Parse(dr["catOriginalId"].ToString());
                 desde = DateTime.Parse(dr["desde"].ToString());
-                hasta = DateTime.Parse(dr["hasta"].ToString());
+                hasta = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Parse(dr["hasta"].ToString()).Hour, DateTime.Parse(dr["hasta"].ToString()).Minute,0);
                 int.TryParse(dr["dia"].ToString(), out dia);
                 int.TryParse(dr["duracion"].ToString(), out duracion);
                 decimal.TryParse(dr["precio"].ToString(), out precio);

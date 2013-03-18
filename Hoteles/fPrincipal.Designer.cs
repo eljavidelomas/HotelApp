@@ -323,7 +323,7 @@ namespace Hoteles
             // 
             // panelDatosHotel
             // 
-            this.panelDatosHotel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelDatosHotel.BackColor = System.Drawing.Color.LightYellow;
             this.panelDatosHotel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelDatosHotel.Controls.Add(this.labelClave);
             this.panelDatosHotel.Controls.Add(this.textClave);
@@ -346,7 +346,7 @@ namespace Hoteles
             // 
             this.labelClave.AutoSize = true;
             this.labelClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClave.Location = new System.Drawing.Point(1, 209);
+            this.labelClave.Location = new System.Drawing.Point(0, 277);
             this.labelClave.Name = "labelClave";
             this.labelClave.Size = new System.Drawing.Size(75, 25);
             this.labelClave.TabIndex = 8;
@@ -358,7 +358,7 @@ namespace Hoteles
             this.textClave.BackColor = System.Drawing.Color.LemonChiffon;
             this.textClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textClave.Location = new System.Drawing.Point(80, 211);
+            this.textClave.Location = new System.Drawing.Point(79, 279);
             this.textClave.Margin = new System.Windows.Forms.Padding(0);
             this.textClave.Name = "textClave";
             this.textClave.Size = new System.Drawing.Size(116, 23);
@@ -373,7 +373,7 @@ namespace Hoteles
             this.textUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUsuario.ForeColor = System.Drawing.Color.DarkRed;
-            this.textUsuario.Location = new System.Drawing.Point(112, 178);
+            this.textUsuario.Location = new System.Drawing.Point(111, 246);
             this.textUsuario.Margin = new System.Windows.Forms.Padding(0);
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Size = new System.Drawing.Size(116, 23);
@@ -386,27 +386,29 @@ namespace Hoteles
             // 
             this.labelDireccion.AutoSize = true;
             this.labelDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDireccion.Location = new System.Drawing.Point(204, 75);
+            this.labelDireccion.Location = new System.Drawing.Point(204, 88);
             this.labelDireccion.Name = "labelDireccion";
             this.labelDireccion.Size = new System.Drawing.Size(148, 24);
             this.labelDireccion.TabIndex = 5;
             this.labelDireccion.Text = "Viamonte 2220";
+            this.labelDireccion.Visible = false;
             // 
             // labelTel
             // 
             this.labelTel.AutoSize = true;
             this.labelTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTel.Location = new System.Drawing.Point(1, 75);
+            this.labelTel.Location = new System.Drawing.Point(1, 88);
             this.labelTel.Name = "labelTel";
             this.labelTel.Size = new System.Drawing.Size(153, 24);
             this.labelTel.TabIndex = 4;
             this.labelTel.Text = "Tel.: 4345-5454";
+            this.labelTel.Visible = false;
             // 
             // labelConserje
             // 
             this.labelConserje.AutoSize = true;
             this.labelConserje.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConserje.Location = new System.Drawing.Point(1, 175);
+            this.labelConserje.Location = new System.Drawing.Point(0, 243);
             this.labelConserje.Name = "labelConserje";
             this.labelConserje.Size = new System.Drawing.Size(106, 25);
             this.labelConserje.TabIndex = 3;
@@ -415,39 +417,41 @@ namespace Hoteles
             // labelFecha
             // 
             this.labelFecha.AutoSize = true;
-            this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha.Location = new System.Drawing.Point(1, 105);
+            this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.Location = new System.Drawing.Point(1, 129);
             this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(205, 24);
+            this.labelFecha.Size = new System.Drawing.Size(381, 37);
             this.labelFecha.TabIndex = 2;
-            this.labelFecha.Text = "Fecha: 12 / 03 / 2012";
+            this.labelFecha.Text = "Fecha:  Sáb 12 / 03 / 12";
             // 
             // labelHora
             // 
             this.labelHora.AutoSize = true;
-            this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHora.Location = new System.Drawing.Point(1, 135);
+            this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHora.Location = new System.Drawing.Point(0, 191);
             this.labelHora.Name = "labelHora";
-            this.labelHora.Size = new System.Drawing.Size(181, 29);
+            this.labelHora.Size = new System.Drawing.Size(205, 37);
             this.labelHora.TabIndex = 1;
-            this.labelHora.Text = "Hora: 13:00:00";
+            this.labelHora.Text = "Hora:  13:00";
             // 
             // labelNombre
             // 
+            this.labelNombre.BackColor = System.Drawing.Color.Transparent;
             this.labelNombre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelNombre.Font = new System.Drawing.Font("Lucida Handwriting", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.ForeColor = System.Drawing.Color.Firebrick;
             this.labelNombre.Location = new System.Drawing.Point(0, 0);
-            this.labelNombre.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelNombre.Margin = new System.Windows.Forms.Padding(0);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(390, 68);
+            this.labelNombre.Size = new System.Drawing.Size(390, 92);
             this.labelNombre.TabIndex = 0;
-            this.labelNombre.Text = "Hotel Bs. As.";
+            this.labelNombre.Text = "HotelApp V 1.0";
             this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timerHora
             // 
             this.timerHora.Enabled = true;
-            this.timerHora.Interval = 1000;
+            this.timerHora.Interval = 10000;
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
             // timerParpadeo
@@ -459,7 +463,7 @@ namespace Hoteles
             // timerValidarAlarmas
             // 
             this.timerValidarAlarmas.Enabled = true;
-            this.timerValidarAlarmas.Interval = 60000;
+            this.timerValidarAlarmas.Interval = 25000;
             this.timerValidarAlarmas.Tick += new System.EventHandler(this.timerValidarAlarmas_Tick);
             // 
             // fPrincipal

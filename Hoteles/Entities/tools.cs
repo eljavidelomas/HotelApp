@@ -3,22 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Hoteles.Entities
 {
     public static class tools
     {
         public static int altoFilaBar = 35;
+        public static int minCantFilas = 8;
+        public static Font fuenteLabelNroHab = new System.Drawing.Font("Book Antiqua", 22F, System.Drawing.FontStyle.Bold);
+        public static Padding margenPanelIngresoDatos = new System.Windows.Forms.Padding(5);
+        public static Padding paddingPanelIngresoDatos = new System.Windows.Forms.Padding(0, 25, 0, 20);
+        public static Color backColorDetallesHab = Color.Snow;
 
-
-        public static int calcularAltoFila(fPrincipal form,int cantFilas,int maxFilas)
+        public static int calcularAltoFila(fPrincipal form, int cantFilas, int maxFilas)
         {
-            if(cantFilas>maxFilas)
-                cantFilas=maxFilas+1;
+            if (cantFilas > maxFilas)
+                cantFilas = maxFilas + 1;
             return (form.dataGridView1.Height - form.dataGridView1.ColumnHeadersHeight) / cantFilas;
         }
 
-        public static DataGridView CopyDataGridView(DataGridView dgv_in,DataGridView dgv_out)
+        public static void calcularAlturas(int D, float cantFilas, out int altoFila, out int altoFilaExtra)
+        {
+            altoFila = (int)( D / cantFilas);
+            int to = (int)(cantFilas * altoFila);
+            altoFilaExtra = D - to;
+        }
+
+        public static DataGridView CopyDataGridView(DataGridView dgv_in, DataGridView dgv_out)
         {
             //DataGridView dgv_copy = new DataGridView();
             try
@@ -50,7 +62,7 @@ namespace Hoteles.Entities
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Copy DataGridViw"+ex.Message);
+                MessageBox.Show("Copy DataGridViw" + ex.Message);
             }
             return dgv_out;
         }
@@ -62,7 +74,7 @@ namespace Hoteles.Entities
 
             fIngresos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             fIngresos.Controls.Add(lTitulo);
-            
+
             fIngresos.Dock = System.Windows.Forms.DockStyle.Fill;
             //fIngresos.Location = new System.Drawing.Point(323, 403);
             fIngresos.Name = "fIngresos";
@@ -70,7 +82,7 @@ namespace Hoteles.Entities
             fIngresos.TabIndex = 6;
 
             return fIngresos;
-            
+
         }
 
         //public static DataGridView crearFormIngreso()
@@ -91,5 +103,19 @@ namespace Hoteles.Entities
 
         //}
 
+
+        internal static void completarDG(DataGridView dgv, int altoFilaExtra)
+        {
+            int cantFilas = dgv.Rows.Count;
+            if (dgv.Rows.Count < tools.minCantFilas)
+            {
+                for (int i = tools.minCantFilas; i - cantFilas > 0; i--)
+                {
+                    dgv.Rows.Add();
+                }
+            }
+            if (altoFilaExtra > 0)
+                dgv.Rows[dgv.Rows.GetLastRow(DataGridViewElementStates.None)].Height += altoFilaExtra;
+        }
     }
 }

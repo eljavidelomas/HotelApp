@@ -1,0 +1,105 @@
+2013-03-04 22:26:51,649 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:28:05,386 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:28:17,176 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:28:17,407 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:28:17,642 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:28:20,722 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:32:06,742 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:32:11,872 [10] ERROR -  Habitacion.CS , metodo: listadoAvisos  -  La conversión especificada no es válida.    en Hoteles.Entities.Habitacion.listadoAvisos() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 214
+2013-03-04 22:36:29,941 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:36:33,585 [9] ERROR -  Habitacion.CS , metodo: listadoAvisos  -  La conversión especificada no es válida.    en Hoteles.Entities.Habitacion.listadoAvisos() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 214
+2013-03-04 22:36:33,592 [9] ERROR - * Error al traer listado de Avisos de la BD * -    en Hoteles.Entities.Habitacion.listadoAvisos() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 224
+   en Hoteles.FormAvisosHorarios.FormAsignarHab_Load(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 240
+2013-03-04 22:36:45,002 [9] ERROR -  Habitacion.CS , metodo: obtenerAvisos  -  La conversión especificada no es válida.    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 191
+2013-03-04 22:36:45,010 [9] ERROR - * Error al traer Avisos/Alarmas de la BD * -    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 201
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 98
+2013-03-04 22:36:49,206 [9] ERROR -  Habitacion.CS , metodo: obtenerAvisos  -  La conversión especificada no es válida.    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 191
+2013-03-04 22:36:49,214 [9] ERROR - * Error al traer Avisos/Alarmas de la BD * -    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 201
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 98
+2013-03-04 22:39:32,392 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:40:40,323 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:40:41,797 [9] ERROR - No se pueden agregar filas mediante programación a la colección de filas de DataGridView cuando el control está enlazado a datos. -    en System.Windows.Forms.DataGridViewRowCollection.Add(Object[] values)
+   en Hoteles.FormAvisosHorarios.FormAsignarHab_Load(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 242
+2013-03-04 22:40:52,011 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:40:52,156 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:43:41,419 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:43:50,043 [10] ERROR -  Habitacion.CS , metodo: obtenerAvisos  -  La conversión especificada no es válida.    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 191
+2013-03-04 22:43:50,054 [10] ERROR - * Error al traer Avisos/Alarmas de la BD * -    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 201
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 98
+2013-03-04 22:45:22,287 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:45:26,218 [10] ERROR -  Habitacion.CS , metodo: obtenerAvisos  -  La conversión especificada no es válida.    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 191
+2013-03-04 22:45:26,229 [10] ERROR - * Error al traer Avisos/Alarmas de la BD * -    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 201
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 98
+2013-03-04 22:49:54,156 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:51:23,487 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:51:23,689 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:52:02,266 [9] ERROR -  Habitacion.CS , metodo: obtenerAvisos  -  La conversión especificada no es válida.    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 191
+2013-03-04 22:52:02,274 [9] ERROR - * Error al traer Avisos/Alarmas de la BD * -    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 201
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 98
+2013-03-04 22:52:59,461 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:53:06,560 [10] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 22:53:44,315 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:54:27,283 [9] ERROR -  Habitacion.CS , metodo: obtenerAvisos  -  La conversión especificada no es válida.    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 191
+2013-03-04 22:54:27,293 [9] ERROR - * Error al traer Avisos/Alarmas de la BD * -    en Hoteles.Entities.Habitacion.obtenerAvisos(Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 201
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 98
+2013-03-04 22:55:07,112 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:56:22,345 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 22:56:55,485 [10] ERROR - El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index -    en System.Collections.ArrayList.get_Item(Int32 index)
+   en System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 122
+2013-03-04 22:57:01,331 [10] ERROR - El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index -    en System.Collections.ArrayList.get_Item(Int32 index)
+   en System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 122
+2013-03-04 22:57:12,216 [10] ERROR - El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index -    en System.Collections.ArrayList.get_Item(Int32 index)
+   en System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 122
+2013-03-04 23:02:00,276 [10] ERROR - El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index -    en System.Collections.ArrayList.get_Item(Int32 index)
+   en System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 122
+2013-03-04 23:04:27,404 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 23:04:49,487 [10] ERROR - Ya se agregó un elemento con la misma clave. -    en System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   en System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 103
+2013-03-04 23:05:05,771 [10] ERROR - Ya se agregó un elemento con la misma clave. -    en System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   en System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 103
+2013-03-04 23:11:17,831 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 23:13:58,804 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 23:14:20,891 [10] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 23:15:07,138 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 23:15:26,492 [10] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 23:15:26,670 [10] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 23:17:02,509 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 23:19:01,103 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 23:22:51,346 [10] ERROR - El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: startIndex -    en System.String.Insert(Int32 startIndex, String value)
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 166
+2013-03-04 23:23:07,664 [10] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 23:24:43,650 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 23:25:14,858 [10] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 23:26:44,218 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-04 23:27:14,794 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-04 23:27:14,916 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index

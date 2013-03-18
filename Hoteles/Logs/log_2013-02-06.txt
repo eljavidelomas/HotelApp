@@ -1,0 +1,73 @@
+2013-02-06 02:26:22,750 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:27:16,292 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 02:27:16,494 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 02:29:50,270 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:30:25,279 [1] ERROR - Error al generar pedido de Bar - No se encontró el procedimiento almacenado 'articulos_anularPedido'.    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:31:10,613 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:31:36,114 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:32:12,276 [1] ERROR - Error al generar pedido de Bar - Error de desbordamiento aritmético para el tipo de datos tinyint, valor = -2.
+La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:37:28,580 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:37:37,649 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 02:37:53,427 [1] ERROR - Error al generar pedido de Bar - Error de desbordamiento aritmético para el tipo de datos tinyint, valor = -2.
+La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:38:13,601 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 02:38:13,788 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 02:41:08,826 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:41:18,363 [1] ERROR - Error al generar pedido de Bar - Error de desbordamiento aritmético para el tipo de datos tinyint, valor = -2.
+La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:45:30,666 [1] ERROR - Error al generar pedido de Bar - Error de desbordamiento aritmético para el tipo de datos tinyint, valor = -2.
+La petición ROLLBACK TRANSACTION no tiene la correspondiente BEGIN TRANSACTION.
+La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:45:44,698 [1] ERROR - Error al generar pedido de Bar - Error grave en el comando actual. Los resultados, si los hay, se deben descartar.
+La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:45:52,067 [1] ERROR - Error al generar pedido de Bar - Error grave en el comando actual. Los resultados, si los hay, se deben descartar.
+La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:46:01,513 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:46:09,977 [1] ERROR - Error al generar pedido de Bar - Error grave en el comando actual. Los resultados, si los hay, se deben descartar.
+La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:46:20,455 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 02:46:20,611 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 02:46:20,750 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 02:53:51,360 [1] ERROR - Error al generar pedido de Bar - Error de desbordamiento aritmético para el tipo de datos tinyint, valor = -2.
+La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:56:06,176 [1] ERROR - Error al generar pedido de Bar - La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:56:57,442 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:57:11,190 [1] ERROR - Error al generar pedido de Bar - La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 186
+2013-02-06 02:59:26,205 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 02:59:41,350 [1] ERROR - Error al generar pedido de Bar - La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 187
+2013-02-06 03:01:53,623 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 03:01:59,980 [1] ERROR - Error al generar pedido de Bar - La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 190
+2013-02-06 03:03:55,922 [1] ERROR - Error al generar pedido de Bar - La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 190
+2013-02-06 03:05:18,604 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 03:06:14,742 [1] ERROR - Error al generar pedido de Bar - La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 190
+2013-02-06 03:07:26,912 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-02-06 03:07:48,919 [1] ERROR - Error al generar pedido de Bar - La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 190
+2013-02-06 03:08:17,966 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-02-06 03:08:18,234 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index

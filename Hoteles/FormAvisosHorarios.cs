@@ -15,18 +15,19 @@ namespace Hoteles
 {
 
 
-    public partial class FormAdelantoDinero : Form
+    public partial class FormAvisosHorarios : Form
     {
         int nroHab;
-        int medioPago;
-        decimal monto; 
+        int avisoSel;
+        int hora;
         string pasoAsignacion = "nroHabitacion";
-        DetallesHabitacion detallesHab;
-        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();
+        List<Aviso> lAvisos = new List<Aviso>();
+        Dictionary<int, Aviso> dictAvisosSel = new Dictionary<int, Aviso>();
+        Dictionary<int, Aviso> dictAvisos = new Dictionary<int, Aviso>();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
-        public FormAdelantoDinero()
+        public FormAvisosHorarios()
         {
             InitializeComponent();
             GoFullscreen(true);
@@ -57,7 +58,7 @@ namespace Hoteles
 
                 return true;
             }
-            if (pasoAsignacion == "confirmar")
+            if (pasoAsignacion == "confirmar" || pasoAsignacion == "quitar")
                 if (keyData == Keys.Enter)
                     tbNroHab_KeyPress(this.tbNroHab, new KeyPressEventArgs((char)keyData));
 
@@ -93,70 +94,105 @@ namespace Hoteles
                                 return;
                             }
                             labelMensaje.Visible = false;
-
                             nroHab = int.Parse(tbNroHab.Text);
-                            detallesHab = Habitacion.obtenerDetalles(nroHab);
+                            lAvisos = Habitacion.obtenerAvisos(nroHab);
                             dgvOpcionesElegidas.Rows[0].Cells[0].Value = dgvOpcionesElegidas.Rows[0].Cells[0].Value.ToString() + " " + nroHab;
-                            dgvOpcionesElegidas.Rows[1].Cells[0].Value = dgvOpcionesElegidas.Rows[1].Cells[0].Value.ToString() + " " + String.Format("{0:C}", detallesHab.impHabitacion);
-                           
-                            labelNroHab.Text = "Medio de Pago ";
+                            foreach (Aviso aviso in lAvisos)
+                            {
+                                dgvOpcionesElegidas.Rows.Add(aviso.mensaje + " " + aviso.hora.ToShortTimeString());
+                                dictAvisosSel.Add(aviso.id, aviso);
+                            }
+                            labelNroHab.Text = "Seleccione Aviso ";
                             tbNroHab.Text = "0";
-                            pasoAsignacion = "medioPago";
+                            pasoAsignacion = "aviso";
                             panelPromos.Visible = true;
-                            dgvMedioPago.ClearSelection();
 
                             break;
 
-                        case "medioPago":
+                        case "aviso":
 
-                            medioPago = string.IsNullOrEmpty(tbNroHab.Text) ? 0 : int.Parse(tbNroHab.Text);
-                            if (!dictMediosDePago.ContainsKey(medioPago))
+                            avisoSel = string.IsNullOrEmpty(tbNroHab.Text) ? 0 : int.Parse(tbNroHab.Text);
+                            if (!dictAvisos.ContainsKey(avisoSel))
                             {
-                                labelMensaje.Text = "* El medio de Pago no existe *";
+                                labelMensaje.Text = "* El Aviso seleccionado no existe *";
                                 labelMensaje.Visible = true;
                                 return;
                             }
+
                             labelMensaje.Visible = false;
-                            dgvOpcionesElegidas.Rows[2].Cells[0].Value = dgvOpcionesElegidas.Rows[2].Cells[0].Value.ToString() + " " + dictMediosDePago[medioPago];
-                            labelNroHab.Text = "Monto a Adelantar $ ";
+                            dgvOpcionesElegidas.Rows.Add(dictAvisos[avisoSel].mensaje);
+                            labelNroHab.Text = "Hora del Aviso ";
                             tbNroHab.Text = "0";
-                            pasoAsignacion = "monto";
-                            
+                            pasoAsignacion = "hora";
+
                             break;
 
-                        case "monto":
+                        case "hora":
 
-                            if (string.IsNullOrEmpty(tbNroHab.Text) || tbNroHab.Text == "0")
+                            if (string.IsNullOrEmpty(tbNroHab.Text))
                             {
-                                labelMensaje.Text = "* El monto debe ser mayor a cero *";
+                                labelMensaje.Text = "* Hora incorrecta *";
                                 labelMensaje.Visible = true;
-                                return;                                
+                                return;
                             }
-                            monto = decimal.Parse(tbNroHab.Text.Replace('.', ','));
-                            if (monto > detallesHab.impHabitacion)
+                            if (tbNroHab.Text == "0")
                             {
-                                labelMensaje.Text = "* El monto debe ser inferior o igual al total *";
-                                labelMensaje.Visible = true;
-                                return;    
+                                if (!validarAlarmaExiste(avisoSel))
+                                {
+                                    labelMensaje.Text = "* El Aviso elegido no esta seteado para esta habitación *";
+                                    labelMensaje.Visible = true;
+                                    return;
+                                }
+                                labelNroHab.Text = "Confirma eliminación? ";
+                                tbNroHab.Visible = false;
+                                pasoAsignacion = "quitar";
+                                break;
                             }
+                            if (dictAvisosSel.ContainsKey(avisoSel))
+                            {
+                                labelMensaje.Text = "* El Aviso seleccionado ya fue seteado *";
+                                labelMensaje.Visible = true;
+                                return;
+                            }
+                            if (tbNroHab.Text.Length < 4)
+                            {
+                                labelMensaje.Text = "* Hora incorrecta *";
+                                labelMensaje.Visible = true;
+                                return;
+                            }
+                            hora = int.Parse(tbNroHab.Text);
+                            if ((hora / 100 > 23) || (hora % 100) > 59)
+                            {
+                                labelMensaje.Text = "* Hora incorrecta *";
+                                labelMensaje.Visible = true;
+                                return;
+                            }
+                            int indice = dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None);
                             labelMensaje.Visible = false;
-                            dgvOpcionesElegidas.Rows[3].Cells[0].Value = dgvOpcionesElegidas.Rows[3].Cells[0].Value.ToString() + " " + String.Format("{0:C}", decimal.Parse(tbNroHab.Text.Replace('.', ',')));
-                            
+                            dgvOpcionesElegidas.Rows[indice].Cells[0].Value = dgvOpcionesElegidas.Rows[indice].Cells[0].Value.ToString() + " " + hora.ToString().PadLeft(4,'0').Insert(2, ":");
+
                             pasoAsignacion = "confirmar";
-                            labelNroHab.Text = "Confirma Adelanto?";
+                            labelNroHab.Text = "Confirma Aviso?";
                             tbNroHab.Visible = false;
                             break;
 
                         case "confirmar":
-                            Habitacion.Adelanto((fPrincipal)this.Owner, nroHab, monto, medioPago);
+                            Habitacion.agregarAviso((fPrincipal)this.Owner ,nroHab, hora, avisoSel);
                             volverFormPrincipal();
-                            return;                            
+                            return;
+
+                        case "quitar":
+                            Habitacion.quitarAviso((fPrincipal)this.Owner, nroHab, avisoSel);
+                            volverFormPrincipal();
+                            return;
 
                         default:
                             break;
                     }
                     tbNroHab.Select(0, tbNroHab.TextLength);
-                    //tbNroHab.SelectionStart = tbNroHab.TextLength;
+                    dgvListadoAvisos.ClearSelection();
+                    dgvOpcionesElegidas.ClearSelection();
+
                     return;
                 }
                 if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != (char)Keys.Back && e.KeyChar != '.' || (e.KeyChar == '.' && (pasoAsignacion == "nroHabitacion" || tbNroHab.Text.Contains('.'))))
@@ -168,7 +204,7 @@ namespace Hoteles
                     }
                     else
                         e.Handled = true;
-                }               
+                }
             }
             catch (Exception ex)
             {
@@ -178,10 +214,17 @@ namespace Hoteles
             }
         }
 
+        private bool validarAlarmaExiste(int aviso)
+        {            
+            if (!dictAvisosSel.ContainsKey(aviso))
+                return false;
+            return true;            
+        }
+
         private string validarNroHabitacion(TextBox tbNroHab)
         {
             if (tbNroHab.Text == String.Empty)
-                return "* Debe ingresar el número de habitación a cancelar*";
+                return "* Debe ingresar el número de habitación *";
             DataSet ds = new DataSet();
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
             dataAdapter.Fill(ds);
@@ -198,17 +241,23 @@ namespace Hoteles
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'hotelDataSet.mediosDePago' Puede moverla o quitarla según sea necesario.
-            this.mediosDePagoTableAdapter.Fill(this.hotelDataSet.mediosDePago);
-            foreach (DataRow dr in hotelDataSet.mediosDePago)
+            try
             {
-                dictMediosDePago.Add(int.Parse(dr[0].ToString()), dr[1].ToString());
+                foreach (Aviso av in Habitacion.listadoAvisos())
+                {
+                    dgvListadoAvisos.Rows.Add(av.id.ToString(), av.mensaje);
+                    dictAvisos.Add(av.id, av);
+                }
+                dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
+                dgvOpcionesElegidas.ClearSelection();
+                dgvListadoAvisos.ClearSelection();
             }
-            dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
-            dgvOpcionesElegidas.Rows.Add("Monto a Pagar:");
-            dgvOpcionesElegidas.Rows.Add("Medio de Pago:");
-            dgvOpcionesElegidas.Rows.Add("Monto a Adelantar:");
-            dgvOpcionesElegidas.ClearSelection();
+            catch (Exception ex)
+            {
+                labelMensaje.Text = ex.Message;
+                labelMensaje.Visible = true;
+                log.Error(ex.Message + " - " + ex.StackTrace);
+            }
         }
 
         private void labelTitulo_Paint(object sender, PaintEventArgs e)

@@ -1,8 +1,11 @@
-Fecha: 15-02-2013 Hora: 07:13 p.m.
-Nro.Ticket: 37
+Fecha: 15-03-2013 Hora: 06:57 p.m.
+Nro.Ticket: 77
 -----------------------------------
-Nro.Habitacion: 105
+Nro.Habitacion: 102
 -----------------------------------
 Cant  Articulo              Precio
 -----------------------------------
- 20   Fanta                 220,00
+  1   Coca-Cola              10,00
+  1   Sprite                 11,00
+  1   Fanta                  14,00
+  1   Champan                60,00

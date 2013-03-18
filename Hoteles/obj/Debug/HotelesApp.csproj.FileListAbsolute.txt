@@ -13,3 +13,6 @@ C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormAdelantoDinero.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormPedidoBar.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormAnularPedidoBar.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormAvisosHorarios.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormCierreTurno.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormCierreTurnoCliente.resources

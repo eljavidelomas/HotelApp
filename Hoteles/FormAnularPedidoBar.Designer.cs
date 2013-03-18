@@ -1,4 +1,5 @@
-﻿namespace Hoteles
+﻿using Hoteles.Entities;
+namespace Hoteles
 {
     partial class FormAnularPedidoBar
     {
@@ -118,7 +119,7 @@
             // 
             this.labelNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelNroHab.AutoSize = true;
-            this.labelNroHab.Font = new System.Drawing.Font("Book Antiqua", 18F);
+            this.labelNroHab.Font = tools.fuenteLabelNroHab;
             this.labelNroHab.Location = new System.Drawing.Point(3, 31);
             this.labelNroHab.Name = "labelNroHab";
             this.labelNroHab.Size = new System.Drawing.Size(222, 28);
@@ -144,7 +145,7 @@
             this.dgvOpcionesElegidas.AllowUserToResizeColumns = false;
             this.dgvOpcionesElegidas.AllowUserToResizeRows = false;
             this.dgvOpcionesElegidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvOpcionesElegidas.BackgroundColor = tools.backColorDetallesHab;
             this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;

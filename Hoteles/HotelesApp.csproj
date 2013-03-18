@@ -68,6 +68,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCierreTurnoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCierreTurnoCliente.Designer.cs">
+      <DependentUpon>FormCierreTurnoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCierreTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCierreTurno.Designer.cs">
+      <DependentUpon>FormCierreTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Aviso.cs" />
     <Compile Include="FormAvisosHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +155,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCierreTurnoCliente.resx">
+      <DependentUpon>FormCierreTurnoCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCierreTurno.resx">
+      <DependentUpon>FormCierreTurno.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAvisosHorarios.resx">
       <DependentUpon>FormAvisosHorarios.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -264,6 +285,9 @@
       <DependentUpon>hotelDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Resources\reloj-despertador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\libros.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

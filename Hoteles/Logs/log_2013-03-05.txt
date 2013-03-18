@@ -1,0 +1,22 @@
+2013-03-05 18:01:13,844 [8] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:02:10,931 [8] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-05 18:05:05,513 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:06:43,824 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:09:35,934 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:15:30,444 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:15:47,862 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-05 18:16:09,139 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-05 18:16:09,344 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-05 18:16:09,514 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-05 18:26:30,106 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:26:46,811 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-05 18:30:35,399 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:39:28,088 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:44:10,286 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-05 18:45:06,926 [9] INFO  - Comienzo - Aplicacion Hotel

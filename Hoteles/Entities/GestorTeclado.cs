@@ -22,12 +22,22 @@ namespace Hoteles.Entities
             {
                 fPresionada = false;
                 Alarma.desactivar();
-                formPrincipal.QuitarReloj(formPrincipal.alarmas[0]);
+                Habitacion.quitarAviso(formPrincipal,formPrincipal.alarmas[0].nroHab, formPrincipal.alarmas[0].id);
+                //formPrincipal.QuitarReloj(formPrincipal.alarmas[0].nroHab);
                 formPrincipal.alarmas.RemoveAt(0);                
                 return true;
             }
             if(tecla == Keys.Alt)
             {
+                return true;
+            }
+            if (tecla == Keys.M)
+            {
+                FormCierreTurnoCliente asignarHab = new FormCierreTurnoCliente();
+                asignarHab.Owner = formPrincipal;
+                asignarHab.Show();
+                formPrincipal.Hide();
+                asignarHab.Activate();
                 return true;
             }
             if (tecla == Keys.L)
@@ -85,7 +95,12 @@ namespace Hoteles.Entities
                             fAdelantoDinero.tbNroHab.Focus();
                             break;
                         case Keys.F4:
-                            
+                            FormCierreTurno fCierreTurno = new FormCierreTurno();
+                            fCierreTurno.Owner = formPrincipal;
+                            fCierreTurno.Show();
+                            formPrincipal.Hide();
+                            fCierreTurno.Activate();
+                            fCierreTurno.tbNroHab.Focus();
                             break;
                         case Keys.F5:
                             FormPedidoBar pedidoBar = new FormPedidoBar();
@@ -104,10 +119,16 @@ namespace Hoteles.Entities
                             anuPedidoBar.tbNroHab.Focus();
                             break;
                         case Keys.F7:
-                            Alarma.activar(formPrincipal,"Alarma");
+                            FormAvisosHorarios avisosHorarios = new FormAvisosHorarios();
+                            avisosHorarios.Owner = formPrincipal;
+                            avisosHorarios.Show();
+                            formPrincipal.Hide();
+                            avisosHorarios.Activate();
+                            avisosHorarios.tbNroHab.Focus();
+                            //Alarma.activar(formPrincipal,"Alarma");
                             break;
                         case Keys.F8:
-                            Alarma.desactivar();
+                            //Alarma.desactivar();
                             break;
                         case Keys.F9:
                             break;

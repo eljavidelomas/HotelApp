@@ -198,12 +198,26 @@ namespace Hoteles
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'hotelDataSet.mediosDePago' Puede moverla o quitarla según sea necesario.
+            int altoFila, altoFilaExtraMedioPagos;
+            panelPromos.Visible = true;
+
             this.mediosDePagoTableAdapter.Fill(this.hotelDataSet.mediosDePago);
+            dgvMedioPago.DataSource = null;
+            tools.calcularAlturas(dgvMedioPago.Height - dgvMedioPago.ColumnHeadersHeight, hotelDataSet.mediosDePago.Count > tools.minCantFilas ? hotelDataSet.mediosDePago.Count : tools.minCantFilas, out altoFila, out altoFilaExtraMedioPagos);
+            dgvMedioPago.RowTemplate.Height = altoFila;
+
             foreach (DataRow dr in hotelDataSet.mediosDePago)
             {
                 dictMediosDePago.Add(int.Parse(dr[0].ToString()), dr[1].ToString());
+                dgvMedioPago.Rows.Add(dr[0].ToString(), dr[1].ToString());
             }
+            // ----  Completando la tabla mediosPagos  ----//
+            tools.completarDG(dgvMedioPago, altoFilaExtraMedioPagos);
+            panelPromos.Visible = false;
+            //---------------------------------------------------------------------------//
+
+
+
             dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
             dgvOpcionesElegidas.Rows.Add("Monto a Pagar:");
             dgvOpcionesElegidas.Rows.Add("Medio de Pago:");

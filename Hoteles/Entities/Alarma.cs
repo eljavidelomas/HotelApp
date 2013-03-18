@@ -30,7 +30,7 @@ namespace Hoteles.Entities
                 lAviso.BackColor = Color.White;
                 lAviso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                 lAviso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                lAviso.Font = new System.Drawing.Font("Wide Latin", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                lAviso.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 lAviso.ForeColor = System.Drawing.Color.Red;                
                 lAviso.Margin = new System.Windows.Forms.Padding(3);
                 lAviso.Name = "lAviso";
@@ -41,7 +41,7 @@ namespace Hoteles.Entities
                 fPrincipal.tableLayoutPanel1.Controls.Add(lAviso, 0, 0);
 
             }
-            lAviso.Text = mensaje;// " Alto:" + (fPrincipal.tableLayoutPanel1.RowStyles[0].Height * fPrincipal.tableLayoutPanel1.Height) / 100;
+            lAviso.Text = mensaje;
             prendida = true;
 
             return lAviso;

@@ -1,4 +1,5 @@
-﻿namespace Hoteles
+﻿using Hoteles.Entities;
+namespace Hoteles
 {
     partial class FormCancelarHab
     {
@@ -40,7 +41,7 @@
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelMensaje = new System.Windows.Forms.Label();
-            this.panelIngresoDatos = new System.Windows.Forms.Panel();
+            this.panelIngresoDatos = new System.Windows.Forms.FlowLayoutPanel();
             this.tbNroHab = new System.Windows.Forms.TextBox();
             this.labelNroHab = new System.Windows.Forms.Label();
             this.panelPromos = new System.Windows.Forms.Panel();
@@ -99,7 +100,7 @@
             this.dgvOpcionesElegidas.AllowUserToResizeRows = false;
             this.dgvOpcionesElegidas.AutoGenerateColumns = false;
             this.dgvOpcionesElegidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvOpcionesElegidas.BackgroundColor = tools.backColorDetallesHab;
             this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -198,11 +199,12 @@
             // panelIngresoDatos
             // 
             this.panelIngresoDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelIngresoDatos.Controls.Add(this.tbNroHab);
             this.panelIngresoDatos.Controls.Add(this.labelNroHab);
+            this.panelIngresoDatos.Controls.Add(this.tbNroHab);
             this.panelIngresoDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelIngresoDatos.Location = new System.Drawing.Point(5, 546);
-            this.panelIngresoDatos.Margin = new System.Windows.Forms.Padding(5);
+            this.panelIngresoDatos.Margin = tools.margenPanelIngresoDatos;
+            this.panelIngresoDatos.Padding = tools.paddingPanelIngresoDatos;
             this.panelIngresoDatos.Name = "panelIngresoDatos";
             this.panelIngresoDatos.Size = new System.Drawing.Size(566, 86);
             this.panelIngresoDatos.TabIndex = 7;
@@ -211,7 +213,7 @@
             // 
             this.tbNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tbNroHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNroHab.Location = new System.Drawing.Point(232, 28);
+            this.tbNroHab.Location = new System.Drawing.Point(297, 3);
             this.tbNroHab.MaxLength = 5;
             this.tbNroHab.Name = "tbNroHab";
             this.tbNroHab.Size = new System.Drawing.Size(65, 35);
@@ -223,10 +225,10 @@
             // 
             this.labelNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelNroHab.AutoSize = true;
-            this.labelNroHab.Font = new System.Drawing.Font("Book Antiqua", 18F);
-            this.labelNroHab.Location = new System.Drawing.Point(3, 30);
+            this.labelNroHab.Font = new System.Drawing.Font("Book Antiqua", 22F, System.Drawing.FontStyle.Bold);
+            this.labelNroHab.Location = new System.Drawing.Point(3, 3);
             this.labelNroHab.Name = "labelNroHab";
-            this.labelNroHab.Size = new System.Drawing.Size(222, 28);
+            this.labelNroHab.Size = new System.Drawing.Size(288, 35);
             this.labelNroHab.TabIndex = 3;
             this.labelNroHab.Text = "Ingresar Habitación";
             // 
@@ -292,7 +294,7 @@
         private System.Windows.Forms.Label labelMensaje;
         internal System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panelIngresoDatos;
+        private System.Windows.Forms.FlowLayoutPanel panelIngresoDatos;
         private System.Windows.Forms.DataGridView dgvOpcionesElegidas;
         private System.Windows.Forms.Panel panelPromos;
         private hotelDataSet2 hotelDataSet2;

@@ -1,0 +1,35 @@
+2013-03-09 00:32:14,438 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-09 00:57:00,870 [10] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-09 01:12:46,716 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-09 01:46:58,479 [10] ERROR - Error al generar pedido de Bar - No se puede insertar el valor NULL en la columna 'impArticulos', tabla 'hotel.dbo.turnos'. La columna no admite valores NULL. Error de UPDATE.    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 143
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 208
+2013-03-09 01:55:01,047 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-09 01:55:54,632 [9] ERROR - Error al generar pedido de Bar - No se puede insertar el valor NULL en la columna 'impArticulos', tabla 'hotel.dbo.turnos'. La columna no admite valores NULL. Error de UPDATE.    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 143
+   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 208
+2013-03-09 02:09:23,095 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-09 02:14:32,180 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-09 02:14:45,160 [9] ERROR - No se encontró el procedimiento almacenado 'turnos_cierre'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.cierre(fPrincipal fPrincipal, Int32 nroHab, Decimal descuento, Int32 medioPago) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 259
+   en Hoteles.FormCierreTurno.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierreTurno.cs:línea 153
+2013-03-09 02:15:20,878 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-09 02:15:28,304 [9] ERROR - No se puede reconocer la cadena como valor DateTime válido. -    en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.DateTime.Parse(String s)
+   en Hoteles.fPrincipal.dibujar(Int32 maxFilas, Int32 cantHab, SqlDataReader reader) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 173
+   en Hoteles.Entities.Habitacion.cierre(fPrincipal fPrincipal, Int32 nroHab, Decimal descuento, Int32 medioPago) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 262
+   en Hoteles.FormCierreTurno.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierreTurno.cs:línea 153
+2013-03-09 02:20:30,576 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-03-09 02:21:57,039 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-09 02:22:11,695 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-09 02:22:28,439 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-03-09 02:23:03,290 [9] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index

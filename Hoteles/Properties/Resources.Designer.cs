@@ -74,6 +74,13 @@ namespace Hoteles.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap libros {
+            get {
+                object obj = ResourceManager.GetObject("libros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap luzOff {
             get {
                 object obj = ResourceManager.GetObject("luzOff", resourceCulture);

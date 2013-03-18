@@ -18,6 +18,7 @@ namespace Hoteles
         string pasoAsignacion = "nroHabitacion";
         int nroPromoElegida;
         int nroHab;
+        int pernocte;
         int socioId = 0;
         Socio socio = new Socio();
         int puntosACambiar = 0;
@@ -81,6 +82,11 @@ namespace Hoteles
                 labelMensaje.Visible = true;
                 return true;
             }
+            if (pasoAsignacion == "confirmar")
+                if (keyData == Keys.Enter)
+                    tbNroHab_KeyPress(this.tbNroHab, new KeyPressEventArgs((char)keyData));
+
+
             return base.ProcessCmdKey(ref msg, keyData);
         }
                
@@ -111,21 +117,28 @@ namespace Hoteles
                             labelMensaje.Visible = true;
                             return;
                         }
-                        nroHab = int.Parse(tbNroHab.Text);
                         int nroPromo = 0;
-                        DictDescuentos = new Dictionary<int, Descuento>();
-
-                        dgvOpcionesElegidas.Rows[0].Cells[1].Value = dgvOpcionesElegidas.Rows[0].Cells[1].Value.ToString() + " " + nroHab;
+                        int altoFila;
+                        int altoFilaExtra;
                         labelMensaje.Visible = false;
-                        dgvPromos.Rows.Add(nroPromo, "Sin Promoción");
-                        DictDescuentos.Add(nroPromo, new Descuento());
 
-                        foreach (Descuento desc in Descuento.obtenerDescuentos(int.Parse(tbNroHab.Text)))
+                        nroHab = int.Parse(tbNroHab.Text);                        
+                        DictDescuentos = new Dictionary<int, Descuento>();
+                        dgvOpcionesElegidas.Rows[0].Cells[1].Value = dgvOpcionesElegidas.Rows[0].Cells[1].Value.ToString() + " " + nroHab;
+                        List<Descuento> lDescuentos = Descuento.obtenerDescuentos(int.Parse(tbNroHab.Text));
+
+                        tools.calcularAlturas(dgvPromos.Height - dgvPromos.ColumnHeadersHeight, lDescuentos.Count > tools.minCantFilas ? lDescuentos.Count : tools.minCantFilas, out altoFila, out altoFilaExtra);
+                        dgvPromos.RowTemplate.Height = altoFila;
+
+                        dgvPromos.Rows.Add(nroPromo, "Sin Promoción");
+                        DictDescuentos.Add(nroPromo, new Descuento("Sin Promoción"));
+                        foreach (Descuento desc in lDescuentos)
                         {
                             nroPromo++;
                             dgvPromos.Rows.Add(nroPromo, desc.nombre);
                             DictDescuentos.Add(nroPromo, desc);
                         }
+                        tools.completarDG(dgvPromos, altoFilaExtra);
                         dgvPromos.ClearSelection();
 
                         panelPromos.Visible = true;
@@ -145,7 +158,7 @@ namespace Hoteles
                             return;
                         }
                         nroPromoElegida = int.Parse(tbNroHab.Text);
-                        dgvOpcionesElegidas.Rows[1].Cells[1].Value = dgvOpcionesElegidas.Rows[1].Cells[1].Value.ToString() + " " + nroPromoElegida;
+                        dgvOpcionesElegidas.Rows[1].Cells[1].Value = dgvOpcionesElegidas.Rows[1].Cells[1].Value.ToString() + " " + DictDescuentos[nroPromoElegida].nombre;
                         this.desc = DictDescuentos[nroPromoElegida];
                         if (nroPromoElegida == 0)// sin promocion
                         {
@@ -161,6 +174,7 @@ namespace Hoteles
                             {
                                 pasoAsignacion = "pernocte";
                                 tbNroHab.Text = "0";
+                                labelNroHab.Text = "Pernocte";
                                 tbNroHab_KeyPress(sender, e);
                                 return;
                             }
@@ -179,7 +193,6 @@ namespace Hoteles
                                 pasoAsignacion = "pernocte";
                                 labelNroHab.Text = "Pernocte";
                                 tbNroHab.Text = "0";
-
                                 labelMensaje.Visible = false;
                                 dgvPromos.Visible = false;
                             }
@@ -205,7 +218,7 @@ namespace Hoteles
                         break;
 
                     case "puntos":
-
+                        tbNroHab.Text = String.IsNullOrEmpty(tbNroHab.Text) ? "0" : tbNroHab.Text;
                         if (int.Parse(tbNroHab.Text) > socio.puntaje)
                         {
                             labelMensaje.Text = "El cliente no tiene esa cantidad de puntos.";
@@ -224,10 +237,22 @@ namespace Hoteles
                         if (tbNroHab.Text != "1" && tbNroHab.Text != "0")
                         {
                             labelMensaje.Visible = true;
-                            labelMensaje.Text = "* Debe indicar 0 si no es pernocte , o 1 en caso de serlo *";
+                            labelMensaje.Text = " 0 - No es pernocte\r\n 1 - Es pernocte";
                             return;
                         }
-                        if (Habitacion.Asignar((fPrincipal)this.Owner, this.desc.id, nroHab, int.Parse(tbNroHab.Text), ((fPrincipal)this.Owner).conserjeActual.usuario, socio.id,puntosACambiar))
+                        labelMensaje.Visible = false;
+                        pernocte = int.Parse(tbNroHab.Text);
+                        dgvOpcionesElegidas.Rows[4].Cells[1].Value = dgvOpcionesElegidas.Rows[4].Cells[1].Value + (tbNroHab.Text=="1"?" Si":" No");
+
+                        labelConf.Visible = true;
+                        tbNroHab.Visible = false;
+                        labelNroHab.Text = "¿ Confirma ?";
+                        pasoAsignacion = "confirmar";
+                       
+                        break;
+
+                    case "confirmar":
+                        if (Habitacion.Asignar((fPrincipal)this.Owner, this.desc.id, nroHab, pernocte, ((fPrincipal)this.Owner).conserjeActual.usuario, socio.id, puntosACambiar))
                         {
                             if (socio.id != 0)
                                 socio.descontarPuntos(puntosACambiar);
@@ -236,13 +261,13 @@ namespace Hoteles
                         else
                         {
                             labelMensaje.Text = "No se puede Asignar Pernocte, posiblemente falten asignar tarifas para algun horario.";
-                            labelMensaje.Visible = true;
-                            return;
-                        }
-                        break;
+                            labelMensaje.Visible = true;                         
+                        }                        
+                        return;
 
                     default:
                         break;
+                    
                 }
 
                 tbNroHab.Select(0, tbNroHab.TextLength);
