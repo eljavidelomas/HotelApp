@@ -84,26 +84,7 @@ namespace Hoteles.Entities
             return fIngresos;
 
         }
-
-        //public static DataGridView crearFormIngreso()
-        //{
-        //    FlowLayoutPanel fIngresos = new System.Windows.Forms.FlowLayoutPanel();
-        //    Label lTitulo = new Label();
-
-        //    fIngresos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-        //    fIngresos.Controls.Add(lTitulo);
-
-        //    fIngresos.Dock = System.Windows.Forms.DockStyle.Fill;
-        //    //fIngresos.Location = new System.Drawing.Point(323, 403);
-        //    fIngresos.Name = "fIngresos";
-        //    //fIngresos.Size = new System.Drawing.Size(314, 49);
-        //    fIngresos.TabIndex = 6;
-
-        //    return fIngresos;
-
-        //}
-
-
+         
         internal static void completarDG(DataGridView dgv, int altoFilaExtra)
         {
             int cantFilas = dgv.Rows.Count;

@@ -96,8 +96,11 @@ namespace Hoteles
 
                             nroHab = int.Parse(tbNroHab.Text);
                             detallesHab = Habitacion.obtenerDetalles(nroHab);
+                            decimal saldoAfavor = decimal.Parse(detallesHab.ptosCambiados.ToString()) - detallesHab.impHabitacion < 0 ? 0 : decimal.Parse(detallesHab.ptosCambiados.ToString()) - detallesHab.impHabitacion;
                             dgvOpcionesElegidas.Rows[0].Cells[0].Value = dgvOpcionesElegidas.Rows[0].Cells[0].Value.ToString() + " " + nroHab;
-                            dgvOpcionesElegidas.Rows[1].Cells[0].Value = dgvOpcionesElegidas.Rows[1].Cells[0].Value.ToString() + " " + String.Format("{0:C}", detallesHab.impHabitacion);
+                            dgvOpcionesElegidas.Rows[1].Cells[0].Value = dgvOpcionesElegidas.Rows[1].Cells[0].Value.ToString() + " " + String.Format("{0:C}", detallesHab.impHabitacion - decimal.Parse(detallesHab.ptosCambiados));
+                            dgvOpcionesElegidas.Rows[2].Cells[0].Value = dgvOpcionesElegidas.Rows[2].Cells[0].Value.ToString() + " " + detallesHab.ptosCambiados;
+                            dgvOpcionesElegidas.Rows[3].Cells[0].Value = dgvOpcionesElegidas.Rows[3].Cells[0].Value.ToString() + " " + String.Format("{0:C}", saldoAfavor); ;
                            
                             labelNroHab.Text = "Medio de Pago ";
                             tbNroHab.Text = "0";
@@ -117,7 +120,7 @@ namespace Hoteles
                                 return;
                             }
                             labelMensaje.Visible = false;
-                            dgvOpcionesElegidas.Rows[2].Cells[0].Value = dgvOpcionesElegidas.Rows[2].Cells[0].Value.ToString() + " " + dictMediosDePago[medioPago];
+                            dgvOpcionesElegidas.Rows[4].Cells[0].Value = dgvOpcionesElegidas.Rows[4].Cells[0].Value.ToString() + " " + dictMediosDePago[medioPago];
                             labelNroHab.Text = "Monto a Adelantar $ ";
                             tbNroHab.Text = "0";
                             pasoAsignacion = "monto";
@@ -133,14 +136,14 @@ namespace Hoteles
                                 return;                                
                             }
                             monto = decimal.Parse(tbNroHab.Text.Replace('.', ','));
-                            if (monto > detallesHab.impHabitacion)
+                            if (monto > detallesHab.impHabitacion - decimal.Parse(detallesHab.ptosCambiados) )
                             {
                                 labelMensaje.Text = "* El monto debe ser inferior o igual al total *";
                                 labelMensaje.Visible = true;
                                 return;    
                             }
                             labelMensaje.Visible = false;
-                            dgvOpcionesElegidas.Rows[3].Cells[0].Value = dgvOpcionesElegidas.Rows[3].Cells[0].Value.ToString() + " " + String.Format("{0:C}", decimal.Parse(tbNroHab.Text.Replace('.', ',')));
+                            dgvOpcionesElegidas.Rows[5].Cells[0].Value = dgvOpcionesElegidas.Rows[5].Cells[0].Value.ToString() + " " + String.Format("{0:C}", decimal.Parse(tbNroHab.Text.Replace('.', ',')));
                             
                             pasoAsignacion = "confirmar";
                             labelNroHab.Text = "Confirma Adelanto?";
@@ -220,7 +223,9 @@ namespace Hoteles
 
             dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
             dgvOpcionesElegidas.Rows.Add("Monto a Pagar:");
-            dgvOpcionesElegidas.Rows.Add("Medio de Pago:");
+            dgvOpcionesElegidas.Rows.Add("Puntos canjeados:");
+            dgvOpcionesElegidas.Rows.Add("Saldo a Favor:");
+            dgvOpcionesElegidas.Rows.Add("Medio de Pago:"); // 4           
             dgvOpcionesElegidas.Rows.Add("Monto a Adelantar:");
             dgvOpcionesElegidas.ClearSelection();
         }

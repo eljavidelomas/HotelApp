@@ -26,7 +26,8 @@ namespace Hoteles.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JAVIER-PC\\SQLEXPRESS;Initial Catalog=hotel;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JAVIER-PC\\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=Tr" +
+            "ue")]
         public string hotelConnectionString {
             get {
                 return ((string)(this["hotelConnectionString"]));
@@ -53,11 +54,28 @@ namespace Hoteles.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Fecha: ##FECHA Hora: ##HORA\\rNro.Ticket: ##NRO\\r --------------------------------" +
-            "-------\\r\\rNro.Habitacion: ##HAB\\rCant    Articulo                   Precio\\r")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Fecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\\r\\n-----------------------------" +
+            "------\\r\\nNro.Habitacion: ##HAB\\r\\n-----------------------------------\\r\\nCant  " +
+            "Articulo              Precio\\r\\n-----------------------------------\\r\\n")]
         public string ticketCocina {
             get {
                 return ((string)(this["ticketCocina"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"
+          ****************************************************************************************************************************
+          Conserje:##conserjeId   ##conserjeNm            === Arqueo de caja ===                Fecha: ##fecha   Hora:##hora
+          ****************************************************************************************************************************
+
+                                           ____________________ FACTURADO _________________      ___________ CAJA ___________
+          Nro  HAB  Desde  Hasta   Socio   Turnos     Extras     Bar     Descuento    Total      Efectivo   Tarjeta  	  gastos
+          ----------------------------------------------------------------------------------------------------------------------r\n")]
+        public string planillaCierre {
+            get {
+                return ((string)(this["planillaCierre"]));
             }
         }
     }

@@ -58,9 +58,17 @@ namespace Hoteles
 
                 return true;
             }
+            if (keyData == Keys.F7)
+            {
+                Alarma.desactivar();
+                Habitacion.quitarAviso((fPrincipal)this.Owner, ((fPrincipal)this.Owner).alarmas[0].nroHab, ((fPrincipal)this.Owner).alarmas[0].id);                
+                ((fPrincipal)this.Owner).alarmas.RemoveAt(0);    
+            }
             if (pasoAsignacion == "confirmar" || pasoAsignacion == "quitar")
+            {
                 if (keyData == Keys.Enter)
                     tbNroHab_KeyPress(this.tbNroHab, new KeyPressEventArgs((char)keyData));
+            }
 
             return base.ProcessCmdKey(ref msg, keyData);
         }

@@ -67,8 +67,11 @@ namespace Hoteles
         {
             int maxFilas;
             SqlDataReader reader;
-            int ultFila = 0;
 
+            ThreadStart hiloP = new ThreadStart();
+            Thread hilo = new Thread(GoFullscreen);
+            hilo.Start();
+            
             if (conn == null)
             {
                 conn = new SqlConnection();
@@ -91,7 +94,7 @@ namespace Hoteles
             }
 
             labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm");
-            labelFecha.Text = "Fecha: " + DateTime.Now.ToString("dd / MM / yyyy");
+            labelFecha.Text = "Fecha: " + String.Format("{0:ddd}", DateTime.Now)+ " " + DateTime.Now.ToString("dd / MM / yyyy");
             SqlCommand comm = new SqlCommand("listaTurnos", conn);
             comm.CommandType = CommandType.StoredProcedure;
             SqlParameter cantHab = new SqlParameter("@ret", SqlDbType.Int);
@@ -112,26 +115,20 @@ namespace Hoteles
             reader = comm.ExecuteReader();
             float tamFuente = 12f + (3.6f - (0.1f * (int)cantHab.Value));
             dataGridView1.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", tamFuente, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-
+            
             dibujar(maxFilas, (int)cantHab.Value, reader);
-
             //dataGridView1.Sort(new RowComparer(System.Windows.Forms.SortOrder.Descending));
-
             dataGridView1.Enabled = true;
-
-            dataGridView1.SuspendLayout();
-
-            //lAviso.Text = "Alarma !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - Alto: " + dataGridView1.RowTemplate.Height;
+            dataGridView1.SuspendLayout();            
         }
 
 
         public void dibujar(int maxFilas, int cantHab, SqlDataReader reader)
-        {
+        {            
+
             if (dataGridView1.Rows.Count > 0)
             {
                 dataGridView1.Rows.Clear();
-
             }
             if (col2 != null)
             {
@@ -145,7 +142,7 @@ namespace Hoteles
                 DataGridViewRow row = new DataGridViewRow();
                 dataGridView1.Rows.Add(reader["nroHabitacion"], reader["categoria2"].ToString() == "" ? reader["categoria"] : reader["categoria2"]);
                 ultFila = dataGridView1.Rows.GetLastRow(DataGridViewElementStates.None);
-                
+
 
                 dataGridView1.Rows[ultFila].Cells["importe"].Value = String.Format("{0:C}", reader["importe"]);
                 if (reader["estado"].ToString() == "D") // Disponible
@@ -153,7 +150,6 @@ namespace Hoteles
                     dataGridView1.Rows[ultFila].Cells["estado"].Value = "D";
                     dataGridView1.Rows[ultFila].Cells["salida"].Value = "";
                     dataGridView1.Rows[ultFila].Cells["bar"].Value = ((System.Drawing.Image)Resources.vacio);
-                    //dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Green;
                     dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                 }
                 else if (reader["estado"].ToString() == "A") // Asignada
@@ -162,9 +158,8 @@ namespace Hoteles
                     dataGridView1.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
                     dataGridView1.Rows[ultFila].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Bold);
                     //Si hay alarmas
-                    if(reader["aviso"].ToString()!="")
+                    if (reader["aviso"].ToString() != "")
                         dataGridView1.Rows[ultFila].Cells["alarma"].Value = ((System.Drawing.Image)Resources.relojdespertador);
-                    //dataGridView1.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Orange;
                     dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                 }
                 else if (reader["estado"].ToString() == "O") // Ocupada
@@ -177,11 +172,18 @@ namespace Hoteles
                     if (reader["aviso"].ToString() != "")
                         dataGridView1.Rows[ultFila].Cells["alarma"].Value = ((System.Drawing.Image)Resources.relojdespertador);
                 }
-                else 
+                else if (reader["estado"].ToString() == "M") // Mucama
                 {
                     dataGridView1.Rows[ultFila].Cells["estado"].Value = "M"; // Mucama
                     dataGridView1.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.luzOn);
                     dataGridView1.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Yellow;
+                }
+                else // Otro...
+                {
+                    //dataGridView1.Rows[ultFila].DefaultCellStyle.BackColor = Color.Gainsboro;
+                    dataGridView1.Rows[ultFila].Cells["estado"].Value = "X"; // deshabilitado
+                    dataGridView1.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.vacio);
+                    col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Gainsboro;
                 }
             }
             if (cantHab > maxFilas)
@@ -205,7 +207,6 @@ namespace Hoteles
                         col2.Rows[ultFila].Cells["estado"].Value = "D";
                         col2.Rows[ultFila].Cells["salida"].Value = "";
                         col2.Rows[ultFila].Cells["bar"].Value = ((System.Drawing.Image)Resources.vacio);
-                        //col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Green;
                         col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                     }
                     else if (reader["estado"].ToString() == "A")
@@ -213,20 +214,35 @@ namespace Hoteles
                         col2.Rows[ultFila].Cells["estado"].Value = "A";
                         col2.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
                         col2.Rows[ultFila].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Bold);
-                        col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Orange;
+                        //Si hay alarmas
+                        if (reader["aviso"].ToString() != "")
+                            col2.Rows[ultFila].Cells["alarma"].Value = ((System.Drawing.Image)Resources.relojdespertador);
                         col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Green;
                     }
-                    else
+                    else if (reader["estado"].ToString() == "O") // Ocupada
                     {
                         col2.Rows[ultFila].Cells["estado"].Value = "O";
                         col2.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.luzOn);
                         col2.Rows[ultFila].Cells["salida"].Value = (DateTime.Parse(reader["hsalida"].ToString())).ToString("HH:mm");
                         col2.Rows[ultFila].DefaultCellStyle.Font = new Font(col2.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
-                        // col2.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Tomato;
                         col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Tomato;
+                        if (reader["aviso"].ToString() != "")
+                            col2.Rows[ultFila].Cells["alarma"].Value = ((System.Drawing.Image)Resources.relojdespertador);
+                    }
+                    else if (reader["estado"].ToString() == "M") // Mucama
+                    {
+                        col2.Rows[ultFila].Cells["estado"].Value = "M"; // Mucama
+                        col2.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.luzOn);
+                        col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Yellow;
+                    }
+                    else // Otro...
+                    {
+                        //col2.Rows[ultFila].DefaultCellStyle.BackColor = Color.Gainsboro;
+                        col2.Rows[ultFila].Cells["estado"].Value = "X"; // deshabilitado
+                        col2.Rows[ultFila].Cells["luz"].Value = ((System.Drawing.Image)Resources.vacio);
+                        col2.Rows[ultFila].Cells["nroHab"].Style.BackColor = Color.Gainsboro;
                     }
                 }
-                //col2.Sort(new RowComparer(System.Windows.Forms.SortOrder.Descending));
                 col2.ClearSelection();
             }
             dataGridView1.ClearSelection();
@@ -237,6 +253,9 @@ namespace Hoteles
         {
             try
             {
+                if(conserjeActual == null)
+                    return base.ProcessCmdKey(ref msg, keyData);
+
                 if (GestorTeclado.ProcesarTecla(keyData, this))
                     return true;
                 return base.ProcessCmdKey(ref msg, keyData);
@@ -251,7 +270,7 @@ namespace Hoteles
         private void timerHora_Tick(object sender, EventArgs e)
         {
             labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm");
-            labelFecha.Text = "Fecha: " + DateTime.Now.ToString("dd / MM / yyyy");
+            labelFecha.Text = "Fecha: " + String.Format("{0:ddd}", DateTime.Now) + " " + DateTime.Now.ToString("dd / MM / yyyy");
         }
 
         private void textUsuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -269,7 +288,7 @@ namespace Hoteles
         {
             int clave = 0;
             int usuario = 0;
-            
+
             if ((char)Keys.Enter == e.KeyChar)
             {
                 if (textUsuario.Text == "" || int.TryParse(textUsuario.Text, out usuario) == false)
@@ -377,13 +396,15 @@ namespace Hoteles
                 {
                     foreach (DataRow row in ds.Tables[0].Rows)
                     {
-                        alarmas.Add(new Aviso(int.Parse(row[0].ToString()), int.Parse(row[1].ToString()), row[2].ToString()));                        
+                        Aviso av=new Aviso(int.Parse(row[0].ToString()), int.Parse(row[1].ToString()), row[2].ToString());
+                        if(!alarmas.Exists(x=> x.id==av.id && x.hora == av.hora && x.nroHab == av.nroHab))
+                            alarmas.Add(av);
                     }
                 }
                 if (alarmas.Count > 0)
                 {
-                    if(!Alarma.prendida)
-                        Alarma.activar(this,"Alarma ! "+ alarmas[0].mensaje +"  Habitación Nro: "+alarmas[0].nroHab);
+                    if (!Alarma.prendida)
+                        Alarma.activar(this, "Alarma ! " + alarmas[0].mensaje + "  Habitación Nro: " + alarmas[0].nroHab);
                 }
             }
             catch (Exception ex)
@@ -392,11 +413,10 @@ namespace Hoteles
                 return;
             }
         }
-
-
+        
         internal void QuitarReloj(int nroHab)
         {
-            foreach(DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (int.Parse(row.Cells[0].Value.ToString()) == nroHab)
                 {
@@ -412,9 +432,9 @@ namespace Hoteles
                     return;
                 }
             }
-            
+
         }
-      
+
     }
 }
 

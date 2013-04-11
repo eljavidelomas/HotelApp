@@ -18,7 +18,7 @@ namespace Hoteles
     public partial class FormCierreTurnoCliente : Form
     {        
         FormCierreTurno form;
-        string pasoAsignacion = "nroHabitacion";
+        string pasoAsignacion = "confirmar";
         DetallesHabitacion detallesHab = new DetallesHabitacion();
         Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -59,7 +59,7 @@ namespace Hoteles
                 if (keyData == Keys.Enter)
                 {
                     
-                    Habitacion.Cierre((fPrincipal)form.Owner, form.nroHab, form.impDescArt, form.descuento, form.medioPago);
+                    Habitacion.Cierre((fPrincipal)form.Owner, form.nroHab, form.impDescArt, form.descuento, form.medioPago,form.detallesHab.impHabitacion);
                     volverFormPrincipal();
                                                 
                     return true;
@@ -71,8 +71,9 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
-            this.Owner.Show();
-            this.Owner.Focus();
+            this.Owner.Owner.Show();
+            this.Owner.Owner.Focus();
+            this.Owner.Close();
             this.Hide();
             this.Close();
         }

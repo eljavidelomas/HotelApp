@@ -21,10 +21,7 @@ namespace Hoteles.Entities
             if (tecla == Keys.Escape)
             {
                 fPresionada = false;
-                Alarma.desactivar();
-                Habitacion.quitarAviso(formPrincipal,formPrincipal.alarmas[0].nroHab, formPrincipal.alarmas[0].id);
-                //formPrincipal.QuitarReloj(formPrincipal.alarmas[0].nroHab);
-                formPrincipal.alarmas.RemoveAt(0);                
+                             
                 return true;
             }
             if(tecla == Keys.Alt)
@@ -125,20 +122,46 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             avisosHorarios.Activate();
                             avisosHorarios.tbNroHab.Focus();
-                            //Alarma.activar(formPrincipal,"Alarma");
+                            
                             break;
                         case Keys.F8:
-                            //Alarma.desactivar();
+                            FormCambiarEstado fCambEst = new FormCambiarEstado();
+                            fCambEst.Owner = formPrincipal;
+                            fCambEst.Show();
+                            formPrincipal.Hide();
+                            fCambEst.Activate();
+                            fCambEst.tbNroHab.Focus();
+
                             break;
                         case Keys.F9:
+                            FormExtraccionDinero extraccionDinero = new FormExtraccionDinero();
+                            extraccionDinero.Owner = formPrincipal;
+                            extraccionDinero.Show();
+                            formPrincipal.Hide();
+                            extraccionDinero.Activate();
+                            extraccionDinero.tbNroHab.Focus();
+
                             break;
                         case Keys.F10:
+                            FormClavesOpcionales fClavesOp = new FormClavesOpcionales();
+                            fClavesOp.Owner = formPrincipal;
+                            fClavesOp.Show();
+                            formPrincipal.Hide();
+                            fClavesOp.Activate();
+                            fClavesOp.tbNroHab.Focus();
+                            
                             break;
                         case Keys.F11:
                             formPrincipal.dataGridView1.FirstDisplayedScrollingRowIndex = formPrincipal.dataGridView1.Rows.GetLastRow(DataGridViewElementStates.Displayed);
                             break;
                         case Keys.F12:
-                            formPrincipal.dataGridView1.FirstDisplayedScrollingRowIndex = 0;
+                            FormCierrePlanilla cierrePlanilla = new FormCierrePlanilla();
+                            cierrePlanilla.Owner = formPrincipal;
+                            cierrePlanilla.Show();
+                            formPrincipal.Hide();
+                            cierrePlanilla.Activate();
+                            cierrePlanilla.tbNroHab.Focus();
+                            
                             break;
                         default:
                             return false;

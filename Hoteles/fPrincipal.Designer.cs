@@ -463,7 +463,7 @@ namespace Hoteles
             // timerValidarAlarmas
             // 
             this.timerValidarAlarmas.Enabled = true;
-            this.timerValidarAlarmas.Interval = 25000;
+            this.timerValidarAlarmas.Interval = 10000;
             this.timerValidarAlarmas.Tick += new System.EventHandler(this.timerValidarAlarmas_Tick);
             // 
             // fPrincipal
@@ -495,7 +495,6 @@ namespace Hoteles
         private Panel panelFunciones;
         private Panel panelDatosHotel;
         private Label labelNombre;
-        private Label labelConserje;
         private Label labelFecha;
         private Label labelHora;
         private Timer timerHora;
@@ -523,6 +522,7 @@ namespace Hoteles
         private Label labelFuncVarios;
         private Timer timerParpadeo;
         private Timer timerValidarAlarmas;
+        public Label labelConserje;
         
     }
 }

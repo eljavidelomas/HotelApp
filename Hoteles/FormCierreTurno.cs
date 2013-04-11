@@ -21,9 +21,11 @@ namespace Hoteles
         public int medioPago;
         int altoFilaExtraOpElegidas;
         int altoFilaExtraMedioPagos;
+        int puntos;
         public decimal descuento;
         public Decimal impDescArt;
         public decimal impExtras;
+        public decimal impDescHab;
         public decimal impArt;
         public decimal impHab;
         public decimal efectivo;
@@ -111,13 +113,18 @@ namespace Hoteles
                             impDescArt = decimal.Parse(detalles[3].ToString());
                             efectivo = decimal.Parse(detalles[4].ToString());
                             tarjeta = decimal.Parse(detalles[5].ToString());
-                            detallesHab.impHabitacion = impHab + impExtras + impArt - impDescArt - efectivo - tarjeta;
+                            puntos = detalles["puntos"].ToString() == ""? 0 : int.Parse(detalles["puntos"].ToString());
+                            impDescHab = decimal.Parse(puntos.ToString()) + decimal.Parse(detalles["descHabitacion"].ToString());
+                            detallesHab.impHabitacion = impHab + impExtras + impArt - impDescArt - impDescHab - efectivo - tarjeta;
                             dgvOpcionesElegidas.Rows[0].Cells[0].Value = dgvOpcionesElegidas.Rows[0].Cells[0].Value.ToString() + " " + nroHab;
-                            dgvOpcionesElegidas.Rows[1].Cells[0].Value = dgvOpcionesElegidas.Rows[1].Cells[0].Value.ToString() + " " + String.Format("{0:C}", impHab+impExtras);
-                            dgvOpcionesElegidas.Rows[2].Cells[0].Value = dgvOpcionesElegidas.Rows[2].Cells[0].Value.ToString() + " " + String.Format("{0:C}", impArt-impDescArt);
-                            dgvOpcionesElegidas.Rows[3].Cells[0].Value = dgvOpcionesElegidas.Rows[3].Cells[0].Value.ToString() + " " + String.Format("{0:C}", efectivo + tarjeta);
+                            dgvOpcionesElegidas.Rows[1].Cells[1].Value = String.Format("{0:C}", impHab+impExtras);
+                            dgvOpcionesElegidas.Rows[2].Cells[1].Value = String.Format("{0:C}", impArt);
+                            dgvOpcionesElegidas.Rows[3].Cells[1].Value = String.Format("- {0:C}", impDescArt);
+                            dgvOpcionesElegidas.Rows[4].Cells[1].Value = String.Format("- {0:C}", impDescHab);
+                            dgvOpcionesElegidas.Rows[5].Cells[1].Value = String.Format("{0:C}", efectivo);
+                            dgvOpcionesElegidas.Rows[6].Cells[1].Value = String.Format("{0:C}", tarjeta);
                             
-                           
+                                                       
                             labelNroHab.Text = "Medio de Pago ";
                             tbNroHab.Text = "0";
                             pasoAsignacion = "medioPago";
@@ -136,7 +143,7 @@ namespace Hoteles
                                 return;
                             }
                             labelMensaje.Visible = false;
-                            dgvOpcionesElegidas.Rows[4].Cells[0].Value = dgvOpcionesElegidas.Rows[4].Cells[0].Value.ToString() + " " + dictMediosDePago[medioPago];
+                            dgvOpcionesElegidas.Rows[7].Cells[1].Value = dictMediosDePago[medioPago];
                             labelNroHab.Text = "Monto a Descontar ";
                             tbNroHab.Text = "0";
                             pasoAsignacion = "descuento";
@@ -159,16 +166,16 @@ namespace Hoteles
                                 return;    
                             }
                             labelMensaje.Visible = false;
-                            dgvOpcionesElegidas.Rows[5].Cells[0].Value = dgvOpcionesElegidas.Rows[5].Cells[0].Value.ToString() + " " + String.Format("{0:C}", decimal.Parse(tbNroHab.Text.Replace('.', ',')));
-                            
-                            detallesHab.impHabitacion = detallesHab.impHabitacion - descuento;
+                            dgvOpcionesElegidas.Rows[8].Cells[1].Value =  String.Format("{0:C}", decimal.Parse(tbNroHab.Text.Replace('.', ',')));
+
+                            detallesHab.impHabitacion = detallesHab.impHabitacion - descuento <= 0 ? 0 : detallesHab.impHabitacion - descuento;
                             pasoAsignacion = "confirmar";
                             dgvOpcionesElegidas.Rows.Add();
                             dgvOpcionesElegidas.Rows.Add("Total a pagar   "+ String.Format("{0:C}", detallesHab.impHabitacion));
                             dgvOpcionesElegidas.Rows[dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None)].DefaultCellStyle.ForeColor = Color.Red;
                             dgvOpcionesElegidas.Rows[dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None)].DefaultCellStyle.BackColor= Color.Black;
                             dgvOpcionesElegidas.Rows[dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None)].DefaultCellStyle.Font = new Font("Arial", 24f,FontStyle.Bold);
-                            dgvOpcionesElegidas.Rows[dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None)].Height = (int) (dgvOpcionesElegidas.Rows[dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None)].Height*1.5) + altoFilaExtraOpElegidas;
+                            dgvOpcionesElegidas.Rows[dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None)].Height = (int) (dgvOpcionesElegidas.Rows[dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None)].Height) + altoFilaExtraOpElegidas;
                             labelNroHab.Text = "Confirma Cierre?";
                             tbNroHab.Visible = false;
                             break;
@@ -229,7 +236,7 @@ namespace Hoteles
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
             int altoFila;            
-            tools.calcularAlturas(dgvOpcionesElegidas.Height-dgvOpcionesElegidas.ColumnHeadersHeight, 8.5f, out altoFila, out altoFilaExtraOpElegidas);            
+            tools.calcularAlturas(dgvOpcionesElegidas.Height-dgvOpcionesElegidas.ColumnHeadersHeight, 11f, out altoFila, out altoFilaExtraOpElegidas);            
             dgvOpcionesElegidas.RowTemplate.Height = altoFila;
 
             panelPromos.Visible = true;
@@ -261,7 +268,10 @@ namespace Hoteles
             dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
             dgvOpcionesElegidas.Rows.Add("Monto Total Habitacion:");
             dgvOpcionesElegidas.Rows.Add("Monto Total Articulos:");
-            dgvOpcionesElegidas.Rows.Add("Monto Adelantado:");            
+            dgvOpcionesElegidas.Rows.Add("Descuento por Articulos:"); // 3
+            dgvOpcionesElegidas.Rows.Add("Descuento por Promociones:");
+            dgvOpcionesElegidas.Rows.Add("Adelantado Efectivo:");
+            dgvOpcionesElegidas.Rows.Add("Adelantado Tarjeta:");             
             dgvOpcionesElegidas.Rows.Add("Medio de Pago:");
             dgvOpcionesElegidas.Rows.Add("Descuento:");
 
