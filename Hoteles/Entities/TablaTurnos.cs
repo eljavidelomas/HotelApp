@@ -6,6 +6,8 @@ using System.Text;
 using System.Windows.Forms;
 using Hoteles.Properties;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Data;
 
 namespace Hoteles.Entities
 {
@@ -29,7 +31,7 @@ namespace Hoteles.Entities
             DataGridViewTextBoxColumn salida = new DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn importe = new DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn estado = new DataGridViewTextBoxColumn();
-                       
+            
 
             // 
             // nrohab
@@ -56,7 +58,7 @@ namespace Hoteles.Entities
             // 
             bar.FillWeight = 63.06764F;
             bar.HeaderText = "Bar";
-            bar.Image = Resources.vacio;
+            bar.Image = Resources.vacio;            
             bar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             bar.Name = "bar";
             bar.ReadOnly = true;
@@ -66,7 +68,7 @@ namespace Hoteles.Entities
             // 
             aac.FillWeight = 72.46375F;
             aac.HeaderText = "AAC";
-            aac.Image = Resources.vacio;
+            aac.Image = Resources.vacio;            
             aac.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             aac.Name = "aac";
             aac.ReadOnly = true;
@@ -75,7 +77,7 @@ namespace Hoteles.Entities
             // alarma
             // 
             alarma.FillWeight = 81.30112F;
-            alarma.HeaderText = "Ala";
+            alarma.HeaderText = "Ala";            
             alarma.Image = Resources.vacio;
             alarma.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             alarma.Name = "alarma";
@@ -90,6 +92,7 @@ namespace Hoteles.Entities
             luz.FillWeight = 89.61292F;
             luz.HeaderText = "Luz";
             luz.Image = Resources.luzOff3;
+            luz.DefaultCellStyle.Padding = new Padding(5);
             luz.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             luz.Name = "luz";
             luz.ReadOnly = true;
@@ -170,7 +173,7 @@ namespace Hoteles.Entities
             dataGridView1.Margin = new Padding(0,0,0,0);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "col2";
-            dataGridView1.GridColor = System.Drawing.SystemColors.Control;
+            dataGridView1.GridColor = System.Drawing.Color.Gray;
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;            
             dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -178,12 +181,155 @@ namespace Hoteles.Entities
             dataGridView1.RowTemplate.Height = 23;
             dataGridView1.RowTemplate.Resizable = DataGridViewTriState.False;
             dataGridView1.ScrollBars = ScrollBars.None;
-            dataGridView1.DataSource = null;
-            
+            dataGridView1.DataSource = null;            
 
             return dataGridView1;
         }
 
-        
+        static public DataGridView nuevaTabla_modificada()
+        {
+            DataGridView dataGridView1 = new DataGridView();
+            DataGridViewTextBoxColumn nrohab = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn categoria = new DataGridViewTextBoxColumn();
+            DataGridViewImageColumn bar = new DataGridViewImageColumn();
+            DataGridViewImageColumn aac = new DataGridViewImageColumn();
+            DataGridViewImageColumn alarma = new DataGridViewImageColumn();
+            DataGridViewImageColumn luz = new DataGridViewImageColumn();
+            DataGridViewTextBoxColumn salida = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn importe = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn estado = new DataGridViewTextBoxColumn();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] {
+            nrohab,
+            categoria,
+            bar,
+            aac,
+            alarma,
+            luz,
+            salida,
+            importe,
+            estado});
+
+            // 
+            // nrohab
+            // 
+            //dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            //dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            //nrohab.DefaultCellStyle = dataGridViewCellStyle2;
+            nrohab.FillWeight = 56.33804F;
+            nrohab.HeaderText = "Nº Hab";
+            nrohab.MinimumWidth = 35;
+            nrohab.Name = "nrohab";
+            nrohab.ReadOnly = true;
+            nrohab.Width = 45;
+            // 
+            // categoria
+            // 
+            categoria.FillWeight = 79.05887F;
+            categoria.HeaderText = "  Cat";
+            categoria.Name = "categoria";
+            categoria.ReadOnly = true;
+            categoria.Width = 63;
+            // 
+            // bar
+            // 
+            bar.FillWeight = 63.06764F;
+            bar.HeaderText = "Bar";
+            bar.Image = Resources.vacio;
+            bar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            bar.Name = "bar";
+            bar.ReadOnly = true;
+            bar.Width = 37;
+            // 
+            // aac
+            // 
+            aac.FillWeight = 72.46375F;
+            aac.HeaderText = "AAC";
+
+            aac.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            aac.Name = "aac";
+            aac.ReadOnly = true;
+            aac.Width = 37;
+            // 
+            // alarma
+            // 
+            alarma.FillWeight = 81.30112F;
+            alarma.HeaderText = "Ala";
+
+            alarma.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            alarma.Name = "alarma";
+            alarma.ReadOnly = true;
+            alarma.Width = 37;
+            // 
+            // luz
+            // 
+
+
+            luz.FillWeight = 89.61292F;
+            luz.HeaderText = "Luz";
+
+            luz.DefaultCellStyle.Padding = new Padding(5);
+            luz.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            luz.Name = "luz";
+            luz.ReadOnly = true;
+            luz.Width = 37;
+            // 
+            // salida
+            // 
+            salida.FillWeight = 161.5295F;
+            salida.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            salida.HeaderText = "H. Sal";
+            salida.Name = "salida";
+            salida.ReadOnly = true;
+            salida.Width = 129;
+            // 
+            // importe
+            // 
+            importe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            importe.FillWeight = 196.6283F;
+            importe.HeaderText = "Importe";
+            importe.Name = "importe";
+            importe.ReadOnly = true;
+            importe.Width = 150;
+            // 
+            // estado
+            // 
+            estado.HeaderText = "estado";
+            estado.Name = "estado";
+            estado.ReadOnly = true;
+            estado.Visible = false;
+
+            dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            dataGridView1.Location = new System.Drawing.Point(3, 3);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Size = new System.Drawing.Size(444, 124);
+            dataGridView1.TabIndex = 0;
+            //dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(dataGridView1_RowPostPaint);
+            //dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(dataGridView1_Paint);
+           
+
+            return dataGridView1;
+        }
+
+        static public DataRow obtenerDatosEstadoCaja()
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("estadoHabitacion_obtenerDatos", fPrincipal2.conn);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.Fill(ds);
+            return ds.Tables[0].Rows[0];
+        }
     }
 }

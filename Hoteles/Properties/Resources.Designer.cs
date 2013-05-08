@@ -109,9 +109,16 @@ namespace Hoteles.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap reloj {
+        public static System.Drawing.Bitmap parpadeoRojo {
             get {
-                object obj = ResourceManager.GetObject("reloj", resourceCulture);
+                object obj = ResourceManager.GetObject("parpadeoRojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap parpadeoVerde {
+            get {
+                object obj = ResourceManager.GetObject("parpadeoVerde", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -119,6 +126,20 @@ namespace Hoteles.Properties {
         public static System.Drawing.Bitmap relojdespertador {
             get {
                 object obj = ResourceManager.GetObject("relojdespertador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap relojSonando_2 {
+            get {
+                object obj = ResourceManager.GetObject("relojSonando_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap relojSonando_23 {
+            get {
+                object obj = ResourceManager.GetObject("relojSonando_23", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

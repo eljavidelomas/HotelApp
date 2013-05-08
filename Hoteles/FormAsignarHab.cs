@@ -21,10 +21,11 @@ namespace Hoteles
         int pernocte;
         int nroCategoria;
         decimal montoAdelantar;
-        int medioPago;
-        //int socioId = 0;
-        Socio socio = new Socio();
+        decimal montoAPagar;
+        int medioPago;        
         int puntosACambiar = 0;
+        Socio socio = new Socio();
+        Tarifa tarifaNoche;
         Dictionary<int, Descuento> DictDescuentos;
         Dictionary<int, string> dictMediosDePago= new Dictionary<int,string>();
         Dictionary<int, string> dictCategorias;
@@ -224,6 +225,7 @@ namespace Hoteles
                                     tbNroHab.Width += 50;
                                     tbNroHab.MaxLength = 6;
                                     pasoAsignacion = "leerTarjeta";
+                                    break;
 
                                 }
                                 else // otra promo
@@ -235,6 +237,14 @@ namespace Hoteles
                                     dgvPromos.Visible = false;
                                 }
                             }
+                            panelPromos.Visible = true;
+                            dgvPromos.Visible = true;
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvPromos.Rows.Clear();                            
+                            dgvPromos.Columns[1].HeaderText = " Pernocte ";                            
+                            dgvPromos.Rows.Add(0,"No");
+                            dgvPromos.Rows.Add(1,"Si");
+                            /*-----------------------------------------------*/
 
                             break;
                                                     
@@ -269,6 +279,16 @@ namespace Hoteles
                             tbNroHab.Text = "0";
                             labelNroHab.Text = "Pernocte";
                             pasoAsignacion = "pernocte";
+                            
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvPromos.Rows.Clear();
+                            dgvPromos.Columns[1].HeaderText = " Pernocte ";
+                            dgvPromos.Rows.Add(0, "No");
+                            dgvPromos.Rows.Add(1, "Si");
+                            /*-----------------------------------------------*/
+                            dgvPromos.Visible = true;
+                            panelPromos.Visible = true;
+
                             break;
 
                         case "pernocte":
@@ -280,26 +300,25 @@ namespace Hoteles
                                 return;
                             }
                             labelMensaje.Visible = false;
+                            int altoFilaExtraMedioPagos;
+                            DataSet ds = new DataSet();
                             pernocte = int.Parse(tbNroHab.Text);
                             dgvOpcionesElegidas.Rows[5].Cells[1].Value = dgvOpcionesElegidas.Rows[5].Cells[1].Value + (tbNroHab.Text == "1" ? " Si" : " No");
 
-                            
-                            tbNroHab.Text = "0";
-                            labelNroHab.Text = "Adelanto dinero ";
-                            pasoAsignacion = "adelanto";
+                            montoAPagar = Habitacion.calcularPrecioTurno(pernocte, this.desc.id, puntosACambiar, nroCategoria,out tarifaNoche);
+                            if (montoAPagar == 0)
+                            {
+                                labelMensaje.Visible = true;
+                                labelMensaje.Text = " No hay Tarifas cargadas para este horario y esta categoria ";
+                                return;
+                            }
+                            labelMensaje.Visible = true;
+                            labelMensaje.Text = String.Format("{0:C}",montoAPagar);
 
-                            break;
-
-                        case "adelanto":
-                            DataSet ds = new DataSet();
-                            int altoFilaExtraMedioPagos;
-
-                            montoAdelantar = decimal.Parse(tbNroHab.Text.Replace('.', ','));
-                            panelPromos.Visible = true;                                                      
-                            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from mediosDePago", fPrincipal.conn);
+                            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from mediosDePago", fPrincipal2.conn);
                             dataAdapter.Fill(ds);
                             dgvPromos.Rows.Clear();
-                            dgvOpcionesElegidas.Rows[6].Cells[1].Value = dgvOpcionesElegidas.Rows[6].Cells[1].Value + " " +String.Format("{0:C}", montoAdelantar);
+
                             tools.calcularAlturas(dgvPromos.Height - dgvPromos.ColumnHeadersHeight, ds.Tables[0].Rows.Count > tools.minCantFilas ? ds.Tables[0].Rows.Count : tools.minCantFilas, out altoFila, out altoFilaExtraMedioPagos);
                             dgvPromos.RowTemplate.Height = altoFila;
 
@@ -309,14 +328,46 @@ namespace Hoteles
                                 dgvPromos.Rows.Add(dr[0].ToString(), dr[1].ToString());
                             }
                             // ----  Completando la tabla mediosPagos  ----//
-                            tools.completarDG(dgvPromos, altoFilaExtraMedioPagos);                            
+                            tools.completarDG(dgvPromos, altoFilaExtraMedioPagos);
                             //---------------------------------------------------------------------------//
-
-
-                            labelNroHab.Text = "Medio de Pago ";
+                            
                             tbNroHab.Text = "0";
-                            pasoAsignacion = "medioPago";
                             dgvPromos.Visible = true;
+                            dgvPromos.Columns[1].HeaderText = "Medios de Pago";
+                            labelNroHab.Text = "Medio de Pago ";
+                            pasoAsignacion = "medioPago";
+
+                            break;
+
+                        case "adelanto":
+                                                       
+                            decimal.TryParse(tbNroHab.Text.Replace('.', ','),out montoAdelantar);
+                            if(montoAdelantar + puntosACambiar > montoAPagar)
+                            {
+                                labelMensaje.Text = "* El importe debe ser inferior o igual al total a pagar *";
+                                labelMensaje.Visible = true;
+                                return;
+                            }
+                            labelMensaje.Visible = false;
+
+                            panelPromos.Visible = true;
+                            dgvOpcionesElegidas.Rows[7].Cells[1].Value = dgvOpcionesElegidas.Rows[7].Cells[1].Value + " " + String.Format("{0:C}", montoAdelantar);
+
+                            labelNroHab.Text = "¿Confirmar?";
+                            tbNroHab.Text = "0";
+                            pasoAsignacion = "confirmar";
+
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvPromos.Rows.Clear();
+                            dgvPromos.RowTemplate.Height = 80;
+                            dgvPromos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                            dgvPromos.Columns[1].HeaderText = " Opciones ";
+                            dgvPromos.Columns.RemoveAt(0);
+                            dgvPromos.Rows.Add("Esc - Cancelar");
+                            dgvPromos.Rows.Add("Enter - Confirmar");
+                            /*-----------------------------------------------*/
+                            
+                            tbNroHab.Visible = false;                            
                             
                             break;
 
@@ -328,21 +379,32 @@ namespace Hoteles
                                 labelMensaje.Visible = true;
                                 return;
                             }
-                            dgvOpcionesElegidas.Rows[7].Cells[1].Value = dgvOpcionesElegidas.Rows[7].Cells[1].Value + dictMediosDePago[medioPago];
-                            tbNroHab.Visible = false;
-                            pasoAsignacion = "confirmar";
-                            labelNroHab.Text = "¿ Confirmar ?";
-                            labelConf.Visible = true;
+                            dgvOpcionesElegidas.Rows[6].Cells[1].Value = dgvOpcionesElegidas.Rows[6].Cells[1].Value + " " + dictMediosDePago[medioPago];
+                            
+                            pasoAsignacion = "adelanto";
+                            labelNroHab.Text = "Importe a Adelantar  $";
+                            tbNroHab.Text = "0";
 
                             break;
 
                         case "confirmar":
-                            if (Habitacion.Asignar((fPrincipal)this.Owner, this.desc.id, nroHab, pernocte, nroCategoria, ((fPrincipal)this.Owner).conserjeActual.usuario, socio.id, puntosACambiar))
+                            if (Habitacion.Asignar((fPrincipal2)this.Owner, this.desc.id, nroHab, pernocte, nroCategoria, ((fPrincipal2)this.Owner).conserjeActual.usuario, socio.id, puntosACambiar,montoAPagar,tarifaNoche))
                             {
                                 if(montoAdelantar > 0)
-                                    Habitacion.Adelanto((fPrincipal)this.Owner, nroHab,montoAdelantar, medioPago);
+                                    Habitacion.Adelanto((fPrincipal2)this.Owner, nroHab,montoAdelantar, medioPago);
                                 if (socio.id != 0)
                                     socio.descontarPuntos(puntosACambiar);
+                                
+                                DetallesHabitacion detalle = Habitacion.obtenerDetalles(nroHab);
+                                int minArestar;
+
+                                if(detalle.duracion>=100)
+                                 minArestar = tools.obtenerParametroInt("minFinTurnoMayor100");
+                                else
+                                 minArestar = tools.obtenerParametroInt("minFinTurnoMenor100");
+
+                                Habitacion.agregarAlarma((fPrincipal2)this.Owner, nroHab,int.Parse(detalle.hasta.AddMinutes(-minArestar).ToString("HHmm")), 2);
+                                
                                 volverFormPrincipal();
                             }
                             else
@@ -386,15 +448,21 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación *";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 if (ds.Tables[0].Rows[0]["estado"].ToString() != "D")
+                {
+                    tbNroHab.Text = "";
                     return "* La habitación no esta disponible *";
+                }
             }
             else
+            {
+                tbNroHab.Text = "";
                 return "* El número de habitación no existe *";
+            }
 
             return String.Empty;
         }
@@ -414,7 +482,7 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación *";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count == 0)
             {
@@ -457,8 +525,11 @@ namespace Hoteles
         {
             if (e.IsLastVisibleRow)
             {
-                Graphics g = e.Graphics;
-                g.DrawLine(new Pen(Color.Gainsboro, 2f), nro.Width + 1, g.ClipBounds.Y, nro.Width + 1, g.ClipBounds.Height);
+                if (pasoAsignacion != "confirmar")
+                {
+                    Graphics g = e.Graphics;
+                    g.DrawLine(new Pen(Color.Gainsboro, 2f), nro.Width + 1, g.ClipBounds.Y, nro.Width + 1, g.ClipBounds.Height);
+                }
             }
         }
 

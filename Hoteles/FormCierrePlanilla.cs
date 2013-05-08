@@ -58,7 +58,7 @@ namespace Hoteles
                 volverFormPrincipal();
                 return true;
             }
-            if (pasoAsignacion == "confirmar")
+            if (pasoAsignacion == "confirmar" || pasoAsignacion=="confirmaImpresion")
                 if (keyData == Keys.Enter)
                     tbNroHab_KeyPress(this.tbNroHab, new KeyPressEventArgs((char)keyData));
 
@@ -157,16 +157,36 @@ namespace Hoteles
                             tbNroHab.Visible = false;
                             pasoAsignacion = "confirmar";
 
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvPromos.Rows.Clear();
+                            dgvPromos.RowTemplate.Height = 80;
+                            dgvPromos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                            dgvPromos.Columns[1].HeaderText = " Opciones ";
+                            dgvPromos.Columns.RemoveAt(0);
+                            dgvPromos.Rows.Add("Esc - Cancelar");
+                            dgvPromos.Rows.Add("Enter - Confirmar");
+                            dgvPromos.ClearSelection();
+                            panelPromos.Visible = true;
+                            /*-----------------------------------------------*/
+
                             break;
 
 
                         case "confirmar":
 
                             this.confirmarCierre();
-                            ((fPrincipal)this.Owner).conserjeActual = Conserje.Login(conserjeNuevo, clave);
-                            ((fPrincipal)this.Owner).labelConserje.Text = "Conserje:" + ((fPrincipal)this.Owner).conserjeActual.nombre;
+                            labelNroHab.Text = "¿Confirma impresión?";
+                            pasoAsignacion = "confirmaImpresion";
+                            break;
+
+                        case "confirmaImpresion":
+                            ((fPrincipal2)this.Owner).conserjeActual = Conserje.Login(conserjeNuevo, clave);
+                            ((fPrincipal2)this.Owner).labelConserje.Text = "Conserje:" + ((fPrincipal2)this.Owner).conserjeActual.nombre;
+                            confirmarImpresion();
+                            
                             volverFormPrincipal();
-                            return;
+
+                            break;
 
                         default:
                             break;
@@ -193,9 +213,18 @@ namespace Hoteles
             }
         }
 
+        private void eliminarTurnosCerrados(SqlConnection conn,SqlTransaction tran)
+        {
+            SqlCommand comm;
+            comm = new SqlCommand("cierresCajas_eliminarTurnosCerrados", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Transaction = tran;
+            comm.ExecuteNonQuery();
+        }
+
         private void confirmarCierre()
         {
-            using (SqlConnection conn = new SqlConnection(fPrincipal.conn.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(fPrincipal2.conn.ConnectionString))
             {                
                 SqlTransaction transaccion = null;
                 Totales totales = new Totales();
@@ -205,10 +234,8 @@ namespace Hoteles
                 try
                 {
                     List<FilaPlanilla> filas = this.contabilizarTurnosYGastos(conn, transaccion,totales);
-                    new Impresora().ImprimirPlanillaCierre(filas,totales,efectivoInicialCierreActual,efectivoEnCaja, ((fPrincipal)this.Owner).conserjeActual,labelMensaje);
-                    this.cerrarPlanillaCaja(totEfectivo, totTarjeta, conn, transaccion);
-                    this.abrirPlanillaCaja(efectivoEnCaja, tarjetaEnCaja, conserjeNuevo, conn, transaccion);
-
+                    new Impresora().ImprimirPlanillaCierre(filas,totales,efectivoInicialCierreActual,efectivoEnCaja, ((fPrincipal2)this.Owner).conserjeActual,labelMensaje);
+                    
                     transaccion.Commit();
                 }
                 catch (Exception ex)
@@ -219,9 +246,35 @@ namespace Hoteles
             }
         }
 
+        private void confirmarImpresion()
+        {
+            using (SqlConnection conn = new SqlConnection(fPrincipal2.conn.ConnectionString))
+            {
+                SqlTransaction transaccion = null;
+                Totales totales = new Totales();
+                conn.Open();
+                transaccion = conn.BeginTransaction(IsolationLevel.RepeatableRead);
+                decimal efectivoInicialCierreActual = this.obtenerEfectivoInicialCierreActual();
+                try
+                {                   
+                    this.cerrarPlanillaCaja(totEfectivo, totTarjeta, conn, transaccion);
+                    this.abrirPlanillaCaja(efectivoEnCaja, tarjetaEnCaja, conserjeNuevo, conn, transaccion);
+                    if (tools.obtenerParametroInt("eliminarRegistros") == 1)
+                        eliminarTurnosCerrados(conn,transaccion);
+
+                    transaccion.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
         private decimal obtenerEfectivoInicialCierreActual()
         {
-            SqlDataAdapter comm = new SqlDataAdapter("cierresCajas_obtenerCierreActual", fPrincipal.conn);
+            SqlDataAdapter comm = new SqlDataAdapter("cierresCajas_obtenerCierreActual", fPrincipal2.conn);
             DataSet ds = new DataSet();
             comm.SelectCommand.CommandType = CommandType.StoredProcedure;
             comm.Fill(ds);
@@ -235,7 +288,7 @@ namespace Hoteles
         {
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de Conserje *";
-            if (int.Parse(tbNroHab.Text) == ((fPrincipal)this.Owner).conserjeActual.usuario)            
+            if (int.Parse(tbNroHab.Text) == ((fPrincipal2)this.Owner).conserjeActual.usuario)            
                 return "* El conserje nuevo es igual al conserje actual *";            
             if (!Conserje.Validar(tbNroHab.Text))
                 return "* El Conserje ingresado no existe *";
@@ -245,19 +298,18 @@ namespace Hoteles
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
-            this.obtenerMontosTotales(out totEfectivo, out totTarjeta);
-
-            dgvOpcionesElegidas.Rows.Add("Conserje Actual:  " + ((fPrincipal)this.Owner).conserjeActual.nombre);
+            FormCierrePlanilla.obtenerMontosTotales(out totEfectivo, out totTarjeta);
+            dgvOpcionesElegidas.Rows.Add("Conserje Actual:  " + ((fPrincipal2)this.Owner).conserjeActual.nombre);
             dgvOpcionesElegidas.Rows.Add("Total Efectivo:   " + string.Format("{0:C}", totEfectivo));
             dgvOpcionesElegidas.Rows.Add("Total Tarjeta:    " + string.Format("{0:C}", totTarjeta));
             dgvOpcionesElegidas.Rows.Add("Conserje Nuevo:   ");
             dgvOpcionesElegidas.Rows.Add("Efectivo Inicial: ");
             dgvOpcionesElegidas.Rows.Add("Tarjeta Inicial:  ");
-
             int altoFila, altoFilaExtraMedioPagos;
             tools.calcularAlturas(dgvOpcionesElegidas.Height - dgvOpcionesElegidas.ColumnHeadersHeight, 8, out altoFila, out altoFilaExtraMedioPagos);
             dgvOpcionesElegidas.RowTemplate.Height = altoFila;
             dgvOpcionesElegidas.ClearSelection();
+            panelPromos.Visible = false;
         }
 
         private void labelTitulo_Paint(object sender, PaintEventArgs e)
@@ -303,15 +355,7 @@ namespace Hoteles
             dataAdapter.SelectCommand.Transaction = tran;
             dataAdapter.Fill(ds);
             FilaPlanilla fila;
-            decimal totalTurnos = 0;
-            decimal totalExtras = 0;
-            decimal totalBar = 0;
-            decimal totalDescuento = 0;
-            decimal totalTotal = 0;
-            decimal totalEfectivo = 0;
-            decimal totalTarjeta = 0;
-            decimal totalGastos = 0;
-            
+                      
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 fila = new FilaPlanilla(dr, nroOrd);
@@ -365,11 +409,11 @@ namespace Hoteles
 
 
 
-        private void obtenerMontosTotales(out decimal totEfectivo, out decimal totTarjeta)
+        public static void obtenerMontosTotales(out decimal totEfectivo, out decimal totTarjeta)
         {
             DataSet ds = new DataSet();
 
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("cierresCajas_obtenerTotales", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("cierresCajas_obtenerTotales", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.Fill(ds);
 

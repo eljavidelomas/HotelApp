@@ -1,0 +1,185 @@
+2013-04-11 01:31:44,970 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 01:40:36,868 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 01:47:08,918 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 01:49:03,859 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 01:53:45,995 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 16:38:07,077 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 18:09:32,342 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 18:32:42,296 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:46,500 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:46,856 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:47,143 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:47,443 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:47,739 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:48,295 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:48,817 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:49,498 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:49,717 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:32:49,946 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:33:08,417 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 18:33:21,749 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 121
+2013-04-11 19:03:26,490 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 19:03:36,402 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 113
+2013-04-11 19:03:38,494 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 113
+2013-04-11 19:03:39,027 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 113
+2013-04-11 19:05:55,739 [9] ERROR - Invalid column name 'adelanto'. -    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Cancelar(fPrincipal fPrincipal, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 179
+   en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 113
+2013-04-11 19:10:04,505 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 19:10:29,959 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 19:12:41,333 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 19:13:47,001 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 19:14:02,503 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 19:16:30,230 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-11 19:17:20,384 [10] INFO  - Comienzo - Aplicacion Hotel

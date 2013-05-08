@@ -148,10 +148,24 @@ namespace Hoteles
                             pasoAsignacion = "confirmar";
                             labelNroHab.Text = "Confirma Adelanto?";
                             tbNroHab.Visible = false;
+
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvMedioPago.Rows.Clear();
+                            dgvMedioPago.RowTemplate.Height = 80;
+                            dgvMedioPago.BackgroundColor = Color.White;
+                            dgvMedioPago.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                            dgvMedioPago.Columns[1].HeaderText = " Opciones ";
+                            dgvMedioPago.Columns.RemoveAt(0);
+                            dgvMedioPago.Rows.Add("Esc - Cancelar");
+                            dgvMedioPago.Rows.Add("Enter - Confirmar");
+                            dgvMedioPago.ClearSelection();
+                            panelPromos.Visible = true;
+                            /*-----------------------------------------------*/
+
                             break;
 
                         case "confirmar":
-                            Habitacion.Adelanto((fPrincipal)this.Owner, nroHab, monto, medioPago);
+                            Habitacion.Adelanto((fPrincipal2)this.Owner, nroHab, monto, medioPago);
                             volverFormPrincipal();
                             return;                            
 
@@ -186,7 +200,7 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación a cancelar*";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {

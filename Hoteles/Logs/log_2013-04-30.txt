@@ -1,0 +1,118 @@
+2013-04-30 00:02:59,001 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 00:05:21,727 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 00:06:50,042 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 00:55:15,722 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 00:57:32,300 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:00:37,554 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:04:26,674 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:05:44,526 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:06:43,968 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:17:04,304 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:33:48,809 [8] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:36:28,833 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:37:47,553 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:38:55,462 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:49:12,005 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:49:52,367 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:53:46,445 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:54:49,835 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 01:55:39,211 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:04:42,928 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:05:40,141 [8] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:07:23,052 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:08:03,067 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:10:10,390 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:12:39,932 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:20:21,440 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:20:46,385 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:22:36,339 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:22:59,640 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:24:13,160 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:29:01,016 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:30:05,040 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:31:07,661 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:31:37,132 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:35:58,536 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:39:39,893 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:55:19,958 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 10:56:27,702 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 11:00:53,667 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 11:03:02,199 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 11:03:57,042 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 11:04:24,491 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 11:42:23,394 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 11:49:41,489 [8] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 11:58:33,322 [8] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 12:34:01,955 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 12:36:23,936 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 457
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 438
+2013-04-30 12:36:32,337 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 457
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 438
+2013-04-30 12:36:42,306 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 457
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 438
+2013-04-30 12:36:52,487 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 457
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 438
+2013-04-30 12:44:35,059 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 12:45:35,385 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:45:45,336 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:46:46,746 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:47:25,444 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:47:27,012 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:48:25,708 [9] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 430
+2013-04-30 12:48:35,476 [9] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 430
+2013-04-30 12:48:45,492 [9] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 430
+2013-04-30 12:48:55,491 [9] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 430
+2013-04-30 12:53:59,719 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 12:55:20,024 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:55:30,033 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:55:40,071 [9] ERROR - Ya se agregó un elemento con la misma clave. -    en System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   en System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 466
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:55:50,056 [9] ERROR - Ya se agregó un elemento con la misma clave. -    en System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   en System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 466
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 12:56:00,076 [9] ERROR - Ya se agregó un elemento con la misma clave. -    en System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   en System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 466
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 13:00:07,197 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 13:02:37,554 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 13:03:29,448 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 13:03:31,389 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 13:04:39,009 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 13:05:06,864 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-30 13:06:17,154 [9] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 458
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 13:06:27,167 [9] ERROR - Ya se agregó un elemento con la misma clave. -    en System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   en System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 466
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439
+2013-04-30 13:06:37,166 [9] ERROR - Ya se agregó un elemento con la misma clave. -    en System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   en System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   en Hoteles.fPrincipal.activarIconosAlarmas(List`1 alarmas) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 466
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 439

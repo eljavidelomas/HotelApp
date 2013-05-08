@@ -8,7 +8,7 @@ namespace Hoteles.Entities
 {
     public class Limpiador
     {
-        static public void limpiarCampos(fPrincipal fPrincipal, Keys key)
+        static public void limpiarCampos(fPrincipal2 fPrincipal, Keys key)
         {
 
             //fPrincipal.input1.Text = "";

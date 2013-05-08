@@ -1,0 +1,19 @@
+2013-04-04 00:42:42,369 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-04 01:12:20,267 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-04 01:33:52,000 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-04 01:36:48,062 [9] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-04-04 01:49:15,923 [9] ERROR - Could not find stored procedure 'cierresCajas_contabilizarTurnos'. -    en Hoteles.FormCierrePlanilla.confirmarCierre() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierrePlanilla.cs:línea 217
+   en Hoteles.FormCierrePlanilla.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierrePlanilla.cs:línea 165
+2013-04-04 02:01:52,185 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-04 02:07:06,170 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-04 02:12:33,478 [11] INFO  - Comienzo - Aplicacion Hotel
+2013-04-04 02:16:43,635 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-04 02:18:22,917 [10] INFO  - Comienzo - Aplicacion Hotel

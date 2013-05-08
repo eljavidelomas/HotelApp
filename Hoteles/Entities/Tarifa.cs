@@ -186,7 +186,7 @@ namespace Hoteles.Entities
         {
             DataSet ds = new DataSet();
             Tarifa tarifa;
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("tarifas_obtenerActual", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("tarifas_obtenerActual", fPrincipal2.conn);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@catId", catId);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@dia", dia);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@diaAnt", diaAnt);
@@ -223,7 +223,7 @@ namespace Hoteles.Entities
             Tarifa tarifa;
             //int diaAct;
             int diaAnt = Calendario.nroDiaAnt(hora);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("tarifas_obtenerSiguiente", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("tarifas_obtenerSiguiente", fPrincipal2.conn);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@catId", catId);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@dia", diaAct);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@diaSig", diaSig);
@@ -244,7 +244,7 @@ namespace Hoteles.Entities
             try
             {
                 dataAdapter.Fill(ds);
-                tarifa = new Tarifa(ds.Tables[0].Rows[0]);
+                tarifa = new Tarifa(ds.Tables[ds.Tables.Count-1].Rows[0]);
             }
             catch (Exception ex)
             {

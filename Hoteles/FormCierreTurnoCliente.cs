@@ -59,7 +59,8 @@ namespace Hoteles
                 if (keyData == Keys.Enter)
                 {
                     
-                    Habitacion.Cierre((fPrincipal)form.Owner, form.nroHab, form.impDescArt, form.descuento, form.medioPago,form.detallesHab.impHabitacion);
+                    Habitacion.Cierre((fPrincipal2)form.Owner, form.nroHab, form.impDescArt, form.descuento, form.medioPago,form.detallesHab.impHabitacion);
+                    ((fPrincipal2)form.Owner).borrarPB_parpadeo(form.nroHab);                   
                     volverFormPrincipal();
                                                 
                     return true;
@@ -88,7 +89,7 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación a cancelar*";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {

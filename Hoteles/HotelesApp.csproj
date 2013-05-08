@@ -69,6 +69,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -87,8 +93,31 @@
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="confirmar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="confirmar.Designer.cs">
+      <DependentUpon>confirmar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\itemDicParpadeo.cs" />
+    <Compile Include="FormEstadoCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstadoCaja.Designer.cs">
+      <DependentUpon>FormEstadoCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ControladorHabitacion.cs" />
     <Compile Include="FormClavesOpcionales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,11 +215,17 @@
     <Compile Include="FormAsignarHab.Designer.cs">
       <DependentUpon>FormAsignarHab.cs</DependentUpon>
     </Compile>
-    <Compile Include="fPrincipal.cs">
+    <Compile Include="fPrincipal_bk.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fPrincipal.Designer.cs">
-      <DependentUpon>fPrincipal.cs</DependentUpon>
+    <Compile Include="fPrincipal_bk.Designer.cs">
+      <DependentUpon>fPrincipal_bk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPrincipal2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPrincipal2.Designer.cs">
+      <DependentUpon>fPrincipal2.cs</DependentUpon>
     </Compile>
     <Compile Include="hotelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -202,8 +237,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>hotelDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="opcionesCambEst.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>opcionesCambEst.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="confirmar.resx">
+      <DependentUpon>confirmar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstadoCaja.resx">
+      <DependentUpon>FormEstadoCaja.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormClavesOpcionales.resx">
       <DependentUpon>FormClavesOpcionales.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -252,9 +299,12 @@
       <DependentUpon>FormAsignarHab.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="fPrincipal.resx">
-      <DependentUpon>fPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="fPrincipal_bk.resx">
+      <DependentUpon>fPrincipal_bk.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPrincipal2.resx">
+      <DependentUpon>fPrincipal2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -353,7 +403,43 @@
     <None Include="Resources\reloj-despertador.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="opcionesCambEst.xsc">
+      <DependentUpon>opcionesCambEst.xsd</DependentUpon>
+    </None>
+    <None Include="opcionesCambEst.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>opcionesCambEst.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="opcionesCambEst.xss">
+      <DependentUpon>opcionesCambEst.xsd</DependentUpon>
+    </None>
     <None Include="Resources\libros.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\relojSonando.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarmclr.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\relojDespertador_mov.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarmclr1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\relojDespertadorJavi.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlarmaSonando.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parpadeoRojo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Resources\parpadeoVerde.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

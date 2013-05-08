@@ -30,14 +30,14 @@ namespace Hoteles
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGlobal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvOpcionesElegidas = new System.Windows.Forms.DataGridView();
+            this.nroClave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelIngresoDatos = new System.Windows.Forms.FlowLayoutPanel();
@@ -47,20 +47,13 @@ namespace Hoteles
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
-            this.dgvOpcionesElegidas = new System.Windows.Forms.DataGridView();
-            this.nroClave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvOpcionesElegidas2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas)).BeginInit();
             this.panelIngresoDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.opcionesAsignarHabitacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelGlobal
@@ -82,7 +75,6 @@ namespace Hoteles
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.dgvOpcionesElegidas2, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.dgvOpcionesElegidas, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelTitulo, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelMensaje, 1, 2);
@@ -98,6 +90,67 @@ namespace Hoteles
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1153, 637);
             this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // dgvOpcionesElegidas
+            // 
+            this.dgvOpcionesElegidas.AllowUserToAddRows = false;
+            this.dgvOpcionesElegidas.AllowUserToDeleteRows = false;
+            this.dgvOpcionesElegidas.AllowUserToResizeColumns = false;
+            this.dgvOpcionesElegidas.AllowUserToResizeRows = false;
+            this.dgvOpcionesElegidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOpcionesElegidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvOpcionesElegidas.ColumnHeadersHeight = 50;
+            this.dgvOpcionesElegidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvOpcionesElegidas.ColumnHeadersVisible = false;
+            this.dgvOpcionesElegidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nroClave,
+            this.descripcion});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOpcionesElegidas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvOpcionesElegidas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOpcionesElegidas.Location = new System.Drawing.Point(5, 112);
+            this.dgvOpcionesElegidas.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvOpcionesElegidas.Name = "dgvOpcionesElegidas";
+            this.dgvOpcionesElegidas.ReadOnly = true;
+            this.dgvOpcionesElegidas.RowHeadersVisible = false;
+            this.dgvOpcionesElegidas.RowHeadersWidth = 20;
+            this.dgvOpcionesElegidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvOpcionesElegidas.RowTemplate.Height = 60;
+            this.dgvOpcionesElegidas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOpcionesElegidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvOpcionesElegidas.Size = new System.Drawing.Size(566, 367);
+            this.dgvOpcionesElegidas.TabIndex = 8;
+            // 
+            // nroClave
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nroClave.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nroClave.FillWeight = 180F;
+            this.nroClave.HeaderText = "";
+            this.nroClave.Name = "nroClave";
+            this.nroClave.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.FillWeight = 366F;
+            this.descripcion.HeaderText = "descripcionClave";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
             // 
             // labelTitulo
             // 
@@ -201,128 +254,6 @@ namespace Hoteles
             // 
             this.opcionesAsignarHabitacionTableAdapter.ClearBeforeFill = true;
             // 
-            // dgvOpcionesElegidas
-            // 
-            this.dgvOpcionesElegidas.AllowUserToAddRows = false;
-            this.dgvOpcionesElegidas.AllowUserToDeleteRows = false;
-            this.dgvOpcionesElegidas.AllowUserToResizeColumns = false;
-            this.dgvOpcionesElegidas.AllowUserToResizeRows = false;
-            this.dgvOpcionesElegidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOpcionesElegidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvOpcionesElegidas.ColumnHeadersHeight = 50;
-            this.dgvOpcionesElegidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvOpcionesElegidas.ColumnHeadersVisible = false;
-            this.dgvOpcionesElegidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nroClave,
-            this.descripcion});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOpcionesElegidas.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvOpcionesElegidas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOpcionesElegidas.Location = new System.Drawing.Point(5, 112);
-            this.dgvOpcionesElegidas.Margin = new System.Windows.Forms.Padding(5);
-            this.dgvOpcionesElegidas.Name = "dgvOpcionesElegidas";
-            this.dgvOpcionesElegidas.ReadOnly = true;
-            this.dgvOpcionesElegidas.RowHeadersVisible = false;
-            this.dgvOpcionesElegidas.RowHeadersWidth = 20;
-            this.dgvOpcionesElegidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvOpcionesElegidas.RowTemplate.Height = 60;
-            this.dgvOpcionesElegidas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOpcionesElegidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvOpcionesElegidas.Size = new System.Drawing.Size(566, 367);
-            this.dgvOpcionesElegidas.TabIndex = 8;
-            // 
-            // nroClave
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nroClave.DefaultCellStyle = dataGridViewCellStyle5;
-            this.nroClave.FillWeight = 180F;
-            this.nroClave.HeaderText = "";
-            this.nroClave.Name = "nroClave";
-            this.nroClave.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.FillWeight = 366F;
-            this.descripcion.HeaderText = "descripcionClave";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // dgvOpcionesElegidas2
-            // 
-            this.dgvOpcionesElegidas2.AllowUserToAddRows = false;
-            this.dgvOpcionesElegidas2.AllowUserToDeleteRows = false;
-            this.dgvOpcionesElegidas2.AllowUserToResizeColumns = false;
-            this.dgvOpcionesElegidas2.AllowUserToResizeRows = false;
-            this.dgvOpcionesElegidas2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOpcionesElegidas2.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvOpcionesElegidas2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOpcionesElegidas2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvOpcionesElegidas2.ColumnHeadersHeight = 50;
-            this.dgvOpcionesElegidas2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvOpcionesElegidas2.ColumnHeadersVisible = false;
-            this.dgvOpcionesElegidas2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOpcionesElegidas2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvOpcionesElegidas2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOpcionesElegidas2.Location = new System.Drawing.Point(581, 112);
-            this.dgvOpcionesElegidas2.Margin = new System.Windows.Forms.Padding(5);
-            this.dgvOpcionesElegidas2.Name = "dgvOpcionesElegidas2";
-            this.dgvOpcionesElegidas2.ReadOnly = true;
-            this.dgvOpcionesElegidas2.RowHeadersVisible = false;
-            this.dgvOpcionesElegidas2.RowHeadersWidth = 20;
-            this.dgvOpcionesElegidas2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvOpcionesElegidas2.RowTemplate.Height = 60;
-            this.dgvOpcionesElegidas2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOpcionesElegidas2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvOpcionesElegidas2.Size = new System.Drawing.Size(567, 367);
-            this.dgvOpcionesElegidas2.TabIndex = 9;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.FillWeight = 180F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 366F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "descripcionClave";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
             // FormClavesOpcionales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,13 +266,12 @@ namespace Hoteles
             this.Load += new System.EventHandler(this.FormAsignarHab_Load);
             this.panelGlobal.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas)).EndInit();
             this.panelIngresoDatos.ResumeLayout(false);
             this.panelIngresoDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.opcionesAsignarHabitacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,9 +290,6 @@ namespace Hoteles
         private Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter opcionesAsignarHabitacionTableAdapter;
         public System.Windows.Forms.TextBox tbNroHab;
         private System.Windows.Forms.DataGridView dgvOpcionesElegidas;
-        private System.Windows.Forms.DataGridView dgvOpcionesElegidas2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroClave;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         

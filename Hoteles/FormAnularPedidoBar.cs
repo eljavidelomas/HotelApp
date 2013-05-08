@@ -137,6 +137,21 @@ namespace Hoteles
                             labelNroHab.Text = "Confirma anulación ?";
                             tbNroHab.Text = "1";
                             tbNroHab.Visible = false;
+
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvPromos.Rows.Clear();
+                            dgvPromos.RowTemplate.Height = 80;
+                            dgvPromos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                            dgvPromos.Columns[1].HeaderText = " Opciones ";
+                            dgvPromos.Columns.RemoveAt(3);
+                            dgvPromos.Columns.RemoveAt(2);
+                            dgvPromos.Columns.RemoveAt(0);
+                            dgvPromos.Rows.Add("Esc - Cancelar");
+                            dgvPromos.Rows.Add("Enter - Confirmar");
+                            dgvPromos.ClearSelection();
+                            panelPromos.Visible = true;
+                            /*-----------------------------------------------*/
+
                             break;
                         }
                         labelMensaje.Visible = false;
@@ -205,7 +220,7 @@ namespace Hoteles
                         {
                             try
                             {
-                                Articulo.anularPedidoBar((fPrincipal)this.Owner, DictArticulosAnulados, nroHab);
+                                Articulo.anularPedidoBar((fPrincipal2)this.Owner, DictArticulosAnulados, nroHab);
                                 volverFormPrincipal();
                                 
                                 return;
@@ -260,7 +275,7 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación *";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {

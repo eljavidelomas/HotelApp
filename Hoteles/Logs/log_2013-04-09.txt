@@ -1,0 +1,18 @@
+2013-04-09 01:58:57,460 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 21:29:06,571 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 21:38:38,509 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 21:40:36,415 [10] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.FormAdelantoDinero.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAdelantoDinero.cs:línea 115
+2013-04-09 21:47:36,139 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 22:09:32,364 [8] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 22:13:13,675 [10] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 22:46:20,560 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 23:12:17,748 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 23:20:13,583 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 23:24:46,928 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 23:28:02,213 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 23:38:45,809 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 23:42:14,506 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 23:47:44,237 [9] INFO  - Comienzo - Aplicacion Hotel
+2013-04-09 23:50:01,918 [9] INFO  - Comienzo - Aplicacion Hotel

@@ -1,0 +1,23 @@
+2013-04-17 00:33:36,112 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 00:35:53,605 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 00:38:33,208 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 00:38:55,260 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 00:50:14,180 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 00:57:26,431 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:02:54,408 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:03:21,435 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:05:01,731 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:08:40,803 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:47:56,040 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:49:07,060 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:50:30,656 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:51:22,610 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:54:53,519 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 01:55:10,583 [1] ERROR - Ya se agregó un elemento con la misma clave. -    en System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   en System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   en Hoteles.FormAvisosHorarios.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAvisosHorarios.cs:línea 139
+2013-04-17 01:55:55,780 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 02:09:31,719 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 02:13:36,700 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-17 02:14:37,736 [1] INFO  - Comienzo - Aplicacion Hotel

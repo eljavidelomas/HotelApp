@@ -15,13 +15,15 @@ namespace Hoteles.Entities
         static string funcion;
         static int luz = 1;
 
-        static public Boolean ProcesarTecla(Keys tecla,fPrincipal formPrincipal)
+        static public Boolean ProcesarTecla(Keys tecla,fPrincipal2 formPrincipal)
         {       
             
             if (tecla == Keys.Escape)
             {
-                fPresionada = false;
-                             
+                for (int nH = 101; nH < 121; nH++)
+                {
+                    formPrincipal.estadoHabitaciones[nH] = 0;
+                }                             
                 return true;
             }
             if(tecla == Keys.Alt)
@@ -152,7 +154,12 @@ namespace Hoteles.Entities
                             
                             break;
                         case Keys.F11:
-                            formPrincipal.dataGridView1.FirstDisplayedScrollingRowIndex = formPrincipal.dataGridView1.Rows.GetLastRow(DataGridViewElementStates.Displayed);
+                            FormEstadoCaja fEstCaja = new FormEstadoCaja();
+                            fEstCaja.Owner = formPrincipal;
+                            fEstCaja.Show();
+                            formPrincipal.Hide();
+                            fEstCaja.Activate();
+
                             break;
                         case Keys.F12:
                             FormCierrePlanilla cierrePlanilla = new FormCierrePlanilla();

@@ -1,0 +1,20 @@
+2013-04-12 20:32:23,656 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-12 21:19:03,571 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-12 21:25:28,383 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-12 21:26:59,477 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-12 21:42:12,637 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-12 23:44:48,484 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-12 23:46:22,391 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:1 hora:2013-04-12 23:46:22
+2013-04-12 23:46:22,397 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Referencia a objeto no establecida como instancia de un objeto.    en Hoteles.Entities.Tarifa.calcularPrecioConPernocte(Int32 catId, Tarifa& tarifaNoche) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Tarifa.cs:línea 119
+   en Hoteles.Entities.Habitacion.calcularPrecioTurno(Int32 pernocte, Decimal descuentoId, Int32 puntos, Int32 catId) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 332
+2013-04-12 23:46:28,241 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:1 hora:2013-04-12 23:46:28
+2013-04-12 23:46:28,248 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Referencia a objeto no establecida como instancia de un objeto.    en Hoteles.Entities.Tarifa.calcularPrecioConPernocte(Int32 catId, Tarifa& tarifaNoche) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Tarifa.cs:línea 119
+   en Hoteles.Entities.Habitacion.calcularPrecioTurno(Int32 pernocte, Decimal descuentoId, Int32 puntos, Int32 catId) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 332
+2013-04-12 23:47:22,007 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:1 hora:2013-04-12 23:47:21
+2013-04-12 23:47:22,011 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Referencia a objeto no establecida como instancia de un objeto.    en Hoteles.Entities.Tarifa.calcularPrecioConPernocte(Int32 catId, Tarifa& tarifaNoche) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Tarifa.cs:línea 119
+   en Hoteles.Entities.Habitacion.calcularPrecioTurno(Int32 pernocte, Decimal descuentoId, Int32 puntos, Int32 catId) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 332
+2013-04-12 23:48:18,073 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:1 hora:2013-04-12 23:48:18
+2013-04-12 23:49:02,228 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Referencia a objeto no establecida como instancia de un objeto.    en Hoteles.Entities.Tarifa.calcularPrecioConPernocte(Int32 catId, Tarifa& tarifaNoche) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Tarifa.cs:línea 119
+   en Hoteles.Entities.Habitacion.calcularPrecioTurno(Int32 pernocte, Decimal descuentoId, Int32 puntos, Int32 catId) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 332
+2013-04-12 23:50:14,601 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:1 hora:2013-04-12 23:49:15
+2013-04-12 23:54:24,599 [1] INFO  - Comienzo - Aplicacion Hotel

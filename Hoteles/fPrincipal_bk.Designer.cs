@@ -5,7 +5,7 @@ using Hoteles.Properties;
 using System.IO;
 namespace Hoteles
 {
-    partial class fPrincipal
+    partial class fPrincipal_bk
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -450,20 +450,16 @@ namespace Hoteles
             // 
             // timerHora
             // 
-            this.timerHora.Enabled = true;
             this.timerHora.Interval = 10000;
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
             // timerParpadeo
             // 
-            this.timerParpadeo.Enabled = true;
-            this.timerParpadeo.Interval = 1000;
-            this.timerParpadeo.Tick += new System.EventHandler(this.timerParpadeo_Tick);
+            this.timerParpadeo.Interval = 3000;
             // 
             // timerValidarAlarmas
             // 
-            this.timerValidarAlarmas.Enabled = true;
-            this.timerValidarAlarmas.Interval = 10000;
+            this.timerValidarAlarmas.Interval = 5000;
             this.timerValidarAlarmas.Tick += new System.EventHandler(this.timerValidarAlarmas_Tick);
             // 
             // fPrincipal
@@ -479,6 +475,7 @@ namespace Hoteles
             this.Name = "fPrincipal";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.fPrincipal_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fPrincipal_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panelFunciones.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

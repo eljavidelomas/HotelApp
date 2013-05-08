@@ -32,7 +32,7 @@ namespace Hoteles.Entities
         static public DataTable obtenerListaCuentasGastos()
         {
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from cuentasGastos", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from cuentasGastos", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.Text;
             try
             {
@@ -48,7 +48,7 @@ namespace Hoteles.Entities
         static public DataTable obtenerGastos(int conserjeId)
         {
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("gastos_obtenerListado", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("gastos_obtenerListado", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.AddWithValue("@conserjeId", conserjeId);
             try
@@ -67,7 +67,7 @@ namespace Hoteles.Entities
             try
             {
                 SqlCommand comm;
-                comm = new SqlCommand("gastos_insertar", fPrincipal.conn);
+                comm = new SqlCommand("gastos_insertar", fPrincipal2.conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@nroCuenta", nroCuenta);
                 comm.Parameters.AddWithValue("@monto", monto);
@@ -84,7 +84,7 @@ namespace Hoteles.Entities
             try
             {
                 SqlCommand comm;
-                comm = new SqlCommand("gastos_devolver", fPrincipal.conn);
+                comm = new SqlCommand("gastos_devolver", fPrincipal2.conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@nroCuenta", nroCuenta);
                 comm.Parameters.AddWithValue("@monto", monto);

@@ -5,7 +5,13 @@ using System.Text;
 
 namespace Hoteles.Entities
 {
-    class ControladorHabitacion
+    public class ControladorHabitacion
     {
+        public fPrincipal2 formPrincipal;
+
+        public void ControlarHabitaciones()
+        {
+
+        }
     }
 }

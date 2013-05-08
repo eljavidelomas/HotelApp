@@ -33,9 +33,7 @@ namespace Hoteles
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGlobal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvOpcionesElegidas = new System.Windows.Forms.DataGridView();
@@ -92,14 +90,16 @@ namespace Hoteles
             this.tableLayoutPanel2.Controls.Add(this.panelIngresoDatos, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.panelPromos, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Font = new System.Drawing.Font("Palatino Linotype", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.95447F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.97488F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.91366F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1153, 637);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
@@ -115,7 +115,7 @@ namespace Hoteles
             this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -129,7 +129,7 @@ namespace Hoteles
             this.dgvOpcionesElegidas.DataSource = this.opcionesAsignarHabitacionBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -181,17 +181,17 @@ namespace Hoteles
             this.tableLayoutPanel2.SetColumnSpan(this.labelTitulo, 2);
             this.labelTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelTitulo.Font = new System.Drawing.Font("MV Boli", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Font = new System.Drawing.Font("MV Boli", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.ForeColor = System.Drawing.SystemColors.InfoText;
             this.labelTitulo.Image = global::Hoteles.Properties.Resources.libros;
             this.labelTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelTitulo.Location = new System.Drawing.Point(5, 5);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(5);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Padding = new System.Windows.Forms.Padding(100, 10, 100, 10);
+            this.labelTitulo.Padding = new System.Windows.Forms.Padding(125, 10, 125, 10);
             this.labelTitulo.Size = new System.Drawing.Size(1143, 98);
             this.labelTitulo.TabIndex = 1;
-            this.labelTitulo.Text = "Asignar Habitacion";
+            this.labelTitulo.Text = "Asignar Habitación";
             this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelMensaje
@@ -221,7 +221,7 @@ namespace Hoteles
             this.panelIngresoDatos.Location = new System.Drawing.Point(5, 546);
             this.panelIngresoDatos.Margin = new System.Windows.Forms.Padding(5);
             this.panelIngresoDatos.Name = "panelIngresoDatos";
-            this.panelIngresoDatos.Padding = new System.Windows.Forms.Padding(0, 25, 0, 20);
+            this.panelIngresoDatos.Padding = new System.Windows.Forms.Padding(0, 25, 0, 15);
             this.panelIngresoDatos.Size = new System.Drawing.Size(566, 86);
             this.panelIngresoDatos.TabIndex = 7;
             // 
@@ -230,7 +230,8 @@ namespace Hoteles
             this.labelNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelNroHab.AutoSize = true;
             this.labelNroHab.Font = new System.Drawing.Font("Book Antiqua", 22F, System.Drawing.FontStyle.Bold);
-            this.labelNroHab.Location = new System.Drawing.Point(3, 28);
+            this.labelNroHab.Location = new System.Drawing.Point(7, 26);
+            this.labelNroHab.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelNroHab.Name = "labelNroHab";
             this.labelNroHab.Size = new System.Drawing.Size(288, 35);
             this.labelNroHab.TabIndex = 3;
@@ -240,11 +241,12 @@ namespace Hoteles
             // 
             this.tbNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tbNroHab.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.tbNroHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNroHab.Location = new System.Drawing.Point(297, 28);
+            this.tbNroHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNroHab.Location = new System.Drawing.Point(302, 25);
+            this.tbNroHab.Margin = new System.Windows.Forms.Padding(0);
             this.tbNroHab.MaxLength = 5;
             this.tbNroHab.Name = "tbNroHab";
-            this.tbNroHab.Size = new System.Drawing.Size(65, 35);
+            this.tbNroHab.Size = new System.Drawing.Size(156, 38);
             this.tbNroHab.TabIndex = 2;
             this.tbNroHab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbNroHab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNroHab_KeyPress);
@@ -269,27 +271,11 @@ namespace Hoteles
             this.dgvPromos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPromos.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvPromos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPromos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPromos.ColumnHeadersHeight = 50;
             this.dgvPromos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPromos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nro,
             this.promociones});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPromos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPromos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPromos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPromos.GridColor = System.Drawing.SystemColors.ControlLight;
@@ -307,8 +293,8 @@ namespace Hoteles
             // 
             // nro
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nro.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nro.DefaultCellStyle = dataGridViewCellStyle3;
             this.nro.FillWeight = 20.30457F;
             this.nro.HeaderText = "";
             this.nro.Name = "nro";
@@ -316,8 +302,8 @@ namespace Hoteles
             // 
             // promociones
             // 
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.promociones.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.promociones.DefaultCellStyle = dataGridViewCellStyle4;
             this.promociones.FillWeight = 179.6954F;
             this.promociones.HeaderText = "Promociones";
             this.promociones.Name = "promociones";
@@ -334,6 +320,7 @@ namespace Hoteles
             this.tableLayoutPanel1.Controls.Add(this.labelConf, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.804124F));
@@ -348,9 +335,10 @@ namespace Hoteles
             this.labelConf.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelConf.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConf.ForeColor = System.Drawing.Color.Red;
-            this.labelConf.Location = new System.Drawing.Point(108, 686);
+            this.labelConf.Location = new System.Drawing.Point(112, 686);
+            this.labelConf.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelConf.Name = "labelConf";
-            this.labelConf.Size = new System.Drawing.Size(558, 44);
+            this.labelConf.Size = new System.Drawing.Size(550, 44);
             this.labelConf.TabIndex = 1;
             this.labelConf.Text = "Enter - Confirma          Esc - Salir";
             this.labelConf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -362,11 +350,13 @@ namespace Hoteles
             // 
             // FormAsignarHab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1350, 730);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "FormAsignarHab";
             this.Text = "FormAsignar";
             this.Load += new System.EventHandler(this.FormAsignarHab_Load);

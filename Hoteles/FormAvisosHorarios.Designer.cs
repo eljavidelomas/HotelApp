@@ -113,7 +113,7 @@ namespace Hoteles
             this.dgvOpcionesElegidas.AllowUserToResizeColumns = false;
             this.dgvOpcionesElegidas.AllowUserToResizeRows = false;
             this.dgvOpcionesElegidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOpcionesElegidas.BackgroundColor = tools.backColorDetallesHab;
+            this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -216,7 +216,7 @@ namespace Hoteles
             // 
             this.labelNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelNroHab.AutoSize = true;
-            this.labelNroHab.Font = tools.fuenteLabelNroHab;
+            this.labelNroHab.Font = new System.Drawing.Font("Book Antiqua", 22F, System.Drawing.FontStyle.Bold);
             this.labelNroHab.Location = new System.Drawing.Point(3, 28);
             this.labelNroHab.Name = "labelNroHab";
             this.labelNroHab.Size = new System.Drawing.Size(288, 35);
@@ -284,6 +284,7 @@ namespace Hoteles
             this.dgvListadoAvisos.ShowRowErrors = false;
             this.dgvListadoAvisos.Size = new System.Drawing.Size(567, 423);
             this.dgvListadoAvisos.TabIndex = 0;
+            this.dgvListadoAvisos.Visible = false;
             // 
             // id
             // 

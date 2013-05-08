@@ -25,7 +25,7 @@ namespace Hoteles.Entities
         public Conserje(int nroConserje)
         {
             DataSet ds = new DataSet();            
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from conserjes where usuario = " + nroConserje.ToString(), fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from conserjes where usuario = " + nroConserje.ToString(), fPrincipal2.conn);
             dataAdapter.Fill(ds);
             
             if (ds.Tables[0].Rows.Count > 0)
@@ -42,7 +42,7 @@ namespace Hoteles.Entities
         {
             DataSet ds = new DataSet();
             Conserje conserje;
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from conserjes where logueado = 1", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from conserjes where logueado = 1", fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
                 conserje = new Conserje(ds.Tables[0].Rows[0]);
@@ -55,7 +55,7 @@ namespace Hoteles.Entities
         public static Conserje Login(int usuario, int clave)
         {
             DataSet ds = new DataSet();
-            using (SqlConnection connection = new SqlConnection(fPrincipal.conn.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(fPrincipal2.conn.ConnectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = new SqlCommand("conserje_login", connection);
@@ -73,7 +73,7 @@ namespace Hoteles.Entities
         internal static bool ValidarPass(int conserjeId,string pass)
         {
             DataSet ds = new DataSet();
-            using (SqlConnection connection = new SqlConnection(fPrincipal.conn.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(fPrincipal2.conn.ConnectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = new SqlCommand("select * from conserjes where usuario = " + conserjeId.ToString() + "and clave=" + pass, connection);                
@@ -89,7 +89,7 @@ namespace Hoteles.Entities
         internal static bool Validar(string conserjeId)
         {
             DataSet ds = new DataSet();
-            using (SqlConnection connection = new SqlConnection(fPrincipal.conn.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(fPrincipal2.conn.ConnectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = new SqlCommand("select * from conserjes where usuario = " + conserjeId, connection);                

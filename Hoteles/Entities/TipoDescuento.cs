@@ -26,7 +26,7 @@ namespace Hoteles.Entities
         {
             DataSet ds = new DataSet();                        
             List<TipoDescuento> descuentos = new List<TipoDescuento>();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("tipoDescuentos_getAll", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("tipoDescuentos_getAll", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", nroHab);
             dataAdapter.Fill(ds);

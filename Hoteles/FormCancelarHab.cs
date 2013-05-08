@@ -99,38 +99,29 @@ namespace Hoteles
                             dgvOpcionesElegidas.Rows[5].Cells[1].Value = dgvOpcionesElegidas.Rows[5].Cells[1].Value.ToString() + " " + (detalles.pernocte == 0? "No":"Si");
                             dgvOpcionesElegidas.Rows[6].Cells[1].Value = dgvOpcionesElegidas.Rows[6].Cells[1].Value.ToString() + " " + String.Format("{0:C}",detalles.impAdelantado);
                             
-
-
-
                             labelNroHab.Text = "¿Confirma Cancelar?";
                             tbNroHab.Text = "1";
                             tbNroHab.Visible = false;
                             pasoAsignacion = "confirmar";
 
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvPromos.Rows.Clear();
+                            dgvPromos.RowTemplate.Height = 80;
+                            dgvPromos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                            dgvPromos.Columns[1].HeaderText = " Opciones ";
+                            dgvPromos.Columns.RemoveAt(0);
+                            dgvPromos.Rows.Add("Esc - Cancelar");
+                            dgvPromos.Rows.Add("Enter - Confirmar");
+                            dgvPromos.ClearSelection();
+                            panelPromos.Visible = true;
+                            /*-----------------------------------------------*/
+
                             break;
 
                         case "confirmar":
-
-                            if (string.IsNullOrEmpty(tbNroHab.Text))
-                            {
-                                labelMensaje.Text = "0 - No cancela la habitación.\r\n1 - Cancela la habitación.";
-                                labelMensaje.Visible = true;
-                            }
-                            else if (int.Parse(tbNroHab.Text) == 1)
-                            {
-                                Habitacion.Cancelar((fPrincipal)this.Owner, nroHab);
-                                volverFormPrincipal();
-                            }
-                            else if (int.Parse(tbNroHab.Text) == 0)
-                            {
-                                volverFormPrincipal();
-                            }
-                            else
-                            {
-                                labelMensaje.Text = "0 - No cancela la habitación.\r\n1 - Cancela la habitación.";
-                                labelMensaje.Visible = true;
-                            }
-
+                            Habitacion.Cancelar((fPrincipal2)this.Owner, nroHab);
+                            volverFormPrincipal();
+                            
                             break;
 
                         default:
@@ -161,7 +152,7 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación a cancelar*";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {

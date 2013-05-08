@@ -35,7 +35,7 @@ namespace Hoteles.Entities
             {
                 this.nroHab = int.Parse(dr["nroHabitacion"].ToString());
                 this.desde = DateTime.Parse(dr["desde"].ToString());
-                this.hasta = DateTime.Parse(dr["hasta"].ToString());
+                DateTime.TryParse(dr["horaCierre"].ToString(), out this.hasta);
                 this.socio = dr["nroSocio"].ToString();                
 
                 this.turnos = decimal.Parse(dr["impHabitacion"].ToString());

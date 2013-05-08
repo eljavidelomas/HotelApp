@@ -1,0 +1,239 @@
+2013-03-28 00:46:27,988 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 00:47:49,842 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 01:00:47,220 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 01:16:14,594 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 01:16:48,996 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 01:17:18,808 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 01:31:13,314 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 01:33:15,595 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 01:37:03,546 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 01:41:42,360 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 01:41:59,609 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 01:47:49,508 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:09:56,765 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:10:01,702 [1] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 95
+2013-03-28 02:10:43,326 [1] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 95
+2013-03-28 02:12:18,814 [1] ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.FormCancelarHab.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCancelarHab.cs:línea 95
+2013-03-28 02:18:52,145 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:18:52,365 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:21:42,838 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:23:14,891 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:24:26,079 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:25:48,620 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:35:42,852 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:36:08,940 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:36:09,134 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:38:12,112 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:39:44,159 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:40:46,545 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:44:55,110 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:45:43,460 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:46:01,395 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:46:59,760 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 02:47:05,615 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:47:07,117 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:47:08,318 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:47:09,190 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:47:09,346 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:47:09,562 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:47:09,783 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:47:10,398 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:47:10,637 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:48:07,169 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:48:07,678 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:48:07,877 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:48:08,016 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-28 02:50:53,054 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:50:53,329 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 02:54:18,260 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 03:12:51,298 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 03:12:54,906 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.FormCierreTurno.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierreTurno.cs:línea 115
+2013-03-28 03:13:09,440 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.FormCierreTurno.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierreTurno.cs:línea 115
+2013-03-28 03:13:17,406 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.FormCierreTurno.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierreTurno.cs:línea 115
+2013-03-28 03:15:22,986 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.FormCierreTurno.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierreTurno.cs:línea 115
+2013-03-28 03:18:24,118 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 15:40:33,754 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 15:51:55,045 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 15:51:55,213 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 16:00:07,300 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:04:20,602 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 16:04:20,740 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 16:07:33,428 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:08:44,313 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 16:08:44,463 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-28 16:08:54,507 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:14:17,927 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:23:17,505 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:25:39,624 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:28:31,761 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:32:54,497 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:47:52,775 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:49:01,034 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 16:54:05,627 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 17:03:25,743 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 17:06:38,042 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 17:19:03,455 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 18:16:26,070 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 18:16:56,001 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 18:24:54,727 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:23:50,242 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:25:48,581 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:26:19,077 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:28:57,379 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:29:13,529 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:34:43,121 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:35:51,050 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:36:15,701 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:37:44,127 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:41:15,415 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:43:44,567 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 20:44:26,856 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 21:06:26,182 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 21:17:39,822 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 21:18:06,160 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 21:25:21,112 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 21:36:48,415 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 21:38:28,339 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 21:39:05,026 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 22:34:24,233 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 22:35:32,977 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 22:36:28,417 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-28 22:39:08,040 [1] INFO  - Comienzo - Aplicacion Hotel

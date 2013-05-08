@@ -114,13 +114,7 @@ namespace Hoteles
                             labelMensaje.Visible = true;
                             return;
                         }
-                        //if (tbNroHab.Text == "0") //Esto significa que no quiere mas articulos.
-                        //{
-                        //    labelNroHab.Text = "Confirma pedido ?";
-                        //    tbNroHab.Text = "1";
-                        //    tbNroHab.Visible = false;
-                        //    break;
-                        //}
+                       
                         labelMensaje.Visible = false;
                         nroCuenta = int.Parse(tbNroHab.Text);
                         dgvOpcionesElegidas.Rows.Add(DictCuentas[nroCuenta]);
@@ -172,14 +166,30 @@ namespace Hoteles
                         tbNroHab.Visible = false;
                         labelNroHab.Text = "¿ Confirma ?";
 
+                        /*--- Modifico el dgv Promos ---*/
+                        dgvPromos.Rows.Clear();
+                        dgvPromos.RowTemplate.Height = 80;
+                        dgvPromos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                        dgvPromos.Columns[1].HeaderText = " Opciones ";
+                        dgvPromos.Columns.RemoveAt(0);
+                        dgvPromos.Rows.Add("Esc - Cancelar");
+                        dgvPromos.Rows.Add("Enter - Confirmar");
+                        dgvPromos.ClearSelection();
+                        panelPromos.Visible = true;
+                        /*-----------------------------------------------*/
+
                         break;
 
                     case "confirmar":
                         
                         try
                         {
-                            if(insertar)
-                                Gasto.insertar(nroCuenta,monto);
+                            if (insertar)
+                            {
+                                if (tools.obtenerParametroInt("emisionGastos") == 1)
+                                    new Impresora().ImprimirGasto(labelMensaje, monto, DictCuentas[nroCuenta]);
+                                Gasto.insertar(nroCuenta, monto);
+                            }
                             else
                                 Gasto.devolver(nroCuenta, monto);
                             volverFormPrincipal();                            
@@ -247,7 +257,7 @@ namespace Hoteles
                 dgvPromos.Rows.Add(dr[0], dr[1]);
                 DictCuentas.Add(Convert.ToInt32(dr[0]), dr[1].ToString());
             }
-            foreach (DataRow dr in Gasto.obtenerGastos(((fPrincipal)this.Owner).conserjeActual.usuario).Rows)
+            foreach (DataRow dr in Gasto.obtenerGastos(((fPrincipal2)this.Owner).conserjeActual.usuario).Rows)
             {
                 dgvOpcionesElegidas.Rows.Add(dr[0].ToString(), String.Format("{0:C}", decimal.Parse(dr[1].ToString())));
                 DictGastos.Add(int.Parse(dr[2].ToString()), decimal.Parse(dr[1].ToString()));

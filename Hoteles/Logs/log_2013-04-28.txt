@@ -1,0 +1,21 @@
+2013-04-28 22:01:39,630 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-28 22:35:01,593 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 395
+2013-04-28 22:35:11,594 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 395
+2013-04-28 22:35:21,595 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 395
+2013-04-28 22:35:31,609 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 395
+2013-04-28 22:35:41,608 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 395
+2013-04-28 22:35:51,625 [1] ERROR - La cadena de entrada no tiene el formato correcto. -    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en Hoteles.fPrincipal.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal.cs:línea 395
+2013-04-28 22:59:37,857 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-28 23:35:07,728 [1] INFO  - Comienzo - Aplicacion Hotel

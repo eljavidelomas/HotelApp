@@ -10,19 +10,19 @@ namespace Hoteles.Entities
 
         public static int nroDia(DateTime fecha)
         {
-            int dia = (int)DateTime.Today.DayOfWeek;
+            int dia = (int)fecha.DayOfWeek;
             return dia;
         }
 
         public static int nroDiaSig(DateTime fecha)
         {
-            int dia = (int)DateTime.Today.AddDays(1).DayOfWeek;
+            int dia = (int)fecha.AddDays(1).DayOfWeek;
             return dia;
         }
 
         public static int nroDiaAnt(DateTime fecha)
         {
-            int dia = (int)DateTime.Today.AddDays(-1).DayOfWeek;
+            int dia = (int)fecha.AddDays(-1).DayOfWeek;
             return dia;
         }
 

@@ -13,15 +13,16 @@ using System.Globalization;
 
 namespace Hoteles
 {
-
-
+    
     public partial class FormAvisosHorarios : Form
     {
         int nroHab;
         int avisoSel;
         int hora;
         string pasoAsignacion = "nroHabitacion";
+        int opcion;
         List<Aviso> lAvisos = new List<Aviso>();
+        Dictionary<int, Aviso> dictAlarmasSel = new Dictionary<int, Aviso>();
         Dictionary<int, Aviso> dictAvisosSel = new Dictionary<int, Aviso>();
         Dictionary<int, Aviso> dictAvisos = new Dictionary<int, Aviso>();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -59,12 +60,26 @@ namespace Hoteles
                 return true;
             }
             if (keyData == Keys.F7)
-            {
-                Alarma.desactivar();
-                Habitacion.quitarAviso((fPrincipal)this.Owner, ((fPrincipal)this.Owner).alarmas[0].nroHab, ((fPrincipal)this.Owner).alarmas[0].id);                
-                ((fPrincipal)this.Owner).alarmas.RemoveAt(0);    
+            {                
+                if (((fPrincipal2)this.Owner).alarmas.Count > 0 && pasoAsignacion=="opcion")
+                {
+                    if (((fPrincipal2)this.Owner).alarmas[0].nroHab == nroHab)
+                    {
+                        Alarma.desactivar();
+                        Habitacion.quitarAlarma((fPrincipal2)this.Owner, ((fPrincipal2)this.Owner).alarmas[0].nroHab, ((fPrincipal2)this.Owner).alarmas[0].id);
+
+                        fPrincipal2.dicAlarmasSonando.Remove(((fPrincipal2)this.Owner).alarmas[0].nroHab);
+                        ((fPrincipal2)this.Owner).alarmas.RemoveAt(0);
+
+
+                        //---   Redibujo el listado de turnos
+                        tools.actualizarListadoTurnos(((fPrincipal2)this.Owner).dataGridView1, ((fPrincipal2)this.Owner).dataGridView2);
+                        volverFormPrincipal();
+                    }
+
+                }
             }
-            if (pasoAsignacion == "confirmar" || pasoAsignacion == "quitar")
+            if (pasoAsignacion == "confirmar" || pasoAsignacion == "quitar" || pasoAsignacion== "confirmarAviso" || pasoAsignacion=="quitarAviso")
             {
                 if (keyData == Keys.Enter)
                     tbNroHab_KeyPress(this.tbNroHab, new KeyPressEventArgs((char)keyData));
@@ -103,21 +118,94 @@ namespace Hoteles
                             }
                             labelMensaje.Visible = false;
                             nroHab = int.Parse(tbNroHab.Text);
-                            lAvisos = Habitacion.obtenerAvisos(nroHab);
                             dgvOpcionesElegidas.Rows[0].Cells[0].Value = dgvOpcionesElegidas.Rows[0].Cells[0].Value.ToString() + " " + nroHab;
+
+                            lAvisos = Habitacion.obtenerAlarmas(nroHab);
                             foreach (Aviso aviso in lAvisos)
                             {
-                                dgvOpcionesElegidas.Rows.Add(aviso.mensaje + " " + aviso.hora.ToShortTimeString());
+                                dgvOpcionesElegidas.Rows.Add(aviso.mensaje + "  -  " + aviso.hora.ToString("HH:mm"));
+                                dictAlarmasSel.Add(aviso.id, aviso);
+                            }
+                            lAvisos.Clear();
+                            lAvisos = Habitacion.obtenerAvisos(nroHab);
+                            foreach (Aviso aviso in lAvisos)
+                            {
+                                dgvOpcionesElegidas.Rows.Add(aviso.mensaje);
                                 dictAvisosSel.Add(aviso.id, aviso);
                             }
-                            labelNroHab.Text = "Seleccione Aviso ";
-                            tbNroHab.Text = "0";
-                            pasoAsignacion = "aviso";
+                            
+                            dgvListadoAvisos.Rows.Clear();
+                            dgvListadoAvisos.Columns[1].HeaderText = " Opciones ";
+                            dgvListadoAvisos.Rows.Add(1, "Alarmas");
+                            dgvListadoAvisos.Rows.Add(2, "Avisos");
+                            dgvListadoAvisos.Visible = true;
+
+                            labelNroHab.Text = "Ingrese Opción ";
+                            tbNroHab.Text = "1";
+                            pasoAsignacion = "opcion";
                             panelPromos.Visible = true;
 
                             break;
+                        
+                        case "opcion":
+                            int.TryParse(tbNroHab.Text,out opcion);
+                            if (opcion == 1)
+                            {                               
+                                try
+                                {
+                                    dgvListadoAvisos.Rows.Clear();
+                                    foreach (Aviso av in Habitacion.listadoAlarmas())
+                                    {
+                                        dgvListadoAvisos.Rows.Add(av.id.ToString(), av.mensaje);
+                                        dictAvisos.Add(av.id, av);
+                                    }                                    
+                                    dgvOpcionesElegidas.ClearSelection();
+                                    dgvListadoAvisos.ClearSelection();
+                                }
+                                catch (Exception ex)
+                                {
+                                    labelMensaje.Text = ex.Message;
+                                    labelMensaje.Visible = true;
+                                    log.Error(ex.Message + " - " + ex.StackTrace);
+                                }
+                                labelNroHab.Text = "Seleccione Alarma ";
+                                tbNroHab.Text = dictAvisos.Keys.First().ToString();
+                                pasoAsignacion = "alarma";
+                                panelPromos.Visible = true;
+                            }
+                            else if (opcion == 2)
+                            {
+                                try
+                                {
+                                    dgvListadoAvisos.Rows.Clear();
+                                    foreach (Aviso av in Habitacion.listadoAvisos())
+                                    {
+                                        dgvListadoAvisos.Rows.Add(av.id.ToString(), av.mensaje);
+                                        dictAvisos.Add(av.id, av);
+                                    }
+                                    dgvOpcionesElegidas.ClearSelection();
+                                    dgvListadoAvisos.ClearSelection();
+                                }
+                                catch (Exception ex)
+                                {
+                                    labelMensaje.Text = ex.Message;
+                                    labelMensaje.Visible = true;
+                                    log.Error(ex.Message + " - " + ex.StackTrace);
+                                }
+                                labelNroHab.Text = "Seleccione Aviso";
+                                tbNroHab.Text = dictAvisos.Keys.First().ToString();
+                                pasoAsignacion = "aviso";
+                                panelPromos.Visible = true;
+                            }
+                            else
+                            {
+                                labelMensaje.Text = "* La opción elegida no existe *";
+                                labelMensaje.Visible = true;
+                            }
 
-                        case "aviso":
+                            break;
+
+                        case "alarma":
 
                             avisoSel = string.IsNullOrEmpty(tbNroHab.Text) ? 0 : int.Parse(tbNroHab.Text);
                             if (!dictAvisos.ContainsKey(avisoSel))
@@ -154,9 +242,22 @@ namespace Hoteles
                                 labelNroHab.Text = "Confirma eliminación? ";
                                 tbNroHab.Visible = false;
                                 pasoAsignacion = "quitar";
+
+                                /*--- Modifico el dgv Promos ---*/
+                                dgvListadoAvisos.Rows.Clear();
+                                dgvListadoAvisos.RowTemplate.Height = 80;
+                                dgvListadoAvisos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                                dgvListadoAvisos.Columns[1].HeaderText = " Opciones ";
+                                dgvListadoAvisos.Columns.RemoveAt(0);
+                                dgvListadoAvisos.Rows.Add("Esc - Cancelar");
+                                dgvListadoAvisos.Rows.Add("Enter - Confirmar");
+                                dgvListadoAvisos.ClearSelection();
+                                panelPromos.Visible = true;
+                                /*-----------------------------------------------*/
+
                                 break;
                             }
-                            if (dictAvisosSel.ContainsKey(avisoSel))
+                            if (dictAlarmasSel.ContainsKey(avisoSel))
                             {
                                 labelMensaje.Text = "* El Aviso seleccionado ya fue seteado *";
                                 labelMensaje.Visible = true;
@@ -182,15 +283,89 @@ namespace Hoteles
                             pasoAsignacion = "confirmar";
                             labelNroHab.Text = "Confirma Aviso?";
                             tbNroHab.Visible = false;
+
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvListadoAvisos.Rows.Clear();
+                            dgvListadoAvisos.RowTemplate.Height = 80;
+                            dgvListadoAvisos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                            dgvListadoAvisos.Columns[1].HeaderText = " Opciones ";
+                            dgvListadoAvisos.Columns.RemoveAt(0);
+                            dgvListadoAvisos.Rows.Add("Esc - Cancelar");
+                            dgvListadoAvisos.Rows.Add("Enter - Confirmar");
+                            dgvListadoAvisos.ClearSelection();
+                            panelPromos.Visible = true;
+                            /*-----------------------------------------------*/
+
+                            break;
+
+                        case "aviso":
+                            
+                            if (tbNroHab.Text[0] == '.')
+                            {
+                                tbNroHab.Text = tbNroHab.Text.Replace(".", "");
+                                avisoSel = string.IsNullOrEmpty(tbNroHab.Text) ? 0 : int.Parse(tbNroHab.Text);
+                                if (!dictAvisosSel.ContainsKey(avisoSel))
+                                {
+                                    labelMensaje.Text = "* El Aviso seleccionado no fue cargado *";
+                                    labelMensaje.Visible = true;
+                                    return;
+                                }
+                                labelMensaje.Visible = false;
+                                dgvOpcionesElegidas.Rows.Add(dictAvisos[avisoSel].mensaje);
+                                dgvOpcionesElegidas.Rows[dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None)].DefaultCellStyle.ForeColor = Color.Red;
+                                labelNroHab.Text = "Confirma Eliminar Aviso?";
+                                tbNroHab.Visible = false;
+                                pasoAsignacion = "quitarAviso";                                                                
+                            }
+                            else
+                            {
+                                avisoSel = string.IsNullOrEmpty(tbNroHab.Text) ? 0 : int.Parse(tbNroHab.Text);
+
+                                if (!dictAvisos.ContainsKey(avisoSel))
+                                {
+                                    labelMensaje.Text = "* El Aviso seleccionado no existe *";
+                                    labelMensaje.Visible = true;
+                                    return;
+                                }
+
+                                labelMensaje.Visible = false;
+                                dgvOpcionesElegidas.Rows.Add(dictAvisos[avisoSel].mensaje);
+                                labelNroHab.Text = "Confirma Aviso?";
+                                tbNroHab.Visible = false;
+                                pasoAsignacion = "confirmarAviso";
+                            }
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvListadoAvisos.Rows.Clear();
+                            dgvListadoAvisos.RowTemplate.Height = 80;
+                            dgvListadoAvisos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                            dgvListadoAvisos.Columns[1].HeaderText = " Opciones ";
+                            dgvListadoAvisos.Columns.RemoveAt(0);
+                            dgvListadoAvisos.Rows.Add("Esc - Cancelar");
+                            dgvListadoAvisos.Rows.Add("Enter - Confirmar");
+                            dgvListadoAvisos.ClearSelection();
+                            panelPromos.Visible = true;
+                            /*-----------------------------------------------*/
+
                             break;
 
                         case "confirmar":
-                            Habitacion.agregarAviso((fPrincipal)this.Owner ,nroHab, hora, avisoSel);
+                            Habitacion.agregarAlarma((fPrincipal2)this.Owner ,nroHab, hora, avisoSel);
+                            volverFormPrincipal();
+                            return;
+
+                        case "confirmarAviso":
+                            Habitacion.agregarAviso((fPrincipal2)this.Owner, nroHab,avisoSel);
                             volverFormPrincipal();
                             return;
 
                         case "quitar":
-                            Habitacion.quitarAviso((fPrincipal)this.Owner, nroHab, avisoSel);
+                            Habitacion.quitarAlarma((fPrincipal2)this.Owner, nroHab, avisoSel);
+                            tools.actualizarListadoTurnos(((fPrincipal2)this.Owner).dataGridView1, ((fPrincipal2)this.Owner).dataGridView2);
+                            volverFormPrincipal();
+                            return;
+                            
+                        case "quitarAviso":
+                            Habitacion.quitarAviso((fPrincipal2)this.Owner, nroHab, avisoSel);
                             volverFormPrincipal();
                             return;
 
@@ -224,7 +399,7 @@ namespace Hoteles
 
         private bool validarAlarmaExiste(int aviso)
         {            
-            if (!dictAvisosSel.ContainsKey(aviso))
+            if (!dictAlarmasSel.ContainsKey(aviso))
                 return false;
             return true;            
         }
@@ -234,7 +409,7 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación *";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -249,23 +424,24 @@ namespace Hoteles
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
-            try
-            {
-                foreach (Aviso av in Habitacion.listadoAvisos())
-                {
-                    dgvListadoAvisos.Rows.Add(av.id.ToString(), av.mensaje);
-                    dictAvisos.Add(av.id, av);
-                }
-                dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
-                dgvOpcionesElegidas.ClearSelection();
-                dgvListadoAvisos.ClearSelection();
-            }
-            catch (Exception ex)
-            {
-                labelMensaje.Text = ex.Message;
-                labelMensaje.Visible = true;
-                log.Error(ex.Message + " - " + ex.StackTrace);
-            }
+            dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
+            dgvOpcionesElegidas.ClearSelection();
+            dgvListadoAvisos.ClearSelection();
+            //try
+            //{
+            //    foreach (Aviso av in Habitacion.listadoAvisos())
+            //    {
+            //        dgvListadoAvisos.Rows.Add(av.id.ToString(), av.mensaje);
+            //        dictAvisos.Add(av.id, av);
+            //    }
+               
+            //}
+            //catch (Exception ex)
+            //{
+            //    labelMensaje.Text = ex.Message;
+            //    labelMensaje.Visible = true;
+            //    log.Error(ex.Message + " - " + ex.StackTrace);
+            //}
         }
 
         private void labelTitulo_Paint(object sender, PaintEventArgs e)

@@ -147,16 +147,17 @@ namespace Hoteles
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
+            
             //Cargar claves 
             dgvOpcionesElegidas.Rows.Add("1234", "Menu de configuración de la app");
-            dgvOpcionesElegidas2.Rows.Add("14", "Menu de Administración");
+            //dgvOpcionesElegidas2.Rows.Add("14", "Menu de Administración");
             dgvOpcionesElegidas.Rows.Add("55674", "Menu de datos Hotel");
-            dgvOpcionesElegidas2.Rows.Add("1113", "Menu de configuración de la app");
+            //dgvOpcionesElegidas2.Rows.Add("1113", "Menu de configuración de la app");
             dgvOpcionesElegidas.Rows.Add("5434", "Menu de configuración de la app");
         
 
             dgvOpcionesElegidas.ClearSelection();
-            dgvOpcionesElegidas2.ClearSelection();
+            //dgvOpcionesElegidas2.ClearSelection();
         }
 
         private void labelMensaje_Layout(object sender, LayoutEventArgs e)

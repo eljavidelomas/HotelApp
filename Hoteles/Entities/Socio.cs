@@ -34,7 +34,7 @@ namespace Hoteles.Entities
         {
             Socio socio;
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("socios_registrar", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("socios_registrar", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.AddWithValue("@nroSocio", nroSocio);
             try
@@ -57,7 +57,7 @@ namespace Hoteles.Entities
 
         internal void descontarPuntos(int puntos)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("socios_descontarPuntos", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("socios_descontarPuntos", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.AddWithValue("@puntos", puntos);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@nroSocio", this.nroSocio);

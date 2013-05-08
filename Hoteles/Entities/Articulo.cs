@@ -28,7 +28,7 @@ namespace Hoteles.Entities
         static public DataTable obtenerListaArticulos()
         {
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("articulos_obtenerListado", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("articulos_obtenerListado", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             try
             {
@@ -44,7 +44,7 @@ namespace Hoteles.Entities
         static public DataTable obtenerConsumos(int nroHab)
         {
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("articulos_obtenerConsumos", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("articulos_obtenerConsumos", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", nroHab);
             try
@@ -62,7 +62,7 @@ namespace Hoteles.Entities
         {
             DataSet ds = new DataSet();
             Array datos = Array.CreateInstance(typeof(Object), 2);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("articulos_obtenerNombre", fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("articulos_obtenerNombre", fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.AddWithValue("@artId", articuloId);
             try
@@ -80,12 +80,12 @@ namespace Hoteles.Entities
 
         }
 
-        static public bool generarPedidoBar(fPrincipal fPrincipal, Dictionary<int, int> pedido, int nroHab)
+        static public bool generarPedidoBar(fPrincipal2 fPrincipal, Dictionary<int, int> pedido, int nroHab)
         {
             try
             {
                 SqlCommand comm;
-                comm = new SqlCommand("articulos_insertar", fPrincipal.conn);
+                comm = new SqlCommand("articulos_insertar", fPrincipal2.conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@nroHab", nroHab);
 
@@ -98,9 +98,11 @@ namespace Hoteles.Entities
                     comm.Parameters.RemoveAt("@cant");
                 }
 
-                comm.CommandText = "listaTurnos";
-                comm.Parameters.Clear();
-                fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
+                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
+                //comm.CommandText = "listaTurnos_2";
+                //comm.Parameters.Clear();
+                //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
+                //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
 
                 return true;
             }
@@ -111,12 +113,12 @@ namespace Hoteles.Entities
 
         }
 
-        static public bool anularPedidoBar(fPrincipal fPrincipal, Dictionary<int, int> pedido, int nroHab)
+        static public bool anularPedidoBar(fPrincipal2 fPrincipal, Dictionary<int, int> pedido, int nroHab)
         {
             try
             {
                 SqlCommand comm;
-                comm = new SqlCommand("articulos_anularPedido", fPrincipal.conn);
+                comm = new SqlCommand("articulos_anularPedido", fPrincipal2.conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@nroHab", nroHab);
 
@@ -129,9 +131,11 @@ namespace Hoteles.Entities
                     comm.Parameters.RemoveAt("@cant");
                 }
 
-                comm.CommandText = "listaTurnos";
-                comm.Parameters.Clear();
-                fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
+                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
+                //comm.CommandText = "listaTurnos_2";
+                //comm.Parameters.Clear();
+                //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
+                //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
 
                 return true;
             }

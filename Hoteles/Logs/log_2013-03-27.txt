@@ -1,0 +1,181 @@
+2013-03-27 00:33:43,507 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 00:38:49,526 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:04:56,079 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:05:27,153 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 01:05:27
+2013-03-27 01:05:54,471 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 01:05:54
+2013-03-27 01:06:26,653 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 01:06:19
+2013-03-27 01:19:29,488 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:19:48,586 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 01:19:48
+2013-03-27 01:24:03,773 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:24:30,644 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:24:30,854 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:25:14,853 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:29:34,271 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:30:44,817 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-27 01:31:13,921 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:33:17,835 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:33:35,557 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-27 01:33:50,533 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Cannot insert the value NULL into column 'impHabitacion', table 'hotel.dbo.turnos'; column does not allow nulls. INSERT fails.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 76
+2013-03-27 01:34:07,835 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:34:08,026 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 23:55:17,653 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:40:46,958 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:40:50,032 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:40:50,615 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:40:54,329 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:40:59,504 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:00,465 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:00,651 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:00,811 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:00,974 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:01,162 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,004 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,501 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,535 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,566 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,597 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,630 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,661 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,694 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,726 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,759 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:03,791 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:04,812 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:05,311 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:05,492 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:05,711 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:05,950 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:06,447 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:06,480 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:12,191 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:12,559 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:12,722 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:12,882 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:13,054 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:13,274 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:13,510 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:14,274 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:15,234 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:15,545 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:15,956 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:16,453 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:16,587 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:17,173 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:17,548 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:18,794 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:19,153 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:19,310 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:33,313 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:33,610 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:41:33,787 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:42:01,149 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:42:41,878 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:42:43,894 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:50:27,528 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:52:32,028 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 01:52:48,410 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 01:52:48
+2013-03-27 01:53:11,447 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 01:53:11
+2013-03-27 01:54:05,034 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 01:54:05,275 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 02:08:41,759 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 02:18:13,119 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 02:18:47,731 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 21:37:39,770 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 21:43:09,334 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 23:01:43,624 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 23:02:40,130 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 23:03:57,166 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 23:45:57,084 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 23:46:46,252 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 23:47:10,931 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 23:47:12,826 [1] ERROR - fPrincipal - ProcessCmdKey  = El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2013-03-27 23:47:28,021 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-03-27 23:48:05,787 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 23:48:05
+2013-03-27 23:48:11,678 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 23:48:11
+2013-03-27 23:48:12,780 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 23:48:12
+2013-03-27 23:48:12,958 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 23:48:12
+2013-03-27 23:48:13,345 [1] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:5 hora:2013-03-27 23:48:13

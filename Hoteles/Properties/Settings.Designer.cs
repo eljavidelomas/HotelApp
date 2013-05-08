@@ -66,16 +66,40 @@ namespace Hoteles.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"
-          ****************************************************************************************************************************
-          Conserje:##conserjeId   ##conserjeNm            === Arqueo de caja ===                Fecha: ##fecha   Hora:##hora
-          ****************************************************************************************************************************
+****************************************************************************************************************************
+Conserje:##conserjeId##conserjeNm           === Arqueo de Caja - Nro:##nroArq ===           Fecha: ##fecha   Hora:##hora
+****************************************************************************************************************************
 
-                                           ____________________ FACTURADO _________________      ___________ CAJA ___________
-          Nro  HAB  Desde  Hasta   Socio   Turnos     Extras     Bar     Descuento    Total      Efectivo   Tarjeta  	  gastos
-          ----------------------------------------------------------------------------------------------------------------------r\n")]
+                                   ____________________ FACTURADO _________________      ___________ CAJA ____________
+Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Descuento    Total      Efectivo   Tarjeta     Gastos
+----------------------------------------------------------------------------------------------------------------------")]
         public string planillaCierre {
             get {
                 return ((string)(this["planillaCierre"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\nFecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\r\n-----------------------------" +
+            "------\r\n  Monto       Gasto\r\n-----------------------------------\\r\\n")]
+        public string ticketGasto {
+            get {
+                return ((string)(this["ticketGasto"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"
+                              LISTADO ARTICULOS EN STOCK
+                             ============================
+
+ NUM    DESCRIPCIÓN               STOCK     CONSUMO     REPONER     STOCK GENERAL
+=================================================================================\r\n")]
+        public string listadoArtStock {
+            get {
+                return ((string)(this["listadoArtStock"]));
             }
         }
     }

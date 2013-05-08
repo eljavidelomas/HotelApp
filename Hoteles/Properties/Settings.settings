@@ -21,13 +21,28 @@
     </Setting>
     <Setting Name="planillaCierre" Type="System.String" Scope="Application">
       <Value Profile="(Default)">
-          ****************************************************************************************************************************
-          Conserje:##conserjeId   ##conserjeNm            === Arqueo de caja ===                Fecha: ##fecha   Hora:##hora
-          ****************************************************************************************************************************
+****************************************************************************************************************************
+Conserje:##conserjeId##conserjeNm           === Arqueo de Caja - Nro:##nroArq ===           Fecha: ##fecha   Hora:##hora
+****************************************************************************************************************************
 
-                                           ____________________ FACTURADO _________________      ___________ CAJA ___________
-          Nro  HAB  Desde  Hasta   Socio   Turnos     Extras     Bar     Descuento    Total      Efectivo   Tarjeta  	  gastos
-          ----------------------------------------------------------------------------------------------------------------------r\n</Value>
+                                   ____________________ FACTURADO _________________      ___________ CAJA ____________
+Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Descuento    Total      Efectivo   Tarjeta     Gastos
+----------------------------------------------------------------------------------------------------------------------</Value>
+    </Setting>
+    <Setting Name="ticketGasto" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+Fecha: ##FECHA Hora: ##HORA\r\nNro.Ticket: ##NRO
+-----------------------------------
+  Monto       Gasto
+-----------------------------------\r\n</Value>
+    </Setting>
+    <Setting Name="listadoArtStock" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+                              LISTADO ARTICULOS EN STOCK
+                             ============================
+
+ NUM    DESCRIPCIÓN               STOCK     CONSUMO     REPONER     STOCK GENERAL
+=================================================================================\r\n</Value>
     </Setting>
   </Settings>
 </SettingsFile>

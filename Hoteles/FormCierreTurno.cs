@@ -181,7 +181,7 @@ namespace Hoteles
                             break;
 
                         case "confirmar":
-                            FormCierreTurnoCliente formCliente= new FormCierreTurnoCliente();
+                            FormCierreTurnoCliente formCliente = new FormCierreTurnoCliente();
                             formCliente.Owner = this;
                             formCliente.Show();
                             this.Hide();
@@ -220,7 +220,7 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación a cancelar*";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {

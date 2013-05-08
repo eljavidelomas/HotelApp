@@ -1,0 +1,5 @@
+2013-04-14 21:42:46,101 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-14 22:21:43,720 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-14 22:36:05,895 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-14 22:52:45,514 [1] INFO  - Comienzo - Aplicacion Hotel
+2013-04-14 23:59:59,693 [1] INFO  - Comienzo - Aplicacion Hotel
