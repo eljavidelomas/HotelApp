@@ -24,12 +24,14 @@ namespace Hoteles
         Dictionary<int, Articulo> DictConsumos = new Dictionary<int, Articulo>();
         Dictionary<int, int> DictArticulosAnulados = new Dictionary<int, int>();
         Articulo artElegido;
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
 
         public FormAnularPedidoBar()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.flowLayoutPanel1.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -82,6 +84,7 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Anular Pedido");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
@@ -221,8 +224,8 @@ namespace Hoteles
                             try
                             {
                                 Articulo.anularPedidoBar((fPrincipal2)this.Owner, DictArticulosAnulados, nroHab);
-                                volverFormPrincipal();
-                                
+                                LoggerProxy.Info(string.Format("Ejecuto Anular Pedido Bar - Hab:{0}",nroHab));
+                                volverFormPrincipal();                                
                                 return;
                                 // y mandar a imprimir ticket a la cocina.
                             }
@@ -238,7 +241,7 @@ namespace Hoteles
                                 else
                                     labelMensaje.Text = "Ha ocurrido un error.Revisar los Logs.";
                                 labelMensaje.Visible = true;
-                                log.Error("Error al generar pedido de Bar - " + ex.Message + " " + ex.StackTrace);
+                                LoggerProxy.Error("Error al generar pedido de Bar - " + ex.Message + " " + ex.StackTrace);
                             }                            
                         }
                         if (int.Parse(tbNroHab.Text) == 0)
@@ -279,7 +282,8 @@ namespace Hoteles
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                if (ds.Tables[0].Rows[0]["estado"].ToString() != "O")
+                if (ds.Tables[0].Rows[0]["estado"].ToString() != "O" &&
+                    ds.Tables[0].Rows[0]["estado"].ToString() != "A")
                     return "* La habitación no esta Ocupada *";
             }
             else

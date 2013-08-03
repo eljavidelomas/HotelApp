@@ -32,13 +32,16 @@ namespace Hoteles
         public decimal tarjeta;
         string pasoAsignacion = "nroHabitacion";
         public DetallesHabitacion detallesHab = new DetallesHabitacion();
-        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();        
 
 
         public FormCierreTurno()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.flowLayoutPanel1.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -76,6 +79,7 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Cierre Turno");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
@@ -193,7 +197,7 @@ namespace Hoteles
                             break;
                     }
                     tbNroHab.Select(0, tbNroHab.TextLength);
-                    //tbNroHab.SelectionStart = tbNroHab.TextLength;
+                    
                     return;
                 }
                 if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != (char)Keys.Back && e.KeyChar != '.' || (e.KeyChar == '.' && (pasoAsignacion == "nroHabitacion" || tbNroHab.Text.Contains('.'))))
@@ -211,7 +215,7 @@ namespace Hoteles
             {
                 labelMensaje.Text = ex.Message;
                 labelMensaje.Visible = true;
-                log.Error(ex.Message + " - " + ex.StackTrace);
+                LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
             }
         }
 

@@ -36,8 +36,6 @@ namespace Hoteles
             this.panelGlobal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvOpcionesElegidas = new System.Windows.Forms.DataGridView();
-            this.nroClave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelIngresoDatos = new System.Windows.Forms.FlowLayoutPanel();
@@ -47,6 +45,8 @@ namespace Hoteles
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
+            this.nroClave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas)).BeginInit();
@@ -85,8 +85,8 @@ namespace Hoteles
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.95447F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.34066F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.86185F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.14914F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.05338F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1153, 637);
             this.tableLayoutPanel2.TabIndex = 7;
@@ -110,7 +110,6 @@ namespace Hoteles
             this.dgvOpcionesElegidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOpcionesElegidas.ColumnHeadersHeight = 50;
             this.dgvOpcionesElegidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvOpcionesElegidas.ColumnHeadersVisible = false;
             this.dgvOpcionesElegidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nroClave,
             this.descripcion});
@@ -133,24 +132,8 @@ namespace Hoteles
             this.dgvOpcionesElegidas.RowTemplate.Height = 60;
             this.dgvOpcionesElegidas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOpcionesElegidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvOpcionesElegidas.Size = new System.Drawing.Size(566, 367);
+            this.dgvOpcionesElegidas.Size = new System.Drawing.Size(566, 404);
             this.dgvOpcionesElegidas.TabIndex = 8;
-            // 
-            // nroClave
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nroClave.DefaultCellStyle = dataGridViewCellStyle2;
-            this.nroClave.FillWeight = 180F;
-            this.nroClave.HeaderText = "";
-            this.nroClave.Name = "nroClave";
-            this.nroClave.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.FillWeight = 366F;
-            this.descripcion.HeaderText = "descripcionClave";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
             // 
             // labelTitulo
             // 
@@ -175,10 +158,10 @@ namespace Hoteles
             this.labelMensaje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMensaje.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelMensaje.Location = new System.Drawing.Point(581, 489);
+            this.labelMensaje.Location = new System.Drawing.Point(581, 526);
             this.labelMensaje.Margin = new System.Windows.Forms.Padding(5);
             this.labelMensaje.Name = "labelMensaje";
-            this.labelMensaje.Size = new System.Drawing.Size(567, 143);
+            this.labelMensaje.Size = new System.Drawing.Size(567, 106);
             this.labelMensaje.TabIndex = 5;
             this.labelMensaje.Text = "mensaje";
             this.labelMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -191,11 +174,11 @@ namespace Hoteles
             this.panelIngresoDatos.Controls.Add(this.labelNroHab);
             this.panelIngresoDatos.Controls.Add(this.tbNroHab);
             this.panelIngresoDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelIngresoDatos.Location = new System.Drawing.Point(5, 489);
+            this.panelIngresoDatos.Location = new System.Drawing.Point(5, 526);
             this.panelIngresoDatos.Margin = new System.Windows.Forms.Padding(5);
             this.panelIngresoDatos.Name = "panelIngresoDatos";
-            this.panelIngresoDatos.Padding = new System.Windows.Forms.Padding(0, 50, 0, 25);
-            this.panelIngresoDatos.Size = new System.Drawing.Size(566, 143);
+            this.panelIngresoDatos.Padding = new System.Windows.Forms.Padding(0, 30, 0, 25);
+            this.panelIngresoDatos.Size = new System.Drawing.Size(566, 106);
             this.panelIngresoDatos.TabIndex = 7;
             // 
             // labelNroHab
@@ -203,7 +186,7 @@ namespace Hoteles
             this.labelNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelNroHab.AutoSize = true;
             this.labelNroHab.Font = new System.Drawing.Font("Book Antiqua", 24F, System.Drawing.FontStyle.Bold);
-            this.labelNroHab.Location = new System.Drawing.Point(3, 51);
+            this.labelNroHab.Location = new System.Drawing.Point(3, 31);
             this.labelNroHab.Name = "labelNroHab";
             this.labelNroHab.Size = new System.Drawing.Size(229, 39);
             this.labelNroHab.TabIndex = 3;
@@ -213,7 +196,7 @@ namespace Hoteles
             // 
             this.tbNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tbNroHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNroHab.Location = new System.Drawing.Point(238, 53);
+            this.tbNroHab.Location = new System.Drawing.Point(238, 33);
             this.tbNroHab.MaxLength = 5;
             this.tbNroHab.Name = "tbNroHab";
             this.tbNroHab.Size = new System.Drawing.Size(140, 35);
@@ -253,6 +236,22 @@ namespace Hoteles
             // opcionesAsignarHabitacionTableAdapter
             // 
             this.opcionesAsignarHabitacionTableAdapter.ClearBeforeFill = true;
+            // 
+            // nroClave
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nroClave.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nroClave.FillWeight = 20F;
+            this.nroClave.HeaderText = "Clave";
+            this.nroClave.Name = "nroClave";
+            this.nroClave.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.FillWeight = 80F;
+            this.descripcion.HeaderText = "Acción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
             // 
             // FormClavesOpcionales
             // 

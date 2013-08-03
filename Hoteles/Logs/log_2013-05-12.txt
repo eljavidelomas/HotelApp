@@ -1,0 +1,24 @@
+2013-05-12 23:09:25,720 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Violation of UNIQUE KEY constraint 'IX_turnos'. Cannot insert duplicate key in object 'dbo.turnos'.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal2 fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos, Decimal montoTotal, Tarifa tarifaNoche) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 75
+2013-05-12 23:09:32,110 [1] ERROR -  Habitacion.CS , metodo: Asignar -  Violation of UNIQUE KEY constraint 'IX_turnos'. Cannot insert duplicate key in object 'dbo.turnos'.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal2 fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos, Decimal montoTotal, Tarifa tarifaNoche) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 75
+2013-05-12 23:11:09,452 [1] ERROR - Valor de tiempo de espera caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde. -    en Hoteles.FormCierrePlanilla.confirmarImpresion() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierrePlanilla.cs:línea 274
+   en Hoteles.FormCierrePlanilla.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierrePlanilla.cs:línea 185
+2013-05-12 23:13:10,468 [1] ERROR - Valor de tiempo de espera caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde. -    en Hoteles.FormCierrePlanilla.confirmarImpresion() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierrePlanilla.cs:línea 274
+   en Hoteles.FormCierrePlanilla.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierrePlanilla.cs:línea 185
+2013-05-12 23:19:00,395 [1] ERROR - ExecuteScalar requiere que el comando tenga una transacción cuando la conexión asignada al mismo está en una transacción local pendiente. No se ha inicializado la propiedad Transaction del comando. -    en Hoteles.FormCierrePlanilla.confirmarImpresion() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierrePlanilla.cs:línea 274
+   en Hoteles.FormCierrePlanilla.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormCierrePlanilla.cs:línea 185

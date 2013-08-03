@@ -51,7 +51,6 @@ namespace Hoteles
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.promociones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelConf = new System.Windows.Forms.Label();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -317,7 +316,6 @@ namespace Hoteles
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.62519F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.605223F));
             this.tableLayoutPanel1.Controls.Add(this.panelGlobal, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelConf, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
@@ -329,20 +327,6 @@ namespace Hoteles
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.773196F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 730);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // labelConf
-            // 
-            this.labelConf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelConf.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConf.ForeColor = System.Drawing.Color.Red;
-            this.labelConf.Location = new System.Drawing.Point(112, 686);
-            this.labelConf.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.labelConf.Name = "labelConf";
-            this.labelConf.Size = new System.Drawing.Size(550, 44);
-            this.labelConf.TabIndex = 1;
-            this.labelConf.Text = "Enter - Confirma          Esc - Salir";
-            this.labelConf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelConf.Visible = false;
             // 
             // opcionesAsignarHabitacionTableAdapter
             // 
@@ -394,7 +378,6 @@ namespace Hoteles
         public System.Windows.Forms.TextBox tbNroHab;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro;
         private System.Windows.Forms.DataGridViewTextBoxColumn promociones;
-        private System.Windows.Forms.Label labelConf;
         
         
         

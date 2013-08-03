@@ -20,15 +20,14 @@ namespace Hoteles
         FormCierreTurno form;
         string pasoAsignacion = "confirmar";
         DetallesHabitacion detallesHab = new DetallesHabitacion();
-        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();       
 
         public FormCierreTurnoCliente()
         {
             InitializeComponent();
             GoFullscreen(true);
-            
+            LoggerProxy.Info("Ingreso Cierre Turno al Cliente");            
         }
 
         private void GoFullscreen(bool fullscreen)
@@ -57,10 +56,21 @@ namespace Hoteles
             }
             if (pasoAsignacion == "confirmar")
                 if (keyData == Keys.Enter)
-                {
-                    
+                {                    
                     Habitacion.Cierre((fPrincipal2)form.Owner, form.nroHab, form.impDescArt, form.descuento, form.medioPago,form.detallesHab.impHabitacion);
-                    ((fPrincipal2)form.Owner).borrarPB_parpadeo(form.nroHab);                   
+                    //((fPrincipal2)form.Owner).borrarPB_parpadeo(form.nroHab);
+
+                    try
+                    {
+                        if (detallesHab.nroSocio != "")
+                            Socio.asignarPuntos(detallesHab.impAdelantado + form.detallesHab.impHabitacion, detallesHab.nroSocio);
+                    }
+                    catch(Exception ex)
+                    {
+                        LoggerProxy.Error("CierreTurnoCliente - asignarPuntos - " + ex.Message);
+                    }
+
+                    LoggerProxy.Info(string.Format("Ejecuto Cierre de Turno - Hab:{0}",form.nroHab));
                     volverFormPrincipal();
                                                 
                     return true;
@@ -72,6 +82,7 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Cierre Turno Cliente");
             this.Owner.Owner.Show();
             this.Owner.Owner.Focus();
             this.Owner.Close();
@@ -83,45 +94,41 @@ namespace Hoteles
         {
             
         }
-
-        private string validarNroHabitacion(TextBox tbNroHab)
-        {
-            if (tbNroHab.Text == String.Empty)
-                return "* Debe ingresar el número de habitación a cancelar*";
-            DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
-            dataAdapter.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                if (ds.Tables[0].Rows[0]["estado"].ToString() != "A" && ds.Tables[0].Rows[0]["estado"].ToString() != "O")
-                    return "* La habitación no está asignada ni ocupada.*";
-            }
-            else
-                return "* El número de habitación no existe *";
-
-            return String.Empty;
-        }
-
+        
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
             form = (FormCierreTurno) this.Owner;
-            lblMonto.Text = form.detallesHab.impHabitacion.ToString();
+            lblMonto.Text = form.detallesHab.impHabitacion.ToString("C");
             lblNroHab.Text = form.nroHab.ToString();
-            
-           
+            cargarDetallesTurno(form.nroHab);            
+        }
+
+        private void cargarDetallesTurno(int nroHab)
+        {
+            detallesHab = Habitacion.obtenerDetalles(nroHab);
+            string detHabitacion = "HABITACIÓN  Desde: " + detallesHab.desde.ToString("HH:mm") +
+                " Hasta: " + detallesHab.hasta.ToString("HH:mm");
+            dgvDetallesTurno.Rows.Add("", detHabitacion, string.Format("{0:C}",(detallesHab.impHabitacion + detallesHab.impAdelantado + detallesHab.descuentoDinero - detallesHab.impArticulos + detallesHab.descArticulos) ));
+            dgvDetallesTurno.Rows.Add("", "Descuento Habitación", "- " + (detallesHab.descuentoDinero + int.Parse(detallesHab.ptosCambiados)).ToString("C"));
+
+
+            foreach (DataRow dr in Articulo.obtenerConsumos(nroHab).Rows)
+            {
+                dgvDetallesTurno.Rows.Add(dr[1].ToString(), dr[2].ToString(), String.Format("{0:C}", decimal.Parse(dr[3].ToString())));
+            }
+
+//            dgvDetallesTurno.Rows.Add("", "Total Articulos", detallesHab.impArticulos.ToString("C"));
+            dgvDetallesTurno.Rows.Add("", "Descuento por Artículos", "- " + detallesHab.descArticulos.ToString("C"));
+            dgvDetallesTurno.Rows.Add("", "Descuento Al Cierre", "- " + form.descuento.ToString("C"));
+            lHora.Text = DateTime.Now.ToString("HH:mm");
+            if (dgvDetallesTurno.Rows.Count < 15)
+                dgvDetallesTurno.ClearSelection();
 
         }
 
         private void labelTitulo_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            //g.DrawLine(new Pen(Color.BlueViolet, 1.5f), 0, g.ClipBounds.Height - 5, g.ClipBounds.Width, g.ClipBounds.Height - 5);
-        }
-
-        private void labelMensaje_Layout(object sender, LayoutEventArgs e)
-        {
-            if (lblMonto.Visible == false)
-                lblMonto.Size = new Size(1, 1);
-        }
+            Graphics g = e.Graphics;            
+        }     
     }
 }

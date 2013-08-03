@@ -1,0 +1,8 @@
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Release\configurator.exe.config
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Release\configurator.exe
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Release\configurator.pdb
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Release\ResolveAssemblyReference.cache
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Release\Configurator.fConfigurator.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Release\Configurator.csproj.GenerateResource.Cache
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Release\configurator.exe
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Release\configurator.pdb

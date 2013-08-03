@@ -1,12 +1,8 @@
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Debug\configurator.exe.config
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Debug\configurator.exe
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Debug\configurator.pdb
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Debug\configurator.fPrincipal.resources
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Debug\configurator.Properties.Resources.resources
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Debug\configurator.csproj.GenerateResource.Cache
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Debug\Configurator.fConfigurator.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Debug\Configurator.csproj.GenerateResource.Cache
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Debug\configurator.exe
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\obj\Debug\configurator.pdb
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Debug\configurator.exe.config
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Debug\Hoteles.exe
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Debug\log4net.dll
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\configurator\bin\Debug\Hoteles.pdb

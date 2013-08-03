@@ -22,13 +22,16 @@ namespace Hoteles
         decimal monto; 
         string pasoAsignacion = "nroHabitacion";
         DetallesHabitacion detallesHab;
-        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();       
 
 
         public FormAdelantoDinero()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.panelIngresoDatos.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -66,6 +69,7 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Adelanto de Dinero");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
@@ -166,6 +170,7 @@ namespace Hoteles
 
                         case "confirmar":
                             Habitacion.Adelanto((fPrincipal2)this.Owner, nroHab, monto, medioPago);
+                            LoggerProxy.Info(string.Format("Ejecuto Adelanto de Dinero - Hab:{0}  Monto:{1}",nroHab,monto));
                             volverFormPrincipal();
                             return;                            
 
@@ -191,7 +196,7 @@ namespace Hoteles
             {
                 labelMensaje.Text = ex.Message;
                 labelMensaje.Visible = true;
-                log.Error(ex.Message + " - " + ex.StackTrace);
+                LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
             }
         }
 

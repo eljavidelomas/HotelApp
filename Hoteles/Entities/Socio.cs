@@ -53,8 +53,7 @@ namespace Hoteles.Entities
 
             return socio;
         }
-
-
+        
         internal void descontarPuntos(int puntos)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("socios_descontarPuntos", fPrincipal2.conn);
@@ -70,6 +69,17 @@ namespace Hoteles.Entities
             {
                 log.Error("Socio - registrarYobtener = " + ex.Message + ex.StackTrace);                
             }
+        }
+
+        public static void asignarPuntos(decimal montoGastado,string nroSocio)
+        {
+            int puntos = (int) Math.Floor(decimal.Parse(tools.obtenerParametroString("coefPuntos")) * montoGastado);
+            
+            SqlCommand comm = new SqlCommand("update socios set puntos = puntos + " + puntos + 
+                ",cantidadVisitas = cantidadVisitas + 1,fechaVencimientoPuntaje = '"+ DateTime.Now.AddDays(180).ToString("yyyy/MM/dd") +"' where nroSocio = " + nroSocio, fPrincipal2.conn);
+            comm.CommandType = CommandType.Text;
+
+            comm.ExecuteNonQuery();            
         }
     }
 }

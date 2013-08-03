@@ -94,15 +94,16 @@ namespace Hoteles.Entities
                     comm.Parameters.AddWithValue("@nroArt", nroArt);
                     comm.Parameters.AddWithValue("@cant", pedido[nroArt]);
                     comm.ExecuteNonQuery();
+                    // Registrar en la tabla articulosConsumidos
+                    comm.CommandText = "articulosConsumidos_agregar";
+                    comm.ExecuteNonQuery();
+                    //-----------------------------------------
                     comm.Parameters.RemoveAt("@nroArt");
                     comm.Parameters.RemoveAt("@cant");
+                    comm.CommandText = "articulos_insertar";
                 }
-
-                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-                //comm.CommandText = "listaTurnos_2";
-                //comm.Parameters.Clear();
-                //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-                //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
+                                
+                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);              
 
                 return true;
             }
@@ -127,16 +128,17 @@ namespace Hoteles.Entities
                     comm.Parameters.AddWithValue("@nroArt", nroArt);
                     comm.Parameters.AddWithValue("@cant", pedido[nroArt]);
                     comm.ExecuteNonQuery();
+                    // Anular registración en la tabla articulosConsumidos
+                    comm.CommandText = "articulosConsumidos_quitar";
+                    comm.ExecuteNonQuery();
+                    //-----------------------------------------
                     comm.Parameters.RemoveAt("@nroArt");
                     comm.Parameters.RemoveAt("@cant");
+                    comm.CommandText = "articulos_anularPedido";
                 }
 
                 tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-                //comm.CommandText = "listaTurnos_2";
-                //comm.Parameters.Clear();
-                //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-                //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
-
+                
                 return true;
             }
             catch (Exception ex)
@@ -145,6 +147,68 @@ namespace Hoteles.Entities
             }
 
         }
+        
+        static public DataTable obtenerListaRopa()
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("ropaHotel_listadoRopaHotel", fPrincipal2.conn);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;            
+            try
+            {
+                dataAdapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
+                throw ex;
+            }
+        }
 
+        internal static void generarSalidaRopa(Dictionary<int, int> envios)
+        {
+            try
+            {
+                SqlCommand comm;
+                comm = new SqlCommand("ropaHotel_descontar", fPrincipal2.conn);
+                comm.CommandType = CommandType.StoredProcedure;                
+
+                foreach (int nroArt in envios.Keys)
+                {
+                    comm.Parameters.AddWithValue("@nroArt", nroArt);
+                    comm.Parameters.AddWithValue("@cant", envios[nroArt]);
+                    comm.ExecuteNonQuery();                   
+                    comm.Parameters.RemoveAt("@nroArt");
+                    comm.Parameters.RemoveAt("@cant");                    
+                }                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal static void generarEntradaRopa(Dictionary<int, int> articulos)
+        {
+            try
+            {
+                SqlCommand comm;
+                comm = new SqlCommand("ropaHotel_sumar", fPrincipal2.conn);
+                comm.CommandType = CommandType.StoredProcedure;
+
+                foreach (int nroArt in articulos.Keys)
+                {
+                    comm.Parameters.AddWithValue("@nroArt", nroArt);
+                    comm.Parameters.AddWithValue("@cant", articulos[nroArt]);
+                    comm.ExecuteNonQuery();
+                    comm.Parameters.RemoveAt("@nroArt");
+                    comm.Parameters.RemoveAt("@cant");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

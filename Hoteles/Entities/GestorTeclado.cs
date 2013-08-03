@@ -70,8 +70,7 @@ namespace Hoteles.Entities
                             funcion = "F1";
                             FormAsignarHab asignarHab = new FormAsignarHab();
                             asignarHab.Owner = formPrincipal;                            
-                            asignarHab.Show();
-                            formPrincipal.Hide();
+                            asignarHab.Show();                            
                             asignarHab.Activate();
                             asignarHab.tbNroHab.Focus();
                             
@@ -83,7 +82,8 @@ namespace Hoteles.Entities
                             cancelarHab.Show();
                             formPrincipal.Hide();
                             cancelarHab.Activate();
-                            cancelarHab.tbNroHab.Focus();                            
+                            cancelarHab.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Cancelar Habitación");
                             break;
                         case Keys.F3:
                             FormAdelantoDinero fAdelantoDinero = new FormAdelantoDinero();
@@ -92,6 +92,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             fAdelantoDinero.Activate();
                             fAdelantoDinero.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Adelanto Dinero");
                             break;
                         case Keys.F4:
                             FormCierreTurno fCierreTurno = new FormCierreTurno();
@@ -100,6 +101,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             fCierreTurno.Activate();
                             fCierreTurno.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Cerrar Turno");
                             break;
                         case Keys.F5:
                             FormPedidoBar pedidoBar = new FormPedidoBar();
@@ -108,6 +110,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             pedidoBar.Activate();
                             pedidoBar.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Pedido de Bar");
                             break;
                         case Keys.F6:
                             FormAnularPedidoBar anuPedidoBar = new FormAnularPedidoBar();                            
@@ -116,6 +119,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             anuPedidoBar.Activate();
                             anuPedidoBar.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Anular Pedido Bar");
                             break;
                         case Keys.F7:
                             FormAvisosHorarios avisosHorarios = new FormAvisosHorarios();
@@ -124,6 +128,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             avisosHorarios.Activate();
                             avisosHorarios.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Avisos Horarios");
                             
                             break;
                         case Keys.F8:
@@ -133,6 +138,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             fCambEst.Activate();
                             fCambEst.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Cambiar Estado Habitación");
 
                             break;
                         case Keys.F9:
@@ -142,6 +148,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             extraccionDinero.Activate();
                             extraccionDinero.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Extracción Dinero");
 
                             break;
                         case Keys.F10:
@@ -151,6 +158,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             fClavesOp.Activate();
                             fClavesOp.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Claves Opcionales");
                             
                             break;
                         case Keys.F11:
@@ -159,6 +167,7 @@ namespace Hoteles.Entities
                             fEstCaja.Show();
                             formPrincipal.Hide();
                             fEstCaja.Activate();
+                            LoggerProxy.Info("Ingreso Estado Caja");
 
                             break;
                         case Keys.F12:
@@ -168,6 +177,7 @@ namespace Hoteles.Entities
                             formPrincipal.Hide();
                             cierrePlanilla.Activate();
                             cierrePlanilla.tbNroHab.Focus();
+                            LoggerProxy.Info("Ingreso Cierre Caja");
                             
                             break;
                         default:

@@ -33,6 +33,10 @@ namespace Hoteles
         public FormCambiarEstado()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.panelIngresoDatos.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -69,6 +73,7 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Cambiar Estado");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
@@ -149,6 +154,7 @@ namespace Hoteles
 
                                     Habitacion.CambiarEstado((fPrincipal2)this.Owner, nroHab, estHab);
                                     ((fPrincipal2)Owner).borrarPB_parpadeo(nroHab);
+                                    LoggerProxy.Info(string.Format("Ejecuto Cambio Habitación - Hab:{0} Opcion:{1}",nroHab,dOpciones[opcion]));
                                     volverFormPrincipal();
                                     break;
 
@@ -203,20 +209,8 @@ namespace Hoteles
         }
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
-        {
-            //SqlDataReader reader;
-            //int altoFila;
-            int altoFilaExtraMedioPagos;
-            //SqlCommand comm = new SqlCommand("listaTurnos_2", fPrincipal2.conn);
-            //comm.CommandType = CommandType.StoredProcedure;
-            //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-            //SqlParameter cantHab = new SqlParameter("@ret", SqlDbType.Int);
-            //cantHab.Direction = ParameterDirection.ReturnValue;
-            //comm.Parameters.Add(cantHab);
-            //comm.ExecuteNonQuery();
-
-            //this.maxFilas = maxFilas = ((int)cantHab.Value / 2) - 1;
-            //this.cantHab = (int)cantHab.Value;
+        {            
+            int altoFilaExtraMedioPagos;            
             tabla1 = TablaTurnos.nuevaTabla();
             tabla2 = TablaTurnos.nuevaTabla();
 
@@ -243,8 +237,6 @@ namespace Hoteles
             tabla1.Columns.RemoveAt(6);
             tabla2.Columns.RemoveAt(7);
             tabla2.Columns.RemoveAt(6);
-            //dibujar(maxFilas, (int)cantHab.Value, reader);
-
             
             tools.calcularAlturas(dgvOpciones.Height - dgvOpciones.ColumnHeadersHeight, opcionesCambEst.opcionesCambioEstado.Count > tools.minCantFilas ? opcionesCambEst.opcionesCambioEstado.Count : tools.minCantFilas, out altoFila, out altoFilaExtraMedioPagos);
             dgvOpciones.RowTemplate.Height = altoFila;
@@ -259,6 +251,8 @@ namespace Hoteles
             // ----  Completando la tabla mediosPagos  ----//
             tools.completarDG(dgvOpciones, altoFilaExtraMedioPagos);
             dgvOpciones.ClearSelection();
+            tabla1.ClearSelection();
+            tabla2.ClearSelection();
         }
 
         private void labelMensaje_Layout(object sender, LayoutEventArgs e)

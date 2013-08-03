@@ -12,7 +12,14 @@
     <AssemblyName>Hoteles</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <StartupObject>
+    </StartupObject>
+    <ManifestCertificateThumbprint>49C146F413C4CCDD0ADC4C192A18F9DF10D140E5</ManifestCertificateThumbprint>
+    <ManifestKeyFile>HotelesApp_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>C:\Users\javier\Desktop\test\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,13 +29,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <StartupObject>
-    </StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,6 +74,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -85,6 +92,7 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -104,13 +112,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="confirmar.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="FormRopaSaliente.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="confirmar.Designer.cs">
-      <DependentUpon>confirmar.cs</DependentUpon>
+    <Compile Include="FormRopaSaliente.Designer.cs">
+      <DependentUpon>FormRopaSaliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ActualizadorTarifa.cs" />
+    <Compile Include="Entities\RestauradorTarifa.cs" />
+    <Compile Include="Entities\FilaRopaConsumida.cs" />
+    <Compile Include="Entities\FilaListArt.cs" />
     <Compile Include="Entities\itemDicParpadeo.cs" />
+    <Compile Include="Entities\LoggerProxy.cs" />
     <Compile Include="FormEstadoCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,8 +257,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="confirmar.resx">
-      <DependentUpon>confirmar.cs</DependentUpon>
+    <EmbeddedResource Include="FormRopaSaliente.resx">
+      <DependentUpon>FormRopaSaliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstadoCaja.resx">
       <DependentUpon>FormEstadoCaja.cs</DependentUpon>
@@ -332,6 +346,11 @@
     <None Include="Resources\vs.png" />
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
@@ -346,6 +365,11 @@
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5</ProductName>
       <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
       <Visible>False</Visible>
@@ -438,7 +462,7 @@
     <None Include="Resources\parpadeoRojo.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="HotelesApp_TemporaryKey.pfx" />
     <None Include="Resources\parpadeoVerde.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

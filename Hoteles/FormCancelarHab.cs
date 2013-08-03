@@ -16,15 +16,17 @@ namespace Hoteles
     
 
     public partial class FormCancelarHab : Form
-    {
-        
+    {        
         string pasoAsignacion = "nroHabitacion";        
-        int nroHab;
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        int nroHab;        
 
         public FormCancelarHab()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.panelIngresoDatos.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -54,13 +56,16 @@ namespace Hoteles
             }
             if (pasoAsignacion == "confirmar")
                 if (keyData == Keys.Enter)
+                {
                     tbNroHab_KeyPress(this.tbNroHab, new KeyPressEventArgs((char)keyData));
+                }
            
             return base.ProcessCmdKey(ref msg, keyData);
         }
                
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Cancelar Habitación");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
@@ -120,8 +125,8 @@ namespace Hoteles
 
                         case "confirmar":
                             Habitacion.Cancelar((fPrincipal2)this.Owner, nroHab);
-                            volverFormPrincipal();
-                            
+                            LoggerProxy.Info(string.Format("Ejecuto Cancelar Habitación - Hab:{0}",nroHab));
+                            volverFormPrincipal();                            
                             break;
 
                         default:
@@ -143,7 +148,9 @@ namespace Hoteles
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message + " - " + ex.StackTrace);
+                labelMensaje.Text = ex.Message;
+                labelMensaje.Visible = true;
+                LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
             }
         }
 

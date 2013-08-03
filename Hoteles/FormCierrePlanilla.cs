@@ -31,6 +31,11 @@ namespace Hoteles
         public FormCierrePlanilla()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.panelIngresoDatos.BackColor = tools.backColorIngresoDatos;
+            this.panelIngresoDatos.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -58,19 +63,29 @@ namespace Hoteles
                 volverFormPrincipal();
                 return true;
             }
-            if (pasoAsignacion == "confirmar" || pasoAsignacion=="confirmaImpresion")
+            if (pasoAsignacion == "confirmar" || pasoAsignacion == "confirmaImpresion")
+            {
                 if (keyData == Keys.Enter)
+                {
                     tbNroHab_KeyPress(this.tbNroHab, new KeyPressEventArgs((char)keyData));
-
-            return base.ProcessCmdKey(ref msg, keyData);
+                    dgvOpcionesElegidas.ClearSelection();                    
+                }
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
         }
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Cierre Caja");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
             this.Close();
+            
         }
 
         private void tbNroHab_KeyPress(object sender, KeyPressEventArgs e)
@@ -180,10 +195,10 @@ namespace Hoteles
                             break;
 
                         case "confirmaImpresion":
+                            LoggerProxy.Info(string.Format("Ejecuto Cierre Planilla de caja - Conserje:{0} ", ((fPrincipal2)this.Owner).conserjeActual.nombre));
                             ((fPrincipal2)this.Owner).conserjeActual = Conserje.Login(conserjeNuevo, clave);
                             ((fPrincipal2)this.Owner).labelConserje.Text = "Conserje:" + ((fPrincipal2)this.Owner).conserjeActual.nombre;
-                            confirmarImpresion();
-                            
+                            confirmarImpresion();                            
                             volverFormPrincipal();
 
                             break;
@@ -235,8 +250,8 @@ namespace Hoteles
                 {
                     List<FilaPlanilla> filas = this.contabilizarTurnosYGastos(conn, transaccion,totales);
                     new Impresora().ImprimirPlanillaCierre(filas,totales,efectivoInicialCierreActual,efectivoEnCaja, ((fPrincipal2)this.Owner).conserjeActual,labelMensaje);
-                    
-                    transaccion.Commit();
+
+                    transaccion.Rollback();
                 }
                 catch (Exception ex)
                 {
@@ -254,12 +269,12 @@ namespace Hoteles
                 Totales totales = new Totales();
                 conn.Open();
                 transaccion = conn.BeginTransaction(IsolationLevel.RepeatableRead);
-                decimal efectivoInicialCierreActual = this.obtenerEfectivoInicialCierreActual();
                 try
-                {                   
+                {
+                    this.contabilizarTurnosYGastos(conn, transaccion, totales);
                     this.cerrarPlanillaCaja(totEfectivo, totTarjeta, conn, transaccion);
                     this.abrirPlanillaCaja(efectivoEnCaja, tarjetaEnCaja, conserjeNuevo, conn, transaccion);
-                    if (tools.obtenerParametroInt("eliminarRegistros") == 1)
+                    if (tools.obtenerParametroInt("eliminarRegistros",conn,transaccion) == 1)
                         eliminarTurnosCerrados(conn,transaccion);
 
                     transaccion.Commit();

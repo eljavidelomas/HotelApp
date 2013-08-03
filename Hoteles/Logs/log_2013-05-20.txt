@@ -1,0 +1,1 @@
+2013-05-20 21:51:31,124 [9] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:4 hora:2013-05-20 21:51:27

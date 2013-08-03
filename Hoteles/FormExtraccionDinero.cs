@@ -15,8 +15,7 @@ namespace Hoteles
 {
     public partial class FormExtraccionDinero : Form
     {
-        string pasoAsignacion = "cuenta";
-        int nroArtElegido;
+        string pasoAsignacion = "cuenta";        
         int ultFila;
         int nroCuenta;
         decimal monto;
@@ -24,13 +23,14 @@ namespace Hoteles
         Socio socio = new Socio();
         Dictionary<int, string> DictCuentas = new Dictionary<int, string>();
         Dictionary<int, decimal> DictGastos = new Dictionary<int, decimal>();
-        Articulo artElegido;
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
 
         public FormExtraccionDinero()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.flowLayoutPanel1.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -89,6 +89,7 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Extracción Dinero");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
@@ -186,19 +187,24 @@ namespace Hoteles
                         {
                             if (insertar)
                             {
+                                Gasto.insertar(nroCuenta, monto);
                                 if (tools.obtenerParametroInt("emisionGastos") == 1)
                                     new Impresora().ImprimirGasto(labelMensaje, monto, DictCuentas[nroCuenta]);
-                                Gasto.insertar(nroCuenta, monto);
+                                LoggerProxy.Info(string.Format("Ejecuto Extraccion de Dinero - Cuenta:{0}  Monto:{1} ", DictCuentas[nroCuenta], monto));
+
                             }
                             else
+                            {
                                 Gasto.devolver(nroCuenta, monto);
+                                LoggerProxy.Info(string.Format("Ejecuto Devolución de Dinero - Cuenta:{0}  Monto:{1} ", DictCuentas[nroCuenta], monto));
+                            }
                             volverFormPrincipal();                            
                         }
                         catch (Exception ex)
                         {
                             labelMensaje.Text = "Ha ocurrido un error. Revisar los Logs.";
                             labelMensaje.Visible = true;
-                            log.Error("Error al generar extracción de dinero -\r\n " + ex.Message + " " + ex.StackTrace);
+                            LoggerProxy.Error("Error al generar extracción de dinero -\r\n " + ex.Message + " " + ex.StackTrace);
                         }
 
                         return;
@@ -227,18 +233,7 @@ namespace Hoteles
         private string validarCuenta(TextBox tbNroArt)
         {
             if (tbNroArt.Text == String.Empty)
-                return "* Debe ingresar el número de Cuenta *";
-
-            if (int.Parse(tbNroArt.Text) == 0)
-            {
-                if (artElegido == null)
-                    return "* La Cuenta ingresada no existe *";
-                else
-                {
-                    pasoAsignacion = "confirmar";
-                    return String.Empty;
-                }
-            }
+                return "* Debe ingresar el número de Cuenta *";          
 
             if (!DictCuentas.ContainsKey(int.Parse(tbNroArt.Text)))
                 return "* La Cuenta ingresada no existe *";

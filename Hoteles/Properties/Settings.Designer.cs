@@ -25,17 +25,6 @@ namespace Hoteles.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JAVIER-PC\\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=Tr" +
-            "ue")]
-        public string hotelConnectionString {
-            get {
-                return ((string)(this["hotelConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("resources/LogoHotel.png")]
         public string Logo {
             get {
@@ -92,14 +81,39 @@ Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Descuento    To
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"
-                              LISTADO ARTICULOS EN STOCK
-                             ============================
+ ##nmHotelLISTADO ARTICULOS EN STOCK
+                                             ============================
 
- NUM    DESCRIPCIÓN               STOCK     CONSUMO     REPONER     STOCK GENERAL
-=================================================================================\r\n")]
+  NUM      DESCRIPCIÓN                                         STOCK     CONSUMO     REPONER     STOCK GENERAL
+ ===============================================================================================================\r\n")]
         public string listadoArtStock {
             get {
                 return ((string)(this["listadoArtStock"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"
+                                              LISTADO DE ROPA CONSUMIDA
+                                             ===========================
+
+               CATEGORIA            FUNDAS   SABANAS   ACOLCHADOS   TOALLAS   TOALLONES   BATAS
+               =================================================================================\r\n")]
+        public string listadoRopaConsumida {
+            get {
+                return ((string)(this["listadoRopaConsumida"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=Tr" +
+            "ue")]
+        public string hotelConnectionString {
+            get {
+                return ((string)(this["hotelConnectionString"]));
             }
         }
     }

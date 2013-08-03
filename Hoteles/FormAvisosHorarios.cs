@@ -31,6 +31,10 @@ namespace Hoteles
         public FormAvisosHorarios()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.panelIngresoDatos.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -90,6 +94,7 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Avisos Horarios");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
@@ -130,7 +135,7 @@ namespace Hoteles
                             lAvisos = Habitacion.obtenerAvisos(nroHab);
                             foreach (Aviso aviso in lAvisos)
                             {
-                                dgvOpcionesElegidas.Rows.Add(aviso.mensaje);
+                            //    dgvOpcionesElegidas.Rows.Add(aviso.mensaje);
                                 dictAvisosSel.Add(aviso.id, aviso);
                             }
                             
@@ -173,7 +178,7 @@ namespace Hoteles
                                 pasoAsignacion = "alarma";
                                 panelPromos.Visible = true;
                             }
-                            else if (opcion == 2)
+                            else if (opcion == 2)// Avisos
                             {
                                 try
                                 {
@@ -183,6 +188,11 @@ namespace Hoteles
                                         dgvListadoAvisos.Rows.Add(av.id.ToString(), av.mensaje);
                                         dictAvisos.Add(av.id, av);
                                     }
+                                    dgvListadoAvisos.Rows[0].Cells[1].Style.ForeColor = Color.Red;
+                                    dgvListadoAvisos.Rows[1].Cells[1].Style.ForeColor = Color.Green;
+                                    dgvListadoAvisos.Rows[2].Cells[1].Style.ForeColor = Color.Yellow;
+                                    dgvListadoAvisos.Rows[3].Cells[1].Style.ForeColor = Color.Blue;
+                                    dgvListadoAvisos.Rows[4].Cells[1].Style.ForeColor = Color.Black;
                                     dgvOpcionesElegidas.ClearSelection();
                                     dgvListadoAvisos.ClearSelection();
                                 }
@@ -306,7 +316,7 @@ namespace Hoteles
                                 avisoSel = string.IsNullOrEmpty(tbNroHab.Text) ? 0 : int.Parse(tbNroHab.Text);
                                 if (!dictAvisosSel.ContainsKey(avisoSel))
                                 {
-                                    labelMensaje.Text = "* El Aviso seleccionado no fue cargado *";
+                                    labelMensaje.Text = "* El Aviso a eliminar no fue cargado *";
                                     labelMensaje.Visible = true;
                                     return;
                                 }
@@ -327,7 +337,6 @@ namespace Hoteles
                                     labelMensaje.Visible = true;
                                     return;
                                 }
-
                                 labelMensaje.Visible = false;
                                 dgvOpcionesElegidas.Rows.Add(dictAvisos[avisoSel].mensaje);
                                 labelNroHab.Text = "Confirma Aviso?";
@@ -350,22 +359,28 @@ namespace Hoteles
 
                         case "confirmar":
                             Habitacion.agregarAlarma((fPrincipal2)this.Owner ,nroHab, hora, avisoSel);
+                            LoggerProxy.Info(string.Format("Agrego Alarma Hab:", nroHab));
                             volverFormPrincipal();
                             return;
 
                         case "confirmarAviso":
+                            if(dictAvisosSel.Keys.Count>0)
+                                Habitacion.quitarAviso((fPrincipal2)this.Owner, nroHab, dictAvisosSel.First().Value.id);
                             Habitacion.agregarAviso((fPrincipal2)this.Owner, nroHab,avisoSel);
+                            LoggerProxy.Info(string.Format("Agrego Aviso Hab:",nroHab));
                             volverFormPrincipal();
                             return;
 
                         case "quitar":
                             Habitacion.quitarAlarma((fPrincipal2)this.Owner, nroHab, avisoSel);
                             tools.actualizarListadoTurnos(((fPrincipal2)this.Owner).dataGridView1, ((fPrincipal2)this.Owner).dataGridView2);
+                            LoggerProxy.Info(string.Format("Elimino Alarma Hab:{0}", nroHab));
                             volverFormPrincipal();
                             return;
                             
                         case "quitarAviso":
                             Habitacion.quitarAviso((fPrincipal2)this.Owner, nroHab, avisoSel);
+                            LoggerProxy.Info(string.Format("Elimino Aviso Hab:{0}",nroHab));
                             volverFormPrincipal();
                             return;
 

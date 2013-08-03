@@ -31,25 +31,27 @@ namespace Hoteles.Entities
             id = 0;
         }
 
-        private Tarifa(DataRow dr)
+        public Tarifa(DataRow dr)
         {
             id = int.Parse(dr["id"].ToString());
             if (id > 0)
             {
                 categoriaId = int.Parse(dr["catId"].ToString());
-                DateTime fecha = DateTime.Parse(dr["desde"].ToString());
-                //if (fecha.TimeOfDay > DateTime.Now.TimeOfDay)                
-                //    fecha = DateTime.Now.AddDays(-1);                
-                //else
-                    fecha = DateTime.Now;
+                DateTime fecha = DateTime.Now;
                 desde = new DateTime(fecha.Year, fecha.Month, fecha.Day, DateTime.Parse(dr["desde"].ToString()).Hour, DateTime.Parse(dr["desde"].ToString()).Minute, 0);
-
+                int diferenciaDias = Math.Abs( Calendario.nroDia(desde) - int.Parse(dr["dia"].ToString()));
+                if ( diferenciaDias != 0)
+                {
+                    if ( Calendario.nroDia(desde.AddDays(-1)) == int.Parse(dr["dia"].ToString()))
+                        desde = desde.AddDays(-1);
+                    if ( Calendario.nroDia(desde.AddDays(1)) == int.Parse(dr["dia"].ToString()))                    
+                        desde = desde.AddDays(1);
+                }
                 if (dr["hasta"].ToString() != "")
                 {
-                    DateTime fechaHasta = DateTime.Parse(dr["hasta"].ToString());
-                    if (fechaHasta < desde)
-                        fechaHasta = fechaHasta.AddDays(1);
-                    hasta = new DateTime(fechaHasta.Year, fechaHasta.Month, fechaHasta.Day, DateTime.Parse(dr["hasta"].ToString()).Hour, DateTime.Parse(dr["hasta"].ToString()).Minute, 0);
+                    hasta = new DateTime(desde.Year, desde.Month, desde.Day, DateTime.Parse(dr["hasta"].ToString()).Hour, DateTime.Parse(dr["hasta"].ToString()).Minute, 0);                    
+                    if (hasta.TimeOfDay < desde.TimeOfDay)
+                        hasta = hasta.AddDays(1);                    
                 }
 
                 int.TryParse(dr["dia"].ToString(), out dia);
@@ -66,6 +68,50 @@ namespace Hoteles.Entities
 
         }
 
+        public Tarifa(DataRow dr,DateTime hora)
+        {
+            id = int.Parse(dr["id"].ToString());
+            if (id > 0)
+            {
+                categoriaId = int.Parse(dr["catId"].ToString());
+                DateTime fecha = hora;
+                desde = new DateTime(fecha.Year, fecha.Month, fecha.Day, DateTime.Parse(dr["desde"].ToString()).Hour, DateTime.Parse(dr["desde"].ToString()).Minute, 0);
+                int diferenciaDias = Math.Abs(Calendario.nroDia(desde) - int.Parse(dr["dia"].ToString()));
+                if (diferenciaDias != 0)
+                {
+                    if (Calendario.nroDia(desde.AddDays(-1)) == int.Parse(dr["dia"].ToString()))
+                        desde = desde.AddDays(-1);
+                    if (Calendario.nroDia(desde.AddDays(1)) == int.Parse(dr["dia"].ToString()))
+                        desde = desde.AddDays(1);
+                }
+                if (dr["hasta"].ToString() != "")
+                {
+                    hasta = new DateTime(desde.Year, desde.Month, desde.Day, DateTime.Parse(dr["hasta"].ToString()).Hour, DateTime.Parse(dr["hasta"].ToString()).Minute, 0);
+                    if (hasta.TimeOfDay < desde.TimeOfDay)
+                        hasta = hasta.AddDays(1);
+                }
+
+                int.TryParse(dr["dia"].ToString(), out dia);
+                int.TryParse(dr["duracion"].ToString(), out duracion);
+                decimal.TryParse(dr["precio"].ToString(), out precio);
+                decimal.TryParse(dr["precioMinuto"].ToString(), out precioMinuto);
+                int.TryParse(dr["extension"].ToString(), out extension);
+                decimal.TryParse(dr["extensionPrecio"].ToString(), out extensionPrecio);
+                int.TryParse(dr["tolerancia"].ToString(), out tolerancia);
+                decimal.TryParse(dr["precioTN"].ToString(), out precioTN);
+                bool.TryParse(dr["pernocte"].ToString(), out pernocte);
+            }
+
+
+        }
+
+        public decimal PrecioExtension()
+        {
+            if (this.extensionPrecio != 0)
+                return extensionPrecio;
+            else
+                return this.extension * precioMinuto;
+        }
 
         //public decimal obtenerPrecioMinutos(Tarifa tar,DateTime desde,DateTime hasta)
         //{
@@ -115,12 +161,27 @@ namespace Hoteles.Entities
 
             while (true)
             {
-                tarSig = Tarifa.obtenerTarifaSiguiente(catId, dia, diaSig, tar, hora);//falta desarrollar esta funcion teniendo en cuenta que si tar.hasta existe y es mayor a hora...
+                int contadorOverflow = 0;
+                tarSig = Tarifa.obtenerTarifaSiguiente(catId, dia, diaSig, tar, hora);
                 if (tarSig.pernocte)
                 {
                     decimal precioAux = Tarifa.obtenerPrecioDesdeHasta(tar, hora, tarSig.desde);
+                    // 16-7-2013 Un bug, cuando hay hasta y es diferente de desde del sigueinte calcula mal
                     if (tar.hasta != DateTime.MinValue && precioAux > tar.precioTN)
+                    {
+                        decimal precioAux2 = 0;
                         precioAux = tar.precioTN;
+
+                        if (tar.hasta < tarSig.desde)// si el hasta es menor al desde del turno noche obtengo la tar actual
+                        {
+                            Tarifa tarAux2 = obtenerTarifaActual(catId, Calendario.nroDia(tar.hasta), Calendario.nroDiaAnt(tar.hasta), tar.hasta);
+                            precioAux2 = Tarifa.obtenerPrecioDesdeHasta(tarAux2, tar.hasta, tarSig.desde);
+                            precioAux2 = precioAux2 > 0 ? precioAux2 : 0;
+                        }
+
+                        precioAux += precioAux2;
+
+                    }
 
                     precioTotal += precioAux;
                     precioTotal += tarSig.precioTN;
@@ -128,6 +189,7 @@ namespace Hoteles.Entities
 
                     return precioTotal;
                 }
+
                 //Calcular precio teniendo en cuenta condiciones
                 if (tar.hasta != DateTime.MinValue)
                 {
@@ -143,8 +205,51 @@ namespace Hoteles.Entities
                     hora = tarSig.desde;
                 }
                 tar = tarSig;
+                contadorOverflow++;
+                if (contadorOverflow > 50)
+                {
+                    tarifaNoche = null;
+                    return 0;
+                }
                 ////////////////////////////////////////////////////////////////////
             }
+        }
+
+
+        public static decimal obtenerPrecioActualizadoPorHabitacion(int nroHab)
+        {
+            decimal precioASumar;
+            Tarifa tar = obtenerTarifaInicial(nroHab,DateTime.Now);
+            DetallesHabitacion det = Habitacion.obtenerDetalles(nroHab);
+            int diaAct = Calendario.nroDia(DateTime.Now);
+            int diaAnt = Calendario.nroDiaAnt(DateTime.Now);
+            int diaSig = Calendario.nroDiaSig(DateTime.Now);
+
+
+            if (tar.hasta == DateTime.MinValue)// Si no tiene seteado el campo hasta, entonces...
+            {
+                Tarifa tActual = obtenerTarifaActual(det.catId, diaAct, diaAnt, DateTime.Now);
+                Tarifa tSig = Tarifa.obtenerTarifaSiguiente(det.catId, diaAct, diaSig, tActual, DateTime.Now);
+                det.hasta.AddMinutes(tActual.extension);
+                if (tActual.extensionPrecio != 0)
+                    precioASumar = tActual.extensionPrecio;
+                else
+                    precioASumar = tActual.precioMinuto * tActual.extension;
+
+                actualizarTurno(nroHab, precioASumar, det.hasta);
+
+                return det.impHabitacion + precioASumar;
+            }
+            else
+            {
+
+                return 0;
+            }            
+        }
+
+        private static void actualizarTurno(int nroHab, decimal precioASumar, DateTime dateTime)
+        {
+            throw new NotImplementedException();
         }
 
         public static decimal obtenerPrecioDesdeHasta(Tarifa tar, DateTime desde, DateTime hasta)
@@ -200,6 +305,14 @@ namespace Hoteles.Entities
                     tarifa = new Tarifa(ds.Tables[0].Rows[0]);
                 else
                     tarifa = new Tarifa(ds.Tables[1].Rows[0]);
+
+                if (tarifa.desde.Day == hora.Day) // Si es el mismo dia del mes
+                {
+                    if (tarifa.desde.TimeOfDay > hora.TimeOfDay) // y la hora desde es mayor a la hora actual
+                    {
+                        tarifa.desde = tarifa.desde.AddDays(-1); // pongo fecha de ayer.
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -220,31 +333,53 @@ namespace Hoteles.Entities
         public static Tarifa obtenerTarifaSiguiente(int catId, int diaAct, int diaSig, Tarifa tar, DateTime hora)
         {
             DataSet ds = new DataSet();
-            Tarifa tarifa;
-            //int diaAct;
+            Tarifa tarifaSig;
+            
             int diaAnt = Calendario.nroDiaAnt(hora);
             SqlDataAdapter dataAdapter = new SqlDataAdapter("tarifas_obtenerSiguiente", fPrincipal2.conn);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@catId", catId);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@dia", diaAct);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@diaSig", diaSig);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@hora", hora);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             if (tar.hasta != DateTime.MinValue)
             {
-                if (tar.hasta < hora)// Si hubo cruce de dias
+                if (tar.hasta < hora )// Si hubo cruce de dias // REVISAR 2-7-2013
                 {
                     diaAnt = diaAct;
                     diaAct = Calendario.nroDia(hora.AddDays(1));
                 }
-                return obtenerTarifaActual(catId, diaAct, diaAnt, tar.hasta);
+                Tarifa aux = obtenerTarifaActual(catId, diaAct, diaAnt, tar.hasta);
+                if (aux.categoriaId == tar.categoriaId && aux.dia == tar.dia && aux.desde == tar.desde)// si es la misma
+                {                    
+                    dataAdapter.Fill(ds);
+                    tarifaSig = new Tarifa(ds.Tables[ds.Tables.Count - 1].Rows[0]);
+
+                    if (tarifaSig.desde.Day == hora.Day) // Si es el mismo dia del mes
+                    {
+                        if (tarifaSig.desde.TimeOfDay < hora.TimeOfDay) // y la hora desde es menor a la hora actual
+                        {
+                            tarifaSig.desde = tarifaSig.desde.AddDays(1); // pongo fecha de mañana.
+                        }
+                    }
+
+                    return tarifaSig;
+                }
+                else
+                    return obtenerTarifaActual(catId, diaAct, diaAnt, tar.hasta);
             }
-            else
-            {
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@hora", hora);
-            }
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        
             try
             {
                 dataAdapter.Fill(ds);
-                tarifa = new Tarifa(ds.Tables[ds.Tables.Count-1].Rows[0]);
+                tarifaSig = new Tarifa(ds.Tables[ds.Tables.Count-1].Rows[0]);
+
+                if (tar.desde > tarifaSig.desde) // Si la fecha tarAnterior es mas actual que la siguiente , al asiguiente le sumo 1 dia.
+                {
+                    tarifaSig.desde = tarifaSig.desde.AddDays(1);
+                    if(tarifaSig.hasta!= DateTime.MinValue)
+                        tarifaSig.hasta= tarifaSig.hasta.AddDays(1);
+                }
             }
             catch (Exception ex)
             {
@@ -255,7 +390,28 @@ namespace Hoteles.Entities
                 else
                     log.Error("Tarifa.obtenerTarifaActual = " + ex.Message + ex.StackTrace);
 
-                tarifa = null;
+                tarifaSig = null;
+            }
+
+            return tarifaSig;
+        }
+
+        public static Tarifa obtenerTarifaInicial(int nroHab,DateTime hora)
+        {
+            DataSet ds = new DataSet();
+            Tarifa tarifa = new Tarifa();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("tarifas_obtenerInicial", fPrincipal2.conn);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", nroHab);            
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                dataAdapter.Fill(ds);
+                if (ds.Tables[0].Rows.Count == 1)
+                    tarifa = new Tarifa(ds.Tables[0].Rows[0],hora);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.Error(ex.Message + "-" + ex.StackTrace);                
             }
 
             return tarifa;

@@ -10,6 +10,7 @@ using Hoteles.Entities;
 using System.Threading;
 using System.Data.SqlClient;
 using Hoteles.Properties;
+using System.Collections;
 
 namespace Hoteles
 {
@@ -25,16 +26,17 @@ namespace Hoteles
         public Conserje conserjeActual;
         public List<Aviso> alarmas = new List<Aviso>();
         static public Dictionary<int, PictureBox> dicAlarmasSonando = new Dictionary<int, PictureBox>();
-        public Dictionary<int, itemDicParpadeo> dictHabParpadeando = new Dictionary<int, itemDicParpadeo>();
-        public static Thread th;
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        static public Dictionary<int, itemDicParpadeo> dictHabParpadeando = new Dictionary<int, itemDicParpadeo>();
+        private Thread thActualizarHora;
+        private Thread thControlarTarifa;
+        private Thread thControlarParpadeo;
+
         public Dictionary<int, int> estadoHabitaciones = new Dictionary<int, int>();
 
 
         public fPrincipal2()
         {
             initConnection();
-
 
             DataTable dt = tools.listadoTurnos();
             maxFilas = (int)Math.Ceiling(dt.Rows.Count * 0.5);
@@ -44,38 +46,35 @@ namespace Hoteles
             this.SetStyle(ControlStyles.UserPaint, true);
 
             InitializeComponent();
-            timerHora_Tick(this, EventArgs.Empty);
-            
             GoFullscreen(true);
 
-
-
-            for (int i = 107; i < 121; i++)
+            for (int i = 1; i < 199; i++)
             {
-                estadoHabitaciones.Add(i, 1);
+                estadoHabitaciones.Add(i, 0);
             }
-            estadoHabitaciones.Add(101, 0);
-            estadoHabitaciones.Add(102, 1);
-            estadoHabitaciones.Add(103, 1);
-            estadoHabitaciones.Add(104, 1);
-            estadoHabitaciones.Add(105, 0);
-            estadoHabitaciones.Add(106, 1);
+            estadoHabitaciones[101] = 1;
+            estadoHabitaciones[104] = 1;
+            estadoHabitaciones[105] = 1;
+            estadoHabitaciones[106] = 1;
+
+            thActualizarHora = new Thread(ActualizarLaHora);
+            thActualizarHora.Start();
         }
+
+
 
         public void initConnection()
         {
-            conn.Open();
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD("Error de conexión con la base de datos - " + ex.Message + "-" + ex.StackTrace);
+                throw ex;
+            }
         }
-
-        //protected override CreateParams CreateParams
-        //{
-        //    get
-        //    {
-        //        CreateParams cp = base.CreateParams;
-        //        cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
-        //        return cp;
-        //    }
-        //}
 
         private void GoFullscreen(bool fullscreen)
         {
@@ -92,8 +91,6 @@ namespace Hoteles
             }
         }
 
-
-
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             try
@@ -107,28 +104,9 @@ namespace Hoteles
             }
             catch (Exception ex)
             {
-                log.Error("fPrincipal - ProcessCmdKey  = " + ex.Message);
+                LoggerProxy.Error("fPrincipal - ProcessCmdKey  = " + ex.Message);
                 return base.ProcessCmdKey(ref msg, keyData);
-            }
-            //try
-            //{
-            //    List<Control> lis = new List<Control>();
-            //    if (keyData == Keys.Escape)
-            //    {
-            //        tools.borrarIconosAlarmasSonando(dataGridView1);
-            //        for (int nH=101;nH<121;nH++)
-            //        {
-            //            estadoHabitaciones[nH] = 0;                        
-            //        }                  
-
-            //        return true;
-            //    }
-            //    return base.ProcessCmdKey(ref msg, keyData);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return base.ProcessCmdKey(ref msg, keyData);
-            //}
+            }          
         }
 
         private void fPrincipal2_Load(object sender, EventArgs e)
@@ -150,6 +128,12 @@ namespace Hoteles
 
             #endregion
 
+            #region Recuperar Estado Habitaciones
+
+            recuperarEstadosHabitaciones();
+
+            #endregion
+            
             #region CargarConserje
 
             conserjeActual = Conserje.obtenerConserjeActual();
@@ -165,29 +149,100 @@ namespace Hoteles
 
             #endregion
 
-            timerParpadeo_Tick(this, EventArgs.Empty);
+            #region ActualizadorTarifaHabitacion
 
+            thControlarTarifa = new Thread(ControlarTarifaHabitacion);
+            thControlarTarifa.Start();
+
+            #endregion
+
+            thControlarParpadeo = new Thread(timerParpadeo2);
+            thControlarParpadeo.Start();            
         }
 
-        private void timerHora_Tick(object sender, EventArgs e)
+        delegate void actualizarRelojCallback();
+
+        delegate void timerParpadeo2Callback();
+
+        private void actualizarReloj()
         {
-            labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm");
-            labelFecha.Text = String.Format("{0:ddd}", DateTime.Now).ToUpper() + " " + DateTime.Now.ToString("dd / MM / yyyy");
+            try
+            {
+                if (dataGridView1.InvokeRequired)
+                {
+                    actualizarRelojCallback d = new actualizarRelojCallback(actualizarReloj);
+                    this.Invoke(d);
+                }
+                else
+                {
+                    labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm:ss");
+                    labelFecha.Text = String.Format("{0:ddd}", DateTime.Now).ToUpper() + " " + DateTime.Now.ToString("dd / MM / yyyy");
+                }
+            }
+            catch
+            {
+                Thread.CurrentThread.Interrupt();
+            }
         }
 
-        private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        private void recuperarEstadosHabitaciones()
         {
+            List<DataGridView> datagrids = new List<DataGridView>();
+            datagrids.Add(dataGridView1);
+            datagrids.Add(dataGridView2);
+            foreach (DataGridView dg in datagrids)
+                foreach (DataGridViewRow dr in dg.Rows)
+                {
+                    if (dr.Cells[8].Value.ToString() == "A" || dr.Cells[8].Value.ToString() == "O")
+                    {
+                        int nroHabitacion = Convert.ToInt32(dr.Cells[0].Value);
+                        DetallesHabitacion tur = null;
+                        Tarifa tar = null;
 
+                    inicio:
 
+                        if (Convert.ToDateTime(dr.Cells[9].Value) <= DateTime.Now) // Columna Hasta en formato DateTime
+                        {
+                            if (tur == null)
+                            {
+                                tur = Habitacion.obtenerDetalles(nroHabitacion);
+                                tar = Tarifa.obtenerTarifaInicial(nroHabitacion, tur.desde);
+                                RestauradorTarifa.contPernocte[nroHabitacion] = tur.contPernocte;
+                            }
+
+                            if (dr.Cells[10].Value != null && dr.Cells[10].Value.ToString() == "1")
+                            {
+                                RestauradorTarifa.actualizarTarifa(tur, tar, dr);
+                            }
+                            else
+                            {
+                                dr.Cells[10].Value = "1";
+                                tur.hasta = tur.hasta.AddMinutes(tar.tolerancia);
+                                updateDetallesTurno(nroHabitacion, 0, tur.hasta, 0, dr);
+                                goto inicio;
+                            }
+                        }
+                    }
+                }
         }
 
-        //private void timer_parpadeoHabitaciones_Tick(object sender, EventArgs e)
-        //{
-        //    th = new Thread(new ThreadStart(timerParpadeo_Tick));
-        //    th.IsBackground = true;
-        //    th.Start();
-        //    //this.timerParpadeo_Tick();
-        //}
+        static public void borrarPicturesBoxesParpadeo(DataGridView dgv1, DataGridView dgv2)
+        {
+            
+            List<int> list = new List<int>();
+            foreach (int nroHab in dictHabParpadeando.Keys)
+            {
+                list.Add(nroHab);
+            }
+            foreach (int nroHab in list)
+            {
+                dgv1.Controls.Remove(dictHabParpadeando[nroHab].picBox);
+                dgv2.Controls.Remove(dictHabParpadeando[nroHab].picBox);
+                dictHabParpadeando.Remove(nroHab);
+            }
+            
+
+        }
 
         public void borrarPB_parpadeo(int nroHab)
         {
@@ -201,102 +256,173 @@ namespace Hoteles
                 }
             }
         }
-
-        private void timerParpadeo_Tick(object sender, EventArgs e)
+        
+        private void timerParpadeo2_tick()
         {
-            mut.WaitOne();
-            string estado;
-            int nroHab;
-            DataGridViewRowCollection filas;
             try
             {
-                if (dataGridView1.IsDisposed)
-                    return;
-
-                if (dataGridView1.Rows != null)// para esperar que se haya llenado de datos las grillas( debido al mutex, o las dos o ninguna)
+                if (dataGridView1.InvokeRequired)
                 {
-                    for (int contador = 1; contador <= 2; contador++)
-                    {
-                        if (contador == 1)
-                            filas = dataGridView1.Rows;
-                        else
-                            filas = dataGridView2.Rows;
-
-                        foreach (DataGridViewRow fila in filas)
-                        {
-                            estado = fila.Cells[8].Value.ToString();
-                            nroHab = int.Parse(fila.Cells[0].Value.ToString());
-
-                            if (estado == "A")
-                            {
-                                if (estadoHabitaciones[nroHab] == 0)// Puerta Sin trabar => ParpadeoVerde
-                                {
-                                    if (!dictHabParpadeando.ContainsKey(nroHab))
-                                    {
-                                        DataGridViewCellStyle style = fila.Cells[0].Style.Clone();
-                                        PictureBox pb = crearPB_Parpadeo(Resources.parpadeoVerde, fila);
-                                        itemDicParpadeo item = new itemDicParpadeo(style, pb);
-                                        dictHabParpadeando.Add(nroHab, item);
-                                        fila.DataGridView.Controls.Add(pb);
-                                      
-                                    }
-                                }
-                                else if (estadoHabitaciones[nroHab] == 1)
-                                {
-                                    if (dictHabParpadeando.ContainsKey(nroHab))
-                                    {
-                                        //fila.Cells[0].Style.BackColor = Color.Red;
-                                        fila.Cells[0].Style.ForeColor = Color.Black;
-                                        fila.DataGridView.Controls.Remove(dictHabParpadeando[nroHab].picBox);
-                                        lock (fPrincipal2.locker)
-                                        {
-                                            dictHabParpadeando.Remove(nroHab);
-                                        }
-                                    }
-                                }
-                            }
-
-                            else if (estado == "D")
-                            {
-                                if (estadoHabitaciones[nroHab] == 1)
-                                {
-                                    if (!dictHabParpadeando.ContainsKey(nroHab))
-                                    {
-                                        DataGridViewCellStyle style = fila.Cells[0].Style.Clone();
-                                        PictureBox pb = crearPB_Parpadeo(Resources.parpadeoRojo, fila);
-                                        itemDicParpadeo item = new itemDicParpadeo(style, pb);
-                                        dictHabParpadeando.Add(nroHab, item);
-                                        fila.DataGridView.Controls.Add(pb);
-                                    }
-                                }
-                                if (estadoHabitaciones[nroHab] == 0)
-                                {
-                                    if (dictHabParpadeando.ContainsKey(nroHab))
-                                    {
-                                        fila.Cells[0].Style.BackColor = Color.Green;
-                                        fila.Cells[0].Style.ForeColor = Color.Black;
-                                        fila.DataGridView.Controls.Remove(dictHabParpadeando[nroHab].picBox);
-                                        lock (fPrincipal2.locker)
-                                        {
-                                            dictHabParpadeando.Remove(nroHab);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    timerParpadeo2Callback d = new timerParpadeo2Callback(timerParpadeo2_tick);
+                    this.Invoke(d);
                 }
+                else
+                {
+                    mut.WaitOne();
+                    try
+                    {
+                        List<DataGridView> grids = new List<DataGridView>();
+                        grids.Add(dataGridView1);
+                        grids.Add(dataGridView2);
+                        foreach (DataGridView dg in grids)
+                        {
+                            if (dg != null && dg.Rows != null)
+                            {
+                                foreach (DataGridViewRow fila in dg.Rows)
+                                {
+                                    if (fila.Cells[8].Value.ToString() == "A")
+                                    {
+                                        if (estadoHabitaciones[int.Parse(fila.Cells[0].Value.ToString())] == 0) // 0 es destrabada
+                                        {
+                                            if (fila.Cells[0].Style.BackColor == Color.FromArgb(51, 255, 51))
+                                                fila.Cells[0].Style.BackColor = Color.Green;//dataGridView1.DefaultCellStyle.BackColor;
+                                            else
+                                                fila.Cells[0].Style.BackColor = Color.FromArgb(51, 255, 51);// Colorar.GreenYellow;
+                                        }
+                                        else
+                                            fila.Cells[0].Style.BackColor = Color.Green;
+                                    }
+                                    else if (fila.Cells[8].Value.ToString() == "D")
+                                    {
+                                        if (estadoHabitaciones[int.Parse(fila.Cells[0].Value.ToString())] == 1) // 1 es trabada
+                                        {
+                                            if (fila.Cells[0].Style.BackColor == Color.Tomato)
+                                                fila.Cells[0].Style.BackColor = Color.Green;// dataGridView1.DefaultCellStyle.BackColor;
+                                            else
+                                                fila.Cells[0].Style.BackColor = Color.Tomato;
+                                        }
+                                        else
+                                            fila.Cells[0].Style.BackColor = Color.Green;
+                                    }
+                                }
+                            }
+                        }                     
+                    }
+                    catch (Exception ex)
+                    {
+                        LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
+                    }
 
+                    mut.ReleaseMutex();
+                }
             }
-            catch (Exception ex)
+            catch
             {
-                log.Error(ex.Message + " - " + ex.StackTrace);
+                Thread.CurrentThread.Interrupt();
             }
-
-            mut.ReleaseMutex();
-            ///test
-            labelConserje.Text = (dataGridView1.Controls.Find("parpadeando", true).Count() + dataGridView2.Controls.Find("parpadeando", true).Count()).ToString();
         }
+
+        private void timerParpadeo2()
+        {            
+            while (true)
+            {                
+                timerParpadeo2_tick();                
+                Thread.Sleep(300);
+            }
+        }
+
+        //public void timerParpadeo_Tick(object sender, EventArgs e)
+        //{
+        //    mut.WaitOne();
+        //    string estado;
+        //    int nroHab;
+        //    DataGridViewRowCollection filas;
+        //    try
+        //    {
+        //        if (dataGridView1.IsDisposed)
+        //            return;
+
+        //        if (dataGridView1.Rows != null)// para esperar que se haya llenado de datos las grillas( debido al mutex, o las dos o ninguna)
+        //        {
+        //            for (int contador = 1; contador <= 2; contador++)
+        //            {
+        //                if (contador == 1)
+        //                    filas = dataGridView1.Rows;
+        //                else
+        //                    filas = dataGridView2.Rows;
+
+        //                foreach (DataGridViewRow fila in filas)
+        //                {
+        //                    estado = fila.Cells[8].Value.ToString();
+        //                    nroHab = int.Parse(fila.Cells[0].Value.ToString());
+
+        //                    if (estado == "A")
+        //                    {
+        //                        if (estadoHabitaciones[nroHab] == 0)// Puerta Sin trabar => ParpadeoVerde
+        //                        {
+        //                            if (!dictHabParpadeando.ContainsKey(nroHab))
+        //                            {
+        //                                DataGridViewCellStyle style = fila.Cells[0].Style.Clone();
+        //                                PictureBox pb = crearPB_Parpadeo(Resources.parpadeoVerde, fila);
+        //                                itemDicParpadeo item = new itemDicParpadeo(style, pb);
+        //                                dictHabParpadeando.Add(nroHab, item);
+        //                                fila.DataGridView.Controls.Add(pb);
+
+        //                            }
+        //                        }
+        //                        else if (estadoHabitaciones[nroHab] == 1)
+        //                        {
+        //                            if (dictHabParpadeando.ContainsKey(nroHab))
+        //                            {
+        //                                fila.Cells[0].Style.ForeColor = Color.Black;
+        //                                fila.DataGridView.Controls.Remove(dictHabParpadeando[nroHab].picBox);
+        //                                lock (fPrincipal2.locker)
+        //                                {
+        //                                    dictHabParpadeando.Remove(nroHab);
+        //                                }
+        //                            }
+        //                        }
+        //                    }
+
+        //                    else if (estado == "D")
+        //                    {
+        //                        if (estadoHabitaciones[nroHab] == 1)
+        //                        {
+        //                            if (!dictHabParpadeando.ContainsKey(nroHab))
+        //                            {
+        //                                DataGridViewCellStyle style = fila.Cells[0].Style.Clone();
+        //                                PictureBox pb = crearPB_Parpadeo(Resources.parpadeoRojo, fila);
+        //                                itemDicParpadeo item = new itemDicParpadeo(style, pb);
+        //                                dictHabParpadeando.Add(nroHab, item);
+        //                                fila.DataGridView.Controls.Add(pb);
+        //                            }
+        //                        }
+        //                        if (estadoHabitaciones[nroHab] == 0)
+        //                        {
+        //                            if (dictHabParpadeando.ContainsKey(nroHab))
+        //                            {
+        //                                fila.Cells[0].Style.BackColor = Color.Green;
+        //                                fila.Cells[0].Style.ForeColor = Color.Black;
+        //                                fila.DataGridView.Controls.Remove(dictHabParpadeando[nroHab].picBox);
+        //                                lock (fPrincipal2.locker)
+        //                                {
+        //                                    dictHabParpadeando.Remove(nroHab);
+        //                                }
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
+        //    }
+
+        //    mut.ReleaseMutex();
+        //}
 
         private PictureBox crearPB_Parpadeo(Bitmap bitmap, DataGridViewRow fila)
         {
@@ -310,7 +436,7 @@ namespace Hoteles
             pb.SizeMode = PictureBoxSizeMode.StretchImage;
             pb.BackColor = Color.Transparent;
             pb.Location = fila.DataGridView.GetCellDisplayRectangle(0, fila.Index, true).Location;
-            fila.Cells[0].Style.ForeColor = Color.Transparent;            
+            fila.Cells[0].Style.ForeColor = Color.Transparent;
 
             return pb;
         }
@@ -390,7 +516,7 @@ namespace Hoteles
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message + " - " + ex.StackTrace);
+                LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
                 return;
             }
         }
@@ -479,10 +605,8 @@ namespace Hoteles
             if (e.IsLastVisibleRow && fPrincipal2.dicAlarmasSonando.Count > 0)
             {
                 contador++;
-                labelConserje.Text = contador.ToString();
 
                 DataGridView dgv = (DataGridView)sender;
-
                 dgv.Controls.Find("as", true);
 
                 foreach (DataGridViewRow dr in dgv.Rows)
@@ -504,5 +628,142 @@ namespace Hoteles
 
             }
         }
+
+        private void ActualizarLaHora()
+        {
+            while (true)
+            {
+                try
+                {
+                    actualizarReloj();
+                    Thread.Sleep(10000);
+                }
+                catch
+                {
+                    break;
+                }
+            }
+        }
+
+        private void ControlarTarifaHabitacion()
+        {
+            while (true)
+            {
+                try
+                {
+                    if (dataGridView1.Rows.Count + dataGridView2.Rows.Count == cantHab)
+                        actualizarTarifas();
+                    Thread.Sleep(10000);//Cada 10 seg
+                }
+                catch { }
+            }
+        }
+
+        delegate void actualizarTarifasCallback();
+
+        private void actualizarTarifas()
+        {
+            try
+            {
+                if (dataGridView1.InvokeRequired)
+                {
+                    actualizarTarifasCallback d = new actualizarTarifasCallback(actualizarTarifas);
+                    this.Invoke(d);
+                }
+                else
+                {
+                    List<DataGridView> datagrids = new List<DataGridView>();
+                    datagrids.Add(dataGridView1);
+                    datagrids.Add(dataGridView2);
+                    foreach (DataGridView dg in datagrids)
+                        foreach (DataGridViewRow dr in dg.Rows)
+                        {
+                            if (dr.Cells[8].Value.ToString() == "A" || dr.Cells[8].Value.ToString() == "O")
+                            {
+                                int nroHabitacion = Convert.ToInt32(dr.Cells[0].Value);
+                                DetallesHabitacion tur = null;
+                                Tarifa tar = null;
+
+                            inicio:
+
+                                if (Convert.ToDateTime(dr.Cells[9].Value) <= DateTime.Now) // Columna Hasta en formato DateTime
+                                {
+                                    if (tur == null)
+                                    {
+                                        tur = Habitacion.obtenerDetalles(nroHabitacion);
+                                        tar = Tarifa.obtenerTarifaInicial(nroHabitacion, tur.desde);
+                                        ActualizadorTarifa.contPernocte[nroHabitacion] = tur.contPernocte;
+                                    }
+
+                                    if (dr.Cells[10].Value != null && dr.Cells[10].Value.ToString() == "1")
+                                    {
+                                        ActualizadorTarifa.actualizarTarifa(tur, tar, dr);
+                                    }
+                                    else
+                                    {
+                                        dr.Cells[10].Value = "1";// tolerancia en 1
+                                        tur.hasta = tur.hasta.AddMinutes(tar.tolerancia);
+                                        updateDetallesTurno(nroHabitacion, 0, tur.hasta, 0, dr);
+                                        goto inicio;
+                                    }
+                                }
+                            }
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                int test = 0;
+            }
+        }
+
+        public void updateDetallesTurno(int nroHab, decimal montoAsumar, DateTime hasta, decimal contPernocte, DataGridViewRow dr)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("turnos_actualizar", fPrincipal2.conn);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", nroHab);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@monto", montoAsumar);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@hasta", hasta);
+            if (contPernocte == 0)
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@contPern", contPernocte);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.ExecuteNonQuery();
+
+            dr.Cells[9].Value = hasta;// h.salida datetime
+
+
+            dr.Cells[6].Value = hasta.ToString("HH:mm");//h.salida datetime
+            dr.Cells[7].Value = (decimal.Parse(dr.Cells[7].Value.ToString().Replace("$ ", "")) + montoAsumar).ToString("C");// importe
+
+        }
+
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+            
+        }
+        
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void fPrincipal2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            thActualizarHora.Abort();
+            thControlarParpadeo.Abort();
+            thControlarTarifa.Abort();
+        }       
     }
 }
+
+
+
+
+//protected override CreateParams CreateParams
+//{
+//    get
+//    {
+//        CreateParams cp = base.CreateParams;
+//        cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+//        return cp;
+//    }
+//}

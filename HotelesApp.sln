@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelesApp", "Hoteles\HotelesApp.csproj", "{D0780C6F-2BEE-4E9B-BA0D-601552BB8F91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "configurator", "configurator\configurator.csproj", "{4598C8E3-39E6-40CA-9949-E9DDFBC6C9F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configurator", "configurator\Configurator.csproj", "{4598C8E3-39E6-40CA-9949-E9DDFBC6C9F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Administrador", "Administrador\Administrador.csproj", "{473500B1-DB28-4A4C-9004-C62F1031A54E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{216D26F2-C8A9-45C7-B570-8A99D5F70058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +23,13 @@ Global
 		{4598C8E3-39E6-40CA-9949-E9DDFBC6C9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4598C8E3-39E6-40CA-9949-E9DDFBC6C9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4598C8E3-39E6-40CA-9949-E9DDFBC6C9F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{473500B1-DB28-4A4C-9004-C62F1031A54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473500B1-DB28-4A4C-9004-C62F1031A54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473500B1-DB28-4A4C-9004-C62F1031A54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473500B1-DB28-4A4C-9004-C62F1031A54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216D26F2-C8A9-45C7-B570-8A99D5F70058}.Debug|Any CPU.ActiveCfg = Debug
+		{216D26F2-C8A9-45C7-B570-8A99D5F70058}.Release|Any CPU.ActiveCfg = Release
+		{216D26F2-C8A9-45C7-B570-8A99D5F70058}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

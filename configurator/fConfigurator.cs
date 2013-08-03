@@ -9,20 +9,19 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Drawing.Printing;
 using System.Data.SqlClient;
-using configurator.Properties;
+using Configurator.Properties;
 using System.Threading;
-using Hoteles.Entities;
 
-namespace configurator
+
+namespace Configurator
 {
-    public partial class fPrincipal : Form
+    public partial class fConfigurator : Form
     {
-        SqlConnection conn;
+        public static SqlConnection conn;
 
-        public fPrincipal()
+        public fConfigurator()
         {
-            InitializeComponent();
-            new Hoteles.fPrincipal2();
+            InitializeComponent();            
         }
 
         private void fPrincipal_Load(object sender, EventArgs e)
@@ -41,10 +40,8 @@ namespace configurator
                     ImpresoraCaja.Items.Add(printer);
                     ImpresoraCocina.Items.Add(printer);
                     ImpresoraTickets.Items.Add(printer);
-                }
-                           
+                }                           
             }
-
             
             ImpresoraCaja.SelectedItem = tools.obtenerParametroString("ImpresoraCaja");
             ImpresoraCocina.SelectedItem = tools.obtenerParametroString("ImpresoraCocina");
@@ -54,6 +51,7 @@ namespace configurator
             stockCierreCaja.SelectedItem = tools.obtenerParametroString("stockCierreCaja");
             nombreHotel.Text = tools.obtenerParametroString("nombreHotel");            
             nroHotelCodBarras.Text = tools.obtenerParametroInt("nroHotelCodBarras").ToString();
+            redondeo.Text = tools.obtenerParametroString("redondeo");
             emisionPedidos.SelectedItem = tools.obtenerParametroString("emisionPedidos");
             mostrarVisualEXE.Checked = tools.obtenerParametroInt("mostrarVisualEXE")==0?false:true;            
             emisionFactura.Checked = tools.obtenerParametroInt("emisionFactura") == 0 ? false : true;
@@ -64,6 +62,7 @@ namespace configurator
             ordenListado.SelectedItem = tools.obtenerParametroString("ordenListado");
             minFinTurnoMayor100.Text = tools.obtenerParametroInt("minFinTurnoMayor100").ToString();
             minFinTurnoMenor100.Text = tools.obtenerParametroInt("minFinTurnoMenor100").ToString();
+            coefPuntos.Text = tools.obtenerParametroString("coefPuntos");
             bytes.Text = tools.obtenerParametroInt("bytes").ToString();
             claveAcceso.Text = tools.obtenerParametroString("claveAcceso");
             placaOutter.Checked = tools.obtenerParametroInt("placaOutter") == 0 ? false : true;
@@ -77,7 +76,7 @@ namespace configurator
             SqlCommand comm;
             try
             {
-                comm = new SqlCommand("update parametros set val1_string = '" + valor + "' where nombre = '" + parametro + "'", this.conn);
+                comm = new SqlCommand("update parametros set val1_string = '" + valor + "' where nombre = '" + parametro + "'", fConfigurator.conn);
                 comm.CommandType = CommandType.Text;
                 comm.ExecuteNonQuery();
             }
@@ -90,7 +89,7 @@ namespace configurator
         {
             SqlCommand comm;
             
-            comm = new SqlCommand("update parametros set val1 = " + valor +" where nombre = '" + parametro + "'", this.conn);            
+            comm = new SqlCommand("update parametros set val1 = " + valor +" where nombre = '" + parametro + "'", fConfigurator.conn);            
             comm.ExecuteNonQuery();
         }
 

@@ -26,6 +26,9 @@ namespace Hoteles
         public FormEstadoCaja()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;            
             GoFullscreen(true);            
         }
 
@@ -62,6 +65,7 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Estado Caja");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();

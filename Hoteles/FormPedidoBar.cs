@@ -22,12 +22,15 @@ namespace Hoteles
         Dictionary<int, Articulo> DictArticulos = new Dictionary<int, Articulo>();
         Dictionary<int, int> DictArticulosPedidos = new Dictionary<int, int>();
         Articulo artElegido;
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
         public FormPedidoBar()
         {
             InitializeComponent();
+            this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
+            this.labelTitulo.BackColor = tools.backColorTitulo;
+            this.labelMensaje.BackColor = tools.backColorMsjError;
+            this.flowLayoutPanel1.BackColor = tools.backColorIngresoDatos;
             GoFullscreen(true);
             tbNroHab.Focus();
         }
@@ -57,14 +60,14 @@ namespace Hoteles
                 {
                     dgvOpcionesElegidas.Rows.RemoveAt(dgvOpcionesElegidas.Rows.Count - 1);
                     labelNroHab.Text = "Ingresar Nro.Art ";
-                    tbNroHab.Text = "";                    
+                    tbNroHab.Text = "";
                     pasoAsignacion = "articulo";
                 }
                 else
                 {
                     volverFormPrincipal();
                     return true;
-                }                
+                }
             }
             if (keyData == Keys.F7)
             {
@@ -93,9 +96,11 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
+            LoggerProxy.Info("Salir Pedido de Bar");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
+            //if (tools.obtenerParametroString("emisionPedidos") == "No")
             this.Close();
         }
 
@@ -148,15 +153,15 @@ namespace Hoteles
                             tbNroHab.Visible = false;
 
                             /*--- Modifico el dgv Promos ---*/
-                            
+
                             dgvPromos.Rows.Clear();
                             dgvPromos.RowTemplate.Height = 80;
                             dgvPromos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
                             dgvPromos.Columns[1].HeaderText = " Opciones ";
                             dgvPromos.Columns.RemoveAt(3);
                             dgvPromos.Columns.RemoveAt(2);
-                            dgvPromos.Columns.RemoveAt(0);                            
-                            
+                            dgvPromos.Columns.RemoveAt(0);
+
                             dgvPromos.Rows.Add("Esc - Cancelar");
                             dgvPromos.Rows.Add("Enter - Confirmar");
                             dgvPromos.ClearSelection();
@@ -216,15 +221,21 @@ namespace Hoteles
                             try
                             {
                                 Articulo.generarPedidoBar((fPrincipal2)this.Owner, DictArticulosPedidos, nroHab);
+                                LoggerProxy.Info(string.Format("Ejecuto Pedido Bar - Hab:{0}", nroHab));
+                                if (tools.obtenerParametroString("emisionPedidos") != "No")
+                                {
+                                    ParameterizedThreadStart pth = new ParameterizedThreadStart(imprimirPedido);
+                                    Thread th = new Thread(pth);
+                                    th.Start(new pedidoAux(DictArticulosPedidos, nroHab, labelMensaje));                                   
+                                }
                                 volverFormPrincipal();
-                                if(tools.obtenerParametroInt("emisionPedidos") == 1 )
-                                    new Impresora().ImprimirSolicitudBar(labelMensaje, DictArticulosPedidos, nroHab);                                
+
                             }
                             catch (Exception ex)
                             {
                                 labelMensaje.Text = "Ha ocurrido un error.Revisar los Logs.";
                                 labelMensaje.Visible = true;
-                                log.Error("Error al generar pedido de Bar - " + ex.Message + " " + ex.StackTrace);
+                                LoggerProxy.Error("Error al generar pedido de Bar - " + ex.Message + " " + ex.StackTrace);
                             }
 
                             return;
@@ -257,6 +268,12 @@ namespace Hoteles
             }
         }
 
+        private void imprimirPedido(object ob)
+        {
+            pedidoAux p = (pedidoAux)ob;
+            new Impresora().ImprimirSolicitudBar(p.mensajeError, p.dict, p.nroHab);
+        }
+
         private string validarNroHabitacion(TextBox tbNroHab)
         {
             if (tbNroHab.Text == String.Empty)
@@ -266,7 +283,8 @@ namespace Hoteles
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                if (ds.Tables[0].Rows[0]["estado"].ToString() != "O")
+                if (ds.Tables[0].Rows[0]["estado"].ToString() != "O" &&
+                    ds.Tables[0].Rows[0]["estado"].ToString() != "A")
                     return "* La habitación no esta Ocupada *";
             }
             else
@@ -299,7 +317,7 @@ namespace Hoteles
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
-            DataRowCollection articulos = Articulo.obtenerListaArticulos().Rows;                       
+            DataRowCollection articulos = Articulo.obtenerListaArticulos().Rows;
 
             dgvPromos.RowTemplate.Height = tools.altoFilaBar;// con un heigt de 60 entran 6
             dgvOpcionesElegidas.RowTemplate.Height = tools.altoFilaBar;
@@ -307,8 +325,8 @@ namespace Hoteles
             foreach (DataRow dr in articulos)
             {
                 dgvPromos.Rows.Add(dr[0], dr[1], dr[2], dr[3]);
-                DictArticulos.Add(Convert.ToInt32(dr[0]), new Articulo(Convert.ToInt32(dr[0]), dr[1].ToString(), Convert.ToDecimal(dr[2]),0));
-            }            
+                DictArticulos.Add(Convert.ToInt32(dr[0]), new Articulo(Convert.ToInt32(dr[0]), dr[1].ToString(), Convert.ToDecimal(dr[2]), 0));
+            }
             dgvPromos.ClearSelection();
             dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
             dgvOpcionesElegidas.ClearSelection();
@@ -319,6 +337,19 @@ namespace Hoteles
             if (labelMensaje.Visible == false)
                 labelMensaje.Size = new Size(1, 1);
         }
+    }
 
+    public class pedidoAux
+    {
+        public Dictionary<int, int> dict;
+        public int nroHab;
+        public Label mensajeError;
+
+        public pedidoAux(Dictionary<int, int> d, int n, Label l)
+        {
+            dict = d;
+            nroHab = n;
+            mensajeError = l;
+        }
     }
 }

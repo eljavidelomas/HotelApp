@@ -2,14 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Hoteles.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="hotelConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=JAVIER-PC\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=True&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=JAVIER-PC\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=True</Value>
-    </Setting>
     <Setting Name="Logo" Type="System.String" Scope="Application">
       <Value Profile="(Default)">resources/LogoHotel.png</Value>
     </Setting>
@@ -38,11 +30,27 @@ Fecha: ##FECHA Hora: ##HORA\r\nNro.Ticket: ##NRO
     </Setting>
     <Setting Name="listadoArtStock" Type="System.String" Scope="Application">
       <Value Profile="(Default)">
-                              LISTADO ARTICULOS EN STOCK
-                             ============================
+ ##nmHotelLISTADO ARTICULOS EN STOCK
+                                             ============================
 
- NUM    DESCRIPCIÓN               STOCK     CONSUMO     REPONER     STOCK GENERAL
-=================================================================================\r\n</Value>
+  NUM      DESCRIPCIÓN                                         STOCK     CONSUMO     REPONER     STOCK GENERAL
+ ===============================================================================================================\r\n</Value>
+    </Setting>
+    <Setting Name="listadoRopaConsumida" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+                                              LISTADO DE ROPA CONSUMIDA
+                                             ===========================
+
+               CATEGORIA            FUNDAS   SABANAS   ACOLCHADOS   TOALLAS   TOALLONES   BATAS
+               =================================================================================\r\n</Value>
+    </Setting>
+    <Setting Name="hotelConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=localhost\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=localhost\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

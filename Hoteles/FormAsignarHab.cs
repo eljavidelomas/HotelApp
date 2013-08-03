@@ -24,19 +24,24 @@ namespace Hoteles
         decimal montoAPagar;
         int medioPago;        
         int puntosACambiar = 0;
+        string puntosStr;
         Socio socio = new Socio();
         Tarifa tarifaNoche;
         Dictionary<int, Descuento> DictDescuentos;
         Dictionary<int, string> dictMediosDePago= new Dictionary<int,string>();
         Dictionary<int, string> dictCategorias;
         Descuento desc;
-
+        decimal descTotalHabitacion;
+        decimal totExtra;
+        string pernocteString;
 
         public FormAsignarHab()
         {
+            
             InitializeComponent();
             GoFullscreen(true);
             tbNroHab.Focus();
+            LoggerProxy.Info("Ingreso Asignar Habitación.");
         }
 
         private void GoFullscreen(bool fullscreen)
@@ -103,7 +108,8 @@ namespace Hoteles
         }
 
         private void volverFormPrincipal()
-        {
+        {            
+            LoggerProxy.Info("Salio Asignar Habitación.");
             this.Owner.Show();
             this.Owner.Focus();
             this.Hide();
@@ -223,8 +229,9 @@ namespace Hoteles
                                     dgvPromos.Visible = false;
                                     tbNroHab.Text = "";
                                     tbNroHab.Width += 50;
-                                    tbNroHab.MaxLength = 6;
+                                    tbNroHab.MaxLength = 8;
                                     pasoAsignacion = "leerTarjeta";
+                                    puntosStr = dgvOpcionesElegidas.Rows[4].Cells[1].Value.ToString();
                                     break;
 
                                 }
@@ -250,19 +257,29 @@ namespace Hoteles
                                                     
 
                         case "leerTarjeta":
-
-                            socio = Socio.registrarYobtener(int.Parse(tbNroHab.Text));
-                            if (socio == null)
+                            int nroHotel = tools.obtenerParametroInt("nroHotelCodBarras");
+                            if (nroHotel.ToString() == tbNroHab.Text.Substring(0, 2))
                             {
-                                labelMensaje.Text = "Error al registrar el Socio.";
+                                socio = Socio.registrarYobtener(int.Parse(tbNroHab.Text.Substring(2)));
+                                if (socio == null)
+                                {
+                                    labelMensaje.Text = "Error al registrar el Socio.";
+                                    labelMensaje.Visible = true;
+                                    return;
+                                }
+                                labelMensaje.Visible = false;
+                                dgvOpcionesElegidas.Rows[3].Cells[1].Value = dgvOpcionesElegidas.Rows[3].Cells[1].Value.ToString() + " " + socio.nroSocio;
+                                dgvOpcionesElegidas.Rows[4].Cells[1].Value = dgvOpcionesElegidas.Rows[4].Cells[1].Value.ToString() + socio.puntaje;
+                                tbNroHab.Text = "0";
+                                labelNroHab.Text = "¿Cambiar puntos?";
+                                pasoAsignacion = "puntos";
+                            }
+                            else
+                            {
+                                labelMensaje.Text = "El numero ingresado no corresponde a ninguna tarjeta valida.";
                                 labelMensaje.Visible = true;
                                 return;
                             }
-                            dgvOpcionesElegidas.Rows[3].Cells[1].Value = dgvOpcionesElegidas.Rows[3].Cells[1].Value.ToString() + " " + socio.nroSocio;
-                            dgvOpcionesElegidas.Rows[4].Cells[1].Value = dgvOpcionesElegidas.Rows[4].Cells[1].Value.ToString() + " " + socio.puntaje;
-                            tbNroHab.Text = "0";
-                            labelNroHab.Text = "¿Cambiar puntos?";
-                            pasoAsignacion = "puntos";
 
                             break;
 
@@ -274,8 +291,9 @@ namespace Hoteles
                                 labelMensaje.Visible = true;
                                 return;
                             }
+                            labelMensaje.Visible = false;
                             puntosACambiar = int.Parse(tbNroHab.Text);
-                            dgvOpcionesElegidas.Rows[4].Cells[1].Value = "Puntos Act.: " + (socio.puntaje - puntosACambiar);
+                            dgvOpcionesElegidas.Rows[4].Cells[1].Value = puntosStr + (socio.puntaje - puntosACambiar);
                             tbNroHab.Text = "0";
                             labelNroHab.Text = "Pernocte";
                             pasoAsignacion = "pernocte";
@@ -303,17 +321,21 @@ namespace Hoteles
                             int altoFilaExtraMedioPagos;
                             DataSet ds = new DataSet();
                             pernocte = int.Parse(tbNroHab.Text);
-                            dgvOpcionesElegidas.Rows[5].Cells[1].Value = dgvOpcionesElegidas.Rows[5].Cells[1].Value + (tbNroHab.Text == "1" ? " Si" : " No");
+                            dgvOpcionesElegidas.Rows[5].Cells[1].Value = pernocteString + (tbNroHab.Text == "1" ? " Si" : " No");
 
-                            montoAPagar = Habitacion.calcularPrecioTurno(pernocte, this.desc.id, puntosACambiar, nroCategoria,out tarifaNoche);
+                            montoAPagar = Habitacion.calcularPrecioTurno(pernocte, this.desc.id, puntosACambiar, nroCategoria,out tarifaNoche,out descTotalHabitacion,out totExtra);
+
+                            //decimal precioExtra = montoAPagar - (tarifaNoche == null ? 0 : tarifaNoche.precio);
                             if (montoAPagar == 0)
                             {
                                 labelMensaje.Visible = true;
-                                labelMensaje.Text = " No hay Tarifas cargadas para este horario y esta categoria ";
+                                labelMensaje.Text = " No hay Tarifas cargadas para este horario y esta categoria ó el precio asignado es cero ";
                                 return;
                             }
                             labelMensaje.Visible = true;
-                            labelMensaje.Text = String.Format("{0:C}",montoAPagar);
+                            labelMensaje.Text = String.Format("{0:C}",montoAPagar) ;
+                            labelMensaje.Font = new Font("Cooper Std", 38, FontStyle.Bold);
+                            labelMensaje.BorderStyle = BorderStyle.FixedSingle;
 
                             SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from mediosDePago", fPrincipal2.conn);
                             dataAdapter.Fill(ds);
@@ -388,7 +410,7 @@ namespace Hoteles
                             break;
 
                         case "confirmar":
-                            if (Habitacion.Asignar((fPrincipal2)this.Owner, this.desc.id, nroHab, pernocte, nroCategoria, ((fPrincipal2)this.Owner).conserjeActual.usuario, socio.id, puntosACambiar,montoAPagar,tarifaNoche))
+                            if (Habitacion.Asignar((fPrincipal2)this.Owner, this.desc.id, nroHab, pernocte, nroCategoria, ((fPrincipal2)this.Owner).conserjeActual.usuario, socio.id, puntosACambiar,montoAPagar,tarifaNoche,descTotalHabitacion,totExtra))
                             {
                                 if(montoAdelantar > 0)
                                     Habitacion.Adelanto((fPrincipal2)this.Owner, nroHab,montoAdelantar, medioPago);
@@ -404,8 +426,9 @@ namespace Hoteles
                                  minArestar = tools.obtenerParametroInt("minFinTurnoMenor100");
 
                                 Habitacion.agregarAlarma((fPrincipal2)this.Owner, nroHab,int.Parse(detalle.hasta.AddMinutes(-minArestar).ToString("HHmm")), 2);
-                                
+                                LoggerProxy.Info(string.Format("Ejecuto Asignar Habitación - Nro.Hab:{0}, Categoria:{1}, Conserje:{2}.", nroHab, dictCategorias[nroCategoria], ((fPrincipal2)this.Owner).conserjeActual.nombre));
                                 volverFormPrincipal();
+                                
                             }
                             else
                             {
@@ -448,7 +471,7 @@ namespace Hoteles
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación *";
             DataSet ds = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where habilitada = 1 and nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -513,6 +536,9 @@ namespace Hoteles
             
             this.opcionesAsignarHabitacionTableAdapter.Fill(this.hotelDataSet2.OpcionesAsignarHabitacion);
             dgvOpcionesElegidas.ClearSelection();
+
+            pernocteString = dgvOpcionesElegidas.Rows[5].Cells[1].Value.ToString();
+
         }
 
         private void labelTitulo_Paint(object sender, PaintEventArgs e)

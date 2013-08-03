@@ -14,19 +14,17 @@ namespace Hoteles.Entities
         public int nroHabitacion;
         public bool habilitada;
         public int categoriaId;
-        public char estado;
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public char estado;        
 
-        static public Boolean Asignar(fPrincipal2 fPrincipal, int descuentoId, int nroHab, int pernocte, int catId, int conserjeId, int socioId, int puntos, decimal montoTotal,Tarifa tarifaNoche)
+        static public Boolean Asignar(fPrincipal2 fPrincipal, int descuentoId, int nroHab, int pernocte, int catId, int conserjeId, int socioId, int puntos, decimal montoApagar,Tarifa tarifaNoche,decimal descTotalHabitacion,decimal impExtra)
         {
             try
             {
                 SqlCommand comm;
 
-                int dia;
-                int diaAnt;
-                new Calendario().dameNroDia(out dia, out diaAnt);
-
+                int dia = Calendario.nroDia(DateTime.Now);
+                int diaAnt = Calendario.nroDiaAnt(DateTime.Now);
+                
                 if (pernocte == 0)
                 {
                     comm = new SqlCommand("Habitacion_Asignar", fPrincipal2.conn);
@@ -46,21 +44,19 @@ namespace Hoteles.Entities
                 }
                 else
                 {                    
-                    //decimal precioTotal = Tarifa.calcularPrecioConPernocte(catId, out tarifaNoche); //calcularPrecioConPernocte(nroHab, out tarifaNoche);
-                    if (montoTotal == 0)
+                    if (montoApagar == 0)
                     {
-                        return false;// throw new Exception(); // No se encontro tarifa                    
+                        return false;// No se encontro tarifa                    
                     }
-                    decimal precioExtra = montoTotal - tarifaNoche.precio;
-
+                    
                     comm = new SqlCommand("Habitacion_AsignarTurnoNoche", fPrincipal2.conn);
                     comm.CommandType = CommandType.StoredProcedure;
 
                     comm.Parameters.AddWithValue("@nroHab", nroHab);
                     comm.Parameters.AddWithValue("@catId", catId);
                     comm.Parameters.AddWithValue("@tarifaId2", tarifaNoche.id);
-                    comm.Parameters.AddWithValue("@precioTotal", montoTotal - precioExtra);
-                    comm.Parameters.AddWithValue("@precioExtras", precioExtra);
+                    comm.Parameters.AddWithValue("@precioTotal", tarifaNoche.precio);
+                    comm.Parameters.AddWithValue("@precioExtras", impExtra);
                     DateTime fHasta = DateTime.Now.Hour > tarifaNoche.hasta.Hour ? DateTime.Now.AddDays(1) : DateTime.Now;
                     comm.Parameters.AddWithValue("@hasta", new DateTime(fHasta.Year, fHasta.Month, fHasta.Day, tarifaNoche.hasta.Hour, tarifaNoche.hasta.Minute, 0));
                     if (descuentoId != 0)
@@ -70,6 +66,8 @@ namespace Hoteles.Entities
                         comm.Parameters.AddWithValue("@socioId", socioId);
                     if (puntos > 0)
                         comm.Parameters.AddWithValue("@puntos", puntos);
+                    if (descTotalHabitacion > 0)
+                        comm.Parameters.AddWithValue("@descTotalHabitacion", descTotalHabitacion);
                 }
 
                 comm.ExecuteNonQuery();
@@ -79,17 +77,13 @@ namespace Hoteles.Entities
                 comm.CommandType = CommandType.Text; 
                 comm.ExecuteNonQuery();
 
-                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-                //comm.CommandText = "listaTurnos_2";
-                //comm.CommandType = CommandType.StoredProcedure;
-                //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-                //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
+                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);                
 
                 return true;
             }
             catch (Exception ex)
             {
-                log.Error(" Habitacion.CS , metodo: Asignar -  " + ex.Message + " " + ex.StackTrace);
+                LoggerProxy.Error(" Habitacion.CS , metodo: Asignar -  " + ex.Message + " " + ex.StackTrace);
                 return false;
             }
         }
@@ -146,14 +140,18 @@ namespace Hoteles.Entities
 
         internal static void Cierre(fPrincipal2 fPrincipal, int nroHab, decimal descPorArt,decimal descuento, int medioPago,decimal impHabitacionFaltante)
         {
-            SqlCommand comm = new SqlCommand("turnos_cerrar", fPrincipal2.conn);
+            // Ingresar la ropa consumida en el turno
+            SqlCommand comm = new SqlCommand("ropaConsumida_contabilizar", fPrincipal2.conn);
             comm.CommandType = CommandType.StoredProcedure;
-            comm.Parameters.AddWithValue("@descuento", descuento);
-            comm.Parameters.AddWithValue("@descPorArt", descPorArt);
             comm.Parameters.AddWithValue("@nroHab", nroHab);
+            comm.ExecuteNonQuery();
+            // Hacer el cierre de la habitacion
+            comm.CommandText = "turnos_cerrar";
+            comm.Parameters.AddWithValue("@descuento", descuento);
+            comm.Parameters.AddWithValue("@descPorArt", descPorArt);            
             comm.Parameters.AddWithValue("@medioPago", medioPago);
             comm.Parameters.AddWithValue("@impHabFaltante", impHabitacionFaltante);
-            comm.ExecuteNonQuery();
+            comm.ExecuteNonQuery();            
 
             tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);          
         }
@@ -195,7 +193,7 @@ namespace Hoteles.Entities
             }
             catch (Exception ex)
             {
-                log.Error(" Habitacion.CS , metodo: obtenerAvisos  -  " + ex.Message + " " + ex.StackTrace);
+                LoggerProxy.Error(" Habitacion.CS , metodo: obtenerAvisos  -  " + ex.Message + " " + ex.StackTrace);
                 throw new Exception("* Error al traer Avisos/Alarmas de la BD *");
             }
         }
@@ -218,7 +216,7 @@ namespace Hoteles.Entities
             }
             catch (Exception ex)
             {
-                log.Error(" Habitacion.CS , metodo: listadoAvisos  -  " + ex.Message + " " + ex.StackTrace);
+                LoggerProxy.Error(" Habitacion.CS , metodo: listadoAvisos  -  " + ex.Message + " " + ex.StackTrace);
                 throw new Exception("* Error al traer listado de Avisos de la BD *");
             }
         }
@@ -241,7 +239,7 @@ namespace Hoteles.Entities
             }
             catch (Exception ex)
             {
-                log.Error(" Habitacion.CS , metodo: listadoAvisos  -  " + ex.Message + " " + ex.StackTrace);
+                LoggerProxy.Error(" Habitacion.CS , metodo: listadoAvisos  -  " + ex.Message + " " + ex.StackTrace);
                 throw new Exception("* Error al traer listado de Avisos de la BD *");
             }
         }
@@ -258,12 +256,7 @@ namespace Hoteles.Entities
 
             comm.ExecuteNonQuery();
 
-            tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-            //comm.CommandText = "listaTurnos_2";
-            //comm.Parameters.Clear();
-            //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-            //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
-
+            tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);           
         }
 
         internal static void quitarAlarma(fPrincipal2 fPrincipal,int nroHab, int avisoSel)
@@ -275,11 +268,6 @@ namespace Hoteles.Entities
             comm.Parameters.AddWithValue("@avisoId", avisoSel);
 
             comm.ExecuteNonQuery();
-            //tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-            //comm.CommandText = "listaTurnos_2";
-            //comm.Parameters.Clear();
-            //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-            //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
         }
         
         internal static void quitarAviso(int nroHab, int avisoSel)
@@ -304,8 +292,13 @@ namespace Hoteles.Entities
                 dataAdapter.Fill(ds);
                 
                 categorias.Add(int.Parse(ds.Tables[0].Rows[0][0].ToString()),ds.Tables[0].Rows[0][3].ToString());
-                if(ds.Tables[0].Rows.Count>1 )
-                    categorias.Add(int.Parse(ds.Tables[0].Rows[1][1].ToString()), ds.Tables[0].Rows[1][3].ToString());
+                if (ds.Tables[0].Rows.Count > 1)
+                {
+                    if(ds.Tables[0].Rows[1][1].ToString()!="")
+                        categorias.Add(int.Parse(ds.Tables[0].Rows[1][1].ToString()), ds.Tables[0].Rows[1][3].ToString());
+                    else
+                        categorias.Add(int.Parse(ds.Tables[0].Rows[1][2].ToString()), ds.Tables[0].Rows[1][3].ToString());
+                }
                 if (ds.Tables[0].Rows.Count>2)
                     categorias.Add(int.Parse(ds.Tables[0].Rows[2][2].ToString()), ds.Tables[0].Rows[2][3].ToString());
 
@@ -313,7 +306,7 @@ namespace Hoteles.Entities
             }
             catch (Exception ex)
             {
-                log.Error(" Habitacion.CS , metodo: obtenerCategorias  -  " + ex.Message + " " + ex.StackTrace);
+                LoggerProxy.Error(" Habitacion.CS , metodo: obtenerCategorias  -  " + ex.Message + " " + ex.StackTrace);
                 throw new Exception("* Error al traer listado de categorias de la BD *");
             }
         }
@@ -332,13 +325,17 @@ namespace Hoteles.Entities
             //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
         }
 
-        public static decimal calcularPrecioTurno(int pernocte, decimal descuentoId,int puntos,int catId,out Tarifa tarifaNoche)
+        public static decimal calcularPrecioTurno(int pernocte, decimal descuentoId,int puntos,int catId,out Tarifa tarifaNoche,out decimal totDescDinero,out decimal totExtra)
         {
+            totDescDinero = 0;
+            totExtra = 0;
+            
             try
             {
                 tarifaNoche = null;
-                SqlCommand comm;
-
+                decimal precioTotal = 0;
+                decimal impTurnoRedondeado = 0;
+                SqlCommand comm;                
                 int dia;
                 int diaAnt;
                 dia= Calendario.nroDia(DateTime.Now);
@@ -359,19 +356,22 @@ namespace Hoteles.Entities
                 }
                 else
                 {                    
-                    decimal precioTotal = Tarifa.calcularPrecioConPernocte(catId, out tarifaNoche); //calcularPrecioConPernocte(nroHab, out tarifaNoche);
+                    precioTotal = Tarifa.calcularPrecioConPernocte(catId, out tarifaNoche); 
                     if (precioTotal == 0)
-                    {
+                    {                        
                         return 0;// No se encontro tarifa                    
                     }
-                    if (descuentoId == 0)
-                        return precioTotal - puntos; // no es necesario aplicar descuentos
+                    impTurnoRedondeado = tools.redondeo(tarifaNoche.precio);
+                    totExtra = tools.redondeo(precioTotal - tools.redondeo(tarifaNoche.precio));
 
-                    decimal precioExtra = precioTotal - tarifaNoche.precio;
+                    if (descuentoId == 0)
+                        return impTurnoRedondeado + totExtra - puntos; // no es necesario aplicar descuentos
+                                      
+                    
                     comm = new SqlCommand("Habitacion_calcularPrecioAsignarTurnoNoche", fPrincipal2.conn);
-                    comm.CommandType = CommandType.StoredProcedure;                                       
-                    comm.Parameters.AddWithValue("@precioTotal", precioTotal - precioExtra);
-                    comm.Parameters.AddWithValue("@precioExtras", precioExtra);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.AddWithValue("@precioTotal", impTurnoRedondeado);
+                    comm.Parameters.AddWithValue("@precioExtras", totExtra);
                    
                     if (descuentoId != 0)
                         comm.Parameters.AddWithValue("@descuentoId", descuentoId);
@@ -379,17 +379,20 @@ namespace Hoteles.Entities
                     if (puntos > 0)
                         comm.Parameters.AddWithValue("@puntos", puntos);
                 }
+                DataSet ds = new DataSet();                
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(comm);
+                dataAdapter.Fill(ds);
+                decimal descFinal = Convert.ToDecimal(ds.Tables[0].Rows[0][1]);
+                decimal impFinal = Convert.ToDecimal(ds.Tables[0].Rows[0][0]);
+                decimal totPuntos = Convert.ToDecimal(ds.Tables[0].Rows[0][2]);
+                totDescDinero = tools.redondeo(descFinal);
 
-                decimal montoTotal;
-                decimal.TryParse(comm.ExecuteScalar().ToString(),out montoTotal);
-                
-                return montoTotal;
-                
+                return  impFinal - totDescDinero - totPuntos;
             }
             catch (Exception ex)
             {
                 tarifaNoche = null;
-                log.Error(" Habitacion.CS , metodo: calcularPrecioAsignar -  " + ex.Message + " " + ex.StackTrace);
+                LoggerProxy.Error(" Habitacion.CS , metodo: calcularPrecioAsignar -  " + ex.Message + " " + ex.StackTrace);
                 return 0;
             }
         }
@@ -404,11 +407,6 @@ namespace Hoteles.Entities
 
             comm.ExecuteNonQuery();
             tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-            //comm.CommandText = "listaTurnos_2";
-            //comm.Parameters.Clear();
-            //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-            //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
-
         }
 
         internal static List<Aviso> obtenerAvisos(int nroHab)
@@ -430,7 +428,7 @@ namespace Hoteles.Entities
             }
             catch (Exception ex)
             {
-                log.Error(" Habitacion.CS , metodo: obtenerAvisos  -  " + ex.Message + " " + ex.StackTrace);
+                LoggerProxy.Error(" Habitacion.CS , metodo: obtenerAvisos  -  " + ex.Message + " " + ex.StackTrace);
                 throw new Exception("* Error al traer Avisos/Alarmas de la BD *");
             }
         }
@@ -444,11 +442,7 @@ namespace Hoteles.Entities
             comm.Parameters.AddWithValue("@avisoId", avisoSel);
 
             comm.ExecuteNonQuery();
-            tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-            //comm.CommandText = "listaTurnos_2";
-            //comm.Parameters.Clear();
-            //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-            //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
+            tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);            
         }
     }
 
@@ -463,7 +457,14 @@ namespace Hoteles.Entities
         public decimal impHabitacion;
         public decimal impAdelantado;
         public DateTime hasta;
+        public DateTime desde;
         public double duracion;
+        public decimal descuentoDinero;
+        public decimal descArticulos;
+        public decimal impArticulos;
+        public int catId;
+        public int nroHab;
+        public decimal contPernocte;
 
 
         public DetallesHabitacion(){}
@@ -478,7 +479,14 @@ namespace Hoteles.Entities
             impAdelantado = decimal.Parse(dr["impAdelantado"].ToString());
             categoria = dr["categoria"].ToString();
             hasta = DateTime.Parse(dr["hasta"].ToString());
+            desde = DateTime.Parse(dr["desde"].ToString());
             duracion = (hasta-DateTime.Parse(dr["desde"].ToString())).TotalMinutes;
+            descuentoDinero = decimal.Parse(dr["descHabitacion"].ToString());
+            descArticulos = decimal.Parse(dr["descArt"].ToString());
+            impArticulos = decimal.Parse(dr["impArticulos"].ToString());
+            catId = int.Parse(dr["catId"].ToString());
+            nroHab = int.Parse(dr["nroHab"].ToString());
+            contPernocte = decimal.Parse(dr["contPernocte"].ToString());
 
         }
 
