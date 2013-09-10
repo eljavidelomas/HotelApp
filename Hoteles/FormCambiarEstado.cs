@@ -153,7 +153,7 @@ namespace Hoteles
                                         estHab = "D";
 
                                     Habitacion.CambiarEstado((fPrincipal2)this.Owner, nroHab, estHab);
-                                    ((fPrincipal2)Owner).borrarPB_parpadeo(nroHab);
+                                    //((fPrincipal2)Owner).borrarPB_parpadeo(nroHab);
                                     LoggerProxy.Info(string.Format("Ejecuto Cambio Habitación - Hab:{0} Opcion:{1}",nroHab,dOpciones[opcion]));
                                     volverFormPrincipal();
                                     break;

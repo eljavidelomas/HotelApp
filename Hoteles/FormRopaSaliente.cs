@@ -13,7 +13,7 @@ using System.Globalization;
 
 namespace Hoteles
 {
-    public partial class FormRopaSaliente: Form
+    public partial class FormRopaSaliente : Form
     {
         string pasoAsignacion = "articulo";
         bool ropaSaliente = true;
@@ -21,7 +21,8 @@ namespace Hoteles
         int nroHab;
         Socio socio = new Socio();
         Dictionary<int, string> DictArticulos = new Dictionary<int, string>();
-        Dictionary<int, int> DictArticulosPedidos = new Dictionary<int, int>();
+        Dictionary<int, int> DictArticulosSalientes = new Dictionary<int, int>();
+        Dictionary<int, int> DictArticulosEntrantes = new Dictionary<int, int>();
         //Articulo artElegido;
         int artElegido;
 
@@ -29,12 +30,11 @@ namespace Hoteles
         public FormRopaSaliente(bool saliente)
         {
             InitializeComponent();
-            if (!saliente)// si es entrante :
-            {
-                labelTitulo.Text = "Ropa Devuelta del Lavadero";
-                ropaSaliente = false;
-            }
-            
+
+            labelTitulo.Text = "Lavadero";
+            ropaSaliente = false;
+
+
             this.tableLayoutPanel2.BackColor = tools.backColorTableLayout;
             this.labelTitulo.BackColor = tools.backColorTitulo;
             this.labelMensaje.BackColor = tools.backColorMsjError;
@@ -68,14 +68,14 @@ namespace Hoteles
                 {
                     dgvOpcionesElegidas.Rows.RemoveAt(dgvOpcionesElegidas.Rows.Count - 1);
                     labelNroHab.Text = "Ingresar Nro.Art ";
-                    tbNroHab.Text = "";                    
+                    tbNroHab.Text = "";
                     pasoAsignacion = "articulo";
                 }
                 else
                 {
                     volverFormPrincipal();
                     return true;
-                }                
+                }
             }
             if (keyData == Keys.F7)
             {
@@ -104,9 +104,9 @@ namespace Hoteles
 
         private void volverFormPrincipal()
         {
-            LoggerProxy.Info("Salir Pedido de Bar");
+            LoggerProxy.Info("Salir Lavadero");
             this.Owner.Show();
-            this.Owner.Focus();            
+            this.Owner.Focus();
             this.Close();
         }
 
@@ -121,125 +121,129 @@ namespace Hoteles
                 switch (pasoAsignacion)
                 {
                     case "articulo":
+                        int cantidad = int.Parse(tbNroHab.Text == "" ? "0" : tbNroHab.Text);
 
-                        msj = validarArticulo(tbNroHab);
-                        if (msj != string.Empty)
-                        {
-                            labelMensaje.Visible = true;
-                            labelMensaje.Text = msj;
-                            return;
-                        }
-                        if (tbNroHab.Text == "0") //Esto significa que no quiere mas articulos.
-                        {
-                            if(ropaSaliente)
-                                labelNroHab.Text = "¿ Confirma Envío ?";
-                            else
-                                labelNroHab.Text = "¿ Confirma Recepción ?";
-                            tbNroHab.Text = "1";
-                            tbNroHab.Visible = false;
-
-                            /*--- Modifico el dgv Promos ---*/
-                            
-                            dgvPromos.Rows.Clear();
-                            dgvPromos.RowTemplate.Height = 80;
-                            dgvPromos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
-                            dgvPromos.Columns[1].HeaderText = " Opciones ";                            
-                            dgvPromos.Columns.RemoveAt(0);
-                            
-                            dgvPromos.Rows.Add("Esc - Cancelar");
-                            dgvPromos.Rows.Add("Enter - Confirmar");
-                            dgvPromos.ClearSelection();
-                            /*-----------------------------------------------*/
-
-                            break;
-                        }
+                        if (DictArticulosSalientes.ContainsKey(nroArtElegido))
+                            DictArticulosSalientes[nroArtElegido] += cantidad;
+                        else
+                            DictArticulosSalientes.Add(nroArtElegido, cantidad);
+                                                                       
                         labelMensaje.Visible = false;
-                        nroArtElegido = int.Parse(tbNroHab.Text);
-                        dgvOpcionesElegidas.Rows.Add(DictArticulos[nroArtElegido]);
+                        dgvOpcionesElegidas.Rows.Add(DictArticulos[nroArtElegido], cantidad);
+                        DictArticulos.Remove(nroArtElegido);
+
+                        /*Graficar en grilla*/
                         int ultFila = dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None);
                         dgvOpcionesElegidas.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Red;
                         dgvOpcionesElegidas.FirstDisplayedScrollingRowIndex = ultFila;
                         dgvOpcionesElegidas.ClearSelection();
+                        //---------------------------------------------------------------------------------
                         this.artElegido = nroArtElegido;
-                        pasoAsignacion = "cantidad";
-                        tbNroHab.Text = "1";
-                        labelNroHab.Text = "Ingresar Cantidad de Articulos ";
+                        tbNroHab.Text = "";
 
-                        break;
-
-                    case "cantidad":
-
-                        int cantidad;
-                        if (tbNroHab.Text == "" || (cantidad = int.Parse(tbNroHab.Text)) == 0)
+                        if (DictArticulos.Count == 0)
                         {
-                            labelMensaje.Visible = true;
-                            labelMensaje.Text = "* La cantidad debe ser un numero mayor a 0 *";
-                            return;
+                            dgvOpcionesElegidas.Rows.Add("Ropa Entrante");
+                            pasoAsignacion = "entrante";
+                            DictArticulos.Clear();
+                            foreach (DataRow dr in Articulo.obtenerListaRopa().Rows)
+                            {
+                                DictArticulos.Add(Convert.ToInt32(dr[0]), dr[1].ToString());
+                            }
+                            labelNroHab.Text = DictArticulos.First().Value;
+                            nroArtElegido = DictArticulos.First().Key;
+
                         }
-                        labelMensaje.Visible = false;
-                        if (DictArticulosPedidos.ContainsKey(nroArtElegido))
-                            DictArticulosPedidos[nroArtElegido] += cantidad;
                         else
-                            DictArticulosPedidos.Add(nroArtElegido, cantidad);
-                        int indice = dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None);// [[3].Cells[1].Value = dgvOpcionesElegidas.Rows[3].Cells[1].Value.ToString() + " " + socio.puntaje;
-                        dgvOpcionesElegidas.Rows[indice].Cells[0].Value = cantidad + " " + dgvOpcionesElegidas.Rows[indice].Cells[0].Value;                        
-                        dgvOpcionesElegidas.ClearSelection();
-                        labelNroHab.Text = "Ingresar Nro.Art ";
-                        tbNroHab.Text = "0";
-                        pasoAsignacion = "articulo";
+                        {
+                            labelNroHab.Text = DictArticulos.First().Value;
+                            nroArtElegido = DictArticulos.First().Key;
+
+                        }
 
                         break;
+
+                    case "entrante":
+
+                        cantidad = int.Parse(tbNroHab.Text == "" ? "0" : tbNroHab.Text);
+
+                        if (DictArticulosEntrantes.ContainsKey(nroArtElegido))
+                            DictArticulosEntrantes[nroArtElegido] += cantidad;
+                        else
+                            DictArticulosEntrantes.Add(nroArtElegido, cantidad);
+
+                        dgvOpcionesElegidas.Rows.Add(DictArticulos[nroArtElegido], cantidad);
+                        DictArticulos.Remove(nroArtElegido);
+
+                        /*Graficar en grilla*/
+                        ultFila = dgvOpcionesElegidas.Rows.GetLastRow(DataGridViewElementStates.None);
+                        dgvOpcionesElegidas.Rows[ultFila].DefaultCellStyle.ForeColor = Color.Red;
+                        dgvOpcionesElegidas.FirstDisplayedScrollingRowIndex = ultFila;
+                        //---------------------------------------------------------------------------------
+                        //this.artElegido = nroArtElegido;                        
+
+                        if (DictArticulos.Count == 0)
+                        {
+                            labelNroHab.Text = "¿ Confirma ?";
+                            tbNroHab.Text = "1";
+                            tbNroHab.Visible = false;
+                            /*--- Modifico el dgv Promos ---*/
+                            dgvPromos.Rows.Clear();
+                            dgvPromos.RowTemplate.Height = 80;
+                            dgvPromos.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+                            dgvPromos.Columns[1].HeaderText = " Opciones ";
+                            dgvPromos.Columns.RemoveAt(0);
+                            dgvPromos.Rows.Add("Esc - Cancelar");
+                            dgvPromos.Rows.Add("Enter - Confirmar");
+                            dgvPromos.ClearSelection();
+                            pasoAsignacion = "confirmar";
+                        }
+                        else
+                        {
+                            labelNroHab.Text = DictArticulos.First().Value;
+                            nroArtElegido = DictArticulos.First().Key;
+                        }
+
+                        break;
+
 
                     case "confirmar":
-
-                        if (tbNroHab.Text == "")
+                        try
                         {
-                            labelMensaje.Visible = true;
-                            labelMensaje.Text = "* La cantidad debe ser un numero mayor a 0 *";
-                            return;
-                        }
-                        labelMensaje.Visible = false;
-                        if (int.Parse(tbNroHab.Text) == 1)
-                        {
+                            DataTable saldoAnterior = RopaHotel.ObtenerSaldoAnterior();
+                           /* Articulo.generarSalidaRopa(DictArticulosSalientes);
+                            LoggerProxy.Info(string.Format("Ejecuto Salida Ropa"));
+                            Articulo.generarEntradaRopa(DictArticulosEntrantes);
+                            LoggerProxy.Info(string.Format("Ejecuto Entrada Ropa"));*/
+                            //if(tools.obtenerParametroInt("emisionTicketLavaderoPedidos") == 1 )
                             try
                             {
-                                if (ropaSaliente)
-                                {
-                                    Articulo.generarSalidaRopa(DictArticulosPedidos);
-                                    LoggerProxy.Info(string.Format("Ejecuto Salida Ropa"));
-                                }
-                                else
-                                {
-                                    Articulo.generarEntradaRopa(DictArticulosPedidos);
-                                    LoggerProxy.Info(string.Format("Ejecuto Entrada Ropa"));
-                                }
-                                //if(tools.obtenerParametroInt("emisionPedidos") == 1 )
-                                //    new Impresora().ImprimirSolicitudBar(labelMensaje, DictArticulosPedidos, nroHab);
-                                volverFormPrincipal();
-                                
+                                new Impresora().ImprimirRopaHotelYActualizarSaldo(DictArticulosEntrantes,DictArticulosSalientes,saldoAnterior);
                             }
                             catch (Exception ex)
                             {
-                                labelMensaje.Text = "Ha ocurrido un error.Revisar los Logs.";
-                                labelMensaje.Visible = true;
-                                LoggerProxy.Error("Error al generar Salida de ropa - " + ex.Message + " " + ex.StackTrace);
+                                LoggerProxy.Error("Falla en Ropa Saliente-Imprimir Confirmación.\r\n" + ex.Message + "-" + ex.StackTrace);
+                                labelMensaje.Text = "Error, no se pudo imprimir. Ver Log.";
+                                labelMensaje.Visible = true;                                                                
                             }
-
-                            return;
-                        }
-                        if (int.Parse(tbNroHab.Text) == 0)
-                        {
                             volverFormPrincipal();
-                            return;
+                        }
+                        catch (Exception ex)
+                        {
+                            labelMensaje.Text = "Ha ocurrido un error.Revisar los Logs.";
+                            labelMensaje.Visible = true;                            
+                            LoggerProxy.Error("Error al generar Estado Lavadero.\r\n" + ex.Message + "-" + ex.StackTrace);
                         }
 
-                        break;
+                        return;
 
                     default:
                         break;
                 }
-
+                tbNroHab.Text = "";
+                dgvOpcionesElegidas.ClearSelection();
                 tbNroHab.Select(0, tbNroHab.TextLength);
+
                 return;
             }
 
@@ -255,7 +259,7 @@ namespace Hoteles
             }
         }
 
-     
+
         private string validarArticulo(TextBox tbNroArt)
         {
             if (tbNroArt.Text == String.Empty)
@@ -280,18 +284,20 @@ namespace Hoteles
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
-            DataRowCollection articulos = Articulo.obtenerListaArticulos().Rows;                       
+            //DataRowCollection articulos = Articulo.obtenerListaArticulos().Rows;                       
 
             dgvPromos.RowTemplate.Height = tools.altoFilaBar;// con un heigt de 60 entran 6
-            dgvOpcionesElegidas.RowTemplate.Height = tools.altoFilaBar;
-
+            dgvOpcionesElegidas.RowTemplate.Height = tools.altoFilaBar - 10;
+            dgvOpcionesElegidas.Rows.Add("Ropa Saliente");
             foreach (DataRow dr in Articulo.obtenerListaRopa().Rows)
             {
                 dgvPromos.Rows.Add(dr[0].ToString(), dr[1].ToString());
                 DictArticulos.Add(Convert.ToInt32(dr[0]), dr[1].ToString());
             }
-      
-            dgvPromos.ClearSelection();            
+            labelNroHab.Text = DictArticulos.First().Value;
+            nroArtElegido = DictArticulos.First().Key;
+
+            dgvPromos.ClearSelection();
             dgvOpcionesElegidas.ClearSelection();
         }
 

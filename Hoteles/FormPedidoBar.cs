@@ -10,6 +10,8 @@ using System.Threading;
 using Hoteles.Entities;
 using System.Data.SqlClient;
 using System.Globalization;
+using WindowsFormsApplication1;
+using System.IO;
 
 namespace Hoteles
 {
@@ -18,6 +20,7 @@ namespace Hoteles
         string pasoAsignacion = "nroHabitacion";
         int nroArtElegido;
         int nroHab;
+        
         Socio socio = new Socio();
         Dictionary<int, Articulo> DictArticulos = new Dictionary<int, Articulo>();
         Dictionary<int, int> DictArticulosPedidos = new Dictionary<int, int>();
@@ -224,10 +227,17 @@ namespace Hoteles
                                 LoggerProxy.Info(string.Format("Ejecuto Pedido Bar - Hab:{0}", nroHab));
                                 if (tools.obtenerParametroString("emisionPedidos") != "No")
                                 {
-                                    ParameterizedThreadStart pth = new ParameterizedThreadStart(imprimirPedido);
+                                    /*ParameterizedThreadStart pth = new ParameterizedThreadStart(imprimirPedido);
                                     Thread th = new Thread(pth);
-                                    th.Start(new pedidoAux(DictArticulosPedidos, nroHab, labelMensaje));                                   
+                                    th.Start(new pedidoAux(DictArticulosPedidos, nroHab, labelMensaje));*/
+                                    imprimirPedido(new pedidoAux(DictArticulosPedidos, nroHab, labelMensaje));
                                 }
+
+                                List<string> sonido = new List<string>();
+                                sonido.Add("pedido de bar.wav");
+                                sonido.Add("habitacion numero.wav");
+                                sonido.Add(nroHab.ToString()+".wav");                                
+                                Audio.PlayList(sonido);
                                 volverFormPrincipal();
 
                             }
@@ -278,6 +288,9 @@ namespace Hoteles
         {
             if (tbNroHab.Text == String.Empty)
                 return "* Debe ingresar el número de habitación *";
+            if (tbNroHab.Text == "0")
+                return string.Empty;
+
             DataSet ds = new DataSet();
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from habitaciones where nroHabitacion = " + tbNroHab.Text, fPrincipal2.conn);
             dataAdapter.Fill(ds);

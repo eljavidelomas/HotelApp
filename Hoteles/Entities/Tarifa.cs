@@ -318,7 +318,7 @@ namespace Hoteles.Entities
             {
                 if (ds.Tables[0].Rows.Count == 0)
                 {
-                    log.Info("Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:" + catId + " hora:" + hora.ToString("yyyy-MM-dd HH:mm:ss"));
+                    LoggerProxy.Error("Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:" + catId + " hora:" + hora.ToString("yyyy-MM-dd HH:mm:ss"));
                 }
                 else
                     log.Error("Tarifa.obtenerTarifaActual = " + ex.Message + ex.StackTrace);

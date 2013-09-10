@@ -18,7 +18,7 @@ namespace Hoteles.Entities
         public int cantidadConsumida;
 
 
-        public Articulo(int id, string nombre, decimal precio,int cantidad)
+        public Articulo(int id, string nombre, decimal precio, int cantidad)
         {
             this.id = id;
             this.nombre = nombre;
@@ -69,7 +69,7 @@ namespace Hoteles.Entities
             {
                 dataAdapter.Fill(ds);
                 datos.SetValue((ds.Tables[0].Rows[0][0]).ToString(), 0);
-                datos.SetValue(decimal.Parse((ds.Tables[0].Rows[0][1]).ToString()),1);
+                datos.SetValue(decimal.Parse((ds.Tables[0].Rows[0][1]).ToString()), 1);
                 return datos;
             }
             catch (Exception ex)
@@ -85,6 +85,8 @@ namespace Hoteles.Entities
             try
             {
                 SqlCommand comm;
+
+
                 comm = new SqlCommand("articulos_insertar", fPrincipal2.conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@nroHab", nroHab);
@@ -102,12 +104,12 @@ namespace Hoteles.Entities
                     comm.Parameters.RemoveAt("@cant");
                     comm.CommandText = "articulos_insertar";
                 }
-                                
-                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);              
+                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
 
                 return true;
             }
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -138,7 +140,7 @@ namespace Hoteles.Entities
                 }
 
                 tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-                
+
                 return true;
             }
             catch (Exception ex)
@@ -147,12 +149,12 @@ namespace Hoteles.Entities
             }
 
         }
-        
+
         static public DataTable obtenerListaRopa()
         {
             DataSet ds = new DataSet();
             SqlDataAdapter dataAdapter = new SqlDataAdapter("ropaHotel_listadoRopaHotel", fPrincipal2.conn);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;            
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             try
             {
                 dataAdapter.Fill(ds);
@@ -171,16 +173,16 @@ namespace Hoteles.Entities
             {
                 SqlCommand comm;
                 comm = new SqlCommand("ropaHotel_descontar", fPrincipal2.conn);
-                comm.CommandType = CommandType.StoredProcedure;                
+                comm.CommandType = CommandType.StoredProcedure;
 
                 foreach (int nroArt in envios.Keys)
                 {
                     comm.Parameters.AddWithValue("@nroArt", nroArt);
                     comm.Parameters.AddWithValue("@cant", envios[nroArt]);
-                    comm.ExecuteNonQuery();                   
+                    comm.ExecuteNonQuery();
                     comm.Parameters.RemoveAt("@nroArt");
-                    comm.Parameters.RemoveAt("@cant");                    
-                }                
+                    comm.Parameters.RemoveAt("@cant");
+                }
             }
             catch (Exception ex)
             {

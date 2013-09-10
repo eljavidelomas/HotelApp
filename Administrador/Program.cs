@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Administrador.Entities;
 
 namespace Administrador
 {
@@ -15,13 +16,15 @@ namespace Administrador
         {
             try
             {
+                LoggerProxy.Error("lalala");
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new FAdministrador());
             }
             catch (Exception ex)
             {
-                int test = 0;
+                LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
+                LoggerProxy.Info(ex.Message + " - " + ex.StackTrace);                
             }
         }
     }

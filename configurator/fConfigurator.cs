@@ -46,8 +46,8 @@ namespace Configurator
             ImpresoraCaja.SelectedItem = tools.obtenerParametroString("ImpresoraCaja");
             ImpresoraCocina.SelectedItem = tools.obtenerParametroString("ImpresoraCocina");
             ImpresoraTickets.SelectedItem = tools.obtenerParametroString("ImpresoraTickets");
-            portSeñalIn.SelectedItem = tools.obtenerParametroString("portSeñalIn");
-            modSeñalizacion.SelectedItem = tools.obtenerParametroString("modSeñalizacion");
+            portSeñalIn.SelectedItem = tools.obtenerParametroString("portSenialIn");
+            modSeñalizacion.SelectedItem = tools.obtenerParametroString("modSenializacion");
             stockCierreCaja.SelectedItem = tools.obtenerParametroString("stockCierreCaja");
             nombreHotel.Text = tools.obtenerParametroString("nombreHotel");            
             nroHotelCodBarras.Text = tools.obtenerParametroInt("nroHotelCodBarras").ToString();
@@ -62,12 +62,16 @@ namespace Configurator
             ordenListado.SelectedItem = tools.obtenerParametroString("ordenListado");
             minFinTurnoMayor100.Text = tools.obtenerParametroInt("minFinTurnoMayor100").ToString();
             minFinTurnoMenor100.Text = tools.obtenerParametroInt("minFinTurnoMenor100").ToString();
+            diasParaVencimientoPuntos.Text = tools.obtenerParametroInt("diasParaVencimientoPuntos").ToString();
             coefPuntos.Text = tools.obtenerParametroString("coefPuntos");
+            directorioAudio.Text = tools.obtenerParametroString("directorioAudio");
             bytes.Text = tools.obtenerParametroInt("bytes").ToString();
             claveAcceso.Text = tools.obtenerParametroString("claveAcceso");
             placaOutter.Checked = tools.obtenerParametroInt("placaOutter") == 0 ? false : true;
             eventosCierre.Checked = tools.obtenerParametroInt("eventosCierre") == 0 ? false : true;
             loggin.Checked = tools.obtenerParametroInt("loggin") == 0 ? false : true;
+            haySenializacion.Checked = tools.obtenerParametroInt("haySenializacion") == 0 ? false : true;
+            emisionTicketAsignar.Checked = tools.obtenerParametroInt("emisionTicketAsignar") == 0 ? false : true;
 
         }
                 

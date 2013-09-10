@@ -64,14 +64,14 @@ namespace Hoteles.Entities
                        desde.ToString("HH:mm") + "  " +
                        (hasta == DateTime.MinValue ? "   " : hasta.ToString("HH:mm")) + "   " +
                         socio.ToString().PadLeft(3).PadRight(6) + "  " +
-                       (turnos == 0 ? "" : turnos.ToString()).PadLeft(8) + "    " +
-                       (extras == 0 ? "" : extras.ToString()).PadLeft(6) + "    " +
-                       (bar == 0 ? "" : bar.ToString()).PadLeft(6) + "    " +
-                       (descuento == 0 ? "" : descuento.ToString()).PadLeft(6) + "     " +
-                       (total == 0 ? "" : total.ToString()).PadLeft(8) + "    " +
-                       (efectivo == 0 ? "" : efectivo.ToString()).PadLeft(8) + "   " +
-                       (tarjeta == 0 ? "" : tarjeta.ToString()).PadLeft(8) + "     " +
-                       (gastos == 0 ? "" : gastos.ToString()).PadLeft(8);
+                       (turnos == 0 ? "" : turnos.ToString("N0")).PadLeft(8) + "    " +
+                       (extras == 0 ? "" : extras.ToString("N0")).PadLeft(6) + "   " +
+                       (bar == 0 ? "" : bar.ToString("N0")).PadLeft(6) + "   " +
+                       (descuento == 0 ? "" : descuento.ToString("N0")).PadLeft(6) + "    " +
+                       (total == 0 ? "" : total.ToString("N0")).PadLeft(8) + "    " +
+                       (efectivo == 0 ? "" : efectivo.ToString("N0")).PadLeft(8) + "   " +
+                       (tarjeta == 0 ? "" : tarjeta.ToString("N0")).PadLeft(8) + "     " +
+                       (gastos == 0 ? "" : gastos.ToString("N0")).PadLeft(8);
             }
             else
             {
@@ -79,8 +79,8 @@ namespace Hoteles.Entities
                       (nroHab == 0 ? "" : nroHab.ToString()).PadLeft(2).PadRight(4) + " " +
                       desde.ToString("HH:mm") + "  " +
                       (hasta == DateTime.MinValue ? "   " : hasta.ToString("HH:mm")) + "   " +
-                       socio.ToString().PadLeft(3).PadRight(84) + "    " +                      
-                       gastos.ToString().PadLeft(8);
+                       socio.ToString().PadLeft(3).PadRight(81) + "   " +
+                       gastos.ToString("N0").PadLeft(8);
             }
         }
     }

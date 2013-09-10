@@ -19,10 +19,12 @@ namespace Hoteles
     {
         int nroHab;
         int medioPago;
-        decimal monto; 
+        decimal monto=0;
+        int puntos=0;
         string pasoAsignacion = "nroHabitacion";
         DetallesHabitacion detallesHab;
-        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();       
+        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();
+        Socio socio;
 
 
         public FormAdelantoDinero()
@@ -102,7 +104,9 @@ namespace Hoteles
                             detallesHab = Habitacion.obtenerDetalles(nroHab);
                             decimal saldoAfavor = decimal.Parse(detallesHab.ptosCambiados.ToString()) - detallesHab.impHabitacion < 0 ? 0 : decimal.Parse(detallesHab.ptosCambiados.ToString()) - detallesHab.impHabitacion;
                             dgvOpcionesElegidas.Rows[0].Cells[0].Value = dgvOpcionesElegidas.Rows[0].Cells[0].Value.ToString() + " " + nroHab;
-                            dgvOpcionesElegidas.Rows[1].Cells[0].Value = dgvOpcionesElegidas.Rows[1].Cells[0].Value.ToString() + " " + String.Format("{0:C}", detallesHab.impHabitacion - decimal.Parse(detallesHab.ptosCambiados));
+                            decimal importeAux2 = detallesHab.impHabitacion - decimal.Parse(detallesHab.ptosCambiados);
+                            importeAux2 = importeAux2 < 0 ? 0 : importeAux2;// Si es negativo ,pongo cero.
+                            dgvOpcionesElegidas.Rows[1].Cells[0].Value = dgvOpcionesElegidas.Rows[1].Cells[0].Value.ToString() + " " + String.Format("{0:C}",importeAux2 );
                             dgvOpcionesElegidas.Rows[2].Cells[0].Value = dgvOpcionesElegidas.Rows[2].Cells[0].Value.ToString() + " " + detallesHab.ptosCambiados;
                             dgvOpcionesElegidas.Rows[3].Cells[0].Value = dgvOpcionesElegidas.Rows[3].Cells[0].Value.ToString() + " " + String.Format("{0:C}", saldoAfavor); ;
                            
@@ -124,10 +128,35 @@ namespace Hoteles
                                 return;
                             }
                             labelMensaje.Visible = false;
+                            
+                            //Agrego el tema de los Puntos
+
+                            if (dictMediosDePago[medioPago].ToLower().Contains("puntos"))
+                            {
+                                if (string.IsNullOrEmpty(detallesHab.nroSocio))
+                                {
+                                    labelMensaje.Text = "* El cliente no es socio *";
+                                    labelMensaje.Visible = true;
+                                    return;
+                                }
+                                socio = Socio.registrarYobtener(int.Parse(detallesHab.nroSocio));
+                                
+                                /*--- Modificar panel medios de pago---*/
+                                dgvMedioPago.Rows.Clear();
+                                dgvMedioPago.Columns[1].HeaderText = "Datos Socio";
+                                dgvMedioPago.Rows.Add("","Puntos: "+ socio.puntaje);
+                                dgvMedioPago.Rows.Add("", "Vencimiento: " + socio.fechaVencimientoPuntaje.ToString("dd-MM-yyyy"));
+                                /*-------------------------------------*/
+                                labelNroHab.Text = "Puntos a Cambiar";
+                                pasoAsignacion = "puntos";
+                            }
+                            else
+                            {
+                                labelNroHab.Text = "Monto a Adelantar $ ";
+                                pasoAsignacion = "monto";
+                            }
                             dgvOpcionesElegidas.Rows[4].Cells[0].Value = dgvOpcionesElegidas.Rows[4].Cells[0].Value.ToString() + " " + dictMediosDePago[medioPago];
-                            labelNroHab.Text = "Monto a Adelantar $ ";
-                            tbNroHab.Text = "0";
-                            pasoAsignacion = "monto";
+                            tbNroHab.Text = "0";                            
                             
                             break;
 
@@ -152,24 +181,46 @@ namespace Hoteles
                             pasoAsignacion = "confirmar";
                             labelNroHab.Text = "Confirma Adelanto?";
                             tbNroHab.Visible = false;
+                            mostrarOpcionConfirmar();                            
+
+                            break;
+
+                        case "puntos":
+
+                            if (string.IsNullOrEmpty(tbNroHab.Text) || tbNroHab.Text == "0")
+                            {
+                                labelMensaje.Text = "* La cantidad de puntos debe ser mayor a cero *";
+                                labelMensaje.Visible = true;
+                                return;
+                            }
+                            puntos = int.Parse(tbNroHab.Text);
+                            if (puntos > socio.puntaje)
+                            {
+                                labelMensaje.Text = "* Puntaje insuficiente *";
+                                tbNroHab.Clear();
+                                labelMensaje.Visible = true;
+                                return;
+                            }
+                            labelMensaje.Visible = false;
+                            dgvOpcionesElegidas.Rows[5].Cells[0].Value = dgvOpcionesElegidas.Rows[5].Cells[0].Value.ToString() + " " + puntos.ToString();
+
+                            pasoAsignacion = "confirmar";
+                            labelNroHab.Text = "Confirma Adelanto?";
+                            tbNroHab.Visible = false;
 
                             /*--- Modifico el dgv Promos ---*/
-                            dgvMedioPago.Rows.Clear();
-                            dgvMedioPago.RowTemplate.Height = 80;
-                            dgvMedioPago.BackgroundColor = Color.White;
-                            dgvMedioPago.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
-                            dgvMedioPago.Columns[1].HeaderText = " Opciones ";
-                            dgvMedioPago.Columns.RemoveAt(0);
-                            dgvMedioPago.Rows.Add("Esc - Cancelar");
-                            dgvMedioPago.Rows.Add("Enter - Confirmar");
-                            dgvMedioPago.ClearSelection();
-                            panelPromos.Visible = true;
-                            /*-----------------------------------------------*/
+                            mostrarOpcionConfirmar();
 
                             break;
 
                         case "confirmar":
-                            Habitacion.Adelanto((fPrincipal2)this.Owner, nroHab, monto, medioPago);
+                            
+                            if(puntos == 0)
+                                Habitacion.Adelanto((fPrincipal2)this.Owner, nroHab, monto, medioPago);
+                            else
+                                //adelanto puntos y se los descuento al socio.
+                                Habitacion.AdelantarPuntos((fPrincipal2)this.Owner, nroHab, puntos,ref socio);
+
                             LoggerProxy.Info(string.Format("Ejecuto Adelanto de Dinero - Hab:{0}  Monto:{1}",nroHab,monto));
                             volverFormPrincipal();
                             return;                            
@@ -178,6 +229,7 @@ namespace Hoteles
                             break;
                     }
                     tbNroHab.Select(0, tbNroHab.TextLength);
+                    dgvMedioPago.ClearSelection();
                     //tbNroHab.SelectionStart = tbNroHab.TextLength;
                     return;
                 }
@@ -198,6 +250,20 @@ namespace Hoteles
                 labelMensaje.Visible = true;
                 LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
             }
+        }
+
+        private void mostrarOpcionConfirmar()
+        {
+            dgvMedioPago.Rows.Clear();
+            dgvMedioPago.RowTemplate.Height = 80;
+            dgvMedioPago.BackgroundColor = Color.White;
+            dgvMedioPago.RowTemplate.DefaultCellStyle.Font = tools.fuenteConfirma;
+            dgvMedioPago.Columns[1].HeaderText = " Opciones ";
+            dgvMedioPago.Columns.RemoveAt(0);
+            dgvMedioPago.Rows.Add("Esc - Cancelar");
+            dgvMedioPago.Rows.Add("Enter - Confirmar");
+            dgvMedioPago.ClearSelection();
+            panelPromos.Visible = true;
         }
 
         private string validarNroHabitacion(TextBox tbNroHab)
@@ -237,15 +303,13 @@ namespace Hoteles
             tools.completarDG(dgvMedioPago, altoFilaExtraMedioPagos);
             panelPromos.Visible = false;
             //---------------------------------------------------------------------------//
-
-
-
+            
             dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
             dgvOpcionesElegidas.Rows.Add("Monto a Pagar:");
             dgvOpcionesElegidas.Rows.Add("Puntos canjeados:");
             dgvOpcionesElegidas.Rows.Add("Saldo a Favor:");
             dgvOpcionesElegidas.Rows.Add("Medio de Pago:"); // 4           
-            dgvOpcionesElegidas.Rows.Add("Monto a Adelantar:");
+            dgvOpcionesElegidas.Rows.Add("Cant a Adelantar:");
             dgvOpcionesElegidas.ClearSelection();
         }
 

@@ -1,4 +1,0 @@
-2013-04-25 02:03:36,678 [1] INFO  - Comienzo - Aplicacion Hotel
-2013-04-25 02:11:25,667 [1] INFO  - Comienzo - Aplicacion Hotel
-2013-04-25 02:13:01,235 [1] INFO  - Comienzo - Aplicacion Hotel
-2013-04-25 02:27:36,265 [1] INFO  - Comienzo - Aplicacion Hotel

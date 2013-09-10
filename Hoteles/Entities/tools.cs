@@ -24,6 +24,7 @@ namespace Hoteles.Entities
         public static Color backColorMsjError = Color.White;
         public static Color backColorIngresoDatos = SystemColors.ControlLightLight;
         public static Font fuenteConfirma = new Font("Palatino Linotype", 22, FontStyle.Bold);
+        public static string dirAudio = tools.obtenerParametroString("directorioAudio");
 
         public static DataTable listadoTurnos()
         {
@@ -76,9 +77,13 @@ namespace Hoteles.Entities
                         dgv.Rows.Add(dr["nroHabitacion"], dr["categoria2"].ToString() == "" ? dr["categoria"] : dr["categoria2"]);
                         filaActual = dgv.Rows.GetLastRow(DataGridViewElementStates.None);
                     }
-
-
-                    dgv.Rows[filaActual].Cells[7].Value = String.Format("{0:C}", dr["importe"]);
+                    /*--- Logica por si el importe es negativo ---*/
+                    decimal importeAux;
+                    decimal.TryParse(dr["importe"].ToString(), out importeAux);
+                    if (importeAux < 0)
+                        dgv.Rows[filaActual].Cells[7].Value = String.Format("{0:C}", 0);
+                    else
+                        dgv.Rows[filaActual].Cells[7].Value = String.Format("{0:C}", dr["importe"]);
                     dgv.Rows[filaActual].Cells[6].Value = "";// h.Sal 
                     dgv.Rows[filaActual].Cells[2].Value = ((System.Drawing.Image)Resources.vacio);//bar
                     dgv.Rows[filaActual].Cells[3].Value = ((System.Drawing.Image)Resources.vacio);//acc
@@ -338,6 +343,13 @@ namespace Hoteles.Entities
         {
             SqlCommand comm;
             comm = new SqlCommand("select val1_string from parametros where nombre = '" + parametro + "'", fPrincipal2.conn);
+            
+            if (parametro == "directorioAudio")
+            {
+                string salida = comm.ExecuteScalar().ToString();
+                salida = salida.EndsWith("\\") ? salida : salida + '\\';
+                return salida;
+            }
 
             return comm.ExecuteScalar().ToString();
         }

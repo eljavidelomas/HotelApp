@@ -30,36 +30,38 @@ namespace Hoteles
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGlobal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblMonto = new System.Windows.Forms.Label();
-            this.panelPromos = new System.Windows.Forms.Panel();
-            this.lblNroHab = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvDetallesTurno = new System.Windows.Forms.DataGridView();
             this.cantArticulos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelPromos = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lHoraEnt = new System.Windows.Forms.Label();
+            this.lblMonto = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblNroHab = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.mediosDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new Hoteles.hotelDataSet();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.opcionesAsignarHabitacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mediosDePagoTableAdapter = new Hoteles.hotelDataSetTableAdapters.mediosDePagoTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lHora = new System.Windows.Forms.Label();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lHoraSal = new System.Windows.Forms.Label();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panelPromos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesTurno)).BeginInit();
+            this.panelPromos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mediosDePagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -82,7 +84,7 @@ namespace Hoteles
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.MintCream;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.33438F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.66562F));
@@ -100,63 +102,6 @@ namespace Hoteles
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1268, 636);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // lblMonto
-            // 
-            this.lblMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMonto.Font = new System.Drawing.Font("Stencil", 65F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonto.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblMonto.Location = new System.Drawing.Point(5, 517);
-            this.lblMonto.Margin = new System.Windows.Forms.Padding(0);
-            this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(537, 109);
-            this.lblMonto.TabIndex = 5;
-            this.lblMonto.Text = "$ 77.065,25";
-            this.lblMonto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelPromos
-            // 
-            this.panelPromos.Controls.Add(this.label4);
-            this.panelPromos.Controls.Add(this.lHora);
-            this.panelPromos.Controls.Add(this.lblMonto);
-            this.panelPromos.Controls.Add(this.label2);
-            this.panelPromos.Controls.Add(this.label1);
-            this.panelPromos.Controls.Add(this.lblNroHab);
-            this.panelPromos.Controls.Add(this.shapeContainer1);
-            this.panelPromos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPromos.Location = new System.Drawing.Point(726, 0);
-            this.panelPromos.Margin = new System.Windows.Forms.Padding(0);
-            this.panelPromos.Name = "panelPromos";
-            this.tableLayoutPanel2.SetRowSpan(this.panelPromos, 3);
-            this.panelPromos.Size = new System.Drawing.Size(542, 636);
-            this.panelPromos.TabIndex = 8;
-            // 
-            // lblNroHab
-            // 
-            this.lblNroHab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNroHab.Font = new System.Drawing.Font("Stencil", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroHab.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblNroHab.Location = new System.Drawing.Point(270, 29);
-            this.lblNroHab.Margin = new System.Windows.Forms.Padding(5);
-            this.lblNroHab.Name = "lblNroHab";
-            this.lblNroHab.Size = new System.Drawing.Size(273, 114);
-            this.lblNroHab.TabIndex = 6;
-            this.lblNroHab.Text = "115";
-            this.lblNroHab.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 60F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(9, 428);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(528, 79);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Saldo";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // dgvDetallesTurno
             // 
             this.dgvDetallesTurno.AllowUserToAddRows = false;
@@ -164,31 +109,31 @@ namespace Hoteles
             this.dgvDetallesTurno.AllowUserToResizeColumns = false;
             this.dgvDetallesTurno.AllowUserToResizeRows = false;
             this.dgvDetallesTurno.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDetallesTurno.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.dgvDetallesTurno.BackgroundColor = System.Drawing.Color.MintCream;
             this.dgvDetallesTurno.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDetallesTurno.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetallesTurno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetallesTurno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetallesTurno.ColumnHeadersHeight = 40;
             this.dgvDetallesTurno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetallesTurno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cantArticulos,
             this.descripcion,
             this.precio});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetallesTurno.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetallesTurno.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDetallesTurno.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetallesTurno.EnableHeadersVisualStyles = false;
             this.dgvDetallesTurno.Location = new System.Drawing.Point(0, 0);
@@ -199,8 +144,8 @@ namespace Hoteles
             this.dgvDetallesTurno.RowHeadersWidth = 20;
             this.dgvDetallesTurno.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.tableLayoutPanel2.SetRowSpan(this.dgvDetallesTurno, 3);
-            this.dgvDetallesTurno.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dgvDetallesTurno.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            this.dgvDetallesTurno.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Empty;
+            this.dgvDetallesTurno.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvDetallesTurno.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgvDetallesTurno.RowTemplate.Height = 30;
             this.dgvDetallesTurno.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -211,8 +156,8 @@ namespace Hoteles
             // 
             // cantArticulos
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantArticulos.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantArticulos.DefaultCellStyle = dataGridViewCellStyle6;
             this.cantArticulos.FillWeight = 15F;
             this.cantArticulos.HeaderText = "Cant";
             this.cantArticulos.Name = "cantArticulos";
@@ -227,12 +172,147 @@ namespace Hoteles
             // 
             // precio
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.precio.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.precio.DefaultCellStyle = dataGridViewCellStyle7;
             this.precio.FillWeight = 20F;
             this.precio.HeaderText = "Importe";
             this.precio.Name = "precio";
             this.precio.ReadOnly = true;
+            // 
+            // panelPromos
+            // 
+            this.panelPromos.Controls.Add(this.label5);
+            this.panelPromos.Controls.Add(this.lHoraSal);
+            this.panelPromos.Controls.Add(this.label4);
+            this.panelPromos.Controls.Add(this.lHoraEnt);
+            this.panelPromos.Controls.Add(this.lblMonto);
+            this.panelPromos.Controls.Add(this.label2);
+            this.panelPromos.Controls.Add(this.label1);
+            this.panelPromos.Controls.Add(this.lblNroHab);
+            this.panelPromos.Controls.Add(this.shapeContainer1);
+            this.panelPromos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPromos.Location = new System.Drawing.Point(726, 0);
+            this.panelPromos.Margin = new System.Windows.Forms.Padding(0);
+            this.panelPromos.Name = "panelPromos";
+            this.tableLayoutPanel2.SetRowSpan(this.panelPromos, 3);
+            this.panelPromos.Size = new System.Drawing.Size(542, 636);
+            this.panelPromos.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 35F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label4.Location = new System.Drawing.Point(21, 176);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(216, 68);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Entrada :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lHoraEnt
+            // 
+            this.lHoraEnt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lHoraEnt.Font = new System.Drawing.Font("Stencil", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHoraEnt.ForeColor = System.Drawing.Color.Firebrick;
+            this.lHoraEnt.Location = new System.Drawing.Point(240, 178);
+            this.lHoraEnt.Margin = new System.Windows.Forms.Padding(0);
+            this.lHoraEnt.Name = "lHoraEnt";
+            this.lHoraEnt.Size = new System.Drawing.Size(290, 64);
+            this.lHoraEnt.TabIndex = 9;
+            this.lHoraEnt.Text = "11:55";
+            this.lHoraEnt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblMonto
+            // 
+            this.lblMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMonto.Font = new System.Drawing.Font("Stencil", 65F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonto.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblMonto.Location = new System.Drawing.Point(5, 504);
+            this.lblMonto.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(537, 109);
+            this.lblMonto.TabIndex = 5;
+            this.lblMonto.Text = "$ 77.065,25";
+            this.lblMonto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 80F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label2.Location = new System.Drawing.Point(32, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(243, 109);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Hab";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 60F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(9, 405);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(528, 79);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Saldo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNroHab
+            // 
+            this.lblNroHab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNroHab.Font = new System.Drawing.Font("Times New Roman", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroHab.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblNroHab.Location = new System.Drawing.Point(276, 29);
+            this.lblNroHab.Margin = new System.Windows.Forms.Padding(5);
+            this.lblNroHab.Name = "lblNroHab";
+            this.lblNroHab.Size = new System.Drawing.Size(226, 114);
+            this.lblNroHab.TabIndex = 6;
+            this.lblNroHab.Text = "115";
+            this.lblNroHab.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2,
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(542, 636);
+            this.shapeContainer1.TabIndex = 7;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape2.BorderWidth = 3;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 2;
+            this.lineShape2.X2 = 540;
+            this.lineShape2.Y1 = 398;
+            this.lineShape2.Y2 = 398;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.lineShape1.BorderWidth = 3;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 1;
+            this.lineShape1.X2 = 1;
+            this.lineShape1.Y1 = 1;
+            this.lineShape1.Y2 = 636;
             // 
             // mediosDePagoBindingSource
             // 
@@ -284,81 +364,33 @@ namespace Hoteles
             // 
             this.mediosDePagoTableAdapter.ClearBeforeFill = true;
             // 
-            // label2
+            // label5
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 80F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label2.Location = new System.Drawing.Point(19, 33);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(268, 109);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Hab";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Font = new System.Drawing.Font("Modern No. 20", 35F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label5.Location = new System.Drawing.Point(23, 257);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(173, 68);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Salida :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // shapeContainer1
+            // lHoraSal
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape2,
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(542, 636);
-            this.shapeContainer1.TabIndex = 7;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
-            this.lineShape1.BorderWidth = 3;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 1;
-            this.lineShape1.X2 = 1;
-            this.lineShape1.Y1 = 1;
-            this.lineShape1.Y2 = 636;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lHoraSal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Modern No. 20", 40F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(76, 219);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 109);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Hora :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lHora
-            // 
-            this.lHora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lHora.Font = new System.Drawing.Font("Stencil", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lHora.ForeColor = System.Drawing.Color.Firebrick;
-            this.lHora.Location = new System.Drawing.Point(234, 225);
-            this.lHora.Margin = new System.Windows.Forms.Padding(0);
-            this.lHora.Name = "lHora";
-            this.lHora.Size = new System.Drawing.Size(292, 96);
-            this.lHora.TabIndex = 9;
-            this.lHora.Text = "11:55";
-            this.lHora.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lineShape2.BorderWidth = 3;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 2;
-            this.lineShape2.X2 = 540;
-            this.lineShape2.Y1 = 418;
-            this.lineShape2.Y2 = 418;
+            this.lHoraSal.Font = new System.Drawing.Font("Stencil", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHoraSal.ForeColor = System.Drawing.Color.Firebrick;
+            this.lHoraSal.Location = new System.Drawing.Point(196, 259);
+            this.lHoraSal.Margin = new System.Windows.Forms.Padding(0);
+            this.lHoraSal.Name = "lHoraSal";
+            this.lHoraSal.Size = new System.Drawing.Size(325, 64);
+            this.lHoraSal.TabIndex = 11;
+            this.lHoraSal.Text = "11:55";
+            this.lHoraSal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormCierreTurnoCliente
             // 
@@ -372,8 +404,8 @@ namespace Hoteles
             this.Load += new System.EventHandler(this.FormAsignarHab_Load);
             this.panelGlobal.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.panelPromos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesTurno)).EndInit();
+            this.panelPromos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mediosDePagoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -406,8 +438,10 @@ namespace Hoteles
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lHora;
+        private System.Windows.Forms.Label lHoraEnt;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lHoraSal;
         
         
         

@@ -22,8 +22,6 @@ namespace Hoteles
         List<int> claves = new List<int>();
         int claveAdmin = int.Parse(tools.obtenerParametroString("claveAcceso"));
 
-        //private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
         public FormClavesOpcionales()
         {
             InitializeComponent();
@@ -73,7 +71,7 @@ namespace Hoteles
             this.Hide();
             this.Close();
         }
-        private void irFormRopaSaliente()
+        private void irLavadero()
         {
             FormRopaSaliente ropaSaliente = new FormRopaSaliente(true);
             ropaSaliente.Owner = this.Owner;
@@ -83,7 +81,7 @@ namespace Hoteles
             //this.Hide();
             this.Close();
         }
-        private void irFormRopaEntrante()
+        private void irCompras()
         {
             FormRopaSaliente ropaSaliente = new FormRopaSaliente(false);
             ropaSaliente.Owner = this.Owner;
@@ -129,14 +127,15 @@ namespace Hoteles
                                     break;
 
                                 case 3:
-                                    pasoAsignacion = "ropaSalida";
+                                    pasoAsignacion = "lavadero";
                                     tbNroHab_KeyPress(sender, e);
                                     return;                                    
 
                                 case 4:
-                                    pasoAsignacion = "ropaEntrada";
+                                    pasoAsignacion = "Compras";
                                     tbNroHab_KeyPress(sender, e);
                                     return;
+                                
 
                                 default:
                                     break;
@@ -151,14 +150,14 @@ namespace Hoteles
                                                         
                             break;
 
-                        case "ropaSalida":
-                            irFormRopaSaliente();
+                        case "lavadero":
+                            irLavadero();
                             break;
 
-                        case "ropaEntrada":
-                            irFormRopaEntrante();
+                        case "Compras":
+                            irCompras();
                             break;
-
+                            
                         case "confirmar":
                             volverFormPrincipal();
                             break;
@@ -206,11 +205,13 @@ namespace Hoteles
         {
             //Cargar claves 
             dgvOpcionesElegidas.Rows.Add("1", "Ordenar Listado por Nro.Habitación");
-            //dgvOpcionesElegidas2.Rows.Add("14", "Menu de Administración");
+            
             dgvOpcionesElegidas.Rows.Add("2", "Ordenar Listado por Estado Habitación");
-            dgvOpcionesElegidas.Rows.Add("3", "Ropa Enviada Lavadero");
-            dgvOpcionesElegidas.Rows.Add("4", "Ropa devuelta del Lavadero");
-            //dgvOpcionesElegidas2.Rows.Add("1113", "Menu de configuración de la app");
+            
+            dgvOpcionesElegidas.Rows.Add("3", "Lavadero");
+
+            dgvOpcionesElegidas.Rows.Add("4", "Compras");
+            
             
             dgvOpcionesElegidas.ClearSelection();
             //dgvOpcionesElegidas2.ClearSelection();

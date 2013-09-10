@@ -32,8 +32,8 @@ namespace Hoteles
         public decimal tarjeta;
         string pasoAsignacion = "nroHabitacion";
         public DetallesHabitacion detallesHab = new DetallesHabitacion();
-        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();        
-
+        Dictionary<int, string> dictMediosDePago = new Dictionary<int, string>();
+        public DataRow drDetalles;
 
         public FormCierreTurno()
         {
@@ -109,16 +109,16 @@ namespace Hoteles
                             labelMensaje.Visible = false;
 
                             nroHab = int.Parse(tbNroHab.Text);
-                            DataRow detalles = Habitacion.preCierre(nroHab);
+                            drDetalles = Habitacion.preCierre(nroHab);
                             
-                            impHab = decimal.Parse(detalles[0].ToString());
-                            impArt = decimal.Parse(detalles[1].ToString());
-                            impExtras = decimal.Parse(detalles[2].ToString());
-                            impDescArt = decimal.Parse(detalles[3].ToString());
-                            efectivo = decimal.Parse(detalles[4].ToString());
-                            tarjeta = decimal.Parse(detalles[5].ToString());
-                            puntos = detalles["puntos"].ToString() == ""? 0 : int.Parse(detalles["puntos"].ToString());
-                            impDescHab = decimal.Parse(puntos.ToString()) + decimal.Parse(detalles["descHabitacion"].ToString());
+                            impHab = decimal.Parse(drDetalles[0].ToString());
+                            impArt = decimal.Parse(drDetalles[1].ToString());
+                            impExtras = decimal.Parse(drDetalles[2].ToString());
+                            impDescArt = decimal.Parse(drDetalles[3].ToString());
+                            efectivo = decimal.Parse(drDetalles[4].ToString());
+                            tarjeta = decimal.Parse(drDetalles[5].ToString());
+                            puntos = drDetalles["puntos"].ToString() == ""? 0 : int.Parse(drDetalles["puntos"].ToString());
+                            impDescHab = decimal.Parse(puntos.ToString()) + decimal.Parse(drDetalles["descHabitacion"].ToString());
                             detallesHab.impHabitacion = impHab + impExtras + impArt - impDescArt - impDescHab - efectivo - tarjeta;
                             dgvOpcionesElegidas.Rows[0].Cells[0].Value = dgvOpcionesElegidas.Rows[0].Cells[0].Value.ToString() + " " + nroHab;
                             dgvOpcionesElegidas.Rows[1].Cells[1].Value = String.Format("{0:C}", impHab+impExtras);
@@ -163,12 +163,12 @@ namespace Hoteles
                                 return;                                
                             }
                             
-                            if (descuento > detallesHab.impHabitacion)
+                            /*if (descuento > detallesHab.impHabitacion)
                             {
                                 labelMensaje.Text = "* El descuento debe ser inferior o igual al total *";
                                 labelMensaje.Visible = true;
                                 return;    
-                            }
+                            }*/
                             labelMensaje.Visible = false;
                             dgvOpcionesElegidas.Rows[8].Cells[1].Value =  String.Format("{0:C}", decimal.Parse(tbNroHab.Text.Replace('.', ',')));
 

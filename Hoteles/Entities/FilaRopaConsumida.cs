@@ -22,12 +22,12 @@ namespace Hoteles.Entities
         public FilaRopaConsumida(DataRow dr)
         {
             this.categoria = dr["nombre"].ToString();
-            this.fundas = int.Parse(dr["fundas"].ToString());
-            this.sabanas = int.Parse(dr["sabanas"].ToString());
-            this.acolchados = int.Parse(dr["acolchados"].ToString());
-            this.toallas = int.Parse(dr["toallas"].ToString());
-            this.toallones = int.Parse(dr["toallones"].ToString());
-            this.batas = int.Parse(dr["batas"].ToString());
+            int.TryParse(dr["fundas"].ToString(),out this.fundas);
+            int.TryParse(dr["sabanas"].ToString(),out this.sabanas);
+            int.TryParse(dr["acolchados"].ToString(),out this.acolchados);
+            int.TryParse(dr["toallas"].ToString(), out this.toallas);
+            int.TryParse(dr["toallones"].ToString(), out this.toallones);
+            int.TryParse(dr["batas"].ToString(), out this.batas);
         }
 
         public override string ToString()

@@ -37,6 +37,7 @@ namespace Administrador {
             base.Tables.CollectionChanged += schemaChangedHandler;
             base.Relations.CollectionChanged += schemaChangedHandler;
             this.EndInit();
+            this.InitExpressions();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -47,6 +48,9 @@ namespace Administrador {
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
                 this.Tables.CollectionChanged += schemaChangedHandler1;
                 this.Relations.CollectionChanged += schemaChangedHandler1;
+                if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.ExcludeSchema)) {
+                    this.InitExpressions();
+                }
                 return;
             }
             string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
@@ -67,6 +71,7 @@ namespace Administrador {
             }
             else {
                 this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                this.InitExpressions();
             }
             this.GetSerializationData(info, context);
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -122,6 +127,7 @@ namespace Administrador {
         public override global::System.Data.DataSet Clone() {
             dsRopaHotel cln = ((dsRopaHotel)(base.Clone()));
             cln.InitVars();
+            cln.InitExpressions();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
@@ -190,7 +196,7 @@ namespace Administrador {
             this.Namespace = "http://tempuri.org/dsRopaHotel.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableropaHotel = new ropaHotelDataTable();
+            this.tableropaHotel = new ropaHotelDataTable(false);
             base.Tables.Add(this.tableropaHotel);
         }
         
@@ -252,6 +258,11 @@ namespace Administrador {
             return type;
         }
         
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private void InitExpressions() {
+            this.ropaHotel.stockActualColumn.Expression = "stockInicial-saldoFinal-roto";
+        }
+        
         public delegate void ropaHotelRowChangeEventHandler(object sender, ropaHotelRowChangeEvent e);
         
         /// <summary>
@@ -268,13 +279,25 @@ namespace Administrador {
             
             private global::System.Data.DataColumn columnstockInicial;
             
+            private global::System.Data.DataColumn columnsaldoFinal;
+            
+            private global::System.Data.DataColumn columnroto;
+            
             private global::System.Data.DataColumn columnstockActual;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public ropaHotelDataTable() {
+            public ropaHotelDataTable() : 
+                    this(false) {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ropaHotelDataTable(bool initExpressions) {
                 this.TableName = "ropaHotel";
                 this.BeginInit();
                 this.InitClass();
+                if ((initExpressions == true)) {
+                    this.InitExpressions();
+                }
                 this.EndInit();
             }
             
@@ -322,6 +345,20 @@ namespace Administrador {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn saldoFinalColumn {
+                get {
+                    return this.columnsaldoFinal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn rotoColumn {
+                get {
+                    return this.columnroto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public global::System.Data.DataColumn stockActualColumn {
                 get {
                     return this.columnstockActual;
@@ -357,13 +394,30 @@ namespace Administrador {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public ropaHotelRow AddropaHotelRow(string descripcion, short stockInicial, short stockActual) {
+            public ropaHotelRow AddropaHotelRow(string descripcion, short stockInicial, short saldoFinal, short roto, string stockActual) {
                 ropaHotelRow rowropaHotelRow = ((ropaHotelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         descripcion,
                         stockInicial,
+                        saldoFinal,
+                        roto,
                         stockActual};
+                rowropaHotelRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowropaHotelRow);
+                return rowropaHotelRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ropaHotelRow AddropaHotelRow(string descripcion, short stockInicial, short saldoFinal, short roto) {
+                ropaHotelRow rowropaHotelRow = ((ropaHotelRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        descripcion,
+                        stockInicial,
+                        saldoFinal,
+                        roto,
+                        null};
                 rowropaHotelRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowropaHotelRow);
                 return rowropaHotelRow;
@@ -392,6 +446,8 @@ namespace Administrador {
                 this.columnid = base.Columns["id"];
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columnstockInicial = base.Columns["stockInicial"];
+                this.columnsaldoFinal = base.Columns["saldoFinal"];
+                this.columnroto = base.Columns["roto"];
                 this.columnstockActual = base.Columns["stockActual"];
             }
             
@@ -403,7 +459,11 @@ namespace Administrador {
                 base.Columns.Add(this.columndescripcion);
                 this.columnstockInicial = new global::System.Data.DataColumn("stockInicial", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstockInicial);
-                this.columnstockActual = new global::System.Data.DataColumn("stockActual", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnsaldoFinal = new global::System.Data.DataColumn("saldoFinal", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsaldoFinal);
+                this.columnroto = new global::System.Data.DataColumn("roto", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroto);
+                this.columnstockActual = new global::System.Data.DataColumn("stockActual", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstockActual);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
@@ -416,7 +476,10 @@ namespace Administrador {
                 this.columndescripcion.AllowDBNull = false;
                 this.columndescripcion.MaxLength = 50;
                 this.columnstockInicial.AllowDBNull = false;
-                this.columnstockActual.AllowDBNull = false;
+                this.columnsaldoFinal.AllowDBNull = false;
+                this.columnsaldoFinal.ReadOnly = true;
+                this.columnroto.AllowDBNull = false;
+                this.columnstockActual.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -432,6 +495,11 @@ namespace Administrador {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Type GetRowType() {
                 return typeof(ropaHotelRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitExpressions() {
+                this.stockActualColumn.Expression = "stockInicial-saldoFinal-roto";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -579,13 +647,48 @@ namespace Administrador {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public short stockActual {
+            public short saldoFinal {
                 get {
-                    return ((short)(this[this.tableropaHotel.stockActualColumn]));
+                    return ((short)(this[this.tableropaHotel.saldoFinalColumn]));
+                }
+                set {
+                    this[this.tableropaHotel.saldoFinalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public short roto {
+                get {
+                    return ((short)(this[this.tableropaHotel.rotoColumn]));
+                }
+                set {
+                    this[this.tableropaHotel.rotoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string stockActual {
+                get {
+                    try {
+                        return ((string)(this[this.tableropaHotel.stockActualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'stockActual\' de la tabla \'ropaHotel\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableropaHotel.stockActualColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsstockActualNull() {
+                return this.IsNull(this.tableropaHotel.stockActualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetstockActualNull() {
+                this[this.tableropaHotel.stockActualColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -742,39 +845,44 @@ namespace Administrador.dsRopaHotelTableAdapters {
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("descripcion", "descripcion");
             tableMapping.ColumnMappings.Add("stockInicial", "stockInicial");
-            tableMapping.ColumnMappings.Add("stockActual", "stockActual");
+            tableMapping.ColumnMappings.Add("saldoFinal", "saldoFinal");
+            tableMapping.ColumnMappings.Add("roto", "roto");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ropaHotel] WHERE (([id] = @Original_id) AND ([descripcion] = @" +
-                "Original_descripcion) AND ([stockInicial] = @Original_stockInicial) AND ([stockA" +
-                "ctual] = @Original_stockActual))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [ropaHotel] WHERE (([id] = @Original_id) AND ([descripcion] = @Origin" +
+                "al_descripcion) AND ([stockInicial] = @Original_stockInicial) AND ([saldoFinal] " +
+                "= @Original_saldoFinal) AND ([roto] = @Original_roto))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stockInicial", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockInicial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stockActual", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockActual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_saldoFinal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "saldoFinal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_roto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ropaHotel] ([descripcion], [stockInicial], [stockActual]) VALU" +
-                "ES (@descripcion, @stockInicial, @stockActual);\r\nSELECT id, descripcion, stockIn" +
-                "icial, stockActual FROM ropaHotel WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [ropaHotel] ([descripcion], [stockInicial], [saldoFinal], [roto]) VAL" +
+                "UES (@descripcion, @stockInicial, @saldoFinal, @roto);\r\nSELECT id, descripcion, " +
+                "stockInicial, saldoFinal, roto FROM ropaHotel WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockInicial", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockInicial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockActual", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockActual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saldoFinal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "saldoFinal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ropaHotel] SET [descripcion] = @descripcion, [stockInicial] = @stockInicial, [stockActual] = @stockActual WHERE (([id] = @Original_id) AND ([descripcion] = @Original_descripcion) AND ([stockInicial] = @Original_stockInicial) AND ([stockActual] = @Original_stockActual));
-SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [ropaHotel] SET [descripcion] = @descripcion, [stockInicial] = @stockInicial, [saldoFinal] = @saldoFinal, [roto] = @roto WHERE (([id] = @Original_id) AND ([descripcion] = @Original_descripcion) AND ([stockInicial] = @Original_stockInicial) AND ([saldoFinal] = @Original_saldoFinal) AND ([roto] = @Original_roto));
+SELECT id, descripcion, stockInicial, saldoFinal, roto FROM ropaHotel WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockInicial", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockInicial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockActual", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockActual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saldoFinal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "saldoFinal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stockInicial", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockInicial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stockActual", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockActual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_saldoFinal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "saldoFinal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_roto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -789,7 +897,7 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, descripcion, stockInicial, stockActual FROM dbo.ropaHotel";
+            this._commandCollection[0].CommandText = "SELECT id, descripcion, stockInicial, saldoFinal, roto FROM ropaHotel";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -810,7 +918,7 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsRopaHotel.ropaHotelDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsRopaHotel.ropaHotelDataTable dataTable = new dsRopaHotel.ropaHotelDataTable();
+            dsRopaHotel.ropaHotelDataTable dataTable = new dsRopaHotel.ropaHotelDataTable(true);
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -843,7 +951,7 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_descripcion, short Original_stockInicial, short Original_stockActual) {
+        public virtual int Delete(int Original_id, string Original_descripcion, short Original_stockInicial, short Original_saldoFinal, short Original_roto) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_descripcion == null)) {
                 throw new global::System.ArgumentNullException("Original_descripcion");
@@ -852,7 +960,8 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_descripcion));
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((short)(Original_stockInicial));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((short)(Original_stockActual));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((short)(Original_saldoFinal));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_roto));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -872,7 +981,7 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string descripcion, short stockInicial, short stockActual) {
+        public virtual int Insert(string descripcion, short stockInicial, short saldoFinal, short roto) {
             if ((descripcion == null)) {
                 throw new global::System.ArgumentNullException("descripcion");
             }
@@ -880,7 +989,8 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(descripcion));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((short)(stockInicial));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((short)(stockActual));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((short)(saldoFinal));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(roto));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -900,7 +1010,7 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string descripcion, short stockInicial, short stockActual, int Original_id, string Original_descripcion, short Original_stockInicial, short Original_stockActual, int id) {
+        public virtual int Update(string descripcion, short stockInicial, short saldoFinal, short roto, int Original_id, string Original_descripcion, short Original_stockInicial, short Original_saldoFinal, short Original_roto, int id) {
             if ((descripcion == null)) {
                 throw new global::System.ArgumentNullException("descripcion");
             }
@@ -908,17 +1018,19 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(descripcion));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(stockInicial));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(stockActual));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(saldoFinal));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(roto));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
             if ((Original_descripcion == null)) {
                 throw new global::System.ArgumentNullException("Original_descripcion");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_descripcion));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_descripcion));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Original_stockInicial));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_stockActual));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_stockInicial));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(Original_saldoFinal));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(Original_roto));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -938,8 +1050,8 @@ SELECT id, descripcion, stockInicial, stockActual FROM ropaHotel WHERE (id = @id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string descripcion, short stockInicial, short stockActual, int Original_id, string Original_descripcion, short Original_stockInicial, short Original_stockActual) {
-            return this.Update(descripcion, stockInicial, stockActual, Original_id, Original_descripcion, Original_stockInicial, Original_stockActual, Original_id);
+        public virtual int Update(string descripcion, short stockInicial, short saldoFinal, short roto, int Original_id, string Original_descripcion, short Original_stockInicial, short Original_saldoFinal, short Original_roto) {
+            return this.Update(descripcion, stockInicial, saldoFinal, roto, Original_id, Original_descripcion, Original_stockInicial, Original_saldoFinal, Original_roto, Original_id);
         }
     }
     

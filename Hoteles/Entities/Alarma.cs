@@ -41,6 +41,7 @@ namespace Hoteles.Entities
                 fPrincipal.tableLayoutPanel1.Controls.Add(lAviso, 0, 0);
 
             }
+        
             lAviso.Text = mensaje;
             prendida = true;
 

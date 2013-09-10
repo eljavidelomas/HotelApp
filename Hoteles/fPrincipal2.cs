@@ -11,6 +11,7 @@ using System.Threading;
 using System.Data.SqlClient;
 using Hoteles.Properties;
 using System.Collections;
+using WindowsFormsApplication1;
 
 namespace Hoteles
 {
@@ -27,12 +28,16 @@ namespace Hoteles
         public List<Aviso> alarmas = new List<Aviso>();
         static public Dictionary<int, PictureBox> dicAlarmasSonando = new Dictionary<int, PictureBox>();
         static public Dictionary<int, itemDicParpadeo> dictHabParpadeando = new Dictionary<int, itemDicParpadeo>();
+        static public Dictionary<int, bool> dictSonidoDesocupado = new Dictionary<int, bool>();
+        static public Dictionary<int, bool> dictSonidoOcupado = new Dictionary<int, bool>();
         private Thread thActualizarHora;
         private Thread thControlarTarifa;
         private Thread thControlarParpadeo;
 
+        /*Variables para el port Serie */
         public Dictionary<int, int> estadoHabitaciones = new Dictionary<int, int>();
-
+        public Dictionary<int, int> dictNroordenNroHab = new Dictionary<int, int>();
+        public string senialOcupado;
 
         public fPrincipal2()
         {
@@ -46,19 +51,53 @@ namespace Hoteles
             this.SetStyle(ControlStyles.UserPaint, true);
 
             InitializeComponent();
+            configPortSerial();
             GoFullscreen(true);
 
-            for (int i = 1; i < 199; i++)
-            {
-                estadoHabitaciones.Add(i, 0);
-            }
-            estadoHabitaciones[101] = 1;
-            estadoHabitaciones[104] = 1;
-            estadoHabitaciones[105] = 1;
-            estadoHabitaciones[106] = 1;
+            //for (int i = 1; i < 199; i++)
+            //{
+            //    estadoHabitaciones.Add(i, 0);
+            //}
+            //estadoHabitaciones[101] = 1;
+            //estadoHabitaciones[104] = 1;
+            //estadoHabitaciones[105] = 1;
+            //estadoHabitaciones[106] = 1;
 
             thActualizarHora = new Thread(ActualizarLaHora);
             thActualizarHora.Start();
+        }
+
+        private void configPortSerial()
+        {
+            if (tools.obtenerParametroInt("haySenializacion") == 1)
+            {
+                serialPort1.PortName = tools.obtenerParametroString("portSenialIn");
+                serialPort1.Open();
+                cargarDiccionarioNroOrdenNroHabitacion();
+                senialOcupado = tools.obtenerParametroString("senialOcupado");
+            }
+
+
+        }
+
+        private void cargarDiccionarioNroOrdenNroHabitacion()
+        {
+            DataSet ds = new DataSet();
+            Dictionary<int, string> categorias = new Dictionary<int, string>();
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select posSenializacion,nroHabitacion from habitaciones H WHERE habilitada = 1", fPrincipal2.conn);
+            try
+            {
+                dataAdapter.Fill(ds);
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    dictNroordenNroHab.Add(int.Parse(row[0].ToString()) - 1, int.Parse(row[1].ToString()));
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
 
@@ -106,7 +145,7 @@ namespace Hoteles
             {
                 LoggerProxy.Error("fPrincipal - ProcessCmdKey  = " + ex.Message);
                 return base.ProcessCmdKey(ref msg, keyData);
-            }          
+            }
         }
 
         private void fPrincipal2_Load(object sender, EventArgs e)
@@ -133,7 +172,7 @@ namespace Hoteles
             recuperarEstadosHabitaciones();
 
             #endregion
-            
+
             #region CargarConserje
 
             conserjeActual = Conserje.obtenerConserjeActual();
@@ -157,7 +196,7 @@ namespace Hoteles
             #endregion
 
             thControlarParpadeo = new Thread(timerParpadeo2);
-            thControlarParpadeo.Start();            
+            thControlarParpadeo.Start();
         }
 
         delegate void actualizarRelojCallback();
@@ -179,9 +218,9 @@ namespace Hoteles
                     labelFecha.Text = String.Format("{0:ddd}", DateTime.Now).ToUpper() + " " + DateTime.Now.ToString("dd / MM / yyyy");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                Thread.CurrentThread.Interrupt();
+                LoggerProxy.Error(ex.Message);
             }
         }
 
@@ -212,7 +251,10 @@ namespace Hoteles
 
                             if (dr.Cells[10].Value != null && dr.Cells[10].Value.ToString() == "1")
                             {
-                                RestauradorTarifa.actualizarTarifa(tur, tar, dr);
+                                if (RestauradorTarifa.actualizarTarifa(tur, tar, dr) == false)//Si hubo muchas vuetas
+                                {
+                                    LoggerProxy.Error("No se pudo recuperar la habitacion " + nroHabitacion + ". Error en la definicion de tarifas.");
+                                }
                             }
                             else
                             {
@@ -226,9 +268,9 @@ namespace Hoteles
                 }
         }
 
-        static public void borrarPicturesBoxesParpadeo(DataGridView dgv1, DataGridView dgv2)
+        /*static public void borrarPicturesBoxesParpadeo(DataGridView dgv1, DataGridView dgv2)
         {
-            
+
             List<int> list = new List<int>();
             foreach (int nroHab in dictHabParpadeando.Keys)
             {
@@ -240,11 +282,9 @@ namespace Hoteles
                 dgv2.Controls.Remove(dictHabParpadeando[nroHab].picBox);
                 dictHabParpadeando.Remove(nroHab);
             }
-            
+        }*/
 
-        }
-
-        public void borrarPB_parpadeo(int nroHab)
+        /*public void borrarPB_parpadeo(int nroHab)
         {
             lock (fPrincipal2.locker)
             {
@@ -255,8 +295,8 @@ namespace Hoteles
                     dictHabParpadeando.Remove(nroHab);
                 }
             }
-        }
-        
+        }*/
+
         private void timerParpadeo2_tick()
         {
             try
@@ -269,6 +309,14 @@ namespace Hoteles
                 else
                 {
                     mut.WaitOne();
+
+                    Color cAsig = Color.Green;
+                    Color cAsigAlt = Color.GreenYellow;
+                    Color cOcup = Color.Red;
+                    Color cOcupAlt = Color.Orange;
+                    Color cDisp = Color.Green;
+                    Color cDispAlt = Color.Red;
+
                     try
                     {
                         List<DataGridView> grids = new List<DataGridView>();
@@ -276,59 +324,139 @@ namespace Hoteles
                         grids.Add(dataGridView2);
                         foreach (DataGridView dg in grids)
                         {
-                            if (dg != null && dg.Rows != null)
+                            if (dg != null && dg.Rows != null && estadoHabitaciones.Count > 0)
                             {
                                 foreach (DataGridViewRow fila in dg.Rows)
                                 {
+                                    int nroHabitacion = int.Parse(fila.Cells[0].Value.ToString());
+
+                                    //-----   Estado Asignado   -----//
                                     if (fila.Cells[8].Value.ToString() == "A")
                                     {
-                                        if (estadoHabitaciones[int.Parse(fila.Cells[0].Value.ToString())] == 0) // 0 es destrabada
+                                        if (estadoHabitaciones.ContainsKey(nroHabitacion) && estadoHabitaciones[nroHabitacion] == 0) // 0 es destrabada
                                         {
-                                            if (fila.Cells[0].Style.BackColor == Color.FromArgb(51, 255, 51))
-                                                fila.Cells[0].Style.BackColor = Color.Green;//dataGridView1.DefaultCellStyle.BackColor;
+                                            if (fila.Cells[0].Style.BackColor == cAsig)
+                                                fila.Cells[0].Style.BackColor = cAsigAlt;
                                             else
-                                                fila.Cells[0].Style.BackColor = Color.FromArgb(51, 255, 51);// Colorar.GreenYellow;
+                                                fila.Cells[0].Style.BackColor = cAsig;
                                         }
                                         else
-                                            fila.Cells[0].Style.BackColor = Color.Green;
+                                        {
+                                            Habitacion.CambiarEstado(null, Convert.ToInt32(fila.Cells[0].Value), "O");
+                                            fila.Cells[8].Value = "O"; // Cambio estado en la grilla
+                                            fila.Cells[0].Style.BackColor = cOcup;
+
+                                            //Sonido Se ocupo habitacion
+                                            List<string> sonido = new List<string>();
+                                            sonido.Add("Se ocupo.wav");
+                                            sonido.Add("habitacion numero.wav");
+                                            sonido.Add(nroHabitacion.ToString() + ".wav");
+                                            Audio.PlayList(sonido);
+                                        }
                                     }
+
+                                        //-----   Estado Ocupado   -----//
+                                    else if (fila.Cells[8].Value.ToString() == "O")
+                                    {
+                                        if (tools.obtenerParametroInt("haySenializacion") == 1)
+                                        {
+                                            if (!dictSonidoDesocupado.ContainsKey(nroHabitacion))
+                                                dictSonidoDesocupado.Add(nroHabitacion, false);
+
+                                            if (estadoHabitaciones.ContainsKey(nroHabitacion) && estadoHabitaciones[nroHabitacion] == 0) // 0 es destrabada
+                                            {
+                                                if (fila.Cells[0].Style.BackColor == cOcup)
+                                                    fila.Cells[0].Style.BackColor = cOcupAlt;
+                                                else
+                                                    fila.Cells[0].Style.BackColor = cOcup;
+
+                                                if (!dictSonidoDesocupado[nroHabitacion])
+                                                {
+                                                    //Sonido Se desocupo habitacion
+                                                    List<string> sonido = new List<string>();
+                                                    sonido.Add("Se desocupo.wav");
+                                                    sonido.Add("habitacion numero.wav");
+                                                    sonido.Add(nroHabitacion.ToString() + ".wav");
+                                                    Audio.PlayList(sonido);
+                                                    dictSonidoDesocupado[nroHabitacion] = true;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                dictSonidoDesocupado[nroHabitacion] = false;
+                                                fila.Cells[0].Style.BackColor = cOcup;                                                
+                                            }                                           
+                                        }
+                                        else                                                                                    
+                                            fila.Cells[0].Style.BackColor = cOcup;                                        
+
+                                    }
+
+                                        //-----   Estado Disponible   -----//
                                     else if (fila.Cells[8].Value.ToString() == "D")
                                     {
-                                        if (estadoHabitaciones[int.Parse(fila.Cells[0].Value.ToString())] == 1) // 1 es trabada
+                                        if (tools.obtenerParametroInt("haySenializacion") == 1)
                                         {
-                                            if (fila.Cells[0].Style.BackColor == Color.Tomato)
-                                                fila.Cells[0].Style.BackColor = Color.Green;// dataGridView1.DefaultCellStyle.BackColor;
-                                            else
-                                                fila.Cells[0].Style.BackColor = Color.Tomato;
+                                            if (!dictSonidoOcupado.ContainsKey(nroHabitacion))
+                                                dictSonidoOcupado.Add(nroHabitacion, false);
+
+                                            if (estadoHabitaciones.ContainsKey(nroHabitacion) && estadoHabitaciones[nroHabitacion] == 1) // 1 es trabada
+                                            {
+                                                if (fila.Cells[0].Style.BackColor == cDisp)
+                                                    fila.Cells[0].Style.BackColor = cDispAlt;
+                                                else
+                                                    fila.Cells[0].Style.BackColor = cDisp;
+
+                                                if (!dictSonidoOcupado[nroHabitacion])
+                                                {
+                                                    //Sonido Se desocupo habitacion
+                                                    List<string> sonido = new List<string>();
+                                                    sonido.Add("Se ocupo.wav");
+                                                    sonido.Add("habitacion numero.wav");
+                                                    sonido.Add(nroHabitacion.ToString() + ".wav");
+                                                    Audio.PlayList(sonido);
+                                                    dictSonidoOcupado[nroHabitacion] = true;
+                                                }
+                                            }
+                                            else // Estado Normal
+                                            {
+                                                fila.Cells[0].Style.BackColor = cDisp;
+                                                dictSonidoOcupado[nroHabitacion] = false;
+                                            }
                                         }
-                                        else
-                                            fila.Cells[0].Style.BackColor = Color.Green;
+                                        else                                        
+                                            fila.Cells[0].Style.BackColor = cDisp;                                            
+                                        
                                     }
                                 }
                             }
-                        }                     
+                        }
                     }
                     catch (Exception ex)
                     {
                         LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
                     }
-
-                    mut.ReleaseMutex();
+                    finally
+                    {
+                        mut.ReleaseMutex();
+                    }
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
                 Thread.CurrentThread.Interrupt();
             }
         }
 
         private void timerParpadeo2()
-        {            
-            while (true)
-            {                
-                timerParpadeo2_tick();                
-                Thread.Sleep(300);
-            }
+        {
+            if (tools.obtenerParametroInt("haySenializacion") == 1)
+                while (true)
+                {
+                    timerParpadeo2_tick();
+                    Thread.Sleep(300);
+                }
         }
 
         //public void timerParpadeo_Tick(object sender, EventArgs e)
@@ -424,7 +552,7 @@ namespace Hoteles
         //    mut.ReleaseMutex();
         //}
 
-        private PictureBox crearPB_Parpadeo(Bitmap bitmap, DataGridViewRow fila)
+        /*private PictureBox crearPB_Parpadeo(Bitmap bitmap, DataGridViewRow fila)
         {
             PictureBox pb = new PictureBox();
             pb.Paint += new PaintEventHandler(pb_Paint);
@@ -439,15 +567,15 @@ namespace Hoteles
             fila.Cells[0].Style.ForeColor = Color.Transparent;
 
             return pb;
-        }
+        }*/
 
-        private void pb_Paint(object sender, PaintEventArgs e)
+        /*private void pb_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
             Font fuente = new Font(dataGridView1.DefaultCellStyle.Font.FontFamily, this.tamFuente, FontStyle.Bold);
 
             e.Graphics.DrawString(pb.Tag.ToString(), fuente, Brushes.Black, (e.ClipRectangle.Width - e.Graphics.MeasureString(pb.Tag.ToString(), fuente).Width) / 2, (e.ClipRectangle.Height / 2 - fuente.GetHeight() / 2));
-        }
+        }*/
 
         private void textUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -457,7 +585,6 @@ namespace Hoteles
                 e.Handled = true;
                 return;
             }
-
         }
 
         private void textClave_KeyPress(object sender, KeyPressEventArgs e)
@@ -510,7 +637,22 @@ namespace Hoteles
                 if (alarmas.Count > 0)
                 {
                     if (!Alarma.prendida)
+                    {
                         Alarma.activar(this, "¡ ALARMA !  " + alarmas[0].mensaje + " - Habitación Nro: " + alarmas[0].nroHab);
+                        if (alarmas[0].mensaje.ToLower().Contains("fin de turno"))
+                        {
+                            List<string> sonido = new List<string>();
+                            int i = 0;
+                            while (i < 2)
+                            {
+                                sonido.Add("Aviso fin de turno.wav");
+                                sonido.Add("habitacion numero.wav");
+                                sonido.Add(alarmas[0].nroHab.ToString() + ".wav");
+                                i++;
+                            }
+                            Audio.PlayList(sonido);
+                        }
+                    }
                     actualizarDicAlarmasSonando(alarmas);
                 }
             }
@@ -573,8 +715,6 @@ namespace Hoteles
                     }
                 }
             }
-
-
             if (redibujar)
             {
                 tools.actualizarListadoTurnos(dataGridView1, dataGridView2);
@@ -633,15 +773,8 @@ namespace Hoteles
         {
             while (true)
             {
-                try
-                {
-                    actualizarReloj();
-                    Thread.Sleep(10000);
-                }
-                catch
-                {
-                    break;
-                }
+                actualizarReloj();
+                Thread.Sleep(1000);
             }
         }
 
@@ -697,7 +830,18 @@ namespace Hoteles
 
                                     if (dr.Cells[10].Value != null && dr.Cells[10].Value.ToString() == "1")
                                     {
-                                        ActualizadorTarifa.actualizarTarifa(tur, tar, dr);
+                                        if (tools.obtenerParametroInt("haySenializacion") == 1)
+                                        {
+                                            if (estadoHabitaciones[nroHabitacion] == 1)//si esta cerrado, hago la actualizacìón
+                                            {
+                                                if (ActualizadorTarifa.actualizarTarifa(tur, tar, dr) == false)
+                                                {
+                                                    LoggerProxy.Error("No se pudo actualizar la habitacion " + nroHabitacion + ". Error en la definicion de tarifas.");
+                                                }
+                                            }
+                                        }
+                                        else
+                                            ActualizadorTarifa.actualizarTarifa(tur, tar, dr);
                                     }
                                     else
                                     {
@@ -713,7 +857,7 @@ namespace Hoteles
             }
             catch (Exception ex)
             {
-                int test = 0;
+                LoggerProxy.ErrorSinBD(ex.Message + " - " + ex.StackTrace);
             }
         }
 
@@ -723,27 +867,23 @@ namespace Hoteles
             dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", nroHab);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@monto", montoAsumar);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@hasta", hasta);
-            if (contPernocte == 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@contPern", contPernocte);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@contPern", contPernocte);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.ExecuteNonQuery();
 
-            dr.Cells[9].Value = hasta;// h.salida datetime
-
-
+            dr.Cells[9].Value = hasta;// datetime salida 
             dr.Cells[6].Value = hasta.ToString("HH:mm");//h.salida datetime
             dr.Cells[7].Value = (decimal.Parse(dr.Cells[7].Value.ToString().Replace("$ ", "")) + montoAsumar).ToString("C");// importe
-
         }
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-            
+
         }
-        
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void fPrincipal2_FormClosed(object sender, FormClosedEventArgs e)
@@ -751,7 +891,53 @@ namespace Hoteles
             thActualizarHora.Abort();
             thControlarParpadeo.Abort();
             thControlarTarifa.Abort();
-        }       
+        }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            string aux = "";
+            byte[] array = new byte[64];
+            int bAleer = 0;
+            bAleer = serialPort1.BytesToRead;
+            Dictionary<int, int> d = estadoHabitaciones;
+            int nHab;
+
+            try
+            {
+                if (bAleer == 32 || bAleer == 64)
+                {
+                    serialPort1.Read(array, 0, bAleer);
+                    mut.WaitOne();
+                    
+                    int est;
+                    for (int i = 0; i < bAleer; i++)
+                    {
+                        nHab = array[i] & 63;
+                        if (dictNroordenNroHab.ContainsKey(nHab))
+                        {
+                            nHab = dictNroordenNroHab[nHab];
+                            if (senialOcupado == "1")
+                                est = array[i] >> 6 == 1 ? 0 : 1;
+                            else
+                                est = array[i] >> 6;
+                            if (d.ContainsKey(nHab))
+                                d[nHab] = est;
+                            else
+                                d.Add(nHab, est);
+                        }
+
+                    }
+                    mut.ReleaseMutex();
+                }
+                else
+                    serialPort1.DiscardInBuffer();
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.Error(ex.Message + " - " + ex.StackTrace);
+                mut.ReleaseMutex();
+            }
+        }
     }
 }
 

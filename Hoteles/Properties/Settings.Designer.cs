@@ -34,15 +34,6 @@ namespace Hoteles.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("resources/impTemp.txt")]
-        public string archImprimir {
-            get {
-                return ((string)(this["archImprimir"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Fecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\\r\\n-----------------------------" +
             "------\\r\\nNro.Habitacion: ##HAB\\r\\n-----------------------------------\\r\\nCant  " +
             "Articulo              Precio\\r\\n-----------------------------------\\r\\n")]
@@ -54,14 +45,34 @@ namespace Hoteles.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=Tr" +
+            "ue")]
+        public string hotelConnectionString {
+            get {
+                return ((string)(this["hotelConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("impTemp.txt")]
+        public string archImprimir {
+            get {
+                return ((string)(this["archImprimir"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"
-****************************************************************************************************************************
-Conserje:##conserjeId##conserjeNm           === Arqueo de Caja - Nro:##nroArq ===           Fecha: ##fecha   Hora:##hora
-****************************************************************************************************************************
+*********************************************************************************************************************
+Conserje:##conserjeId##conserjeNm        === Arqueo de Caja - Nro:##nroArq ===      Fecha: ##fecha   Hora:##hora
+*********************************************************************************************************************
 
-                                   ____________________ FACTURADO _________________      ___________ CAJA ____________
-Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Descuento    Total      Efectivo   Tarjeta     Gastos
-----------------------------------------------------------------------------------------------------------------------")]
+                                   ____________________ FACTURADO _______________     ___________ CAJA ____________
+Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Desc       Total     Efectivo   Tarjeta     Gastos
+-------------------------------------------------------------------------------------------------------------------")]
         public string planillaCierre {
             get {
                 return ((string)(this["planillaCierre"]));
@@ -70,8 +81,9 @@ Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Descuento    To
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\r\nFecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\r\n-----------------------------" +
-            "------\r\n  Monto       Gasto\r\n-----------------------------------\\r\\n")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\n          Fecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\r\n          ---------" +
+            "--------------------------\r\n          Monto       Gasto\r\n          -------------" +
+            "----------------------\\r\\n\r\n        ")]
         public string ticketGasto {
             get {
                 return ((string)(this["ticketGasto"]));
@@ -80,12 +92,23 @@ Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Descuento    To
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\n          Fecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\r\n          ---------" +
+            "--------------------------\r\n          Monto       Gasto\r\n          -------------" +
+            "----------------------\\r\\n\r\n        ")]
+        public string ticketAsignar {
+            get {
+                return ((string)(this["ticketAsignar"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"
- ##nmHotelLISTADO ARTICULOS EN STOCK
-                                             ============================
+##nmHotelLISTADO ARTICULOS EN STOCK
+                                           ============================
 
   NUM      DESCRIPCIÓN                                         STOCK     CONSUMO     REPONER     STOCK GENERAL
- ===============================================================================================================\r\n")]
+===============================================================================================================\r\n")]
         public string listadoArtStock {
             get {
                 return ((string)(this["listadoArtStock"]));
@@ -95,25 +118,37 @@ Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Descuento    To
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"
-                                              LISTADO DE ROPA CONSUMIDA
-                                             ===========================
+                                            LISTADO DE ROPA CONSUMIDA
+                                           ===========================
 
-               CATEGORIA            FUNDAS   SABANAS   ACOLCHADOS   TOALLAS   TOALLONES   BATAS
-               =================================================================================\r\n")]
+              CATEGORIA            FUNDAS   SABANAS   ACOLCHADOS   TOALLAS   TOALLONES   BATAS
+              =================================================================================\r\n")]
         public string listadoRopaConsumida {
             get {
                 return ((string)(this["listadoRopaConsumida"]));
             }
         }
         
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\hotel\\")]
+        public string pathHoteleria {
+            get {
+                return ((string)(this["pathHoteleria"]));
+            }
+            set {
+                this["pathHoteleria"] = value;
+            }
+        }
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=Tr" +
-            "ue")]
-        public string hotelConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\n          Fecha: ##FECHA Hora: ##HORA    Nro.Ticket: ##NRO\r\n          \r\n       " +
+            "   Estado de Stock Lavadero\r\n                        En lavadero   Entregó   Dif" +
+            "erencia    Retira    Saldo Final \\r\\n")]
+        public string ticketLavadero {
             get {
-                return ((string)(this["hotelConnectionString"]));
+                return ((string)(this["ticketLavadero"]));
             }
         }
     }

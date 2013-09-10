@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Hoteles.Properties;
 using Hoteles.Entities;
 using System.Threading;
+using WindowsFormsApplication1;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
@@ -652,7 +653,17 @@ namespace Hoteles
                 if (alarmas.Count > 0)
                 {
                     if (!Alarma.prendida)
+                    {
                         Alarma.activar(this, "Alarma ! " + alarmas[0].mensaje + "  Habitación Nro: " + alarmas[0].nroHab);
+                        if (alarmas[0].mensaje.ToLower().Contains("fin de turno"))
+                        {
+                            List<string> sonido = new List<string>();
+                            sonido.Add("fin de turno.wav");
+                            sonido.Add("habitacion numero.wav");
+                            sonido.Add(alarmas[0].nroHab.ToString() + ".wav");
+                            Audio.PlayList(sonido);
+                        }
+                    }
                     activarIconosAlarmas(alarmas);
                 }
             }

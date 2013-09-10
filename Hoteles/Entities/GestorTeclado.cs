@@ -22,7 +22,7 @@ namespace Hoteles.Entities
             {
                 for (int nH = 101; nH < 121; nH++)
                 {
-                    formPrincipal.estadoHabitaciones[nH] = 0;
+                    //formPrincipal.estadoHabitaciones[nH] = 0;
                 }                             
                 return true;
             }
@@ -80,7 +80,7 @@ namespace Hoteles.Entities
                             FormCancelarHab cancelarHab = new FormCancelarHab();
                             cancelarHab.Owner = formPrincipal;                            
                             cancelarHab.Show();
-                            formPrincipal.Hide();
+                            
                             cancelarHab.Activate();
                             cancelarHab.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Cancelar Habitación");
@@ -89,7 +89,7 @@ namespace Hoteles.Entities
                             FormAdelantoDinero fAdelantoDinero = new FormAdelantoDinero();
                             fAdelantoDinero.Owner = formPrincipal;
                             fAdelantoDinero.Show();
-                            formPrincipal.Hide();
+                            
                             fAdelantoDinero.Activate();
                             fAdelantoDinero.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Adelanto Dinero");
@@ -98,7 +98,7 @@ namespace Hoteles.Entities
                             FormCierreTurno fCierreTurno = new FormCierreTurno();
                             fCierreTurno.Owner = formPrincipal;
                             fCierreTurno.Show();
-                            formPrincipal.Hide();
+                            
                             fCierreTurno.Activate();
                             fCierreTurno.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Cerrar Turno");
@@ -107,7 +107,7 @@ namespace Hoteles.Entities
                             FormPedidoBar pedidoBar = new FormPedidoBar();
                             pedidoBar.Owner = formPrincipal;
                             pedidoBar.Show();
-                            formPrincipal.Hide();
+                            
                             pedidoBar.Activate();
                             pedidoBar.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Pedido de Bar");
@@ -116,7 +116,7 @@ namespace Hoteles.Entities
                             FormAnularPedidoBar anuPedidoBar = new FormAnularPedidoBar();                            
                             anuPedidoBar.Show();
                             anuPedidoBar.Owner = formPrincipal;
-                            formPrincipal.Hide();
+                            
                             anuPedidoBar.Activate();
                             anuPedidoBar.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Anular Pedido Bar");
@@ -125,7 +125,7 @@ namespace Hoteles.Entities
                             FormAvisosHorarios avisosHorarios = new FormAvisosHorarios();
                             avisosHorarios.Owner = formPrincipal;
                             avisosHorarios.Show();
-                            formPrincipal.Hide();
+                            
                             avisosHorarios.Activate();
                             avisosHorarios.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Avisos Horarios");
@@ -135,7 +135,7 @@ namespace Hoteles.Entities
                             FormCambiarEstado fCambEst = new FormCambiarEstado();
                             fCambEst.Owner = formPrincipal;
                             fCambEst.Show();
-                            formPrincipal.Hide();
+                            
                             fCambEst.Activate();
                             fCambEst.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Cambiar Estado Habitación");
@@ -145,7 +145,7 @@ namespace Hoteles.Entities
                             FormExtraccionDinero extraccionDinero = new FormExtraccionDinero();
                             extraccionDinero.Owner = formPrincipal;
                             extraccionDinero.Show();
-                            formPrincipal.Hide();
+                            
                             extraccionDinero.Activate();
                             extraccionDinero.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Extracción Dinero");
@@ -155,7 +155,7 @@ namespace Hoteles.Entities
                             FormClavesOpcionales fClavesOp = new FormClavesOpcionales();
                             fClavesOp.Owner = formPrincipal;
                             fClavesOp.Show();
-                            formPrincipal.Hide();
+                            
                             fClavesOp.Activate();
                             fClavesOp.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Claves Opcionales");
@@ -165,7 +165,7 @@ namespace Hoteles.Entities
                             FormEstadoCaja fEstCaja = new FormEstadoCaja();
                             fEstCaja.Owner = formPrincipal;
                             fEstCaja.Show();
-                            formPrincipal.Hide();
+                            
                             fEstCaja.Activate();
                             LoggerProxy.Info("Ingreso Estado Caja");
 
@@ -174,7 +174,7 @@ namespace Hoteles.Entities
                             FormCierrePlanilla cierrePlanilla = new FormCierrePlanilla();
                             cierrePlanilla.Owner = formPrincipal;
                             cierrePlanilla.Show();
-                            formPrincipal.Hide();
+                            
                             cierrePlanilla.Activate();
                             cierrePlanilla.tbNroHab.Focus();
                             LoggerProxy.Info("Ingreso Cierre Caja");

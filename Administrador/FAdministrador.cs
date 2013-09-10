@@ -10,6 +10,8 @@ using System.Collections;
 using System.Data.SqlClient;
 using Administrador.Properties;
 using System.Threading;
+using Administrador.Entities;
+using System.Drawing.Printing;
 
 namespace Administrador
 {
@@ -30,69 +32,25 @@ namespace Administrador
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
 
-            if (tabControl1.SelectedTab.Name == "tpHabitaciones")
-            {
-                if (procesarComando(tabControl1.SelectedTab, keyData))
-                {
-                    this.GetNextControl(this.ActiveControl, true).Focus();
-                    return true;
-                }
-                if (!btnHab_guardar.Focused && keyData == Keys.Enter)
-                {
-                    this.GetNextControl(this.ActiveControl, true).Focus();
-                    return true;
-                }
-            }
+            //if (tabControl1.SelectedTab.Name == "tpHabitaciones")
+            //{
+            //    if (procesarComando(tabControl1.SelectedTab, keyData))
+            //    {
+            //        this.GetNextControl(this.ActiveControl, true).Focus();
+            //        return true;
+            //    }
+                
+            //}
             return base.ProcessCmdKey(ref msg, keyData);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string msjError = "";
-            msjSalida.Visible = false;
-            Thread.Sleep(500);
-            msjSalida.Visible = true;
-
-            if (txtHab_nro.Text.Length == 0)
-            {
-                msjError = "El número de Habitacion es invalido.";
-            }
-            else
-                if (listCat1.SelectedValue == null)
-                {
-                    msjError = "La categoria 1 no puede estar vacia.";
-                }
-                else
-                    if (txtHab_pos.Text.Length == 0)
-                    {
-                        msjError = "La posición de señalización es invalida.";
-                    }
-
-            if (msjError.Length > 0)
-            {
-                msjSalida.Text = msjError;
-                msjSalida.ForeColor = Color.Red;
-                return;
-            }
-
-
-
-            if (insertarEditarHabitacion() == 1)
-            {
-                msjSalida.Text = "Los cambios se han guardado exitosamente";
-                msjSalida.ForeColor = Color.Green;
-            }
-            else
-            {
-                msjSalida.Text = "Ha ocurrido un error. Los cambios no se han guardado.";
-                msjSalida.ForeColor = Color.Red;
-            }
-
-            msjSalida.Visible = true;
-        }
-
+               
         private void FormAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dsCompras.compras' Puede moverla o quitarla según sea necesario.
+            this.comprasTableAdapter.Fill(this.dsCompras.compras);
+            LoggerProxy.Info("lalala");
+            // TODO: esta línea de código carga datos en la tabla 'dsHabitaciones.habitaciones' Puede moverla o quitarla según sea necesario.
+            this.habitacionesTableAdapter.Fill(this.dsHabitaciones.habitaciones);
             // TODO: esta línea de código carga datos en la tabla 'dsRopaHotel.ropaHotel' Puede moverla o quitarla según sea necesario.
             this.ropaHotelTableAdapter.Fill(this.dsRopaHotel.ropaHotel);
             // TODO: esta línea de código carga datos en la tabla 'dsTiposCuentasGastos.tiposCuentasGastos' Puede moverla o quitarla según sea necesario.
@@ -126,54 +84,54 @@ namespace Administrador
             // TODO: esta línea de código carga datos en la tabla 'dsCategorias.categorias' Puede moverla o quitarla según sea necesario.
             this.categoriasTableAdapter.Fill(this.dsCategorias.categorias);
 
-            desactivarControlesExcepto(tlpHabitaciones.Controls, txtHab_nro);
+            //desactivarControlesExcepto(tlpHabitaciones.Controls, txtHab_nro);
             articulosCompuestos_getTableAdapter.Fill(dsCompuestoPor.articulosCompuestos_get, (int)listArtCompuestos.SelectedValue);
             descuentos_ObtenerArticulosByDescuentoIdTableAdapter.Fill(spDescuentosObtenerArticulosByDescId.Descuentos_ObtenerArticulosByDescuentoId, (int)listPromociones.SelectedValue);
-            loadCategorias();
+            //loadCategorias();
             dgvCompuestoPor.ClearSelection();
         }
 
-        public void desactivarControlesExcepto(ICollection controles, Control excepcion)
-        {
-            foreach (Control item in controles)
-            {
-                if (!item.Equals(excepcion) && item.GetType() == typeof(TextBox))
-                {
-                    item.Enabled = false;
-                }
+        //public void desactivarControlesExcepto(ICollection controles, Control excepcion)
+        //{
+        //    foreach (Control item in controles)
+        //    {
+        //        if (!item.Equals(excepcion) && item.GetType() == typeof(TextBox))
+        //        {
+        //            item.Enabled = false;
+        //        }
 
-                listCat1.Enabled = false;
-                listCat2.Enabled = false;
-                listCat3.Enabled = false;
+        //        listCat1.Enabled = false;
+        //        listCat2.Enabled = false;
+        //        listCat3.Enabled = false;
 
-            }
-        }
+        //    }
+        //}
 
-        public void activarControles(ICollection controles)
-        {
-            foreach (Control item in controles)
-            {
-                item.Enabled = true;
-            }
-            listCat1.Enabled = true;
-            listCat2.Enabled = true;
-            listCat3.Enabled = true;
-        }
+        //public void activarControles(ICollection controles)
+        //{
+        //    foreach (Control item in controles)
+        //    {
+        //        item.Enabled = true;
+        //    }
+        //    listCat1.Enabled = true;
+        //    listCat2.Enabled = true;
+        //    listCat3.Enabled = true;
+        //}
 
-        public void cargarDatosHabitacion(DataSet dsHab)
-        {
-            DataRow dr = dsHab.Tables[0].Rows[0];
-            listCat1.SelectedValue = dr["categoria"].ToString();
-            listCat2.SelectedValue = dr["categoria2"].ToString() == "" ? "0" : dr["categoria2"].ToString();
-            listCat3.SelectedValue = dr["categoria3"].ToString() == "" ? "0" : dr["categoria3"].ToString();
-            txtHab_acolchado.Text = dr["acolchado"].ToString();
-            txtHab_batas.Text = dr["batas"].ToString();
-            txtHab_fundas.Text = dr["fundas"].ToString();
-            txtHab_pos.Text = dr["posSenializacion"].ToString();
-            txtHab_sabanas.Text = dr["sabanas"].ToString();
-            txtHab_toallas.Text = dr["toallas"].ToString();
-            txtHab_toallones.Text = dr["toallones"].ToString();
-        }
+        //public void cargarDatosHabitacion(DataSet dsHab)
+        //{
+        //    DataRow dr = dsHab.Tables[0].Rows[0];
+        //    listCat1.SelectedValue = dr["categoria"].ToString();
+        //    listCat2.SelectedValue = dr["categoria2"].ToString() == "" ? "0" : dr["categoria2"].ToString();
+        //    listCat3.SelectedValue = dr["categoria3"].ToString() == "" ? "0" : dr["categoria3"].ToString();
+        //    txtHab_acolchado.Text = dr["acolchado"].ToString();
+        //    txtHab_batas.Text = dr["batas"].ToString();
+        //    txtHab_fundas.Text = dr["fundas"].ToString();
+        //    txtHab_pos.Text = dr["posSenializacion"].ToString();
+        //    txtHab_sabanas.Text = dr["sabanas"].ToString();
+        //    txtHab_toallas.Text = dr["toallas"].ToString();
+        //    txtHab_toallones.Text = dr["toallones"].ToString();
+        //}
 
         private static DataSet obtenerHabitacion(string p)
         {
@@ -190,76 +148,76 @@ namespace Administrador
             return ds;
         }
 
-        private int insertarEditarHabitacion()
-        {
-            DataSet ds = new DataSet();
-            int result = 0;
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("habitacion_ABM_insEdit", FAdministrador.conn);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", int.Parse(txtHab_nro.Text));
-            dataAdapter.SelectCommand.Parameters.AddWithValue("@catId1", listCat1.SelectedValue.ToString());
-            if (listCat2.SelectedValue.ToString() != "0")
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@catId2", listCat2.SelectedValue.ToString());
-            if (listCat3.SelectedValue.ToString() != "0")
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@catId3", listCat3.SelectedValue.ToString());
-            if (txtHab_fundas.Text.Length > 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@fundas", int.Parse(txtHab_fundas.Text));
-            if (txtHab_sabanas.Text.Length > 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@sabanas", int.Parse(txtHab_sabanas.Text));
-            if (txtHab_acolchado.Text.Length > 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@acolchados", int.Parse(txtHab_acolchado.Text));
-            if (txtHab_toallas.Text.Length > 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@toallas", int.Parse(txtHab_toallas.Text));
-            if (txtHab_toallones.Text.Length > 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@toallones", int.Parse(txtHab_toallones.Text));
-            if (txtHab_batas.Text.Length > 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@batas", int.Parse(txtHab_batas.Text));
-            if (txtHab_pos.Text.Length > 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@posSenializacion", int.Parse(txtHab_pos.Text));
-            try
-            {
-                result = dataAdapter.SelectCommand.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                result = 0;
-            }
+        //private int insertarEditarHabitacion()
+        //{
+        //    DataSet ds = new DataSet();
+        //    int result = 0;
+        //    SqlDataAdapter dataAdapter = new SqlDataAdapter("habitacion_ABM_insEdit", FAdministrador.conn);
+        //    dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //    dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", int.Parse(txtHab_nro.Text));
+        //    dataAdapter.SelectCommand.Parameters.AddWithValue("@catId1", listCat1.SelectedValue.ToString());
+        //    if (listCat2.SelectedValue.ToString() != "0")
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@catId2", listCat2.SelectedValue.ToString());
+        //    if (listCat3.SelectedValue.ToString() != "0")
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@catId3", listCat3.SelectedValue.ToString());
+        //    if (txtHab_fundas.Text.Length > 0)
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@fundas", int.Parse(txtHab_fundas.Text));
+        //    if (txtHab_sabanas.Text.Length > 0)
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@sabanas", int.Parse(txtHab_sabanas.Text));
+        //    if (txtHab_acolchado.Text.Length > 0)
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@acolchados", int.Parse(txtHab_acolchado.Text));
+        //    if (txtHab_toallas.Text.Length > 0)
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@toallas", int.Parse(txtHab_toallas.Text));
+        //    if (txtHab_toallones.Text.Length > 0)
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@toallones", int.Parse(txtHab_toallones.Text));
+        //    if (txtHab_batas.Text.Length > 0)
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@batas", int.Parse(txtHab_batas.Text));
+        //    if (txtHab_pos.Text.Length > 0)
+        //        dataAdapter.SelectCommand.Parameters.AddWithValue("@posSenializacion", int.Parse(txtHab_pos.Text));
+        //    try
+        //    {
+        //        result = dataAdapter.SelectCommand.ExecuteNonQuery();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        result = 0;
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
 
 
-        private bool procesarComando(TabPage tabPage, Keys keyData)
-        {
-            switch (tabPage.Name)
-            {
-                case "tpHabitaciones":
-                    if (txtHab_nro.Focused && txtHab_nro.Text.Length > 0 && keyData == Keys.Enter)// si puse nro hab y presione enter, verifico si existe o no la hab.
-                    {
-                        DataSet dsHab;
-                        int nroHab;
+        //private bool procesarComando(TabPage tabPage, Keys keyData)
+        //{
+        //    switch (tabPage.Name)
+        //    {
+        //        case "tpHabitaciones":
+        //            if (txtHab_nro.Focused && txtHab_nro.Text.Length > 0 && keyData == Keys.Enter)// si puse nro hab y presione enter, verifico si existe o no la hab.
+        //            {
+        //                DataSet dsHab;
+        //                int nroHab;
 
-                        msjSalida.Visible = false;
+        //                msjSalida.Visible = false;
 
-                        if (!int.TryParse(txtHab_nro.Text, out nroHab))
-                            return true;
-                        activarControles(tlpHabitaciones.Controls);
-                        if ((dsHab = obtenerHabitacion(txtHab_nro.Text)).Tables[0].Rows.Count > 0)
-                        {
-                            cargarDatosHabitacion(dsHab);
-                        }
-                        else
-                        {
-                            blanquearCampos(tlpHabitaciones.Controls, txtHab_nro);
-                        }
-                        return true;
-                    }
-                    break;
+        //                if (!int.TryParse(txtHab_nro.Text, out nroHab))
+        //                    return true;
+        //                activarControles(tlpHabitaciones.Controls);
+        //                if ((dsHab = obtenerHabitacion(txtHab_nro.Text)).Tables[0].Rows.Count > 0)
+        //                {
+        //                    cargarDatosHabitacion(dsHab);
+        //                }
+        //                else
+        //                {
+        //                    blanquearCampos(tlpHabitaciones.Controls, txtHab_nro);
+        //                }
+        //                return true;
+        //            }
+        //            break;
 
-            }
-            return false;
+        //    }
+        //    return false;
 
-        }
+        //}
 
         private void blanquearCampos(ICollection controles, Control excepcion)
         {
@@ -287,9 +245,9 @@ namespace Administrador
                 categoriasTableAdapter.Update(dsCategorias);
                 categoriasTableAdapter.Fill(dsCategorias.categorias);
                 loadCategorias();
-                blanquearCampos(tlpHabitaciones.Controls, null);
-                desactivarControlesExcepto(tlpHabitaciones.Controls, txtHab_nro);
-                msjSalida.Visible = false;
+                //blanquearCampos(tlpHabitaciones.Controls, null);
+                //desactivarControlesExcepto(tlpHabitaciones.Controls, txtHab_nro);
+                //msjSalida.Visible = false;
                 lblCat_msjSalida.Visible = false;
             }
             catch (Exception ex)
@@ -309,8 +267,20 @@ namespace Administrador
 
         private void btnTarj_save_Click(object sender, EventArgs e)
         {
-            mediosDePagoTableAdapter.Update(dsFormasDePago);
-            mediosDePagoTableAdapter.Fill(dsFormasDePago.mediosDePago);
+            try
+            {
+                mediosDePagoTableAdapter.Update(dsFormasDePago);
+                mediosDePagoTableAdapter.Fill(dsFormasDePago.mediosDePago);
+            }
+            catch (Exception ex)
+            {                
+                if (ex.Message.Contains("FK_turnos_mediosDePago"))
+                {
+                    MessageBox.Show("No se puede borrar el medio de pago por que hay turnos que lo tienen asignado.", "Error");
+
+                }
+                mediosDePagoTableAdapter.Fill(dsFormasDePago.mediosDePago);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -380,9 +350,7 @@ namespace Administrador
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int valor;
-            //dsArticulos.AcceptChanges();
-            //articulosTableAdapter.Update(dsArticulos.articulos);
+            int valor;           
 
             if (((ComboBox)sender).SelectedValue != null)
                 if (int.TryParse(((ComboBox)sender).SelectedValue.ToString(), out valor))
@@ -430,19 +398,15 @@ namespace Administrador
         private void tarifasBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
-            {
-                //DataRow dr = ((DataRowView)((BindingSource)sender).Current).Row;
-                tarifasTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
-                    //((DataRowView)((BindingSource)sender).Current).Row);
-                //tarifasTableAdapter.Fill(dsTarifas.tarifas);
+            {                
+                tarifasTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);                
             }
             dgvCompuestoPor.ClearSelection();
         }
 
         private void tarifasBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            tarifasTableAdapter.Update(dsTarifas.tarifas);
-            //tarifasTableAdapter.Fill(dsTarifas.tarifas);
+            tarifasTableAdapter.Update(dsTarifas.tarifas);            
         }
 
         private void loadCategorias()
@@ -451,23 +415,6 @@ namespace Administrador
             SqlDataAdapter adapter = new SqlDataAdapter("select id,nombre from categorias", FAdministrador.conn);
             adapter.Fill(ds);
             ds.Tables[0].Rows.Add(0, "Ninguna");
-
-            listCat1.DataSource = ds.Tables[0];
-            listCat1.DisplayMember = "nombre";
-            listCat1.ValueMember = "id";
-            listCat1.SelectedValue = 0;
-
-
-            listCat2.DataSource = ds.Copy().Tables[0];
-            listCat2.DisplayMember = "nombre";
-            listCat2.ValueMember = "id";
-            listCat2.SelectedValue = 0;
-
-            listCat3.DataSource = ds.Copy().Tables[0];
-            listCat3.DisplayMember = "nombre";
-            listCat3.ValueMember = "id";
-            listCat3.SelectedValue = 0;
-
         }
 
         private void dgvTarifas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -521,6 +468,352 @@ namespace Administrador
         {
             ropaHotelTableAdapter.Update(dsRopaHotel);
             ropaHotelTableAdapter.Fill(dsRopaHotel.ropaHotel);
+        }
+
+        private void habitacionesBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+            {
+                habitacionesTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+            }            
+        }
+
+        private void habitacionesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            habitacionesTableAdapter.Update(dsHabitaciones.habitaciones);            
+        }
+
+        private void dataGridView8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int test = 0;// localizar celda y borrarla
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            /*PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument1;
+            printDialog.UseEXDialog = true;
+            grillaImprimir = dataGridView8;
+            //Get the document
+            if (DialogResult.OK == printDialog.ShowDialog())
+            {
+                printDocument1.DocumentName = "Impresion Admin";
+                
+                PrintPreviewDialog objPPdialog = new PrintPreviewDialog();
+                objPPdialog.Document = printDocument1;
+                objPPdialog.ShowDialog();
+            }
+            */
+            grillaImprimir = dataGridView8;
+            prepararImpresion();
+
+        }
+
+        private void prepararImpresion()
+        {
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument1;
+            printDialog.UseEXDialog = true;            
+            //Get the document
+            if (DialogResult.OK == printDialog.ShowDialog())
+            {
+                printDocument1.DocumentName = "Listado";
+                printDocument1.DefaultPageSettings.Margins = new Margins(15, 15, 40, 0);
+                //printDocument1.Print();
+                PrintPreviewDialog objPPdialog = new PrintPreviewDialog();
+                objPPdialog.Document = printDocument1;
+                objPPdialog.ShowDialog();
+            }
+        }
+
+        #region Member Variables
+        
+        StringFormat strFormat; //Used to format the grid rows.
+        ArrayList arrColumnLefts = new ArrayList();//Used to save left coordinates of columns
+        ArrayList arrColumnWidths = new ArrayList();//Used to save column widths
+        int iCellHeight = 0; //Used to get/set the datagridview cell height
+        int iTotalWidth = 0; //
+        int iRow = 0;//Used as counter
+        bool bFirstPage = false; //Used to check whether we are printing first page
+        bool bNewPage = false;// Used to check whether we are printing a new page
+        int iHeaderHeight = 0; //Used for the header height
+        DataGridView grillaImprimir;  
+        #endregion
+
+        private void printDocument1_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            try
+            {
+                strFormat = new StringFormat();
+                strFormat.Alignment = StringAlignment.Near;
+                strFormat.LineAlignment = StringAlignment.Center;
+                strFormat.Trimming = StringTrimming.EllipsisCharacter;
+                
+                arrColumnLefts.Clear();
+                arrColumnWidths.Clear();
+                iCellHeight = 0;
+                iRow = 0;
+                bFirstPage = true;
+                bNewPage = true;
+
+                // Calculating Total Widths
+                iTotalWidth = 0;
+                foreach (DataGridViewColumn dgvGridCol in grillaImprimir.Columns)
+                {
+                    iTotalWidth += dgvGridCol.Width;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                //Set the left margin
+                int iLeftMargin = e.MarginBounds.Left;
+                //Set the top margin
+                int iTopMargin = e.MarginBounds.Top;
+                //Whether more pages have to print or not
+                bool bMorePagesToPrint = false;
+                int iTmpWidth = 0;
+
+                //For the first page to print set the cell width and header height
+                if (bFirstPage)
+                {
+                    foreach (DataGridViewColumn GridCol in grillaImprimir.Columns)
+                    {
+                        iTmpWidth = (int)(Math.Floor((double)((double)GridCol.Width /
+                                       (double)iTotalWidth * (double)iTotalWidth *
+                                       ((double)e.MarginBounds.Width / (double)iTotalWidth))));
+
+                        iHeaderHeight = (int)(e.Graphics.MeasureString(GridCol.HeaderText,
+                                    GridCol.InheritedStyle.Font, iTmpWidth).Height) + 11;
+
+                        // Save width and height of headres
+                        arrColumnLefts.Add(iLeftMargin);
+                        arrColumnWidths.Add(iTmpWidth);
+                        iLeftMargin += iTmpWidth;
+                    }
+                }
+                //Loop till all the grid rows not get printed
+                while (iRow <= grillaImprimir.Rows.Count - 1)
+                {
+                    DataGridViewRow GridRow = grillaImprimir.Rows[iRow];
+                    //Set the cell height
+                    iCellHeight = GridRow.Height + 5;
+                    int iCount = 0;
+                    //Check whether the current page settings allo more rows to print
+                    if (iTopMargin + iCellHeight >= e.MarginBounds.Height + e.MarginBounds.Top)
+                    {
+                        bNewPage = true;
+                        bFirstPage = false;
+                        bMorePagesToPrint = true;
+                        break;
+                    }
+                    else
+                    {
+                        if (bNewPage)
+                        {
+                            //Draw Header
+                            //e.Graphics.DrawString("Customer Summary", new Font(dataGridView1.Font, FontStyle.Bold),
+                            //        Brushes.Black, e.MarginBounds.Left, e.MarginBounds.Top -
+                            //        e.Graphics.MeasureString("Customer Summary", new Font(dataGridView1.Font,
+                            //        FontStyle.Bold), e.MarginBounds.Width).Height - 13);
+
+                            String strDate = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
+                            //Draw Date
+                            e.Graphics.DrawString(strDate, new Font(grillaImprimir.Font, FontStyle.Bold),
+                                    Brushes.Black, e.MarginBounds.Left + (e.MarginBounds.Width -
+                                    e.Graphics.MeasureString(strDate, new Font(grillaImprimir.Font,
+                                    FontStyle.Bold), e.MarginBounds.Width).Width), e.MarginBounds.Top -
+                                    e.Graphics.MeasureString("Customer Summary", new Font(new Font(grillaImprimir.Font,
+                                    FontStyle.Bold), FontStyle.Bold), e.MarginBounds.Width).Height - 13);
+
+                            //Draw Columns                 
+                            iTopMargin = e.MarginBounds.Top;
+                            foreach (DataGridViewColumn GridCol in grillaImprimir.Columns)
+                            {
+                                e.Graphics.FillRectangle(new SolidBrush(Color.LightGray),
+                                    new Rectangle((int)arrColumnLefts[iCount], iTopMargin,
+                                    (int)arrColumnWidths[iCount], iHeaderHeight));
+
+                                e.Graphics.DrawRectangle(Pens.Black,
+                                    new Rectangle((int)arrColumnLefts[iCount], iTopMargin,
+                                    (int)arrColumnWidths[iCount], iHeaderHeight));
+
+                                if (GridCol.HeaderText.ToLower().Contains("categor"))
+                                    GridCol.HeaderText = "Cat";
+                                if (GridCol.HeaderText.ToLower().Contains("extension"))
+                                    GridCol.HeaderText = "Ext.";
+
+                                e.Graphics.DrawString(GridCol.HeaderText, GridCol.InheritedStyle.Font,
+                                    new SolidBrush(GridCol.InheritedStyle.ForeColor),
+                                    new RectangleF((int)arrColumnLefts[iCount], iTopMargin,
+                                    (int)arrColumnWidths[iCount], iHeaderHeight), strFormat);
+                                iCount++;
+                            }
+                            bNewPage = false;
+                            iTopMargin += iHeaderHeight;
+                        }
+                        iCount = 0;
+                        //Draw Columns Contents                
+                        foreach (DataGridViewCell Cel in GridRow.Cells)
+                        {
+                            if (Cel.Value != null)
+                            {                                
+                                //Cel.GetType() == typeof(DataGridViewComboBoxCell) ? Cel.FormattedValue.ToString() : Cel.Value.ToString()
+                                e.Graphics.DrawString(Cel.FormattedValue.ToString(),
+                                            Cel.InheritedStyle.Font,
+                                            new SolidBrush(Cel.InheritedStyle.ForeColor),
+                                            new RectangleF((int)arrColumnLefts[iCount], (float)iTopMargin,
+                                            (int)arrColumnWidths[iCount], (float)iCellHeight), strFormat);
+                            }
+                            //Drawing Cells Borders 
+                            e.Graphics.DrawRectangle(Pens.Black, new Rectangle((int)arrColumnLefts[iCount],
+                                    iTopMargin, (int)arrColumnWidths[iCount], iCellHeight));
+
+                            iCount++;
+                        }
+                    }
+                    iRow++;
+                    iTopMargin += iCellHeight;
+                }
+
+                //If more lines exist, print another page.
+                if (bMorePagesToPrint)
+                    e.HasMorePages = true;
+                else
+                    e.HasMorePages = false;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dataGridView1;
+            prepararImpresion();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dataGridView7;
+            prepararImpresion();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dataGridView5;
+            prepararImpresion();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dgvSocios;
+            prepararImpresion();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dataGridView6;
+            prepararImpresion();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dataGridView4;
+            prepararImpresion();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dgvConserjes;
+            prepararImpresion();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dgvMucamas;
+            prepararImpresion();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dataGridView3;
+            prepararImpresion();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dataGridView2;
+            prepararImpresion();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dgvTarifas;
+            prepararImpresion();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dgvArticulos;
+            prepararImpresion();
+        }
+
+        private void button17_Click(object sender, EventArgs e)//Compras
+        {
+            int Compras = (int) nCompra.Value;
+            int Reposicion = (int)nReposicion.Value;
+            string comentario = txtComentario.Text;
+            DateTime fecha = dpFecha.Value;
+            int idArticulo = (int) cbArticulo.SelectedValue;
+            string descripcion = cbArticulo.Text;
+
+          /*  string SQL = string.Format("INSERT INTO [hotel].[dbo].[compras]([articuloId],[descripcion],[fechaIngreso],[comentario],[compra],[reposicion])"+
+            "VALUES ({0},'{1}','{2}','{3}',{4},{5})",idArticulo,descripcion,fecha.ToString("yyyy-MM-dd HH:mm:ss"),comentario,Compras,Reposicion);*/
+            try
+            {
+                SqlCommand comm = new SqlCommand("compras_insertar", FAdministrador.conn);
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@articuloId",idArticulo);
+                comm.Parameters.AddWithValue("@descripcion",descripcion);
+                comm.Parameters.AddWithValue("@fecha",fecha);
+                comm.Parameters.AddWithValue("@comentario",comentario);
+                comm.Parameters.AddWithValue("compra",Compras);
+                comm.Parameters.AddWithValue("reposicion",Reposicion);
+                if(nPrecioUnit.Value>0)
+                    comm.Parameters.AddWithValue("precioU", nPrecioUnit.Value);
+                comm.ExecuteNonQuery();
+                
+                //Actualizo tabla
+                comprasTableAdapter.Fill(dsCompras.compras);
+                
+                //Limpio campos
+                txtComentario.Clear();
+                nReposicion.Value = 0;
+                nCompra.Value = 0;
+                nPrecioUnit.Value = 0;
+                cbArticulo.SelectedIndex = 0;
+                cbArticulo.Focus();
+
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + " - " + ex.StackTrace);
+            }
+
+        }
+
+        private void nCompra_Enter(object sender, EventArgs e)
+        {
+            nCompra.ResetText();
         }
 
     }

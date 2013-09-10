@@ -1,4 +1,0 @@
-2013-02-08 21:17:24,860 [1] INFO  - Comienzo - Aplicacion Hotel
-2013-02-08 21:24:16,913 [1] INFO  - Comienzo - Aplicacion Hotel
-2013-02-08 21:28:25,495 [1] ERROR - Error al generar pedido de Bar - La habitación no posee esa cantidad de ese articulo    en Hoteles.Entities.Articulo.anularPedidoBar(fPrincipal fPrincipal, Dictionary`2 pedido, Int32 nroHab) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Articulo.cs:línea 119
-   en Hoteles.FormAnularPedidoBar.tbNroHab_KeyPress(Object sender, KeyPressEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\FormAnularPedidoBar.cs:línea 190

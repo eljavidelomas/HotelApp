@@ -1,6 +1,7 @@
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Debug\Administrador.exe.config
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Debug\Administrador.exe
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Debug\Administrador.pdb
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Debug\log4net.dll
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Debug\Administrador.FAdministrador.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Debug\Administrador.Properties.Resources.resources

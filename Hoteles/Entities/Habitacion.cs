@@ -21,12 +21,23 @@ namespace Hoteles.Entities
             try
             {
                 SqlCommand comm;
-
                 int dia = Calendario.nroDia(DateTime.Now);
                 int diaAnt = Calendario.nroDiaAnt(DateTime.Now);
                 
                 if (pernocte == 0)
                 {
+                    Tarifa tarActual = Tarifa.obtenerTarifaActual(catId, dia, diaAnt, DateTime.Now);
+                    Tarifa tarSig = Tarifa.obtenerTarifaActual(catId, dia, diaAnt, DateTime.Now.AddMinutes(tarActual.duracion));
+                    decimal precioSumarContador = 0;
+                    if (tarSig.pernocte)
+                    {
+                        if (tarSig.desde < DateTime.Now.AddMinutes(tarActual.duracion)) // Si desde= 10:00 y hasta= 11:00 tengo que poner en el contador 1 hora en $$$
+                        {
+                            decimal precioAux = tools.redondeo(Tarifa.obtenerPrecioDesdeHasta(tarActual, DateTime.Now, tarSig.desde));
+                            precioSumarContador = tarActual.precio - precioAux;
+                        }                      
+                    }
+
                     comm = new SqlCommand("Habitacion_Asignar", fPrincipal2.conn);
                     comm.CommandType = CommandType.StoredProcedure;
                     if (descuentoId != 0)
@@ -37,6 +48,7 @@ namespace Hoteles.Entities
                     comm.Parameters.AddWithValue("@diaAnt", diaAnt);
                     comm.Parameters.AddWithValue("@pernocte", pernocte);
                     comm.Parameters.AddWithValue("@conserjeId", conserjeId);
+                    comm.Parameters.AddWithValue("@contPernocte", precioSumarContador);
                     if (socioId != 0)
                         comm.Parameters.AddWithValue("@socioId", socioId);
                     if (puntos > 0)
@@ -145,6 +157,7 @@ namespace Hoteles.Entities
             comm.CommandType = CommandType.StoredProcedure;
             comm.Parameters.AddWithValue("@nroHab", nroHab);
             comm.ExecuteNonQuery();
+            
             // Hacer el cierre de la habitacion
             comm.CommandText = "turnos_cerrar";
             comm.Parameters.AddWithValue("@descuento", descuento);
@@ -318,11 +331,8 @@ namespace Hoteles.Entities
             comm.Parameters.AddWithValue("@nroHab", nroHab);
             comm.Parameters.AddWithValue("@est", estHab);
             comm.ExecuteNonQuery();
-            tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
-            //comm.CommandText = "listaTurnos_2";
-            //comm.Parameters.Clear();
-            //comm.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-            //fPrincipal.dibujar(fPrincipal.maxFilas, fPrincipal.cantHab, comm.ExecuteReader());
+            if(fPrincipal != null)
+                tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);            
         }
 
         public static decimal calcularPrecioTurno(int pernocte, decimal descuentoId,int puntos,int catId,out Tarifa tarifaNoche,out decimal totDescDinero,out decimal totExtra)
@@ -444,6 +454,34 @@ namespace Hoteles.Entities
             comm.ExecuteNonQuery();
             tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);            
         }
+
+        internal static void AdelantarPuntos(fPrincipal2 fPrincipal, int nroHab, int puntos,ref Socio socio)
+        {
+            using (SqlConnection conn = new SqlConnection(fPrincipal2.conn.ConnectionString))
+            {
+                SqlTransaction transaccion = null;
+                conn.Open();
+                transaccion = conn.BeginTransaction(IsolationLevel.RepeatableRead);
+                try
+                {
+                    SqlCommand comm = new SqlCommand("habitacion_adelantarPuntos", conn);
+                    comm.Transaction = transaccion;
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.AddWithValue("@nroHab", nroHab);
+                    comm.Parameters.AddWithValue("@puntos", puntos);
+                    comm.ExecuteNonQuery();
+
+                    socio.descontarPuntos(puntos,transaccion,conn);                    
+                    transaccion.Commit();
+                    tools.actualizarListadoTurnos(fPrincipal.dataGridView1, fPrincipal.dataGridView2);
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    LoggerProxy.Error(ex.Message + "-" + ex.StackTrace);
+                }
+            }
+        }
     }
 
     public class DetallesHabitacion
@@ -462,6 +500,8 @@ namespace Hoteles.Entities
         public decimal descuentoDinero;
         public decimal descArticulos;
         public decimal impArticulos;
+        public decimal impHabIni;
+        public decimal impExtras;
         public int catId;
         public int nroHab;
         public decimal contPernocte;
@@ -484,6 +524,8 @@ namespace Hoteles.Entities
             descuentoDinero = decimal.Parse(dr["descHabitacion"].ToString());
             descArticulos = decimal.Parse(dr["descArt"].ToString());
             impArticulos = decimal.Parse(dr["impArticulos"].ToString());
+            impHabIni = decimal.Parse(dr["impHabIni"].ToString());
+            impExtras = decimal.Parse(dr["impExtras"].ToString());
             catId = int.Parse(dr["catId"].ToString());
             nroHab = int.Parse(dr["nroHab"].ToString());
             contPernocte = decimal.Parse(dr["contPernocte"].ToString());

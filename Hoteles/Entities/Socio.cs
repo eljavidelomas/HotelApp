@@ -30,6 +30,11 @@ namespace Hoteles.Entities
             DateTime.TryParse(dr["fechaVencimientoPuntaje"].ToString(), out fechaVencimientoPuntaje);
         }
 
+        public Socio(int nroSocio)
+        {
+
+        }
+
         public static Socio registrarYobtener(int nroSocio)
         {
             Socio socio;
@@ -67,16 +72,35 @@ namespace Hoteles.Entities
             }
             catch (Exception ex)
             {
-                log.Error("Socio - registrarYobtener = " + ex.Message + ex.StackTrace);                
+                log.Error("Socio - descontarPuntos = " + ex.Message + ex.StackTrace);                
+            }
+        }
+
+        internal void descontarPuntos(int puntos,SqlTransaction tran,SqlConnection conn)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("socios_descontarPuntos", conn);
+            dataAdapter.SelectCommand.Transaction = tran;
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@puntos", puntos);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@nroSocio", this.nroSocio);
+            try
+            {
+                dataAdapter.Fill(new DataSet());
+                this.puntaje -= puntos;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Socio - descontarPuntos = " + ex.Message + ex.StackTrace);
             }
         }
 
         public static void asignarPuntos(decimal montoGastado,string nroSocio)
         {
             int puntos = (int) Math.Floor(decimal.Parse(tools.obtenerParametroString("coefPuntos")) * montoGastado);
-            
+            int cantDiasVencimiento = tools.obtenerParametroInt("diasParaVencimientoPuntos");
+
             SqlCommand comm = new SqlCommand("update socios set puntos = puntos + " + puntos + 
-                ",cantidadVisitas = cantidadVisitas + 1,fechaVencimientoPuntaje = '"+ DateTime.Now.AddDays(180).ToString("yyyy/MM/dd") +"' where nroSocio = " + nroSocio, fPrincipal2.conn);
+                ",cantidadVisitas = cantidadVisitas + 1,fechaVencimientoPuntaje = '"+ DateTime.Now.AddDays(cantDiasVencimiento).ToString("yyyy/MM/dd") +"' where nroSocio = " + nroSocio, fPrincipal2.conn);
             comm.CommandType = CommandType.Text;
 
             comm.ExecuteNonQuery();            

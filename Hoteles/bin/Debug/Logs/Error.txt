@@ -1,0 +1,927 @@
+2013-09-08 17:30:04,696 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:30:04,730 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:30:09,821 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:30:09,908 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:42:51,660 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:46:47,813 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:46:47,848 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:49:42,622 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:50:59,778 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:51:20,075 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:51:20,148 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:53:13,307 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:53:18,273 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:53:18,328 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:57:04,620 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:57:51,003 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:57:55,884 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:57:55,935 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:01,027 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:01,083 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:06,229 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:06,285 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:21,968 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:26,868 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:26,925 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:31,123 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 17:58:32,076 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:32,152 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:37,219 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:37,273 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:42,363 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:42,419 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:47,517 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:47,563 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:52,675 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:52,732 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:57,817 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:58:57,871 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:02,940 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:02,998 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:08,087 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:08,137 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:13,245 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:13,302 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:18,347 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:18,402 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:23,488 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:23,542 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:28,591 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:28,674 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:33,694 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:33,752 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:38,838 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:38,891 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:43,989 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:44,039 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:49,163 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:49,243 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:54,307 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:54,363 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:59,474 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 17:59:59,528 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:04,602 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:04,653 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:09,746 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:09,809 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:14,932 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:14,994 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:20,095 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:20,146 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:25,197 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:25,249 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:30,324 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:30,384 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:35,448 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:35,499 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:40,593 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:40,640 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:45,734 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:45,792 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:50,894 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:50,946 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:56,115 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:00:56,169 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:01,239 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:01,293 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:06,343 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:06,394 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:11,484 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:11,546 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:16,605 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:16,658 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:21,767 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:21,822 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:26,910 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:26,969 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:32,073 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:32,128 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:37,217 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:37,277 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:42,386 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:42,440 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:47,533 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:47,583 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:52,675 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:52,731 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:57,818 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:01:57,872 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:02,949 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:03,009 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:08,068 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:08,126 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:13,281 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:13,339 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:18,442 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:18,493 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:23,600 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:23,650 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:28,773 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:28,844 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:33,912 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:02:33,963 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 895
+2013-09-08 18:04:06,720 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:06,751 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:11,920 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:11,971 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:16,095 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:04:17,074 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:17,131 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:22,213 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:22,265 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:27,337 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:27,387 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:32,499 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:32,548 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:37,633 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:37,688 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:42,835 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:42,890 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:47,922 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:47,970 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:53,145 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:53,191 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:58,257 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:04:58,318 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:03,296 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:03,352 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:08,440 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:08,521 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:13,478 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:13,534 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:18,584 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:18,654 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:23,698 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:23,752 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:28,816 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:28,870 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:33,953 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:34,007 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:39,089 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:39,143 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:44,204 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:44,256 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:49,303 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:49,354 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:54,416 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:54,490 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:59,552 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:05:59,608 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:04,673 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:04,724 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:09,806 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:09,867 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:14,943 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:14,996 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:20,081 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:20,133 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:25,162 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:25,220 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:30,241 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:30,291 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:35,344 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:35,394 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:40,519 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:40,572 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:45,639 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:45,690 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:50,778 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:50,832 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:55,903 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:06:55,961 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:01,020 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:01,071 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:06,139 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:06,192 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:11,238 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:11,293 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:16,380 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:16,431 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:21,517 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:21,572 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:26,637 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:26,686 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:31,776 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:31,850 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:36,933 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:36,986 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:42,092 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:42,167 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:47,194 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:47,244 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:52,372 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:52,432 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:57,484 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:07:57,535 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:02,659 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:02,714 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:07,798 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:07,849 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:12,939 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:13,010 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:18,033 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:18,087 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:23,091 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:23,145 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:28,225 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:28,277 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:33,365 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:33,416 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:38,482 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:38,534 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:43,620 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:43,683 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:48,697 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:48,748 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:53,853 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:53,903 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:58,967 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:08:59,029 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:04,156 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:04,219 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:09,265 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:09,320 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:14,400 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:14,449 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:19,546 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:19,628 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:24,676 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:24,731 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:29,827 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:29,882 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:34,964 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:35,011 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:40,093 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:40,152 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:45,266 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:45,321 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:50,343 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:50,396 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:55,476 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:09:55,537 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:00,613 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:00,667 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:05,810 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:05,864 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:10,972 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:11,026 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:16,114 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:16,165 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:21,251 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:21,311 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:26,390 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:26,445 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:31,550 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:31,601 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:36,831 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:36,880 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:41,929 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:41,979 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:47,050 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:47,128 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:52,190 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:52,241 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:57,310 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:10:57,362 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:02,453 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:02,500 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:07,526 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:07,583 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:12,624 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:12,678 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:17,749 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:17,808 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:22,861 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:22,916 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:28,040 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:28,095 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:33,144 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:33,191 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:38,280 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:38,343 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:43,399 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:43,451 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:48,522 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:48,574 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:53,724 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:53,778 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:58,804 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:11:58,863 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:03,943 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:03,994 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:09,084 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:09,134 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:14,144 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:14,206 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:19,280 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:19,333 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:24,401 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:24,432 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:29,457 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:29,510 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:34,575 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:34,648 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:39,730 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:39,785 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:44,905 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:44,959 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:50,100 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:50,154 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:55,277 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:12:55,330 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:00,472 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:00,526 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:05,591 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:05,643 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:10,765 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:10,819 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:15,909 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:15,956 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:21,022 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:21,077 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:26,139 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:26,193 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:31,278 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:31,331 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:36,413 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:36,496 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:41,550 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:41,604 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:46,667 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:46,722 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:51,805 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:51,880 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:56,944 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:13:56,998 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:02,062 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:02,115 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:07,197 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:07,251 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:12,333 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:12,389 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:17,490 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:17,546 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:22,627 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:22,682 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:27,842 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:27,896 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:32,999 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:33,053 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:38,137 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:38,189 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:43,233 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:43,287 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:48,391 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:48,444 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:53,529 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:53,586 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:58,688 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:14:58,765 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:03,825 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:03,880 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:08,963 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:09,017 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:14,143 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:14,194 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:19,281 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:19,357 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:39,811 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:39,870 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:44,934 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:44,982 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:50,083 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:50,145 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:55,257 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:15:55,339 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:00,434 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:00,490 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:05,590 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:05,644 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:10,732 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:10,783 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:15,909 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:15,964 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:21,128 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:21,183 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:26,290 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:26,343 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:26,380 ERROR - Ya hay un DataReader abierto asociado a este comando, debe cerrarlo primero. -    en System.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   en System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Hoteles.fPrincipal2.timerValidarAlarmas_Tick(Object sender, EventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 608
+2013-09-08 18:16:31,426 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:31,480 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:36,568 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:36,619 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:41,684 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:41,736 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:46,820 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:46,875 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:51,983 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:52,031 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:57,137 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:16:57,188 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:17:02,275 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:17:02,327 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:17:07,394 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:18:06,704 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:24:16,288 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 896
+2013-09-08 18:35:55,354 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:45:32,012 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:45:36,142 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:45:40,314 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:45:49,773 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:45:59,241 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:03,402 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:13,111 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:17,264 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:21,427 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:25,558 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:29,727 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:39,184 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:43,347 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:47,515 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:51,685 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:46:55,855 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:47:00,024 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:47:04,187 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 18:54:11,605 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 19:08:35,435 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22
+2013-09-08 19:11:54,092 ERROR - Asegúrese de que hay un archivo de sonido en la ubicación especificada.-   en System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   en System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   en WindowsFormsApplication1.Audio.play(String audioLocation) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Audio.cs:línea 22

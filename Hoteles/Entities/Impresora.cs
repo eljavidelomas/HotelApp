@@ -19,7 +19,7 @@ namespace Hoteles.Entities
         private int tipoImpresion = 0;
         int NroHab;
         int cantLineas;
-        List<string> textoAImprimir= null;
+        List<string> textoAImprimir = null;
 
         #region Metodos Internos
 
@@ -41,11 +41,11 @@ namespace Hoteles.Entities
                 }
                 try
                 {
-                    guardarArchivoTemp(ticket,out cantLineas);
+                    guardarArchivoTemp(ticket, out cantLineas);
                     if (tools.obtenerParametroString("emisionPedidos") == "Duplicado")
                         tipoImpresion = 2;//Bar duplicado                    
                     formulario.PrinterSettings.PrinterName = obtenerImpresora("Cocina");//Seleccionar impresora cocina                    
-                    configurarImpresora(ref formulario,cantLineas,0);
+                    configurarImpresora(ref formulario, cantLineas, 0);
                     formulario.Print();
                 }
                 catch (Exception e)
@@ -65,15 +65,15 @@ namespace Hoteles.Entities
         internal void ImprimirGasto(Label msjError, decimal monto, string gasto)
         {
             try
-            {                
+            {
                 string ticket = Settings.Default.ticketGasto.Replace("##FECHA", DateTime.Now.ToString("dd-MM-yyyy")).
                 Replace("##HORA", DateTime.Now.ToShortTimeString()).Replace("##NRO", obtenerNroTicketCocina().ToString());
                 ticket = ticket + string.Format("{0:C}", monto).PadLeft(8) + "    " + gasto + "\r\n";
 
                 try
-                {                    
-                    guardarArchivoTemp(ticket,out cantLineas);
-                    configurarImpresora(ref formulario, cantLineas,0);                    
+                {
+                    guardarArchivoTemp(ticket, out cantLineas);
+                    configurarImpresora(ref formulario, cantLineas, 0);
                     formulario.PrinterSettings.PrinterName = obtenerImpresora("Tickets");// PrinterSettings.InstalledPrinters[2];//Seleccionar impresora cocina
                     formulario.Print();
                 }
@@ -94,20 +94,24 @@ namespace Hoteles.Entities
         {
             try
             {
-                //--------  Listado Articulos
 
-                string stockArt = Settings.Default.listadoArtStock.
-                    Replace("##nmHotel", tools.obtenerParametroString("nombreHotel").PadRight(45));
-
+                string stockArt = "";
                 List<FilaListArt> articulosConsumidos = obtenerArticulosConsumidos(tools.obtenerParametroString("stockCierreCaja"));
-
-                foreach (FilaListArt fila in articulosConsumidos)
+                if (articulosConsumidos != null)
                 {
-                    stockArt = stockArt + "\r\n" + fila.ToString();
-                }
-                stockArt += "\r\n\r\n\r\n\r\n";
-                //--------  Fin Listado Articulos
+                    //--------  Listado Articulos
+                    stockArt = Settings.Default.listadoArtStock.
+                        Replace("##nmHotel", tools.obtenerParametroString("nombreHotel").PadRight(44));
 
+
+
+                    foreach (FilaListArt fila in articulosConsumidos)
+                    {
+                        stockArt = stockArt + "\r\n" + fila.ToString();
+                    }
+                    stockArt += "\r\n\r\n\r\n\r\n";
+                    //--------  Fin Listado Articulos
+                }
 
                 //--------  Planilla cierre turnos
 
@@ -123,22 +127,22 @@ namespace Hoteles.Entities
                     planillaCierre = planillaCierre + "\r\n" + fila.ToString();
                 }
                 planillaCierre += "\r\n" + "".PadRight(124, '=') + "\r\n" +
-                       String.Format("{0:N2}", totales.totalTurnos).PadLeft(41) + "    " +
-                       String.Format("{0:N2}", totales.totalExtras).PadLeft(6) + "    " +
-                       String.Format("{0:N2}", totales.totalBar).PadLeft(6) + "    " +
-                       String.Format("{0:N2}", totales.totalDescuento).PadLeft(6) + "     " +
-                       String.Format("{0:N2}", totales.totalTotal).PadLeft(8) + "    " +
-                       String.Format("{0:N2}", totales.totalEfectivo).PadLeft(8) + "   " +
-                       String.Format("{0:N2}", totales.totalTarjeta).PadLeft(8) + "    " +
-                       String.Format("{0:N2}", totales.totalGastos).PadLeft(8) + "\r\n";
+                       String.Format("{0:N0}", totales.totalTurnos).PadLeft(41) + "    " +
+                       String.Format("{0:N0}", totales.totalExtras).PadLeft(6) + "   " +
+                       String.Format("{0:N0}", totales.totalBar).PadLeft(6) + "   " +
+                       String.Format("{0:N0}", totales.totalDescuento).PadLeft(6) + "    " +
+                       String.Format("{0:N0}", totales.totalTotal).PadLeft(8) + "    " +
+                       String.Format("{0:N0}", totales.totalEfectivo).PadLeft(8) + "   " +
+                       String.Format("{0:N0}", totales.totalTarjeta).PadLeft(8) + "   " +
+                       String.Format("{0:N0}", totales.totalGastos).PadLeft(8) + "\r\n";
 
                 decimal ingEgre = totales.totalEfectivo - totales.totalGastos;
 
-                planillaCierre += "\r\n" + "".PadLeft(70) + "Saldo Inicial  :  " + String.Format("{0:N2}", efectivoInicial).PadLeft(8) +
-                          "\r\n" + "".PadLeft(70) + "Ingreso-Egreso :  " + String.Format("{0:N2}", ingEgre).PadLeft(8) +
-                          "\r\n" + "".PadLeft(70) + "Total en Caja  :  " + String.Format("{0:N2}", (efectivoInicial + ingEgre)).PadLeft(8) +
-                          "\r\n" + "".PadLeft(70) + "Deposito buzón :  " + String.Format("{0:N2}", (efectivoInicial + ingEgre - efectivoEnCaja)).PadLeft(8) +
-                          "\r\n" + "".PadLeft(70) + "Queda en Caja  :  " + String.Format("{0:N2}", efectivoEnCaja).PadLeft(8);
+                planillaCierre += "\r\n" + "".PadLeft(70) + "Saldo Inicial  :  " + String.Format("{0:N0}", efectivoInicial).PadLeft(8) +
+                          "\r\n" + "".PadLeft(70) + "Ingreso-Egreso :  " + String.Format("{0:N0}", ingEgre).PadLeft(8) +
+                          "\r\n" + "".PadLeft(70) + "Total en Caja  :  " + String.Format("{0:N0}", (efectivoInicial + ingEgre)).PadLeft(8) +
+                          "\r\n" + "".PadLeft(70) + "Deposito buzón :  " + String.Format("{0:N0}", (efectivoInicial + ingEgre - efectivoEnCaja)).PadLeft(8) +
+                          "\r\n" + "".PadLeft(70) + "Queda en Caja  :  " + String.Format("{0:N0}", efectivoEnCaja).PadLeft(8);
 
                 planillaCierre += "\r\n\r\n\r\n\r\n";
                 //------    Fin planilla cierre turno
@@ -160,10 +164,10 @@ namespace Hoteles.Entities
                 }
 
                 try
-                {                    
+                {
                     string ticketSalida = stockArt + planillaCierre + ticketRopaConsumida;
-                    guardarArchivoTemp(ticketSalida,out cantLineas);
-                    configurarImpresora(ref formulario,cantLineas,8);                    
+                    guardarArchivoTemp(ticketSalida, out cantLineas);
+                    configurarImpresora(ref formulario, cantLineas, 9);
                     formulario.PrinterSettings.PrinterName = obtenerImpresora("Caja");//Seleccionar impresora Caja
                     formulario.Print();
                 }
@@ -179,22 +183,103 @@ namespace Hoteles.Entities
             }
         }
 
-
-       private void configurarImpresora(ref PrintDocument form,int cantLineas,float tamFuente)
+        internal void ImprimirTicketAsignar(int nroHab)
         {
-            float tamFuenteAux = tamFuente == 0 ? 16 : (float)tamFuente;
+            string ticket = Settings.Default.ticketAsignar.Replace("##FECHA", DateTime.Now.ToString("dd-MM-yyyy")).
+            Replace("##HORA", DateTime.Now.ToShortTimeString()).Replace("##NROHAB", nroHab.ToString());
+
+            try
+            {
+                tipoImpresion = 3;
+                guardarArchivoTemp(ticket, out cantLineas);
+                configurarImpresoraTickets(ref formulario, cantLineas, 0);
+                formulario.PrinterSettings.PrinterName = obtenerImpresora("Tickets");// PrinterSettings.InstalledPrinters[2];//Seleccionar impresora cocina
+                formulario.Print();
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.Error("Error relacionado con la impresìón.\r\n" + ex.Message + " - " + ex.StackTrace);
+                throw ex;
+            }
+        }
+
+
+
+        internal void ImprimirRopaHotelYActualizarSaldo(Dictionary<int, int> DictArticulosEntrantes, Dictionary<int, int> DictArticulosSalientes, DataTable saldoAnterior)
+        {
+            Dictionary<int, int> saldoFinal = new Dictionary<int, int>();
+            try
+            {
+                string ticket = Settings.Default.ticketLavadero.Replace("##FECHA", DateTime.Now.ToString("dd-MM-yyyy")).
+                Replace("##HORA", DateTime.Now.ToShortTimeString()).Replace("##NRO", obtenerNroTicketLavadero().ToString());
+
+                foreach (DataRow dr in saldoAnterior.Rows)
+                {
+                    int codRopa = Convert.ToInt32(dr[0]);
+                    int diferencia = Convert.ToInt32(dr[2]) - DictArticulosEntrantes[codRopa];
+                    saldoFinal.Add(codRopa, diferencia + DictArticulosSalientes[codRopa]);
+                    ticket = ticket + "".PadLeft(10) + dr[1].ToString().PadRight(14) + //Descripcion
+                        "    " + dr[2].ToString().PadLeft(3) + // En lavadero
+                        "".PadRight(9) + DictArticulosEntrantes[Convert.ToInt32(dr[0])].ToString().PadLeft(3) +//Entregó
+                        "".PadRight(9) + diferencia.ToString().PadLeft(3) +
+                        "".PadRight(8) + DictArticulosSalientes[codRopa].ToString().PadLeft(3) + //Retira
+                        "".PadRight(9) + saldoFinal[codRopa].ToString().PadLeft(3) + "\r\n";
+                }
+                RopaHotel.ActualizarSaldoFinal(saldoFinal);
+                LoggerProxy.Info(string.Format("Ejecuto Envio/Recibo de Lavadero"));
+                try
+                {
+                    guardarArchivoTemp(ticket, out cantLineas);
+                    configurarImpresora(ref formulario, cantLineas, 0);
+                    formulario.PrinterSettings.PrinterName = obtenerImpresora("Caja");
+                    formulario.Print();
+                }
+                catch (Exception e)
+                {
+                    LoggerProxy.Error("Error en la configuración de la impresora.\r\n" + e.Message + "-" + e.StackTrace);
+                    throw new Exception("");
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message != "")
+                    LoggerProxy.Error("Error en armado de archivo Lavadero.\r\n" + ex.Message + " - " + ex.StackTrace);
+                throw ex;
+            }
+        }
+
+        private void configurarImpresora(ref PrintDocument form, int cantLineas, float tamFuente)
+        {
+            float tamFuenteAux = tamFuente == 0 ? 12 : (float)tamFuente;
             //form.DefaultPageSettings.PaperSize = form.PrinterSettings.PaperSizes[((int)PaperKind.A3) - 1];
             form.PrintController = new StandardPrintController();
             form.PrintPage += new PrintPageEventHandler(imprimirArchivo);
             fuente = new System.Drawing.Font("consolas", tamFuenteAux);
             float tamPorLinea = fuente.GetHeight(form.PrinterSettings.CreateMeasurementGraphics());
             float altoHoja = (cantLineas + 1) * tamPorLinea;
-            if (altoHoja > 1088)//alto hoja A4
-                //altoHoja = 1188;
-                altoHoja = 4 * tamPorLinea;
-            form.DefaultPageSettings.PaperSize = new PaperSize("Custom", 960,(int) Math.Ceiling(altoHoja));
-            form.DefaultPageSettings.Margins = new Margins(60, 60, 0, 0);// 1 mm  X 4 = 60  => 60 = 15 mm            
-            
+            if (altoHoja > 1088)//alto hoja A4                
+                altoHoja = 15 * tamPorLinea;
+            form.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("Custom", 850, (int)Math.Ceiling(altoHoja));
+            form.DefaultPageSettings.PaperSize = new PaperSize("Custom", 850, (int)Math.Ceiling(altoHoja));
+            form.PrinterSettings.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);// 1 mm  X 4 = 60  => 60 = 15 mm            
+            form.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);// 1 mm  X 4 = 60  => 60 = 15 mm
+        }
+
+        private void configurarImpresoraTickets(ref PrintDocument form, int cantLineas, float tamFuente)
+        {
+            float tamFuenteAux = tamFuente == 0 ? 12 : (float)tamFuente;
+            //form.DefaultPageSettings.PaperSize = form.PrinterSettings.PaperSizes[((int)PaperKind.A3) - 1];
+            form.PrintController = new StandardPrintController();
+            form.PrintPage += new PrintPageEventHandler(imprimirArchivo);
+            fuente = new System.Drawing.Font("consolas", tamFuenteAux);
+            float tamPorLinea = fuente.GetHeight(form.PrinterSettings.CreateMeasurementGraphics());
+            float altoHoja = (cantLineas + 1) * tamPorLinea;
+            if (altoHoja > 1088)//alto hoja A4                
+                altoHoja = 15 * tamPorLinea;
+            //form.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("Custom", 850, (int)Math.Ceiling(altoHoja));
+            form.DefaultPageSettings.PaperSize = new PaperSize("Custom", 425, (int)Math.Ceiling(altoHoja));
+            //form.PrinterSettings.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);// 1 mm  X 4 = 60  => 60 = 15 mm            
+            form.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);// 1 mm  X 4 = 60  => 60 = 15 mm
         }
 
         #endregion
@@ -230,27 +315,38 @@ namespace Hoteles.Entities
                 line = textoAImprimir[0];
                 textoAImprimir.RemoveAt(0);
                 yPos = topMargin + count * fuente.GetHeight(e.Graphics);
-                e.Graphics.DrawString(line, fuente, Brushes.Black, leftMargin, yPos, new StringFormat());
-                if(tipoImpresion==2)//barDoble
+
+                if (tipoImpresion == 3)// Si es ticketAsignar
+                {
+                    if (line.ToLower().Contains("habitaci"))
+                    {
+                        fuente = new Font(fuente.FontFamily, 18);
+                        e.Graphics.DrawString(line, fuente, Brushes.Black, leftMargin, yPos, new StringFormat());
+                    }
+                }
+                else
+                    e.Graphics.DrawString(line, fuente, Brushes.Black, leftMargin, yPos, new StringFormat());
+
+                if (tipoImpresion == 2)//barDoble
                     e.Graphics.DrawString(line, fuente, Brushes.Black, e.PageSettings.PaperSize.Width / 2, yPos, new StringFormat());
                 count++;
             }
 
-            if (textoAImprimir.Count > 0 )
+            if (textoAImprimir.Count > 0)
             {
                 e.HasMorePages = true;
             }
         }
 
-        private void guardarArchivoTemp(string ticket,out int CantLineas)
+        private void guardarArchivoTemp(string ticket, out int CantLineas)
         {
             CantLineas = 0;
-
+            ticket += "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n";
             StreamWriter sw = new StreamWriter(Settings.Default.archImprimir);
             ticket = ticket.Replace("\\r", "\r").Replace("\\n", "\n");
-            cantLineas = ticket.Replace("\r\n","\n").Split('\n').Count();
-            sw.Write(ticket);           
-            sw.Close();            
+            cantLineas = ticket.Replace("\r\n", "\n").Split('\n').Count();
+            sw.Write(ticket);
+            sw.Close();
         }
 
         private void imprimirArchivoDoble(object obj, PrintPageEventArgs e)
@@ -270,7 +366,7 @@ namespace Hoteles.Entities
                 while ((aux = fileToPrint.ReadLine()) != null)
                     textoAImprimir.Add(aux);
             }
-            
+
             while (count < linesPerPage)
             {
                 //line = fileToPrint.ReadLine();
@@ -344,6 +440,8 @@ namespace Hoteles.Entities
                     sp = "articulosConsumidos_obtenerSoloConsumidos";
                     stock = false;
                     break;
+                case "N":
+                    return null;
             }
             SqlDataAdapter dataAdapter = new SqlDataAdapter(sp, fPrincipal2.conn);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -408,6 +506,16 @@ namespace Hoteles.Entities
         //    ev.Graphics.DrawString(ticket, fuente, Brushes.Black, pos_x, pos_y, new StringFormat());
 
         //}
+
+
+
+        private int obtenerNroTicketLavadero()
+        {
+            SqlCommand comm;
+            comm = new SqlCommand("parametros_obtenerNroTicketLavadero", fPrincipal2.conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            return (int)comm.ExecuteScalar();
+        }
     }
 
 }

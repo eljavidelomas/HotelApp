@@ -49,6 +49,8 @@ namespace Hoteles
             this.tbNroHab = new System.Windows.Forms.TextBox();
             this.panelPromos = new System.Windows.Forms.Panel();
             this.dgvMedioPago = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mediosDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new Hoteles.hotelDataSet();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,8 +58,6 @@ namespace Hoteles
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.mediosDePagoTableAdapter = new Hoteles.hotelDataSetTableAdapters.mediosDePagoTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas)).BeginInit();
@@ -293,6 +293,26 @@ namespace Hoteles
             this.dgvMedioPago.Size = new System.Drawing.Size(562, 423);
             this.dgvMedioPago.TabIndex = 0;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.idDataGridViewTextBoxColumn.FillWeight = 25.38071F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.nombreDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.nombreDataGridViewTextBoxColumn.FillWeight = 174.6193F;
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Medios De Pago";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // mediosDePagoBindingSource
             // 
             this.mediosDePagoBindingSource.DataMember = "mediosDePago";
@@ -339,26 +359,6 @@ namespace Hoteles
             // mediosDePagoTableAdapter
             // 
             this.mediosDePagoTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.idDataGridViewTextBoxColumn.FillWeight = 25.38071F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.nombreDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.nombreDataGridViewTextBoxColumn.FillWeight = 174.6193F;
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Medios De Pago";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormAdelantoDinero
             // 

@@ -5,44 +5,8 @@
     <Setting Name="Logo" Type="System.String" Scope="Application">
       <Value Profile="(Default)">resources/LogoHotel.png</Value>
     </Setting>
-    <Setting Name="archImprimir" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">resources/impTemp.txt</Value>
-    </Setting>
     <Setting Name="ticketCocina" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Fecha: ##FECHA Hora: ##HORA\r\nNro.Ticket: ##NRO\r\n-----------------------------------\r\nNro.Habitacion: ##HAB\r\n-----------------------------------\r\nCant  Articulo              Precio\r\n-----------------------------------\r\n</Value>
-    </Setting>
-    <Setting Name="planillaCierre" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">
-****************************************************************************************************************************
-Conserje:##conserjeId##conserjeNm           === Arqueo de Caja - Nro:##nroArq ===           Fecha: ##fecha   Hora:##hora
-****************************************************************************************************************************
-
-                                   ____________________ FACTURADO _________________      ___________ CAJA ____________
-Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Descuento    Total      Efectivo   Tarjeta     Gastos
-----------------------------------------------------------------------------------------------------------------------</Value>
-    </Setting>
-    <Setting Name="ticketGasto" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">
-Fecha: ##FECHA Hora: ##HORA\r\nNro.Ticket: ##NRO
------------------------------------
-  Monto       Gasto
------------------------------------\r\n</Value>
-    </Setting>
-    <Setting Name="listadoArtStock" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">
- ##nmHotelLISTADO ARTICULOS EN STOCK
-                                             ============================
-
-  NUM      DESCRIPCIÓN                                         STOCK     CONSUMO     REPONER     STOCK GENERAL
- ===============================================================================================================\r\n</Value>
-    </Setting>
-    <Setting Name="listadoRopaConsumida" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">
-                                              LISTADO DE ROPA CONSUMIDA
-                                             ===========================
-
-               CATEGORIA            FUNDAS   SABANAS   ACOLCHADOS   TOALLAS   TOALLONES   BATAS
-               =================================================================================\r\n</Value>
     </Setting>
     <Setting Name="hotelConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -51,6 +15,61 @@ Fecha: ##FECHA Hora: ##HORA\r\nNro.Ticket: ##NRO
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=localhost\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="archImprimir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">impTemp.txt</Value>
+    </Setting>
+    <Setting Name="planillaCierre" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+*********************************************************************************************************************
+Conserje:##conserjeId##conserjeNm        === Arqueo de Caja - Nro:##nroArq ===      Fecha: ##fecha   Hora:##hora
+*********************************************************************************************************************
+
+                                   ____________________ FACTURADO _______________     ___________ CAJA ____________
+Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Desc       Total     Efectivo   Tarjeta     Gastos
+-------------------------------------------------------------------------------------------------------------------</Value>
+    </Setting>
+    <Setting Name="ticketGasto" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+          Fecha: ##FECHA Hora: ##HORA\r\nNro.Ticket: ##NRO
+          -----------------------------------
+          Monto       Gasto
+          -----------------------------------\r\n
+        </Value>
+    </Setting>
+    <Setting Name="ticketAsignar" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+          Fecha: ##FECHA Hora: ##HORA\r\nNro.Ticket: ##NRO
+          -----------------------------------
+          Monto       Gasto
+          -----------------------------------\r\n
+        </Value>
+    </Setting>
+    <Setting Name="listadoArtStock" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+##nmHotelLISTADO ARTICULOS EN STOCK
+                                           ============================
+
+  NUM      DESCRIPCIÓN                                         STOCK     CONSUMO     REPONER     STOCK GENERAL
+===============================================================================================================\r\n</Value>
+    </Setting>
+    <Setting Name="listadoRopaConsumida" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+                                            LISTADO DE ROPA CONSUMIDA
+                                           ===========================
+
+              CATEGORIA            FUNDAS   SABANAS   ACOLCHADOS   TOALLAS   TOALLONES   BATAS
+              =================================================================================\r\n</Value>
+    </Setting>
+    <Setting Name="pathHoteleria" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\hotel\</Value>
+    </Setting>
+    <Setting Name="ticketLavadero" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+          Fecha: ##FECHA Hora: ##HORA    Nro.Ticket: ##NRO
+          
+          Estado de Stock Lavadero
+                        En lavadero   Entregó   Diferencia    Retira    Saldo Final \r\n</Value>
     </Setting>
   </Settings>
 </SettingsFile>

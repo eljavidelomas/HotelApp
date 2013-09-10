@@ -1,3 +1,0 @@
-2013-05-19 02:10:15,180 [8] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:1 hora:2013-05-19 02:10:15
-2013-05-19 02:10:46,660 [8] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:1 hora:2013-05-19 02:10:46
-2013-05-19 02:17:16,798 [9] INFO  - Tarifa.obtenerTarifaActual - No se encontro tarifa. Datos: SP:obtenerTarifaConId; catId:1 hora:2013-05-19 02:17:00

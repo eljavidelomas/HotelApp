@@ -108,7 +108,8 @@ namespace Hoteles
         }
 
         private void volverFormPrincipal()
-        {            
+        {       
+            
             LoggerProxy.Info("Salio Asignar Habitación.");
             this.Owner.Show();
             this.Owner.Focus();
@@ -258,7 +259,8 @@ namespace Hoteles
 
                         case "leerTarjeta":
                             int nroHotel = tools.obtenerParametroInt("nroHotelCodBarras");
-                            if (nroHotel.ToString() == tbNroHab.Text.Substring(0, 2))
+                            
+                            if (tbNroHab.Text.Length > 2 && nroHotel.ToString() == tbNroHab.Text.Substring(0, 2))
                             {
                                 socio = Socio.registrarYobtener(int.Parse(tbNroHab.Text.Substring(2)));
                                 if (socio == null)
@@ -364,12 +366,12 @@ namespace Hoteles
                         case "adelanto":
                                                        
                             decimal.TryParse(tbNroHab.Text.Replace('.', ','),out montoAdelantar);
-                            if(montoAdelantar + puntosACambiar > montoAPagar)
+                           /* if(montoAdelantar + puntosACambiar > montoAPagar)
                             {
                                 labelMensaje.Text = "* El importe debe ser inferior o igual al total a pagar *";
                                 labelMensaje.Visible = true;
                                 return;
-                            }
+                            }*/
                             labelMensaje.Visible = false;
 
                             panelPromos.Visible = true;
@@ -421,10 +423,21 @@ namespace Hoteles
                                 int minArestar;
 
                                 if(detalle.duracion>=100)
-                                 minArestar = tools.obtenerParametroInt("minFinTurnoMayor100");
+                                    minArestar = tools.obtenerParametroInt("minFinTurnoMayor100");
                                 else
-                                 minArestar = tools.obtenerParametroInt("minFinTurnoMenor100");
-
+                                    minArestar = tools.obtenerParametroInt("minFinTurnoMenor100");
+                                
+                                try
+                                {
+                                    if(tools.obtenerParametroInt("emisionTicketAsignar")==1)
+                                        new Impresora().ImprimirTicketAsignar(nroHab);
+                                }
+                                catch (Exception ex)
+                                {
+                                    LoggerProxy.Error("Error en Asignar Habitacion - Imprimir Ticket.\r\n" + ex.Message + "-" + ex.StackTrace);
+                                    labelMensaje.Text = "Error, no se pudo imprimir.";
+                                    labelMensaje.Visible = true;
+                                }
                                 Habitacion.agregarAlarma((fPrincipal2)this.Owner, nroHab,int.Parse(detalle.hasta.AddMinutes(-minArestar).ToString("HHmm")), 2);
                                 LoggerProxy.Info(string.Format("Ejecuto Asignar Habitación - Nro.Hab:{0}, Categoria:{1}, Conserje:{2}.", nroHab, dictCategorias[nroCategoria], ((fPrincipal2)this.Owner).conserjeActual.nombre));
                                 volverFormPrincipal();
@@ -462,6 +475,7 @@ namespace Hoteles
             {
                 labelMensaje.Text = ex.Message;
                 labelMensaje.Visible = true;
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
             }
 
         }

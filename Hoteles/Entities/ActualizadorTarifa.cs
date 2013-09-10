@@ -14,10 +14,11 @@ namespace Hoteles.Entities
         static public Dictionary<int, bool> bitHasta = new Dictionary<int, bool>();
 
 
-        static public void actualizarTarifa(DetallesHabitacion tur,Tarifa tarIni,DataGridViewRow dr)
+        static public bool actualizarTarifa(DetallesHabitacion tur, Tarifa tarIni, DataGridViewRow dr)
         {
             Tarifa tarAct;
             DateTime now = DateTime.Now;
+            int nroVuelta = 0;
 
             if (tarIni.hasta != DateTime.MinValue)
             {
@@ -26,28 +27,31 @@ namespace Hoteles.Entities
                     bitHasta[tur.nroHab] = true;
                     tarAct = tarIni;
                     bucle1(tur, tarAct, now, tarIni, dr);
+
+                    return true;
                 }
                 else
                 {
-                    if(!bitHasta.ContainsKey(tur.nroHab) || bitHasta[tur.nroHab])
+                    if (!bitHasta.ContainsKey(tur.nroHab) || bitHasta[tur.nroHab])
                     {
                         bitHasta[tur.nroHab] = false;
                         contPernocte[tur.nroHab] = 0;
-
                     }
-                    bucle0(tur,out tarAct, now, tarIni, dr);
+                    return bucle0(tur, out tarAct, now, tarIni, dr);
                 }
             }
             else // No
             {
-                bucle0(tur,out tarAct, now, tarIni, dr);           
+                return bucle0(tur, out tarAct, now, tarIni, dr);
             }
         }
 
-        private static void bucle0(DetallesHabitacion tur,out Tarifa tarAct, DateTime now, Tarifa tar, DataGridViewRow dr)
+        private static bool bucle0(DetallesHabitacion tur, out Tarifa tarAct, DateTime now, Tarifa tar, DataGridViewRow dr)
         {
             tarAct = Tarifa.obtenerTarifaActual(tur.catId, Calendario.nroDia(now), Calendario.nroDiaAnt(now), now);
-           
+            if (tarAct == null)
+                return false;
+
             if (tarAct.pernocte) // si
             {
                 bucle1(tur, tarAct, now, tar, dr);
@@ -57,24 +61,29 @@ namespace Hoteles.Entities
                 contPernocte[tur.nroHab] = 0;
                 bucle4(false, tur, tur.nroHab, now, tarAct, dr);
             }
+
+            return true;
         }
 
-        private static void bucle1(DetallesHabitacion tur,Tarifa tarAct,DateTime now,Tarifa tar,DataGridViewRow dr)
+        private static void bucle1(DetallesHabitacion tur, Tarifa tarAct, DateTime now, Tarifa tar, DataGridViewRow dr)
         {
-            if (contPernocte[tur.nroHab] + tarAct.PrecioExtension() >= tarAct.precioTN) // Si
+            decimal precioTotal = tools.redondeo(contPernocte[tur.nroHab] + tarAct.PrecioExtension());
+            
+            if (precioTotal >= tarAct.precioTN) // Si supero el precio turno noche
             {
-                tur.impHabitacion += tarAct.precioTN - contPernocte[tur.nroHab];
+                decimal montoAsumar = tools.redondeo(tarAct.precioTN - contPernocte[tur.nroHab]);
+                tur.impHabitacion += montoAsumar;
                 tur.hasta = tarAct.hasta;
-                updateDetallesTurno(tur.nroHab, tarAct.precioTN - contPernocte[tur.nroHab], tur.hasta, tarAct.precioTN, dr);
+                updateDetallesTurno(tur.nroHab, montoAsumar, tur.hasta, tarAct.precioTN, dr);
                 contPernocte[tur.nroHab] = tarAct.precioTN;
             }
             else // No
-            {                
-                bucle4(true, tur, tur.nroHab, now, tar, dr);
+            {
+                bucle4(true, tur, tur.nroHab, now, tarAct, dr);
             }
-        }       
+        }
 
-        static void bucle4(bool sumCont, DetallesHabitacion tur, int nroHab, DateTime hora, Tarifa tar,DataGridViewRow dr)
+        static void bucle4(bool sumCont, DetallesHabitacion tur, int nroHab, DateTime hora, Tarifa tar, DataGridViewRow dr)
         {
             decimal monto;
 
@@ -82,36 +91,32 @@ namespace Hoteles.Entities
             if (tur.hasta.AddMinutes(tar.extension) > tarSig.desde)
             {
                 monto = calcularPrecioExtDesdeHasta(tar, tur.hasta, tarSig.desde);
-                tur.hasta = tarSig.desde;                
+                tur.hasta = tarSig.desde;
             }
             else
             {
                 monto = tar.PrecioExtension();
-                tur.hasta = tur.hasta.AddMinutes(tar.extension);                
+                tur.hasta = tur.hasta.AddMinutes(tar.extension);
             }
-            tur.impHabitacion += monto;            
+            monto = tools.redondeo(monto);
+            tur.impHabitacion += monto;
             if (sumCont)
                 contPernocte[nroHab] += monto;
-
-            updateDetallesTurno(nroHab, monto, tur.hasta,contPernocte[nroHab], dr);
-
+            updateDetallesTurno(nroHab, monto, tur.hasta, contPernocte[nroHab], dr);
         }
 
-        public static void updateDetallesTurno(int nroHab, decimal montoAsumar, DateTime hasta,decimal contPernocte,DataGridViewRow dr)
+        public static void updateDetallesTurno(int nroHab, decimal montoAsumar, DateTime hasta, decimal contPernocte, DataGridViewRow dr)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("turnos_actualizar", fPrincipal2.conn);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@nroHab", nroHab);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@monto", montoAsumar);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@hasta", hasta);
-            if (contPernocte == 0)
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@contPern", contPernocte);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@contPern", contPernocte);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.ExecuteNonQuery();
-
             dr.Cells[9].Value = hasta;// h.salida datetime
             dr.Cells[6].Value = hasta.ToString("HH:mm");//h.salida datetime
             dr.Cells[7].Value = (decimal.Parse(dr.Cells[7].Value.ToString().Replace("$ ", "")) + montoAsumar).ToString("C");// importe
-
         }
 
         static public Tarifa obtenerTarSiguiente(int catId, int diaAct, int diaSig, DateTime horaAct)
@@ -172,21 +177,6 @@ namespace Hoteles.Entities
 
             return Convert.ToDecimal(precioTotal);
         }
+
     }
 }
-
-
-//bucle1
-//if (contPernocte[tur.nroHab] + tarAct.PrecioExtension() >= tarAct.precioTN)
-//{
-//    tur.impHabitacion += tarAct.precioTN - contPernocte[tur.nroHab];
-//    tur.hasta = tarAct.hasta;
-//    updateDetallesTurno(tur.nroHab, tarAct.precioTN - contPernocte[tur.nroHab], tur.hasta, dr);
-//    contPernocte[tur.nroHab] = tarAct.precioTN;
-//}
-//else
-//{
-//    tur.impHabitacion += tarAct.PrecioExtension();
-//    tur.hasta.AddMinutes(tarAct.extension);
-//    bucle4(true, tur, tur.nroHab, now, tar,dr);
-//}
