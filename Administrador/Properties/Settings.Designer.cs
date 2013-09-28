@@ -33,14 +33,5 @@ namespace Administrador.Properties {
                 return ((string)(this["hotelConnectionString2"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool logger {
-            get {
-                return ((bool)(this["logger"]));
-            }
-        }
     }
 }

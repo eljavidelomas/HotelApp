@@ -43,6 +43,11 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs" version="9.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
@@ -64,14 +69,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hoteles.exe" size="475136">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hoteles.exe" size="665600">
       <assemblyIdentity name="Hoteles" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>L9AZMAj3niylyg+owXYJ1wyKPI0=</dsig:DigestValue>
+        <dsig:DigestValue>Ih7pYKXL5Hf2rF9amRcuNg5GwHk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -87,13 +92,43 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Hoteles.exe.config" size="4007">
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll" size="40960">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs.resources" version="9.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="es" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>v7iksD32b1AJPoYIgpQ7mTs7QwQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Hoteles.exe.config" size="5963">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>OqQKmNIck/vK185TZ8OZrom8XSc=</dsig:DigestValue>
+      <dsig:DigestValue>7RdUwNiSdsor8aAG98B6PTgaTlQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\cajareg.png" size="53017">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>YRQWkPqrw75GMZfbwVKxNCNWwq0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\lav.png" size="65200">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>J683easW1nvfq4A9RfiidIym9c0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

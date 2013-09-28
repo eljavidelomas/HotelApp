@@ -81,28 +81,6 @@ Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Desc       Tota
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\r\n          Fecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\r\n          ---------" +
-            "--------------------------\r\n          Monto       Gasto\r\n          -------------" +
-            "----------------------\\r\\n\r\n        ")]
-        public string ticketGasto {
-            get {
-                return ((string)(this["ticketGasto"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\r\n          Fecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\r\n          ---------" +
-            "--------------------------\r\n          Monto       Gasto\r\n          -------------" +
-            "----------------------\\r\\n\r\n        ")]
-        public string ticketAsignar {
-            get {
-                return ((string)(this["ticketAsignar"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"
 ##nmHotelLISTADO ARTICULOS EN STOCK
                                            ============================
@@ -129,15 +107,12 @@ Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Desc       Tota
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("c:\\hotel\\")]
         public string pathHoteleria {
             get {
                 return ((string)(this["pathHoteleria"]));
-            }
-            set {
-                this["pathHoteleria"] = value;
             }
         }
         
@@ -149,6 +124,25 @@ Nro  HAB  Desde  Hasta    Socio    Turnos     Extras     Bar     Desc       Tota
         public string ticketLavadero {
             get {
                 return ((string)(this["ticketLavadero"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\nFecha: ##FECHA Hora: ##HORA\\r\\nNro.Ticket: ##NRO\r\n-----------------------------" +
+            "------\r\nMonto       Gasto\r\n-----------------------------------\\r\\n\r\n        ")]
+        public string ticketGasto {
+            get {
+                return ((string)(this["ticketGasto"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\nFecha: ##FECHA\\r\\n\r\nHora Ing: ##HORA\\r\\n\r\n\r\nHabitación: ##NROHAB")]
+        public string ticketAsignar {
+            get {
+                return ((string)(this["ticketAsignar"]));
             }
         }
     }

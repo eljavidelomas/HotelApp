@@ -7,3 +7,4 @@ C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\Administrador.csproj.GenerateResource.Cache
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\Administrador.exe
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\Administrador.pdb
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Release\log4net.dll

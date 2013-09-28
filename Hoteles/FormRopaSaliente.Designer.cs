@@ -44,7 +44,6 @@ namespace Hoteles
             this.dgvOpcionesElegidas = new System.Windows.Forms.DataGridView();
             this.detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelTitulo = new System.Windows.Forms.Label();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelPromos = new System.Windows.Forms.Panel();
             this.dgvPromos = new System.Windows.Forms.DataGridView();
@@ -54,6 +53,7 @@ namespace Hoteles
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
+            this.labelTitulo = new System.Windows.Forms.Label();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -198,24 +198,6 @@ namespace Hoteles
             this.colPrecio.Name = "colPrecio";
             this.colPrecio.ReadOnly = true;
             // 
-            // labelTitulo
-            // 
-            this.labelTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tableLayoutPanel2.SetColumnSpan(this.labelTitulo, 2);
-            this.labelTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelTitulo.Font = new System.Drawing.Font("MV Boli", 28.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Image = global::Hoteles.Properties.Resources.bar;
-            this.labelTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelTitulo.Location = new System.Drawing.Point(5, 5);
-            this.labelTitulo.Margin = new System.Windows.Forms.Padding(5);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Padding = new System.Windows.Forms.Padding(10);
-            this.labelTitulo.Size = new System.Drawing.Size(1143, 98);
-            this.labelTitulo.TabIndex = 1;
-            this.labelTitulo.Text = "Ropa Enviada al Lavadero";
-            this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // labelMensaje
             // 
             this.labelMensaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -249,7 +231,7 @@ namespace Hoteles
             this.dgvPromos.AllowUserToResizeColumns = false;
             this.dgvPromos.AllowUserToResizeRows = false;
             this.dgvPromos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPromos.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvPromos.BackgroundColor = System.Drawing.Color.White;
             this.dgvPromos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             this.dgvPromos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -341,6 +323,25 @@ namespace Hoteles
             // opcionesAsignarHabitacionTableAdapter
             // 
             this.opcionesAsignarHabitacionTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelTitulo
+            // 
+            this.labelTitulo.BackColor = System.Drawing.Color.White;
+            this.labelTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel2.SetColumnSpan(this.labelTitulo, 2);
+            this.labelTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelTitulo.Font = new System.Drawing.Font("MV Boli", 28.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Image = global::Hoteles.Properties.Resources.lavChico;
+            this.labelTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelTitulo.Location = new System.Drawing.Point(5, 5);
+            this.labelTitulo.Margin = new System.Windows.Forms.Padding(5);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Padding = new System.Windows.Forms.Padding(10);
+            this.labelTitulo.Size = new System.Drawing.Size(1143, 98);
+            this.labelTitulo.TabIndex = 1;
+            this.labelTitulo.Text = "Lavadero";
+            this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormRopaSaliente
             // 

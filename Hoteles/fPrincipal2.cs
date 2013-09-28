@@ -33,6 +33,7 @@ namespace Hoteles
         private Thread thActualizarHora;
         private Thread thControlarTarifa;
         private Thread thControlarParpadeo;
+        private bool thControlarTarifaSalir=false;
 
         /*Variables para el port Serie */
         public Dictionary<int, int> estadoHabitaciones = new Dictionary<int, int>();
@@ -43,16 +44,23 @@ namespace Hoteles
         {
             initConnection();
 
-            DataTable dt = tools.listadoTurnos();
-            maxFilas = (int)Math.Ceiling(dt.Rows.Count * 0.5);
-            cantHab = dt.Rows.Count;
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            this.SetStyle(ControlStyles.UserPaint, true);
+            try
+            {
+                DataTable dt = tools.listadoTurnos();
+                maxFilas = (int)Math.Ceiling(dt.Rows.Count * 0.5);
+                cantHab = dt.Rows.Count;
+                this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+                this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+                this.SetStyle(ControlStyles.UserPaint, true);
 
-            InitializeComponent();
-            configPortSerial();
-            GoFullscreen(true);
+                InitializeComponent();
+                configPortSerial();
+                GoFullscreen(true);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD("Error al Iniciar.\r\n" + ex.Message + "-" + ex.StackTrace);
+            }
 
             //for (int i = 1; i < 199; i++)
             //{
@@ -63,8 +71,6 @@ namespace Hoteles
             //estadoHabitaciones[105] = 1;
             //estadoHabitaciones[106] = 1;
 
-            thActualizarHora = new Thread(ActualizarLaHora);
-            thActualizarHora.Start();
         }
 
         private void configPortSerial()
@@ -76,8 +82,6 @@ namespace Hoteles
                 cargarDiccionarioNroOrdenNroHabitacion();
                 senialOcupado = tools.obtenerParametroString("senialOcupado");
             }
-
-
         }
 
         private void cargarDiccionarioNroOrdenNroHabitacion()
@@ -97,11 +101,10 @@ namespace Hoteles
             }
             catch (Exception ex)
             {
+                LoggerProxy.ErrorSinBD("Error al cargar diccionario Nro de Orden - Nro de Habitacion.\r\n" + ex.Message + "-" + ex.StackTrace);
             }
         }
-
-
-
+        
         public void initConnection()
         {
             try
@@ -150,12 +153,12 @@ namespace Hoteles
 
         private void fPrincipal2_Load(object sender, EventArgs e)
         {
-
+            LoggerProxy.Bitacora("Bitacora hab 37");
             #region cargarListaTurnos
 
             int altoFila;
             int altoFilaExtra;
-            tools.calcularAlturas(dataGridView1.Height - dataGridView1.ColumnHeadersHeight, maxFilas, out altoFila, out altoFilaExtra);
+            tools.calcularAlturas(dataGridView1.Height - dataGridView1.ColumnHeadersHeight, maxFilas < tools.minCantFilas?tools.minCantFilas:maxFilas, out altoFila, out altoFilaExtra);
             dataGridView1.RowTemplate.Height = altoFila;
             dataGridView2.RowTemplate.Height = altoFila;
             dataGridView1.ColumnHeadersHeight = dataGridView1.ColumnHeadersHeight + altoFilaExtra;
@@ -188,6 +191,10 @@ namespace Hoteles
 
             #endregion
 
+
+            thActualizarHora = new Thread(ActualizarLaHora);
+            thActualizarHora.Start();
+
             #region ActualizadorTarifaHabitacion
 
             thControlarTarifa = new Thread(ControlarTarifaHabitacion);
@@ -197,6 +204,9 @@ namespace Hoteles
 
             thControlarParpadeo = new Thread(timerParpadeo2);
             thControlarParpadeo.Start();
+
+            if (textUsuario.Visible)
+                textUsuario.Focus();
         }
 
         delegate void actualizarRelojCallback();
@@ -220,7 +230,8 @@ namespace Hoteles
             }
             catch (Exception ex)
             {
-                LoggerProxy.Error(ex.Message);
+                LoggerProxy.ErrorSinBD("Fallo Actualizar Hora");
+                LoggerProxy.ErrorSinBD(ex.Message+"-"+ex.StackTrace);
             }
         }
 
@@ -346,12 +357,16 @@ namespace Hoteles
                                             fila.Cells[8].Value = "O"; // Cambio estado en la grilla
                                             fila.Cells[0].Style.BackColor = cOcup;
 
-                                            //Sonido Se ocupo habitacion
+                                            /*** Sonido Se ocupo habitacion ***/
                                             List<string> sonido = new List<string>();
                                             sonido.Add("Se ocupo.wav");
                                             sonido.Add("habitacion numero.wav");
                                             sonido.Add(nroHabitacion.ToString() + ".wav");
                                             Audio.PlayList(sonido);
+                                            
+                                            /*** Grabar Bitacora ***/
+                                            LoggerProxy.Bitacora("Habitación " + nroHabitacion + " ocupada.");
+
                                         }
                                     }
 
@@ -372,13 +387,16 @@ namespace Hoteles
 
                                                 if (!dictSonidoDesocupado[nroHabitacion])
                                                 {
-                                                    //Sonido Se desocupo habitacion
+                                                    /*** Sonido Se desocupo habitacion ***/
                                                     List<string> sonido = new List<string>();
                                                     sonido.Add("Se desocupo.wav");
                                                     sonido.Add("habitacion numero.wav");
                                                     sonido.Add(nroHabitacion.ToString() + ".wav");
                                                     Audio.PlayList(sonido);
                                                     dictSonidoDesocupado[nroHabitacion] = true;
+
+                                                    /*** Grabar Bitacora ***/
+                                                    LoggerProxy.Bitacora("Habitación " + nroHabitacion + " desocupada.");
                                                 }
                                             }
                                             else
@@ -399,8 +417,9 @@ namespace Hoteles
                                         {
                                             if (!dictSonidoOcupado.ContainsKey(nroHabitacion))
                                                 dictSonidoOcupado.Add(nroHabitacion, false);
-
-                                            if (estadoHabitaciones.ContainsKey(nroHabitacion) && estadoHabitaciones[nroHabitacion] == 1) // 1 es trabada
+                                            
+                                            /*** Si esta disponible y esta trabada ***/
+                                            if (estadoHabitaciones.ContainsKey(nroHabitacion) && estadoHabitaciones[nroHabitacion] == 1)// 1 es trabada
                                             {
                                                 if (fila.Cells[0].Style.BackColor == cDisp)
                                                     fila.Cells[0].Style.BackColor = cDispAlt;
@@ -409,19 +428,29 @@ namespace Hoteles
 
                                                 if (!dictSonidoOcupado[nroHabitacion])
                                                 {
-                                                    //Sonido Se desocupo habitacion
+                                                    /*** Sonido Se ocupo habitacion ***/
                                                     List<string> sonido = new List<string>();
                                                     sonido.Add("Se ocupo.wav");
                                                     sonido.Add("habitacion numero.wav");
                                                     sonido.Add(nroHabitacion.ToString() + ".wav");
                                                     Audio.PlayList(sonido);
                                                     dictSonidoOcupado[nroHabitacion] = true;
+
+                                                    /*** Grabar Bitacora ***/
+                                                    LoggerProxy.Bitacora("Habitación " + nroHabitacion + " ocupada. * Sin asignar *");
                                                 }
                                             }
-                                            else // Estado Normal
+
+                                            /*** Estado Normal ***/
+                                            else 
                                             {
                                                 fila.Cells[0].Style.BackColor = cDisp;
-                                                dictSonidoOcupado[nroHabitacion] = false;
+                                                if (dictSonidoOcupado[nroHabitacion])
+                                                {
+                                                    /*** Grabar Bitacora ***/
+                                                    LoggerProxy.Bitacora("Habitación " + nroHabitacion + " desocupada. * Sin asignar *");
+                                                    dictSonidoOcupado[nroHabitacion] = false;
+                                                }
                                             }
                                         }
                                         else                                        
@@ -780,10 +809,11 @@ namespace Hoteles
 
         private void ControlarTarifaHabitacion()
         {
-            while (true)
+            while (!thControlarTarifaSalir)
             {
                 try
                 {
+                    
                     if (dataGridView1.Rows.Count + dataGridView2.Rows.Count == cantHab)
                         actualizarTarifas();
                     Thread.Sleep(10000);//Cada 10 seg
@@ -890,7 +920,9 @@ namespace Hoteles
         {
             thActualizarHora.Abort();
             thControlarParpadeo.Abort();
+            thControlarTarifaSalir = true;
             thControlarTarifa.Abort();
+            thControlarTarifa.Join();
         }
 
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)

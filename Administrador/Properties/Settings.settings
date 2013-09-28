@@ -10,8 +10,5 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=localhost\SQLEXPRESS2008;Initial Catalog=hotel;Integrated Security=True</Value>
     </Setting>
-    <Setting Name="logger" Type="System.Boolean" Scope="Application">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

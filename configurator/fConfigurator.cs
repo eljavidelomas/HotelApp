@@ -9,8 +9,9 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Drawing.Printing;
 using System.Data.SqlClient;
-using Configurator.Properties;
+using Configurator;
 using System.Threading;
+using System.Configuration;
 
 
 namespace Configurator
@@ -29,7 +30,7 @@ namespace Configurator
             if (conn == null)
             {
                 conn = new SqlConnection();
-                conn.ConnectionString = Settings.Default.hotelConn;
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["hotelConnectionString"].ConnectionString;
                 conn.Open();
                 foreach (string s in SerialPort.GetPortNames())
                 {

@@ -24,10 +24,10 @@ namespace Hoteles.Entities
 
         public Conserje(int nroConserje)
         {
-            DataSet ds = new DataSet();            
+            DataSet ds = new DataSet();
             SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from conserjes where usuario = " + nroConserje.ToString(), fPrincipal2.conn);
             dataAdapter.Fill(ds);
-            
+
             if (ds.Tables[0].Rows.Count > 0)
             {
                 DataRow dr = ds.Tables[0].Rows[0];
@@ -55,50 +55,54 @@ namespace Hoteles.Entities
         public static Conserje Login(int usuario, int clave)
         {
             DataSet ds = new DataSet();
-            using (SqlConnection connection = new SqlConnection(fPrincipal2.conn.ConnectionString))
+            try
             {
+
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = new SqlCommand("conserje_login", connection);
+                adapter.SelectCommand = new SqlCommand("conserje_login", fPrincipal2.conn);
                 adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adapter.SelectCommand.Parameters.AddWithValue("@usuario", usuario);
-                adapter.SelectCommand.Parameters.AddWithValue("@clave", clave);    
-                adapter.Fill(ds);                
+                adapter.SelectCommand.Parameters.AddWithValue("@clave", clave);
+                adapter.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                    return new Conserje(ds.Tables[0].Rows[0]);
             }
-            if (ds.Tables[0].Rows.Count > 0)            
-                return new Conserje(ds.Tables[0].Rows[0]);
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD("Error Conserje-Login\r\n" + ex.Message + "-" + ex.StackTrace);
+            }
 
             return null;
         }
 
-        internal static bool ValidarPass(int conserjeId,string pass)
+        internal static bool ValidarPass(int conserjeId, string pass)
         {
             DataSet ds = new DataSet();
-            using (SqlConnection connection = new SqlConnection(fPrincipal2.conn.ConnectionString))
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = new SqlCommand("select * from conserjes where usuario = " + conserjeId.ToString() + "and clave=" + pass, connection);                
-                adapter.Fill(ds);
-            }
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = new SqlCommand("select * from conserjes where usuario = " + conserjeId.ToString() + "and clave=" + pass, fPrincipal2.conn);
+            adapter.Fill(ds);
+
             if (ds.Tables[0].Rows.Count == 1)
                 return true;
 
-            return false;            
+            return false;
         }
-        
+
 
         internal static bool Validar(string conserjeId)
         {
             DataSet ds = new DataSet();
-            using (SqlConnection connection = new SqlConnection(fPrincipal2.conn.ConnectionString))
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = new SqlCommand("select * from conserjes where usuario = " + conserjeId, connection);                
-                adapter.Fill(ds);
-            }
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = new SqlCommand("select * from conserjes where usuario = " + conserjeId, fPrincipal2.conn);
+            adapter.Fill(ds);
+
             if (ds.Tables[0].Rows.Count == 1)
                 return true;
 
-            return false;            
+            return false;
         }
     }
 }

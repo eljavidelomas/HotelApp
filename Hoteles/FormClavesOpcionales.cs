@@ -83,11 +83,11 @@ namespace Hoteles
         }
         private void irCompras()
         {
-            FormRopaSaliente ropaSaliente = new FormRopaSaliente(false);
-            ropaSaliente.Owner = this.Owner;
-            ropaSaliente.Show();
-            ropaSaliente.Activate();
-            ropaSaliente.tbNroHab.Focus();
+            FormCompras fCompras = new FormCompras();
+            fCompras.Owner = this.Owner;
+            fCompras.Show();
+            fCompras.Activate();
+            fCompras.tbNroHab.Focus();
             //this.Hide();
             this.Close();
         }

@@ -1150,3 +1150,40 @@
 2013-09-08 19:12:17,809 INFO  - Ingreso Pedido de Bar
 2013-09-08 19:12:26,158 INFO  - Ejecuto Pedido Bar - Hab:10
 2013-09-08 19:12:30,868 INFO  - Salir Pedido de Bar
+2013-09-10 22:53:32,896 INFO  - Ingreso Claves Opcionales
+2013-09-10 22:55:09,266 INFO  - Salir Pedido de Bar
+2013-09-10 22:56:44,119 INFO  - Ingreso Claves Opcionales
+2013-09-10 22:57:25,346 INFO  - Salir Pedido de Bar
+2013-09-10 23:02:05,439 INFO  - Ingreso Claves Opcionales
+2013-09-10 23:03:13,164 INFO  - Salir Pedido de Bar
+2013-09-10 23:04:24,736 INFO  - Ingreso Claves Opcionales
+2013-09-10 23:05:18,899 INFO  - Ingreso Claves Opcionales
+2013-09-10 23:05:20,841 INFO  - Salir Claves Opcionales
+2013-09-10 23:05:21,572 INFO  - Ingreso Claves Opcionales
+2013-09-10 23:06:06,401 INFO  - Salir Pedido de Bar
+2013-09-10 23:07:45,790 INFO  - Ingreso Claves Opcionales
+2013-09-10 23:17:40,367 INFO  - Salir Pedido de Bar
+2013-09-10 23:17:43,233 INFO  - Ingreso Claves Opcionales
+2013-09-10 23:18:33,017 INFO  - Salir Pedido de Bar
+2013-09-10 23:20:04,599 INFO  - Ingreso Claves Opcionales
+2013-09-10 23:20:09,054 INFO  - Salir Claves Opcionales
+2013-09-10 23:20:10,149 INFO  - Ingreso Claves Opcionales
+2013-09-10 23:22:35,655 INFO  - Salir Pedido de Bar
+2013-09-11 00:17:02,814 INFO  - Ingreso Claves Opcionales
+2013-09-11 00:18:14,950 INFO  - Ingreso Claves Opcionales
+2013-09-11 00:21:17,362 INFO  - Ingreso Claves Opcionales
+2013-09-11 00:22:09,759 INFO  - Salir Pedido de Bar
+2013-09-12 22:09:15,886 INFO  - Ingreso Claves Opcionales
+2013-09-12 22:09:16,956 INFO  - Salir Claves Opcionales
+2013-09-12 22:09:17,644 INFO  - Ingreso Claves Opcionales
+2013-09-12 22:10:46,418 INFO  - Salir Pedido de Bar
+2013-09-12 22:10:47,041 INFO  - Ingreso Claves Opcionales
+2013-09-12 22:11:01,717 INFO  - Salir Pedido de Bar
+2013-09-12 22:11:03,083 INFO  - Ingreso Claves Opcionales
+2013-09-12 22:13:01,030 INFO  - Ingreso Claves Opcionales
+2013-09-12 22:13:20,393 INFO  - Salir Pedido de Bar
+2013-09-12 22:17:38,028 INFO  - Ingreso Claves Opcionales
+2013-09-12 22:17:59,537 INFO  - Ejecuto Compras
+2013-09-12 22:17:59,538 INFO  - Salir Pedido de Bar
+2013-09-12 22:18:03,837 INFO  - Ingreso Claves Opcionales
+2013-09-12 22:19:38,282 INFO  - Salir Pedido de Bar

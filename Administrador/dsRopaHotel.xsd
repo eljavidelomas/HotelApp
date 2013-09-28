@@ -80,18 +80,18 @@ SELECT id, descripcion, stockInicial, saldoFinal, roto FROM ropaHotel WHERE (id 
         <xs:element name="ropaHotel" msprop:Generator_UserTableName="ropaHotel" msprop:Generator_RowDeletedName="ropaHotelRowDeleted" msprop:Generator_RowChangedName="ropaHotelRowChanged" msprop:Generator_RowClassName="ropaHotelRow" msprop:Generator_RowChangingName="ropaHotelRowChanging" msprop:Generator_RowEvArgName="ropaHotelRowChangeEvent" msprop:Generator_RowEvHandlerName="ropaHotelRowChangeEventHandler" msprop:Generator_TableClassName="ropaHotelDataTable" msprop:Generator_TableVarName="tableropaHotel" msprop:Generator_RowDeletingName="ropaHotelRowDeleting" msprop:Generator_TablePropName="ropaHotel">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" />
-              <xs:element name="descripcion" msprop:Generator_UserColumnName="descripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn">
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" />
+              <xs:element name="descripcion" msprop:Generator_UserColumnName="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="stockInicial" msprop:Generator_UserColumnName="stockInicial" msprop:Generator_ColumnPropNameInRow="stockInicial" msprop:Generator_ColumnVarNameInTable="columnstockInicial" msprop:Generator_ColumnPropNameInTable="stockInicialColumn" type="xs:short" />
-              <xs:element name="saldoFinal" msdata:ReadOnly="true" msprop:Generator_UserColumnName="saldoFinal" msprop:Generator_ColumnVarNameInTable="columnsaldoFinal" msprop:Generator_ColumnPropNameInRow="saldoFinal" msprop:Generator_ColumnPropNameInTable="saldoFinalColumn" type="xs:short" />
-              <xs:element name="roto" msprop:Generator_UserColumnName="roto" msprop:Generator_ColumnPropNameInRow="roto" msprop:Generator_ColumnVarNameInTable="columnroto" msprop:Generator_ColumnPropNameInTable="rotoColumn" type="xs:short" />
-              <xs:element name="stockActual" msdata:ReadOnly="true" msdata:Expression="stockInicial-saldoFinal-roto" msprop:Generator_UserColumnName="stockActual" msprop:Generator_ColumnPropNameInRow="stockActual" msprop:Generator_ColumnVarNameInTable="columnstockActual" msprop:Generator_ColumnPropNameInTable="stockActualColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="stockInicial" msprop:Generator_UserColumnName="stockInicial" msprop:Generator_ColumnVarNameInTable="columnstockInicial" msprop:Generator_ColumnPropNameInRow="stockInicial" msprop:Generator_ColumnPropNameInTable="stockInicialColumn" type="xs:short" />
+              <xs:element name="saldoFinal" msdata:ReadOnly="true" msprop:Generator_UserColumnName="saldoFinal" msprop:Generator_ColumnPropNameInRow="saldoFinal" msprop:Generator_ColumnVarNameInTable="columnsaldoFinal" msprop:Generator_ColumnPropNameInTable="saldoFinalColumn" type="xs:short" default="0" />
+              <xs:element name="roto" msprop:Generator_UserColumnName="roto" msprop:Generator_ColumnVarNameInTable="columnroto" msprop:Generator_ColumnPropNameInRow="roto" msprop:Generator_ColumnPropNameInTable="rotoColumn" type="xs:short" />
+              <xs:element name="stockActual" msdata:ReadOnly="true" msdata:Expression="stockInicial-saldoFinal-roto" msprop:Generator_UserColumnName="stockActual" msprop:Generator_ColumnVarNameInTable="columnstockActual" msprop:Generator_ColumnPropNameInRow="stockActual" msprop:Generator_ColumnPropNameInTable="stockActualColumn" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -233,7 +233,6 @@
             this.tpLavadero_BtnSave = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -255,6 +254,13 @@
             this.dpFecha = new System.Windows.Forms.DateTimePicker();
             this.cbArticulo = new System.Windows.Forms.ComboBox();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
+            this.compraIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaIngresoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.compraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reposicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsCompras = new Administrador.dsCompras();
             this.label3 = new System.Windows.Forms.Label();
@@ -283,13 +289,7 @@
             this.habitacionesTableAdapter = new Administrador.dsHabitacionesTableAdapters.habitacionesTableAdapter();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.comprasTableAdapter = new Administrador.dsComprasTableAdapters.comprasTableAdapter();
-            this.compraIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaIngresoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.compraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reposicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tpHabitaciones2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
@@ -475,7 +475,6 @@
             this.dataGridView8.ShowRowErrors = false;
             this.dataGridView8.Size = new System.Drawing.Size(1000, 423);
             this.dataGridView8.TabIndex = 6;
-            this.dataGridView8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView8_KeyPress);
             // 
             // nroHabitacionDataGridViewTextBoxColumn
             // 
@@ -1110,7 +1109,6 @@
             this.dgvTarifas.ShowRowErrors = false;
             this.dgvTarifas.Size = new System.Drawing.Size(1000, 420);
             this.dgvTarifas.TabIndex = 4;
-            this.dgvTarifas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifas_CellContentClick);
             // 
             // nombre
             // 
@@ -2435,13 +2433,6 @@
             this.dataGridView7.Size = new System.Drawing.Size(749, 456);
             this.dataGridView7.TabIndex = 9;
             // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.FillWeight = 120F;
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            // 
             // stockInicial
             // 
             this.stockInicial.DataPropertyName = "stockInicial";
@@ -2680,6 +2671,64 @@
             this.dgvCompras.TabIndex = 6;
             this.dgvCompras.VirtualMode = true;
             // 
+            // compraIdDataGridViewTextBoxColumn
+            // 
+            this.compraIdDataGridViewTextBoxColumn.DataPropertyName = "compraId";
+            this.compraIdDataGridViewTextBoxColumn.FillWeight = 50F;
+            this.compraIdDataGridViewTextBoxColumn.HeaderText = "Nro";
+            this.compraIdDataGridViewTextBoxColumn.Name = "compraIdDataGridViewTextBoxColumn";
+            this.compraIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn1
+            // 
+            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.FillWeight = 130F;
+            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripción";
+            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
+            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // fechaIngresoDataGridViewTextBoxColumn
+            // 
+            this.fechaIngresoDataGridViewTextBoxColumn.DataPropertyName = "fechaIngreso";
+            dataGridViewCellStyle8.Format = "d";
+            this.fechaIngresoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.fechaIngresoDataGridViewTextBoxColumn.FillWeight = 80F;
+            this.fechaIngresoDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaIngresoDataGridViewTextBoxColumn.Name = "fechaIngresoDataGridViewTextBoxColumn";
+            this.fechaIngresoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // comentarioDataGridViewTextBoxColumn
+            // 
+            this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "comentario";
+            this.comentarioDataGridViewTextBoxColumn.FillWeight = 180F;
+            this.comentarioDataGridViewTextBoxColumn.HeaderText = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
+            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // compraDataGridViewTextBoxColumn
+            // 
+            this.compraDataGridViewTextBoxColumn.DataPropertyName = "compra";
+            this.compraDataGridViewTextBoxColumn.FillWeight = 65F;
+            this.compraDataGridViewTextBoxColumn.HeaderText = "Compra";
+            this.compraDataGridViewTextBoxColumn.Name = "compraDataGridViewTextBoxColumn";
+            this.compraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reposicionDataGridViewTextBoxColumn
+            // 
+            this.reposicionDataGridViewTextBoxColumn.DataPropertyName = "reposicion";
+            this.reposicionDataGridViewTextBoxColumn.FillWeight = 65F;
+            this.reposicionDataGridViewTextBoxColumn.HeaderText = "Reposicion";
+            this.reposicionDataGridViewTextBoxColumn.Name = "reposicionDataGridViewTextBoxColumn";
+            this.reposicionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precioUnitario
+            // 
+            this.precioUnitario.DataPropertyName = "precioUnitario";
+            this.precioUnitario.FillWeight = 90F;
+            this.precioUnitario.HeaderText = "Precio U.";
+            this.precioUnitario.Name = "precioUnitario";
+            this.precioUnitario.ReadOnly = true;
+            // 
             // comprasBindingSource
             // 
             this.comprasBindingSource.DataMember = "compras";
@@ -2805,63 +2854,12 @@
             // 
             this.comprasTableAdapter.ClearBeforeFill = true;
             // 
-            // compraIdDataGridViewTextBoxColumn
+            // descripcionDataGridViewTextBoxColumn
             // 
-            this.compraIdDataGridViewTextBoxColumn.DataPropertyName = "compraId";
-            this.compraIdDataGridViewTextBoxColumn.FillWeight = 50F;
-            this.compraIdDataGridViewTextBoxColumn.HeaderText = "Nro";
-            this.compraIdDataGridViewTextBoxColumn.Name = "compraIdDataGridViewTextBoxColumn";
-            this.compraIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn1
-            // 
-            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.FillWeight = 130F;
-            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripción";
-            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
-            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // fechaIngresoDataGridViewTextBoxColumn
-            // 
-            this.fechaIngresoDataGridViewTextBoxColumn.DataPropertyName = "fechaIngreso";
-            dataGridViewCellStyle8.Format = "d";
-            this.fechaIngresoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.fechaIngresoDataGridViewTextBoxColumn.FillWeight = 80F;
-            this.fechaIngresoDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaIngresoDataGridViewTextBoxColumn.Name = "fechaIngresoDataGridViewTextBoxColumn";
-            this.fechaIngresoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // comentarioDataGridViewTextBoxColumn
-            // 
-            this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "comentario";
-            this.comentarioDataGridViewTextBoxColumn.FillWeight = 180F;
-            this.comentarioDataGridViewTextBoxColumn.HeaderText = "Comentario";
-            this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
-            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // compraDataGridViewTextBoxColumn
-            // 
-            this.compraDataGridViewTextBoxColumn.DataPropertyName = "compra";
-            this.compraDataGridViewTextBoxColumn.FillWeight = 65F;
-            this.compraDataGridViewTextBoxColumn.HeaderText = "Compra";
-            this.compraDataGridViewTextBoxColumn.Name = "compraDataGridViewTextBoxColumn";
-            this.compraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reposicionDataGridViewTextBoxColumn
-            // 
-            this.reposicionDataGridViewTextBoxColumn.DataPropertyName = "reposicion";
-            this.reposicionDataGridViewTextBoxColumn.FillWeight = 65F;
-            this.reposicionDataGridViewTextBoxColumn.HeaderText = "Reposicion";
-            this.reposicionDataGridViewTextBoxColumn.Name = "reposicionDataGridViewTextBoxColumn";
-            this.reposicionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // precioUnitario
-            // 
-            this.precioUnitario.DataPropertyName = "precioUnitario";
-            this.precioUnitario.FillWeight = 90F;
-            this.precioUnitario.HeaderText = "Precio U.";
-            this.precioUnitario.Name = "precioUnitario";
-            this.precioUnitario.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.FillWeight = 120F;
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
             // FAdministrador
             // 
@@ -3171,7 +3169,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn toallonesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn batasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn posSenializacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockInicial;
         private System.Windows.Forms.DataGridViewTextBoxColumn roto;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockActual;
@@ -3240,6 +3237,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn compraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reposicionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
     }
 }
 

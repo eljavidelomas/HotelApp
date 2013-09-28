@@ -74,6 +74,27 @@ namespace Hoteles.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap cajareg {
+            get {
+                object obj = ResourceManager.GetObject("cajareg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap lav {
+            get {
+                object obj = ResourceManager.GetObject("lav", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap lavChico {
+            get {
+                object obj = ResourceManager.GetObject("lavChico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap libros {
             get {
                 object obj = ResourceManager.GetObject("libros", resourceCulture);

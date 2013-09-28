@@ -9,6 +9,7 @@ using Hoteles.Properties;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
+using log4net.Appender;
 
 namespace Hoteles.Entities
 {
@@ -166,7 +167,7 @@ namespace Hoteles.Entities
                 try
                 {
                     string ticketSalida = stockArt + planillaCierre + ticketRopaConsumida;
-                    guardarArchivoTemp(ticketSalida, out cantLineas);
+                    guardarArchivoTempCierreCaja(ticketSalida, out cantLineas);
                     configurarImpresora(ref formulario, cantLineas, 9);
                     formulario.PrinterSettings.PrinterName = obtenerImpresora("Caja");//Seleccionar impresora Caja
                     formulario.Print();
@@ -203,9 +204,7 @@ namespace Hoteles.Entities
             }
         }
 
-
-
-        internal void ImprimirRopaHotelYActualizarSaldo(Dictionary<int, int> DictArticulosEntrantes, Dictionary<int, int> DictArticulosSalientes, DataTable saldoAnterior)
+        internal void ImprimirRopaHotel_ActualizarSaldo(Dictionary<int, int> DictArticulosEntrantes, Dictionary<int, int> DictArticulosSalientes, DataTable saldoAnterior)
         {
             Dictionary<int, int> saldoFinal = new Dictionary<int, int>();
             try
@@ -347,6 +346,67 @@ namespace Hoteles.Entities
             cantLineas = ticket.Replace("\r\n", "\n").Split('\n').Count();
             sw.Write(ticket);
             sw.Close();
+        }
+
+        private void guardarArchivoTempCierreCaja(string ticket, out int CantLineas)
+        {
+            CantLineas = 0;
+            char[] data;
+            if (tools.obtenerParametroInt("eventosCierre") == 1)
+            {
+                FileAppender fileAppender;
+                obtenerFileAppender(out fileAppender);
+
+                string path = ((FileAppender)fileAppender).File;
+                log4net.Appender.FileAppender curAppender = fileAppender as log4net.Appender.FileAppender;
+                curAppender.File = path;
+                StreamReader sr = null;
+                try
+                {
+                    sr = new StreamReader(path);
+                    ticket += "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "BITACORA\\r\\n===============\\r\\n";
+                    ticket += sr.ReadToEnd();
+                    sr.Close();
+                    FileStream fs = new FileStream(path, FileMode.Create);
+                    fs.Close();
+                }
+                catch (Exception ex)
+                {
+                    (log4net.LogManager.GetLogger(this.GetType())).Error("Could not clear the file log", ex);
+                }
+                finally
+                {
+                    sr.Close();
+
+                }
+            }
+
+            ticket += "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n";
+            StreamWriter sw = new StreamWriter(Settings.Default.archImprimir);
+            ticket = ticket.Replace("\\r", "\r").Replace("\\n", "\n");
+            cantLineas = ticket.Replace("\r\n", "\n").Split('\n').Count();
+            sw.Write(ticket);
+            sw.Close();
+        }
+
+        private void obtenerFileAppender(out FileAppender fAppender)
+        {
+            var appenders = log4net.LogManager.GetRepository().GetAppenders();
+            fAppender = appenders[2] as FileAppender;
+
+            return;
+            foreach (var appender in appenders)
+            {
+                log4net.Appender.FileAppender fileAppender = appender as log4net.Appender.FileAppender;
+                if (fileAppender.Name == "DebugFileAppender")
+                {
+                    fileAppender.ImmediateFlush = true;
+                    fileAppender.LockingModel = new log4net.Appender.FileAppender.MinimalLock();
+                    fileAppender.ActivateOptions();
+                    fAppender = fileAppender;
+                    return;
+                }
+            }
         }
 
         private void imprimirArchivoDoble(object obj, PrintPageEventArgs e)

@@ -450,9 +450,6 @@ namespace Administrador {
                 this.columnid.Unique = true;
                 this.columnnombre.AllowDBNull = false;
                 this.columnnombre.MaxLength = 50;
-                this.columnstockActual.AllowDBNull = false;
-                this.columnstockRecomendado.AllowDBNull = false;
-                this.columnprecio.AllowDBNull = false;
                 this.columntipoArticulo.MaxLength = 1;
                 this.columncontrolStock.DefaultValue = ((bool)(false));
             }
@@ -609,7 +606,12 @@ namespace Administrador {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public int stockActual {
                 get {
-                    return ((int)(this[this.tablearticulos.stockActualColumn]));
+                    try {
+                        return ((int)(this[this.tablearticulos.stockActualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'stockActual\' de la tabla \'articulos\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablearticulos.stockActualColumn] = value;
@@ -619,7 +621,12 @@ namespace Administrador {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public int stockRecomendado {
                 get {
-                    return ((int)(this[this.tablearticulos.stockRecomendadoColumn]));
+                    try {
+                        return ((int)(this[this.tablearticulos.stockRecomendadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'stockRecomendado\' de la tabla \'articulos\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablearticulos.stockRecomendadoColumn] = value;
@@ -629,7 +636,12 @@ namespace Administrador {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public decimal precio {
                 get {
-                    return ((decimal)(this[this.tablearticulos.precioColumn]));
+                    try {
+                        return ((decimal)(this[this.tablearticulos.precioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'precio\' de la tabla \'articulos\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablearticulos.precioColumn] = value;
@@ -664,6 +676,36 @@ namespace Administrador {
                 set {
                     this[this.tablearticulos.controlStockColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsstockActualNull() {
+                return this.IsNull(this.tablearticulos.stockActualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetstockActualNull() {
+                this[this.tablearticulos.stockActualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsstockRecomendadoNull() {
+                return this.IsNull(this.tablearticulos.stockRecomendadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetstockRecomendadoNull() {
+                this[this.tablearticulos.stockRecomendadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsprecioNull() {
+                return this.IsNull(this.tablearticulos.precioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetprecioNull() {
+                this[this.tablearticulos.precioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -959,7 +1001,7 @@ SELECT id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_nombre, int Original_stockActual, int Original_stockRecomendado, decimal Original_precio, string Original_tipoArticulo, global::System.Nullable<bool> Original_controlStock) {
+        public virtual int Delete(int Original_id, string Original_nombre, global::System.Nullable<int> Original_stockActual, global::System.Nullable<int> Original_stockRecomendado, global::System.Nullable<decimal> Original_precio, string Original_tipoArticulo, global::System.Nullable<bool> Original_controlStock) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_nombre");
@@ -967,9 +1009,24 @@ SELECT id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlS
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nombre));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_stockActual));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_stockRecomendado));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_precio));
+            if ((Original_stockActual.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_stockActual.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_stockRecomendado.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_stockRecomendado.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_precio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_precio.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((Original_tipoArticulo == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
@@ -1005,7 +1062,7 @@ SELECT id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id, string nombre, int stockActual, int stockRecomendado, decimal precio, string tipoArticulo, global::System.Nullable<bool> controlStock) {
+        public virtual int Insert(int id, string nombre, global::System.Nullable<int> stockActual, global::System.Nullable<int> stockRecomendado, global::System.Nullable<decimal> precio, string tipoArticulo, global::System.Nullable<bool> controlStock) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id));
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
@@ -1013,9 +1070,24 @@ SELECT id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlS
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(nombre));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(stockActual));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(stockRecomendado));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(precio));
+            if ((stockActual.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(stockActual.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((stockRecomendado.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(stockRecomendado.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((precio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(precio.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((tipoArticulo == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
@@ -1047,7 +1119,7 @@ SELECT id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int id, string nombre, int stockActual, int stockRecomendado, decimal precio, string tipoArticulo, global::System.Nullable<bool> controlStock, int Original_id, string Original_nombre, int Original_stockActual, int Original_stockRecomendado, decimal Original_precio, string Original_tipoArticulo, global::System.Nullable<bool> Original_controlStock) {
+        public virtual int Update(int id, string nombre, global::System.Nullable<int> stockActual, global::System.Nullable<int> stockRecomendado, global::System.Nullable<decimal> precio, string tipoArticulo, global::System.Nullable<bool> controlStock, int Original_id, string Original_nombre, global::System.Nullable<int> Original_stockActual, global::System.Nullable<int> Original_stockRecomendado, global::System.Nullable<decimal> Original_precio, string Original_tipoArticulo, global::System.Nullable<bool> Original_controlStock) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id));
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
@@ -1055,9 +1127,24 @@ SELECT id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlS
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nombre));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(stockActual));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(stockRecomendado));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(precio));
+            if ((stockActual.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(stockActual.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((stockRecomendado.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(stockRecomendado.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((precio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(precio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((tipoArticulo == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
@@ -1077,9 +1164,24 @@ SELECT id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlS
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_nombre));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_stockActual));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_stockRecomendado));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_precio));
+            if ((Original_stockActual.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_stockActual.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_stockRecomendado.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_stockRecomendado.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_precio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_precio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
             if ((Original_tipoArticulo == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
@@ -1115,7 +1217,7 @@ SELECT id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombre, int stockActual, int stockRecomendado, decimal precio, string tipoArticulo, global::System.Nullable<bool> controlStock, int Original_id, string Original_nombre, int Original_stockActual, int Original_stockRecomendado, decimal Original_precio, string Original_tipoArticulo, global::System.Nullable<bool> Original_controlStock) {
+        public virtual int Update(string nombre, global::System.Nullable<int> stockActual, global::System.Nullable<int> stockRecomendado, global::System.Nullable<decimal> precio, string tipoArticulo, global::System.Nullable<bool> controlStock, int Original_id, string Original_nombre, global::System.Nullable<int> Original_stockActual, global::System.Nullable<int> Original_stockRecomendado, global::System.Nullable<decimal> Original_precio, string Original_tipoArticulo, global::System.Nullable<bool> Original_controlStock) {
             return this.Update(Original_id, nombre, stockActual, stockRecomendado, precio, tipoArticulo, controlStock, Original_id, Original_nombre, Original_stockActual, Original_stockRecomendado, Original_precio, Original_tipoArticulo, Original_controlStock);
         }
     }

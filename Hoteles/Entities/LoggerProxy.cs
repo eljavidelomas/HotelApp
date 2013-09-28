@@ -21,6 +21,11 @@ namespace Hoteles.Entities
                 log.Error(msj);
         }
 
+        static public void Bitacora(string msj)
+        {            
+                log.Debug(msj);
+        }
+
         static public void ErrorSinBD(string msj)
         {            
                 log.Error(msj);

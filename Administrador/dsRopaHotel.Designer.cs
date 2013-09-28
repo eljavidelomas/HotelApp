@@ -478,6 +478,7 @@ namespace Administrador {
                 this.columnstockInicial.AllowDBNull = false;
                 this.columnsaldoFinal.AllowDBNull = false;
                 this.columnsaldoFinal.ReadOnly = true;
+                this.columnsaldoFinal.DefaultValue = ((short)(0));
                 this.columnroto.AllowDBNull = false;
                 this.columnstockActual.ReadOnly = true;
             }

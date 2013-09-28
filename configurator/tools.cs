@@ -13,8 +13,15 @@ namespace Configurator
         {
             SqlCommand comm;
             comm = new SqlCommand("select val1_string from parametros where nombre = '" + parametro + "'", fConfigurator.conn);
-
-            return comm.ExecuteScalar().ToString();
+            try
+            {
+                return comm.ExecuteScalar().ToString();    
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            
         }
 
         public static int obtenerParametroInt(string parametro)

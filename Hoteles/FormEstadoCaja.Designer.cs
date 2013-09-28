@@ -32,14 +32,16 @@ namespace Hoteles
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGlobal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCaja = new System.Windows.Forms.DataGridView();
+            this.mensajes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
+            this.detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.mediosDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,8 +51,6 @@ namespace Hoteles
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.mediosDePagoTableAdapter = new Hoteles.hotelDataSetTableAdapters.mediosDePagoTableAdapter();
-            this.detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mensajes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaja)).BeginInit();
@@ -137,6 +137,16 @@ namespace Hoteles
             this.dgvCaja.Size = new System.Drawing.Size(567, 423);
             this.dgvCaja.TabIndex = 6;
             // 
+            // mensajes
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.mensajes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.mensajes.FillWeight = 169.5432F;
+            this.mensajes.HeaderText = "Caja";
+            this.mensajes.Name = "mensajes";
+            this.mensajes.ReadOnly = true;
+            // 
             // dgvTurnos
             // 
             this.dgvTurnos.AllowUserToAddRows = false;
@@ -180,6 +190,14 @@ namespace Hoteles
             this.dgvTurnos.Size = new System.Drawing.Size(566, 423);
             this.dgvTurnos.TabIndex = 0;
             // 
+            // detalles
+            // 
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.detalles.DefaultCellStyle = dataGridViewCellStyle5;
+            this.detalles.HeaderText = "Turnos";
+            this.detalles.Name = "detalles";
+            this.detalles.ReadOnly = true;
+            // 
             // labelTitulo
             // 
             this.labelTitulo.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -188,6 +206,7 @@ namespace Hoteles
             this.labelTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTitulo.Font = new System.Drawing.Font("MV Boli", 28.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Image = global::Hoteles.Properties.Resources.cajareg;
             this.labelTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelTitulo.Location = new System.Drawing.Point(5, 5);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(5);
@@ -259,24 +278,6 @@ namespace Hoteles
             // mediosDePagoTableAdapter
             // 
             this.mediosDePagoTableAdapter.ClearBeforeFill = true;
-            // 
-            // detalles
-            // 
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.detalles.DefaultCellStyle = dataGridViewCellStyle5;
-            this.detalles.HeaderText = "Turnos";
-            this.detalles.Name = "detalles";
-            this.detalles.ReadOnly = true;
-            // 
-            // mensajes
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.mensajes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.mensajes.FillWeight = 169.5432F;
-            this.mensajes.HeaderText = "Caja";
-            this.mensajes.Name = "mensajes";
-            this.mensajes.ReadOnly = true;
             // 
             // FormEstadoCaja
             // 

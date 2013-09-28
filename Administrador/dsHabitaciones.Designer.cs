@@ -532,13 +532,20 @@ namespace Administrador {
                 this.columnid.Unique = true;
                 this.columnnroHabitacion.AllowDBNull = false;
                 this.columnhabilitada.AllowDBNull = false;
+                this.columnhabilitada.DefaultValue = ((bool)(false));
                 this.columncategoria.AllowDBNull = false;
                 this.columnfundas.AllowDBNull = false;
+                this.columnfundas.DefaultValue = ((byte)(0));
                 this.columnsabanas.AllowDBNull = false;
+                this.columnsabanas.DefaultValue = ((byte)(0));
                 this.columnacolchado.AllowDBNull = false;
+                this.columnacolchado.DefaultValue = ((byte)(0));
                 this.columntoallas.AllowDBNull = false;
+                this.columntoallas.DefaultValue = ((byte)(0));
                 this.columntoallones.AllowDBNull = false;
+                this.columntoallones.DefaultValue = ((byte)(0));
                 this.columnbatas.AllowDBNull = false;
+                this.columnbatas.DefaultValue = ((byte)(0));
                 this.columnposSenializacion.AllowDBNull = false;
             }
             

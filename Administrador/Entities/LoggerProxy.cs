@@ -15,13 +15,7 @@ namespace Administrador.Entities
 
             log.Info(msj);
         }
-
-        static public void Error(string msj)
-        {
-
-            log.Error(msj);
-        }
-
+        
         static public void ErrorSinBD(string msj)
         {
             log.Error(msj);

@@ -28,14 +28,21 @@ namespace Hoteles.Entities
 
         public static DataTable listadoTurnos()
         {
-            DataSet ds = new DataSet();
-            SqlDataAdapter Adapter = new SqlDataAdapter("listaTurnos_2", fPrincipal2.conn);
-            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            Adapter.SelectCommand.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
-            Adapter.Fill(ds);
+            try
+            {
+                DataSet ds = new DataSet();
+                SqlDataAdapter Adapter = new SqlDataAdapter("listaTurnos_2", fPrincipal2.conn);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@orden", tools.obtenerParametroString("ordenListado"));
+                Adapter.Fill(ds);
 
-            return ds.Tables[0];
-
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD("Error en obtener Listado de turno.\r\n" + ex.Message + "-" + ex.StackTrace);
+                throw ex;
+            }
         }
 
         public static void actualizarListadoTurnos(DataGridView dgv1, DataGridView dgv2)

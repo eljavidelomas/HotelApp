@@ -211,14 +211,11 @@ namespace Hoteles
                         try
                         {
                             DataTable saldoAnterior = RopaHotel.ObtenerSaldoAnterior();
-                           /* Articulo.generarSalidaRopa(DictArticulosSalientes);
-                            LoggerProxy.Info(string.Format("Ejecuto Salida Ropa"));
-                            Articulo.generarEntradaRopa(DictArticulosEntrantes);
-                            LoggerProxy.Info(string.Format("Ejecuto Entrada Ropa"));*/
+                           
                             //if(tools.obtenerParametroInt("emisionTicketLavaderoPedidos") == 1 )
                             try
                             {
-                                new Impresora().ImprimirRopaHotelYActualizarSaldo(DictArticulosEntrantes,DictArticulosSalientes,saldoAnterior);
+                                new Impresora().ImprimirRopaHotel_ActualizarSaldo(DictArticulosEntrantes,DictArticulosSalientes,saldoAnterior);
                             }
                             catch (Exception ex)
                             {
@@ -284,8 +281,6 @@ namespace Hoteles
 
         private void FormAsignarHab_Load(object sender, EventArgs e)
         {
-            //DataRowCollection articulos = Articulo.obtenerListaArticulos().Rows;                       
-
             dgvPromos.RowTemplate.Height = tools.altoFilaBar;// con un heigt de 60 entran 6
             dgvOpcionesElegidas.RowTemplate.Height = tools.altoFilaBar - 10;
             dgvOpcionesElegidas.Rows.Add("Ropa Saliente");
@@ -294,8 +289,17 @@ namespace Hoteles
                 dgvPromos.Rows.Add(dr[0].ToString(), dr[1].ToString());
                 DictArticulos.Add(Convert.ToInt32(dr[0]), dr[1].ToString());
             }
-            labelNroHab.Text = DictArticulos.First().Value;
-            nroArtElegido = DictArticulos.First().Key;
+            if (DictArticulos.Count > 0)
+            {
+                labelNroHab.Text = DictArticulos.First().Value;
+                nroArtElegido = DictArticulos.First().Key;
+            }
+            else
+            {
+                labelMensaje.Text = "No hay Ropa Cargada.Presione ESC para salir.";
+                labelMensaje.Visible = true;
+                tbNroHab.Visible = false;
+            }
 
             dgvPromos.ClearSelection();
             dgvOpcionesElegidas.ClearSelection();

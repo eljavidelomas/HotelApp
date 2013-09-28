@@ -366,12 +366,7 @@ namespace Hoteles
                         case "adelanto":
                                                        
                             decimal.TryParse(tbNroHab.Text.Replace('.', ','),out montoAdelantar);
-                           /* if(montoAdelantar + puntosACambiar > montoAPagar)
-                            {
-                                labelMensaje.Text = "* El importe debe ser inferior o igual al total a pagar *";
-                                labelMensaje.Visible = true;
-                                return;
-                            }*/
+                          
                             labelMensaje.Visible = false;
 
                             panelPromos.Visible = true;

@@ -112,6 +112,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsCompras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompras.Designer.cs">
+      <DependentUpon>FormCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Audio.cs" />
     <Compile Include="Entities\RopaHotel.cs" />
     <Compile Include="FormRopaSaliente.cs">
@@ -259,6 +270,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCompras.resx">
+      <DependentUpon>FormCompras.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRopaSaliente.resx">
       <DependentUpon>FormRopaSaliente.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -464,8 +479,24 @@
     <None Include="Resources\parpadeoRojo.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="dsCompras.xsc">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="dsCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompras.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCompras.xss">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
     <None Include="HotelesApp_TemporaryKey.pfx" />
     <None Include="Resources\parpadeoVerde.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\cajareg.png" />
+    <Content Include="Resources\lav.png" />
+    <None Include="Resources\lavChico.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -27,3 +27,4 @@ C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.application
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.exe
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.pdb
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Debug\Hoteles.FormCompras.resources

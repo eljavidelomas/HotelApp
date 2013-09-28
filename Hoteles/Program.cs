@@ -16,7 +16,14 @@ namespace Hoteles
         {            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fPrincipal2());
+            try
+            {                
+                Application.Run(new fPrincipal2());
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+            }
         }
     }
 }

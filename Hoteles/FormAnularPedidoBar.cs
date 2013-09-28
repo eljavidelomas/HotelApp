@@ -327,7 +327,7 @@ namespace Hoteles
                 dgvPromos.Rows.Add(dr[0], dr[1], dr[2], dr[3]);
                 DictArticulos.Add(Convert.ToInt32(dr[0]), new Articulo(Convert.ToInt32(dr[0]), dr[1].ToString(), Convert.ToDecimal(dr[2]),0));
             }
-            dgvPromos.Rows.RemoveAt(dgvPromos.Rows.GetLastRow(DataGridViewElementStates.None));
+            //dgvPromos.Rows.RemoveAt(dgvPromos.Rows.GetLastRow(DataGridViewElementStates.None));
             dgvPromos.ClearSelection();
             dgvOpcionesElegidas.Rows.Add("Habitación Nro:");
             dgvOpcionesElegidas.ClearSelection();
