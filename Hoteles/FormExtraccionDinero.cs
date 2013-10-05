@@ -188,7 +188,7 @@ namespace Hoteles
                             if (insertar)
                             {
                                 Gasto.insertar(nroCuenta, monto);
-                                if (tools.obtenerParametroInt("emisionGastos") == 1)
+                                if (tools.obtenerParametroInt("emisionGastos") == 1 && Gasto.imprimirCuenta(nroCuenta))
                                     new Impresora().ImprimirGasto(labelMensaje, monto, DictCuentas[nroCuenta]);
                                 LoggerProxy.Info(string.Format("Ejecuto Extraccion de Dinero - Cuenta:{0}  Monto:{1} ", DictCuentas[nroCuenta], monto));
 

@@ -117,6 +117,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCompras.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Entities\EventoAlCierre.cs" />
     <Compile Include="FormCompras.cs">
       <SubType>Form</SubType>
     </Compile>

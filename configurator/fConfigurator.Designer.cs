@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.diasParaVencimientoPuntos = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.emisionTicketAsignar = new System.Windows.Forms.CheckBox();
             this.label30 = new System.Windows.Forms.Label();
             this.directorioAudio = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.minFinTurnoMenor100 = new System.Windows.Forms.TextBox();
             this.minFinTurnoMayor100 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.bytes = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.modSeñalizacion = new System.Windows.Forms.ComboBox();
@@ -92,14 +92,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.nombreHotel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.diasParaVencimientoPuntos = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
+            this.baudrate = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.panelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPrincipal
             // 
             this.panelPrincipal.AutoScroll = true;
+            this.panelPrincipal.Controls.Add(this.baudrate);
+            this.panelPrincipal.Controls.Add(this.label32);
             this.panelPrincipal.Controls.Add(this.diasParaVencimientoPuntos);
             this.panelPrincipal.Controls.Add(this.label31);
             this.panelPrincipal.Controls.Add(this.emisionTicketAsignar);
@@ -124,8 +126,6 @@
             this.panelPrincipal.Controls.Add(this.minFinTurnoMenor100);
             this.panelPrincipal.Controls.Add(this.minFinTurnoMayor100);
             this.panelPrincipal.Controls.Add(this.label23);
-            this.panelPrincipal.Controls.Add(this.textBox1);
-            this.panelPrincipal.Controls.Add(this.label22);
             this.panelPrincipal.Controls.Add(this.bytes);
             this.panelPrincipal.Controls.Add(this.label21);
             this.panelPrincipal.Controls.Add(this.modSeñalizacion);
@@ -171,6 +171,25 @@
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(969, 750);
             this.panelPrincipal.TabIndex = 0;
+            // 
+            // diasParaVencimientoPuntos
+            // 
+            this.diasParaVencimientoPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diasParaVencimientoPuntos.Location = new System.Drawing.Point(834, 386);
+            this.diasParaVencimientoPuntos.Name = "diasParaVencimientoPuntos";
+            this.diasParaVencimientoPuntos.Size = new System.Drawing.Size(90, 23);
+            this.diasParaVencimientoPuntos.TabIndex = 95;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(638, 388);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(185, 17);
+            this.label31.TabIndex = 94;
+            this.label31.Text = "Cant. Días para vencimiento";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // emisionTicketAsignar
             // 
@@ -400,29 +419,10 @@
             this.label23.Text = "Min. Aviso fin de turno mayores a 100 \'";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(329, 475);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(90, 23);
-            this.textBox1.TabIndex = 69;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(182, 478);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(137, 17);
-            this.label22.TabIndex = 68;
-            this.label22.Text = "Longitud Largo Hoja";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // bytes
             // 
             this.bytes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bytes.Location = new System.Drawing.Point(509, 434);
+            this.bytes.Location = new System.Drawing.Point(509, 464);
             this.bytes.Name = "bytes";
             this.bytes.Size = new System.Drawing.Size(66, 23);
             this.bytes.TabIndex = 67;
@@ -431,7 +431,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(462, 437);
+            this.label21.Location = new System.Drawing.Point(462, 467);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 17);
             this.label21.TabIndex = 66;
@@ -445,7 +445,7 @@
             this.modSeñalizacion.FormattingEnabled = true;
             this.modSeñalizacion.Items.AddRange(new object[] {
             "INTER"});
-            this.modSeñalizacion.Location = new System.Drawing.Point(330, 434);
+            this.modSeñalizacion.Location = new System.Drawing.Point(330, 464);
             this.modSeñalizacion.Name = "modSeñalizacion";
             this.modSeñalizacion.Size = new System.Drawing.Size(118, 24);
             this.modSeñalizacion.TabIndex = 65;
@@ -454,7 +454,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(164, 436);
+            this.label20.Location = new System.Drawing.Point(164, 466);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(158, 17);
             this.label20.TabIndex = 64;
@@ -468,7 +468,7 @@
             this.portSeñalOut.DropDownWidth = 110;
             this.portSeñalOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.portSeñalOut.IntegralHeight = false;
-            this.portSeñalOut.Location = new System.Drawing.Point(329, 280);
+            this.portSeñalOut.Location = new System.Drawing.Point(329, 310);
             this.portSeñalOut.Name = "portSeñalOut";
             this.portSeñalOut.Size = new System.Drawing.Size(170, 24);
             this.portSeñalOut.TabIndex = 63;
@@ -477,7 +477,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(154, 284);
+            this.label19.Location = new System.Drawing.Point(154, 314);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(161, 17);
             this.label19.TabIndex = 62;
@@ -629,11 +629,11 @@
             // 
             // ImpresoraTickets
             // 
-            this.ImpresoraTickets.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ImpresoraTickets.BackColor = System.Drawing.Color.White;
             this.ImpresoraTickets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ImpresoraTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ImpresoraTickets.FormattingEnabled = true;
-            this.ImpresoraTickets.Location = new System.Drawing.Point(329, 392);
+            this.ImpresoraTickets.Location = new System.Drawing.Point(329, 422);
             this.ImpresoraTickets.Name = "ImpresoraTickets";
             this.ImpresoraTickets.Size = new System.Drawing.Size(212, 24);
             this.ImpresoraTickets.TabIndex = 44;
@@ -641,10 +641,11 @@
             // 
             // ImpresoraCaja
             // 
+            this.ImpresoraCaja.BackColor = System.Drawing.Color.White;
             this.ImpresoraCaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ImpresoraCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImpresoraCaja.FormattingEnabled = true;
-            this.ImpresoraCaja.Location = new System.Drawing.Point(329, 352);
+            this.ImpresoraCaja.Location = new System.Drawing.Point(329, 382);
             this.ImpresoraCaja.Name = "ImpresoraCaja";
             this.ImpresoraCaja.Size = new System.Drawing.Size(212, 24);
             this.ImpresoraCaja.TabIndex = 43;
@@ -652,11 +653,11 @@
             // 
             // ImpresoraCocina
             // 
-            this.ImpresoraCocina.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ImpresoraCocina.BackColor = System.Drawing.Color.White;
             this.ImpresoraCocina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ImpresoraCocina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImpresoraCocina.FormattingEnabled = true;
-            this.ImpresoraCocina.Location = new System.Drawing.Point(330, 316);
+            this.ImpresoraCocina.Location = new System.Drawing.Point(330, 346);
             this.ImpresoraCocina.Name = "ImpresoraCocina";
             this.ImpresoraCocina.Size = new System.Drawing.Size(211, 24);
             this.ImpresoraCocina.TabIndex = 42;
@@ -770,7 +771,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(175, 394);
+            this.label6.Location = new System.Drawing.Point(175, 424);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 17);
             this.label6.TabIndex = 12;
@@ -780,7 +781,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(187, 355);
+            this.label7.Location = new System.Drawing.Point(187, 385);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(128, 17);
             this.label7.TabIndex = 10;
@@ -790,7 +791,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(163, 318);
+            this.label8.Location = new System.Drawing.Point(163, 348);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(152, 17);
             this.label8.TabIndex = 8;
@@ -824,24 +825,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del Hotel";
             // 
-            // diasParaVencimientoPuntos
+            // baudrate
             // 
-            this.diasParaVencimientoPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diasParaVencimientoPuntos.Location = new System.Drawing.Point(834, 386);
-            this.diasParaVencimientoPuntos.Name = "diasParaVencimientoPuntos";
-            this.diasParaVencimientoPuntos.Size = new System.Drawing.Size(90, 23);
-            this.diasParaVencimientoPuntos.TabIndex = 95;
+            this.baudrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.baudrate.Location = new System.Drawing.Point(328, 278);
+            this.baudrate.Name = "baudrate";
+            this.baudrate.Size = new System.Drawing.Size(90, 23);
+            this.baudrate.TabIndex = 97;
             // 
-            // label31
+            // label32
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(638, 388);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(185, 17);
-            this.label31.TabIndex = 94;
-            this.label31.Text = "Cant. Días para vencimiento";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(114, 281);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(198, 17);
+            this.label32.TabIndex = 96;
+            this.label32.Text = "Baudios Port Señalización Ent";
             // 
             // fConfigurator
             // 
@@ -898,8 +898,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox modSeñalizacion;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox bytes;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label25;
@@ -926,6 +924,8 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox diasParaVencimientoPuntos;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox baudrate;
+        private System.Windows.Forms.Label label32;
     }
 }
 

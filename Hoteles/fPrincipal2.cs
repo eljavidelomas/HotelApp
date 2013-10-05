@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using Hoteles.Properties;
 using System.Collections;
 using WindowsFormsApplication1;
+using System.IO.Ports;
 
 namespace Hoteles
 {
@@ -49,9 +50,9 @@ namespace Hoteles
                 DataTable dt = tools.listadoTurnos();
                 maxFilas = (int)Math.Ceiling(dt.Rows.Count * 0.5);
                 cantHab = dt.Rows.Count;
-                this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-                this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-                this.SetStyle(ControlStyles.UserPaint, true);
+                //this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+                //this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+                //this.SetStyle(ControlStyles.UserPaint, true);
 
                 InitializeComponent();
                 configPortSerial();
@@ -77,10 +78,18 @@ namespace Hoteles
         {
             if (tools.obtenerParametroInt("haySenializacion") == 1)
             {
-                serialPort1.PortName = tools.obtenerParametroString("portSenialIn");
-                serialPort1.Open();
-                cargarDiccionarioNroOrdenNroHabitacion();
-                senialOcupado = tools.obtenerParametroString("senialOcupado");
+                try
+                {
+                    serialPort1.PortName = tools.obtenerParametroString("portSenialIn");
+                    serialPort1.BaudRate = tools.obtenerParametroInt("baudrate");
+                    serialPort1.Open();
+                    cargarDiccionarioNroOrdenNroHabitacion();
+                    senialOcupado = tools.obtenerParametroString("senialOcupado");
+                }
+                catch (Exception ex)
+                {
+                    LoggerProxy.ErrorSinBD("Error en la configuracion de señalizacion \r\n" + ex.Message + "-" + ex.StackTrace);
+                }
             }
         }
 
@@ -152,8 +161,7 @@ namespace Hoteles
         }
 
         private void fPrincipal2_Load(object sender, EventArgs e)
-        {
-            LoggerProxy.Bitacora("Bitacora hab 37");
+        {            
             #region cargarListaTurnos
 
             int altoFila;
@@ -225,7 +233,7 @@ namespace Hoteles
                 else
                 {
                     labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm:ss");
-                    labelFecha.Text = String.Format("{0:ddd}", DateTime.Now).ToUpper() + " " + DateTime.Now.ToString("dd / MM / yyyy");
+                    labelFecha.Text = String.Format("{0:ddd}", DateTime.Now).ToUpper() + " " + DateTime.Now.ToString("dd/MM/yyyy");
                 }
             }
             catch (Exception ex)
@@ -365,7 +373,8 @@ namespace Hoteles
                                             Audio.PlayList(sonido);
                                             
                                             /*** Grabar Bitacora ***/
-                                            LoggerProxy.Bitacora("Habitación " + nroHabitacion + " ocupada.");
+                                            EventoAlCierre.grabarCierre(nroHabitacion);
+                                            //LoggerProxy.Bitacora("Habitación " + nroHabitacion + " ocupada.");
 
                                         }
                                     }

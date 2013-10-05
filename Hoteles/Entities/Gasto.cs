@@ -45,6 +45,23 @@ namespace Hoteles.Entities
             }
         }
 
+        static public bool imprimirCuenta(int nroCuenta)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select impresion from cuentasGastos where id = " + nroCuenta.ToString(), fPrincipal2.conn);
+            dataAdapter.SelectCommand.CommandType = CommandType.Text;
+            try
+            {
+                dataAdapter.Fill(ds);
+                return (bool) ds.Tables[0].Rows[0][0];
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + " - " + ex.StackTrace);
+                return false;
+            }
+        }
+
         static public DataTable obtenerGastos(int conserjeId)
         {
             DataSet ds = new DataSet();

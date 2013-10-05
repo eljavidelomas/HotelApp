@@ -67,6 +67,7 @@ namespace Configurator
             coefPuntos.Text = tools.obtenerParametroString("coefPuntos");
             directorioAudio.Text = tools.obtenerParametroString("directorioAudio");
             bytes.Text = tools.obtenerParametroInt("bytes").ToString();
+            baudrate.Text = tools.obtenerParametroInt("baudrate").ToString();
             claveAcceso.Text = tools.obtenerParametroString("claveAcceso");
             placaOutter.Checked = tools.obtenerParametroInt("placaOutter") == 0 ? false : true;
             eventosCierre.Checked = tools.obtenerParametroInt("eventosCierre") == 0 ? false : true;
