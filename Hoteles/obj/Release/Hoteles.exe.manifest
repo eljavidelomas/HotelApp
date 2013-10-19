@@ -69,14 +69,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hoteles.exe" size="667136">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hoteles.exe" size="678400">
       <assemblyIdentity name="Hoteles" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>1AEs7DOhXuJbjPMwdsKpJH1RD8k=</dsig:DigestValue>
+        <dsig:DigestValue>sq+C+ngP5Z7AeOeuOgQz9zcf6SY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -104,13 +104,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Hoteles.exe.config" size="5953">
+  <file name="Hoteles.exe.config" size="6084">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>GQB3mLEUE8fADxPKuRGFcHbOUEs=</dsig:DigestValue>
+      <dsig:DigestValue>fmYoewHjDUAE+SarYqP5L645l2I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\cajareg.png" size="53017">

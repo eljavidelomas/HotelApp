@@ -13,6 +13,7 @@ using Hoteles.Properties;
 using System.Collections;
 using WindowsFormsApplication1;
 using System.IO.Ports;
+using System.Configuration;
 
 namespace Hoteles
 {
@@ -44,7 +45,7 @@ namespace Hoteles
         public fPrincipal2()
         {
             initConnection();
-
+            
             try
             {
                 DataTable dt = tools.listadoTurnos();
@@ -55,6 +56,7 @@ namespace Hoteles
                 //this.SetStyle(ControlStyles.UserPaint, true);
 
                 InitializeComponent();
+                cargarImagenes();
                 configPortSerial();
                 GoFullscreen(true);
             }
@@ -72,6 +74,11 @@ namespace Hoteles
             //estadoHabitaciones[105] = 1;
             //estadoHabitaciones[106] = 1;
 
+        }
+
+        private void cargarImagenes()
+        {
+            pictureBox1.ImageLocation = ConfigurationManager.AppSettings["logo"];
         }
 
         private void configPortSerial()
@@ -195,7 +202,7 @@ namespace Hoteles
                 textUsuario.Focus();
             }
             else
-                labelConserje.Text = "Conserje:" + conserjeActual.nombre;
+                labelConserje.Text = "Conserje:  " + conserjeActual.nombre + " " + conserjeActual.apellido;
 
             #endregion
 
@@ -232,8 +239,8 @@ namespace Hoteles
                 }
                 else
                 {
-                    labelHora.Text = "Hora: " + DateTime.Now.ToString("HH:mm:ss");
-                    labelFecha.Text = String.Format("{0:ddd}", DateTime.Now).ToUpper() + " " + DateTime.Now.ToString("dd/MM/yyyy");
+                    labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
+                    labelFecha.Text = String.Format("{0:dddd}", DateTime.Now) + " " + DateTime.Now.ToString("dd")+ " de " + DateTime.Now.ToString("MMMM yyyy");
                 }
             }
             catch (Exception ex)
@@ -373,7 +380,7 @@ namespace Hoteles
                                             Audio.PlayList(sonido);
                                             
                                             /*** Grabar Bitacora ***/
-                                            EventoAlCierre.grabarCierre(nroHabitacion);
+                                            EventoAlCierre.grabarCierre(nroHabitacion,"");
                                             //LoggerProxy.Bitacora("Habitación " + nroHabitacion + " ocupada.");
 
                                         }
@@ -405,11 +412,14 @@ namespace Hoteles
                                                     dictSonidoDesocupado[nroHabitacion] = true;
 
                                                     /*** Grabar Bitacora ***/
-                                                    LoggerProxy.Bitacora("Habitación " + nroHabitacion + " desocupada.");
+                                                    EventoAlCierre.grabarApertura(nroHabitacion, "");
+                                                    //LoggerProxy.Bitacora("Habitación " + nroHabitacion + " desocupada.");
                                                 }
                                             }
                                             else
                                             {
+                                                if(dictSonidoDesocupado[nroHabitacion] == true)
+                                                    EventoAlCierre.grabarCierre(nroHabitacion, "");
                                                 dictSonidoDesocupado[nroHabitacion] = false;
                                                 fila.Cells[0].Style.BackColor = cOcup;                                                
                                             }                                           
@@ -446,7 +456,8 @@ namespace Hoteles
                                                     dictSonidoOcupado[nroHabitacion] = true;
 
                                                     /*** Grabar Bitacora ***/
-                                                    LoggerProxy.Bitacora("Habitación " + nroHabitacion + " ocupada. * Sin asignar *");
+                                                    EventoAlCierre.grabarCierre(nroHabitacion, "*");
+                                                    //LoggerProxy.Bitacora("Habitación " + nroHabitacion + " ocupada. * Sin asignar *");
                                                 }
                                             }
 
@@ -457,7 +468,8 @@ namespace Hoteles
                                                 if (dictSonidoOcupado[nroHabitacion])
                                                 {
                                                     /*** Grabar Bitacora ***/
-                                                    LoggerProxy.Bitacora("Habitación " + nroHabitacion + " desocupada. * Sin asignar *");
+                                                    EventoAlCierre.grabarApertura(nroHabitacion, "*");
+                                                    //LoggerProxy.Bitacora("Habitación " + nroHabitacion + " desocupada. * Sin asignar *");
                                                     dictSonidoOcupado[nroHabitacion] = false;
                                                 }
                                             }
@@ -979,6 +991,7 @@ namespace Hoteles
                 mut.ReleaseMutex();
             }
         }
+              
     }
 }
 

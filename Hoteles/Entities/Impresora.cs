@@ -354,31 +354,38 @@ namespace Hoteles.Entities
             char[] data;
             if (tools.obtenerParametroInt("eventosCierre") == 1)
             {
-                FileAppender fileAppender;
-                obtenerFileAppender(out fileAppender);
+                DataTable bitacora = EventoAlCierre.consultarBitacora();
+                ticket += "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "BITACORA\\r\\n===============\\r\\n";
+                ticket += "  HAB        CIERRE       APERTURA\\r\\n";
+                foreach (DataRow dr in bitacora.Rows)
+                    ticket += dr[0].ToString().PadLeft(5) + "   " + Convert.ToDateTime(dr[1]).ToString("dd-MM-yy HH:mm") +
+                        "   " + Convert.ToDateTime(dr[2]).ToString("dd-MM-yy HH:mm") + "   " + dr[3].ToString().PadLeft(1) + " | " + dr[4].ToString().PadLeft(1) + "\r\n";
+                
+                //FileAppender fileAppender;
+                //obtenerFileAppender(out fileAppender);
 
-                string path = ((FileAppender)fileAppender).File;
-                log4net.Appender.FileAppender curAppender = fileAppender as log4net.Appender.FileAppender;
-                curAppender.File = path;
-                StreamReader sr = null;
-                try
-                {
-                    sr = new StreamReader(path);
-                    ticket += "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "BITACORA\\r\\n===============\\r\\n";
-                    ticket += sr.ReadToEnd();
-                    sr.Close();
-                    FileStream fs = new FileStream(path, FileMode.Create);
-                    fs.Close();
-                }
-                catch (Exception ex)
-                {
-                    (log4net.LogManager.GetLogger(this.GetType())).Error("Could not clear the file log", ex);
-                }
-                finally
-                {
-                    sr.Close();
+                //string path = ((FileAppender)fileAppender).File;
+                //log4net.Appender.FileAppender curAppender = fileAppender as log4net.Appender.FileAppender;
+                //curAppender.File = path;
+                //StreamReader sr = null;
+                //try
+                //{
+                //    sr = new StreamReader(path);
+                //    ticket += "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "BITACORA\\r\\n===============\\r\\n";
+                //    ticket += sr.ReadToEnd();
+                //    sr.Close();
+                //    FileStream fs = new FileStream(path, FileMode.Create);
+                //    fs.Close();
+                //}
+                //catch (Exception ex)
+                //{
+                //    (log4net.LogManager.GetLogger(this.GetType())).Error("Could not clear the file log", ex);
+                //}
+                //finally
+                //{
+                //    sr.Close();
 
-                }
+                //}
             }
 
             ticket += "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n" + "\\r\\n";

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpHabitaciones2 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
@@ -62,7 +62,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.lblCat_msjSalida = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aliasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +69,6 @@
             this.tpArtBar = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.button6 = new System.Windows.Forms.Button();
-            this.btnArt_save = new System.Windows.Forms.Button();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,7 +119,6 @@
             this.dsTarifas = new Administrador.dsTarifas();
             this.tpTarjetas = new System.Windows.Forms.TabPage();
             this.button8 = new System.Windows.Forms.Button();
-            this.btnTarj_save = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,7 +142,6 @@
             this.tpConserjes = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button10 = new System.Windows.Forms.Button();
-            this.btnConserjes_save = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvConserjes = new System.Windows.Forms.DataGridView();
@@ -157,7 +153,6 @@
             this.conserjesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsConserjes = new Administrador.dsConserjes();
             this.button11 = new System.Windows.Forms.Button();
-            this.btnMucamas_save = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvMucamas = new System.Windows.Forms.DataGridView();
@@ -169,7 +164,6 @@
             this.tpCtaGastos = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.button12 = new System.Windows.Forms.Button();
-            this.btnGastos_save = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoCuenta = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -183,12 +177,10 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.idtcuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.tpSocios = new System.Windows.Forms.TabPage();
             this.button14 = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
-            this.btnSocios_save = new System.Windows.Forms.Button();
             this.dgvSocios = new System.Windows.Forms.DataGridView();
             this.nroSocioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -205,7 +197,6 @@
             this.tPromos = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.button15 = new System.Windows.Forms.Button();
-            this.btnPromociones_savePromo = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descuentoFijoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -230,9 +221,9 @@
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tpLavadero = new System.Windows.Forms.TabPage();
             this.button16 = new System.Windows.Forms.Button();
-            this.tpLavadero_BtnSave = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -289,7 +280,7 @@
             this.habitacionesTableAdapter = new Administrador.dsHabitacionesTableAdapters.habitacionesTableAdapter();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.comprasTableAdapter = new Administrador.dsComprasTableAdapters.comprasTableAdapter();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpHabitaciones2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
@@ -405,6 +396,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1070, 622);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tpHabitaciones2
             // 
@@ -473,7 +465,7 @@
             this.dataGridView8.ShowCellErrors = false;
             this.dataGridView8.ShowCellToolTips = false;
             this.dataGridView8.ShowRowErrors = false;
-            this.dataGridView8.Size = new System.Drawing.Size(1000, 423);
+            this.dataGridView8.Size = new System.Drawing.Size(1000, 493);
             this.dataGridView8.TabIndex = 6;
             // 
             // nroHabitacionDataGridViewTextBoxColumn
@@ -504,6 +496,8 @@
             // 
             this.categoriasBindingSource.DataMember = "categorias";
             this.categoriasBindingSource.DataSource = this.dsCategorias;
+            this.categoriasBindingSource.CurrentChanged += new System.EventHandler(this.categoriasBindingSource_CurrentChanged);
+            this.categoriasBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.categoriasBindingSource_AddingNew);
             // 
             // dsCategorias
             // 
@@ -603,7 +597,6 @@
             // 
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.lblCat_msjSalida);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -614,7 +607,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(590, 290);
+            this.button5.Location = new System.Drawing.Point(500, 93);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 40);
             this.button5.TabIndex = 29;
@@ -628,24 +621,12 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCat_msjSalida.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCat_msjSalida.Location = new System.Drawing.Point(500, 347);
+            this.lblCat_msjSalida.Location = new System.Drawing.Point(500, 150);
             this.lblCat_msjSalida.Name = "lblCat_msjSalida";
             this.lblCat_msjSalida.Size = new System.Drawing.Size(535, 195);
             this.lblCat_msjSalida.TabIndex = 28;
             this.lblCat_msjSalida.Text = "msj Salida";
             this.lblCat_msjSalida.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button1.Location = new System.Drawing.Point(590, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Guardar Cambios";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dataGridView1
             // 
@@ -714,7 +695,6 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.button6);
-            this.splitContainer2.Panel1.Controls.Add(this.btnArt_save);
             this.splitContainer2.Panel1.Controls.Add(this.dgvArticulos);
             this.splitContainer2.Panel1.Controls.Add(this.label24);
             // 
@@ -737,26 +717,13 @@
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.Location = new System.Drawing.Point(170, 516);
+            this.button6.Location = new System.Drawing.Point(10, 520);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(80, 30);
             this.button6.TabIndex = 9;
             this.button6.Text = "Imprimir";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // btnArt_save
-            // 
-            this.btnArt_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnArt_save.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArt_save.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnArt_save.Location = new System.Drawing.Point(10, 515);
-            this.btnArt_save.Name = "btnArt_save";
-            this.btnArt_save.Size = new System.Drawing.Size(140, 30);
-            this.btnArt_save.TabIndex = 4;
-            this.btnArt_save.Text = "Guardar";
-            this.btnArt_save.UseVisualStyleBackColor = true;
-            this.btnArt_save.Click += new System.EventHandler(this.btnArtSave_Click);
             // 
             // dgvArticulos
             // 
@@ -1056,7 +1023,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(260, 18);
+            this.button7.Location = new System.Drawing.Point(260, 10);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(80, 29);
             this.button7.TabIndex = 9;
@@ -1068,7 +1035,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(30, 20);
+            this.label34.Location = new System.Drawing.Point(30, 12);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(179, 23);
             this.label34.TabIndex = 5;
@@ -1101,13 +1068,13 @@
             this.extensionDataGridViewTextBoxColumn,
             this.extensionPrecio});
             this.dgvTarifas.DataSource = this.tarifasBindingSource;
-            this.dgvTarifas.Location = new System.Drawing.Point(30, 60);
+            this.dgvTarifas.Location = new System.Drawing.Point(0, 40);
             this.dgvTarifas.Name = "dgvTarifas";
-            this.dgvTarifas.RowTemplate.Height = 30;
+            this.dgvTarifas.RowTemplate.Height = 25;
             this.dgvTarifas.ShowCellErrors = false;
             this.dgvTarifas.ShowCellToolTips = false;
             this.dgvTarifas.ShowRowErrors = false;
-            this.dgvTarifas.Size = new System.Drawing.Size(1000, 420);
+            this.dgvTarifas.Size = new System.Drawing.Size(1000, 519);
             this.dgvTarifas.TabIndex = 4;
             // 
             // nombre
@@ -1120,7 +1087,7 @@
             this.nombre.HeaderText = "Categoría";
             this.nombre.Name = "nombre";
             this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.nombre.ValueMember = "id";
             // 
             // diaComboBoxColumn
@@ -1133,7 +1100,7 @@
             this.diaComboBoxColumn.HeaderText = "Día";
             this.diaComboBoxColumn.Name = "diaComboBoxColumn";
             this.diaComboBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.diaComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.diaComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.diaComboBoxColumn.ValueMember = "id";
             // 
             // diasBindingSource
@@ -1220,7 +1187,6 @@
             // tpTarjetas
             // 
             this.tpTarjetas.Controls.Add(this.button8);
-            this.tpTarjetas.Controls.Add(this.btnTarj_save);
             this.tpTarjetas.Controls.Add(this.label18);
             this.tpTarjetas.Controls.Add(this.dataGridView2);
             this.tpTarjetas.Location = new System.Drawing.Point(4, 54);
@@ -1232,25 +1198,13 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(560, 300);
+            this.button8.Location = new System.Drawing.Point(530, 80);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(90, 40);
             this.button8.TabIndex = 9;
             this.button8.Text = "Imprimir";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // btnTarj_save
-            // 
-            this.btnTarj_save.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTarj_save.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnTarj_save.Location = new System.Drawing.Point(560, 230);
-            this.btnTarj_save.Name = "btnTarj_save";
-            this.btnTarj_save.Size = new System.Drawing.Size(120, 50);
-            this.btnTarj_save.TabIndex = 5;
-            this.btnTarj_save.Text = "Guardar Cambios";
-            this.btnTarj_save.UseVisualStyleBackColor = true;
-            this.btnTarj_save.Click += new System.EventHandler(this.btnTarj_save_Click);
             // 
             // label18
             // 
@@ -1303,6 +1257,8 @@
             // 
             this.mediosDePagoBindingSource.DataMember = "mediosDePago";
             this.mediosDePagoBindingSource.DataSource = this.dsFormasDePago;
+            this.mediosDePagoBindingSource.CurrentChanged += new System.EventHandler(this.mediosDePagoBindingSource_CurrentChanged);
+            this.mediosDePagoBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.mediosDePagoBindingSource_AddingNew);
             // 
             // dsFormasDePago
             // 
@@ -1328,9 +1284,9 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(520, 440);
+            this.button9.Location = new System.Drawing.Point(510, 500);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(80, 30);
+            this.button9.Size = new System.Drawing.Size(90, 40);
             this.button9.TabIndex = 11;
             this.button9.Text = "Imprimir";
             this.button9.UseVisualStyleBackColor = true;
@@ -1419,7 +1375,7 @@
             this.dataGridView3.ShowCellErrors = false;
             this.dataGridView3.ShowCellToolTips = false;
             this.dataGridView3.ShowRowErrors = false;
-            this.dataGridView3.Size = new System.Drawing.Size(400, 495);
+            this.dataGridView3.Size = new System.Drawing.Size(400, 470);
             this.dataGridView3.TabIndex = 4;
             this.dataGridView3.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView3_UserDeletingRow);
             this.dataGridView3.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView3_UserDeletedRow);
@@ -1481,14 +1437,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.button10);
-            this.splitContainer1.Panel1.Controls.Add(this.btnConserjes_save);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.panel2);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button11);
-            this.splitContainer1.Panel2.Controls.Add(this.btnMucamas_save);
             this.splitContainer1.Panel2.Controls.Add(this.label22);
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Size = new System.Drawing.Size(1056, 558);
@@ -1498,24 +1452,13 @@
             // button10
             // 
             this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button10.Location = new System.Drawing.Point(220, 519);
+            this.button10.Location = new System.Drawing.Point(10, 516);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(80, 30);
             this.button10.TabIndex = 9;
             this.button10.Text = "Imprimir";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // btnConserjes_save
-            // 
-            this.btnConserjes_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnConserjes_save.Location = new System.Drawing.Point(10, 520);
-            this.btnConserjes_save.Name = "btnConserjes_save";
-            this.btnConserjes_save.Size = new System.Drawing.Size(180, 30);
-            this.btnConserjes_save.TabIndex = 4;
-            this.btnConserjes_save.Text = "Guardar Conserjes";
-            this.btnConserjes_save.UseVisualStyleBackColor = true;
-            this.btnConserjes_save.Click += new System.EventHandler(this.btnConserjes_save_Click);
             // 
             // label2
             // 
@@ -1601,6 +1544,8 @@
             // 
             this.conserjesBindingSource.DataMember = "conserjes";
             this.conserjesBindingSource.DataSource = this.dsConserjes;
+            this.conserjesBindingSource.CurrentChanged += new System.EventHandler(this.conserjesBindingSource_CurrentChanged);
+            this.conserjesBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.conserjesBindingSource_AddingNew);
             // 
             // dsConserjes
             // 
@@ -1610,24 +1555,13 @@
             // button11
             // 
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button11.Location = new System.Drawing.Point(220, 519);
+            this.button11.Location = new System.Drawing.Point(10, 516);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(80, 30);
             this.button11.TabIndex = 9;
             this.button11.Text = "Imprimir";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // btnMucamas_save
-            // 
-            this.btnMucamas_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnMucamas_save.Location = new System.Drawing.Point(10, 520);
-            this.btnMucamas_save.Name = "btnMucamas_save";
-            this.btnMucamas_save.Size = new System.Drawing.Size(180, 30);
-            this.btnMucamas_save.TabIndex = 5;
-            this.btnMucamas_save.Text = "Guardar Mucamas";
-            this.btnMucamas_save.UseVisualStyleBackColor = true;
-            this.btnMucamas_save.Click += new System.EventHandler(this.btnMucamas_save_Click);
             // 
             // label22
             // 
@@ -1697,6 +1631,8 @@
             // 
             this.mucamasBindingSource.DataMember = "mucamas";
             this.mucamasBindingSource.DataSource = this.dsMucamas;
+            this.mucamasBindingSource.CurrentChanged += new System.EventHandler(this.mucamasBindingSource_CurrentChanged);
+            this.mucamasBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.mucamasBindingSource_AddingNew);
             // 
             // dsMucamas
             // 
@@ -1724,7 +1660,6 @@
             // 
             this.splitContainer4.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer4.Panel1.Controls.Add(this.button12);
-            this.splitContainer4.Panel1.Controls.Add(this.btnGastos_save);
             this.splitContainer4.Panel1.Controls.Add(this.dataGridView4);
             this.splitContainer4.Panel1.Controls.Add(this.label23);
             // 
@@ -1733,7 +1668,6 @@
             this.splitContainer4.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer4.Panel2.Controls.Add(this.button13);
             this.splitContainer4.Panel2.Controls.Add(this.dataGridView6);
-            this.splitContainer4.Panel2.Controls.Add(this.button3);
             this.splitContainer4.Panel2.Controls.Add(this.label32);
             this.splitContainer4.Size = new System.Drawing.Size(1062, 564);
             this.splitContainer4.SplitterDistance = 529;
@@ -1742,24 +1676,13 @@
             // button12
             // 
             this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button12.Location = new System.Drawing.Point(140, 526);
+            this.button12.Location = new System.Drawing.Point(20, 526);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(80, 30);
             this.button12.TabIndex = 9;
             this.button12.Text = "Imprimir";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // btnGastos_save
-            // 
-            this.btnGastos_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGastos_save.Location = new System.Drawing.Point(20, 526);
-            this.btnGastos_save.Name = "btnGastos_save";
-            this.btnGastos_save.Size = new System.Drawing.Size(100, 30);
-            this.btnGastos_save.TabIndex = 7;
-            this.btnGastos_save.Text = "Guardar";
-            this.btnGastos_save.UseVisualStyleBackColor = true;
-            this.btnGastos_save.Click += new System.EventHandler(this.btnGastos_save_Click);
             // 
             // dataGridView4
             // 
@@ -1803,6 +1726,8 @@
             // 
             this.tiposCuentasGastosBindingSource.DataMember = "tiposCuentasGastos";
             this.tiposCuentasGastosBindingSource.DataSource = this.dsTiposCuentasGastos;
+            this.tiposCuentasGastosBindingSource.CurrentChanged += new System.EventHandler(this.tiposCuentasGastosBindingSource_CurrentChanged);
+            this.tiposCuentasGastosBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.tiposCuentasGastosBindingSource_AddingNew);
             // 
             // dsTiposCuentasGastos
             // 
@@ -1820,6 +1745,8 @@
             // 
             this.cuentasGastosBindingSource.DataMember = "cuentasGastos";
             this.cuentasGastosBindingSource.DataSource = this.dsCuentaGastos;
+            this.cuentasGastosBindingSource.CurrentChanged += new System.EventHandler(this.cuentasGastosBindingSource_CurrentChanged);
+            this.cuentasGastosBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.cuentasGastosBindingSource_AddingNew);
             // 
             // dsCuentaGastos
             // 
@@ -1841,7 +1768,7 @@
             // button13
             // 
             this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button13.Location = new System.Drawing.Point(130, 524);
+            this.button13.Location = new System.Drawing.Point(20, 524);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(80, 31);
             this.button13.TabIndex = 11;
@@ -1888,17 +1815,6 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(20, 525);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 30);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
             // label32
             // 
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -1915,7 +1831,6 @@
             // 
             this.tpSocios.Controls.Add(this.button14);
             this.tpSocios.Controls.Add(this.label33);
-            this.tpSocios.Controls.Add(this.btnSocios_save);
             this.tpSocios.Controls.Add(this.dgvSocios);
             this.tpSocios.Location = new System.Drawing.Point(4, 54);
             this.tpSocios.Name = "tpSocios";
@@ -1926,10 +1841,9 @@
             // 
             // button14
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button14.Location = new System.Drawing.Point(160, 528);
+            this.button14.Location = new System.Drawing.Point(242, 15);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(100, 32);
+            this.button14.Size = new System.Drawing.Size(100, 28);
             this.button14.TabIndex = 9;
             this.button14.Text = "Imprimir";
             this.button14.UseVisualStyleBackColor = true;
@@ -1944,17 +1858,6 @@
             this.label33.Size = new System.Drawing.Size(173, 23);
             this.label33.TabIndex = 8;
             this.label33.Text = "Listado de Socios";
-            // 
-            // btnSocios_save
-            // 
-            this.btnSocios_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSocios_save.Location = new System.Drawing.Point(40, 529);
-            this.btnSocios_save.Name = "btnSocios_save";
-            this.btnSocios_save.Size = new System.Drawing.Size(110, 30);
-            this.btnSocios_save.TabIndex = 7;
-            this.btnSocios_save.Text = "Guardar";
-            this.btnSocios_save.UseVisualStyleBackColor = true;
-            this.btnSocios_save.Click += new System.EventHandler(this.btnSocios_save_Click);
             // 
             // dgvSocios
             // 
@@ -1980,7 +1883,7 @@
             this.dgvSocios.Location = new System.Drawing.Point(40, 53);
             this.dgvSocios.Name = "dgvSocios";
             this.dgvSocios.RowTemplate.Height = 30;
-            this.dgvSocios.Size = new System.Drawing.Size(980, 467);
+            this.dgvSocios.Size = new System.Drawing.Size(980, 497);
             this.dgvSocios.TabIndex = 1;
             // 
             // nroSocioDataGridViewTextBoxColumn
@@ -2008,9 +1911,9 @@
             // fechaAltaSocio
             // 
             this.fechaAltaSocio.DataPropertyName = "fechaAltaSocio";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.fechaAltaSocio.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Format = "d";
+            dataGridViewCellStyle17.NullValue = null;
+            this.fechaAltaSocio.DefaultCellStyle = dataGridViewCellStyle17;
             this.fechaAltaSocio.FillWeight = 90F;
             this.fechaAltaSocio.HeaderText = "Fecha Alta";
             this.fechaAltaSocio.Name = "fechaAltaSocio";
@@ -2054,9 +1957,9 @@
             // fechaVencimientoPuntaje
             // 
             this.fechaVencimientoPuntaje.DataPropertyName = "fechaVencimientoPuntaje";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.fechaVencimientoPuntaje.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Format = "d";
+            dataGridViewCellStyle18.NullValue = null;
+            this.fechaVencimientoPuntaje.DefaultCellStyle = dataGridViewCellStyle18;
             this.fechaVencimientoPuntaje.HeaderText = "Venc.Ptos";
             this.fechaVencimientoPuntaje.Name = "fechaVencimientoPuntaje";
             // 
@@ -2064,6 +1967,8 @@
             // 
             this.sociosBindingSource.DataMember = "socios";
             this.sociosBindingSource.DataSource = this.dsSocios;
+            this.sociosBindingSource.CurrentChanged += new System.EventHandler(this.sociosBindingSource_CurrentChanged);
+            this.sociosBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.sociosBindingSource_AddingNew);
             // 
             // dsSocios
             // 
@@ -2090,7 +1995,6 @@
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.Controls.Add(this.button15);
-            this.splitContainer3.Panel1.Controls.Add(this.btnPromociones_savePromo);
             this.splitContainer3.Panel1.Controls.Add(this.dataGridView5);
             this.splitContainer3.Panel1.Controls.Add(this.label31);
             // 
@@ -2111,24 +2015,13 @@
             // button15
             // 
             this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button15.Location = new System.Drawing.Point(190, 515);
+            this.button15.Location = new System.Drawing.Point(16, 512);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(90, 31);
             this.button15.TabIndex = 19;
             this.button15.Text = "Imprimir";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // btnPromociones_savePromo
-            // 
-            this.btnPromociones_savePromo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPromociones_savePromo.Location = new System.Drawing.Point(14, 515);
-            this.btnPromociones_savePromo.Name = "btnPromociones_savePromo";
-            this.btnPromociones_savePromo.Size = new System.Drawing.Size(160, 30);
-            this.btnPromociones_savePromo.TabIndex = 18;
-            this.btnPromociones_savePromo.Text = "Guardar Cambios";
-            this.btnPromociones_savePromo.UseVisualStyleBackColor = true;
-            this.btnPromociones_savePromo.Click += new System.EventHandler(this.btnPromociones_savePromo_Click);
             // 
             // dataGridView5
             // 
@@ -2141,14 +2034,14 @@
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView5.CausesValidation = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn8,
@@ -2175,9 +2068,9 @@
             // descuentoFijoDataGridViewTextBoxColumn
             // 
             this.descuentoFijoDataGridViewTextBoxColumn.DataPropertyName = "descuentoFijo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.descuentoFijoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.descuentoFijoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
             this.descuentoFijoDataGridViewTextBoxColumn.FillWeight = 15F;
             this.descuentoFijoDataGridViewTextBoxColumn.HeaderText = "$ Desc";
             this.descuentoFijoDataGridViewTextBoxColumn.Name = "descuentoFijoDataGridViewTextBoxColumn";
@@ -2185,9 +2078,9 @@
             // descuentoPorcentajeDataGridViewTextBoxColumn
             // 
             this.descuentoPorcentajeDataGridViewTextBoxColumn.DataPropertyName = "descuentoPorcentaje";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.descuentoPorcentajeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.descuentoPorcentajeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
             this.descuentoPorcentajeDataGridViewTextBoxColumn.FillWeight = 15F;
             this.descuentoPorcentajeDataGridViewTextBoxColumn.HeaderText = "% Desc";
             this.descuentoPorcentajeDataGridViewTextBoxColumn.Name = "descuentoPorcentajeDataGridViewTextBoxColumn";
@@ -2195,8 +2088,8 @@
             // cantidadArticulosDataGridViewTextBoxColumn
             // 
             this.cantidadArticulosDataGridViewTextBoxColumn.DataPropertyName = "cantidadArticulos";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidadArticulosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidadArticulosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle22;
             this.cantidadArticulosDataGridViewTextBoxColumn.FillWeight = 15F;
             this.cantidadArticulosDataGridViewTextBoxColumn.HeaderText = "Cant.Art Gratis";
             this.cantidadArticulosDataGridViewTextBoxColumn.Name = "cantidadArticulosDataGridViewTextBoxColumn";
@@ -2205,6 +2098,8 @@
             // 
             this.descuentosBindingSource1.DataMember = "descuentos";
             this.descuentosBindingSource1.DataSource = this.dsPromociones;
+            this.descuentosBindingSource1.CurrentChanged += new System.EventHandler(this.descuentosBindingSource1_CurrentChanged);
+            this.descuentosBindingSource1.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.descuentosBindingSource1_AddingNew);
             // 
             // dsPromociones
             // 
@@ -2370,7 +2265,6 @@
             // tpLavadero
             // 
             this.tpLavadero.Controls.Add(this.button16);
-            this.tpLavadero.Controls.Add(this.tpLavadero_BtnSave);
             this.tpLavadero.Controls.Add(this.label35);
             this.tpLavadero.Controls.Add(this.dataGridView7);
             this.tpLavadero.Location = new System.Drawing.Point(4, 54);
@@ -2383,24 +2277,13 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(860, 200);
+            this.button16.Location = new System.Drawing.Point(850, 100);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(100, 30);
             this.button16.TabIndex = 12;
             this.button16.Text = "Imprimir";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // tpLavadero_BtnSave
-            // 
-            this.tpLavadero_BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tpLavadero_BtnSave.Location = new System.Drawing.Point(860, 153);
-            this.tpLavadero_BtnSave.Name = "tpLavadero_BtnSave";
-            this.tpLavadero_BtnSave.Size = new System.Drawing.Size(110, 30);
-            this.tpLavadero_BtnSave.TabIndex = 11;
-            this.tpLavadero_BtnSave.Text = "Guardar";
-            this.tpLavadero_BtnSave.UseVisualStyleBackColor = true;
-            this.tpLavadero_BtnSave.Click += new System.EventHandler(this.tpLavadero_BtnSave_Click);
             // 
             // label35
             // 
@@ -2433,6 +2316,13 @@
             this.dataGridView7.Size = new System.Drawing.Size(749, 456);
             this.dataGridView7.TabIndex = 9;
             // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.FillWeight = 120F;
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            // 
             // stockInicial
             // 
             this.stockInicial.DataPropertyName = "stockInicial";
@@ -2463,6 +2353,8 @@
             // 
             this.ropaHotelBindingSource.DataMember = "ropaHotel";
             this.ropaHotelBindingSource.DataSource = this.dsRopaHotel;
+            this.ropaHotelBindingSource.CurrentChanged += new System.EventHandler(this.ropaHotelBindingSource_CurrentChanged);
+            this.ropaHotelBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.ropaHotelBindingSource_AddingNew);
             // 
             // dsRopaHotel
             // 
@@ -2471,6 +2363,7 @@
             // 
             // tpCompras
             // 
+            this.tpCompras.Controls.Add(this.button1);
             this.tpCompras.Controls.Add(this.label9);
             this.tpCompras.Controls.Add(this.nPrecioUnit);
             this.tpCompras.Controls.Add(this.label8);
@@ -2641,14 +2534,14 @@
             this.dgvCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompras.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvCompras.CausesValidation = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.compraIdDataGridViewTextBoxColumn,
@@ -2659,7 +2552,7 @@
             this.reposicionDataGridViewTextBoxColumn,
             this.precioUnitario});
             this.dgvCompras.DataSource = this.comprasBindingSource;
-            this.dgvCompras.Location = new System.Drawing.Point(30, 60);
+            this.dgvCompras.Location = new System.Drawing.Point(30, 70);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
             this.dgvCompras.RowHeadersVisible = false;
@@ -2667,7 +2560,7 @@
             this.dgvCompras.ShowCellErrors = false;
             this.dgvCompras.ShowCellToolTips = false;
             this.dgvCompras.ShowRowErrors = false;
-            this.dgvCompras.Size = new System.Drawing.Size(770, 490);
+            this.dgvCompras.Size = new System.Drawing.Size(770, 480);
             this.dgvCompras.TabIndex = 6;
             this.dgvCompras.VirtualMode = true;
             // 
@@ -2690,8 +2583,8 @@
             // fechaIngresoDataGridViewTextBoxColumn
             // 
             this.fechaIngresoDataGridViewTextBoxColumn.DataPropertyName = "fechaIngreso";
-            dataGridViewCellStyle8.Format = "d";
-            this.fechaIngresoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.Format = "d";
+            this.fechaIngresoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle24;
             this.fechaIngresoDataGridViewTextBoxColumn.FillWeight = 80F;
             this.fechaIngresoDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaIngresoDataGridViewTextBoxColumn.Name = "fechaIngresoDataGridViewTextBoxColumn";
@@ -2743,7 +2636,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 20);
+            this.label3.Location = new System.Drawing.Point(40, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 23);
             this.label3.TabIndex = 0;
@@ -2854,12 +2747,15 @@
             // 
             this.comprasTableAdapter.ClearBeforeFill = true;
             // 
-            // descripcionDataGridViewTextBoxColumn
+            // button1
             // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.FillWeight = 120F;
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.button1.Location = new System.Drawing.Point(190, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 27);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Imprimir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FAdministrador
             // 
@@ -3001,7 +2897,6 @@
         private Administrador.dsCategoriasTableAdapters.categoriasTableAdapter categoriasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aliasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridView dataGridView2;
         private dsMediosPago dsFormasDePago;
@@ -3009,7 +2904,6 @@
         private Administrador.hotelDataSetTableAdapters.mediosDePagoTableAdapter mediosDePagoTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Button btnTarj_save;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dataGridView3;
@@ -3034,8 +2928,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button btnConserjes_save;
-        private System.Windows.Forms.Button btnMucamas_save;
         private System.Windows.Forms.DataGridView dataGridView4;
         private dsCuentaGastos dsCuentaGastos;
         private System.Windows.Forms.BindingSource cuentasGastosBindingSource;
@@ -3050,7 +2942,6 @@
         private dsSocios dsSocios;
         private System.Windows.Forms.BindingSource sociosBindingSource;
         private Administrador.dsSociosTableAdapters.sociosTableAdapter sociosTableAdapter;
-        private System.Windows.Forms.Button btnSocios_save;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
@@ -3064,7 +2955,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoArticuloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn controlStockDataGridViewCheckBoxColumn;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button btnArt_save;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox listArtCompuestos;
         private System.Windows.Forms.DataGridView dgvCompuestoPor;
@@ -3124,16 +3014,13 @@
         private dsPromociones dsPromociones;
         private System.Windows.Forms.BindingSource descuentosBindingSource1;
         private Administrador.dsPromocionesTableAdapters.descuentosTableAdapter descuentosTableAdapter1;
-        private System.Windows.Forms.Button btnPromociones_savePromo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn7;
         private dsTiposCuentasGastos dsTiposCuentasGastos;
         private System.Windows.Forms.BindingSource tiposCuentasGastosBindingSource;
         private Administrador.dsTiposCuentasGastosTableAdapters.tiposCuentasGastosTableAdapter tiposCuentasGastosTableAdapter;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.Button btnGastos_save;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentoFijoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentoPorcentajeDataGridViewTextBoxColumn;
@@ -3147,7 +3034,6 @@
         private System.Windows.Forms.TabPage tpLavadero;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.Button tpLavadero_BtnSave;
         private dsRopaHotel dsRopaHotel;
         private System.Windows.Forms.BindingSource ropaHotelBindingSource;
         private Administrador.dsRopaHotelTableAdapters.ropaHotelTableAdapter ropaHotelTableAdapter;
@@ -3203,17 +3089,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewComboBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewComboBoxColumn diaComboBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desdeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duracionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn toleranciaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hastaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn pernocteDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioTNDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn extensionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn extensionPrecio;
         private System.Windows.Forms.NumericUpDown nCompra;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown nPrecioUnit;
@@ -3238,6 +3113,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reposicionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewComboBoxColumn diaComboBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desdeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duracionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toleranciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hastaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn pernocteDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioTNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn extensionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn extensionPrecio;
+        private System.Windows.Forms.Button button1;
     }
 }
 

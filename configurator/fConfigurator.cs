@@ -34,7 +34,7 @@ namespace Configurator
                 conn.Open();
                 foreach (string s in SerialPort.GetPortNames())
                 {
-                    portSeñalIn.Items.Add(s);
+                    portSenialIn.Items.Add(s);
                 }
                 foreach (string printer in PrinterSettings.InstalledPrinters)
                 {
@@ -47,8 +47,8 @@ namespace Configurator
             ImpresoraCaja.SelectedItem = tools.obtenerParametroString("ImpresoraCaja");
             ImpresoraCocina.SelectedItem = tools.obtenerParametroString("ImpresoraCocina");
             ImpresoraTickets.SelectedItem = tools.obtenerParametroString("ImpresoraTickets");
-            portSeñalIn.SelectedItem = tools.obtenerParametroString("portSenialIn");
-            modSeñalizacion.SelectedItem = tools.obtenerParametroString("modSenializacion");
+            portSenialIn.SelectedItem = tools.obtenerParametroString("portSenialIn");
+            modSenializacion.SelectedItem = tools.obtenerParametroString("modSenializacion");
             stockCierreCaja.SelectedItem = tools.obtenerParametroString("stockCierreCaja");
             nombreHotel.Text = tools.obtenerParametroString("nombreHotel");            
             nroHotelCodBarras.Text = tools.obtenerParametroInt("nroHotelCodBarras").ToString();

@@ -25,8 +25,9 @@ namespace Hoteles.Entities
                 SqlCommand comm;
                 comm = new SqlCommand("eventosCierre_insertarApertura", fPrincipal2.conn);
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@habitacion", habitacion);                         
-                comm.Parameters.AddWithValue("@detalle", detalle);
+                comm.Parameters.AddWithValue("@habitacion", habitacion);
+                if (!String.IsNullOrEmpty(detalle))                             
+                    comm.Parameters.AddWithValue("@detalle", detalle);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -35,14 +36,16 @@ namespace Hoteles.Entities
             }
         }
 
-        public static void grabarCierre(int habitacion)
+        public static void grabarCierre(int habitacion,string detalle)
         {
             try
             {
                 SqlCommand comm;
                 comm = new SqlCommand("eventosCierre_insertarCierre", fPrincipal2.conn);
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@habitacion", habitacion);                
+                comm.Parameters.AddWithValue("@habitacion", habitacion);
+                if(!String.IsNullOrEmpty(detalle))
+                    comm.Parameters.AddWithValue("@detalle", detalle);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -51,6 +54,23 @@ namespace Hoteles.Entities
             }
         }
 
-
+        public static DataTable consultarBitacora()
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("eventosCierre_consultar", fPrincipal2.conn);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                dataAdapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD("Fallo la grabacion de Eventos Al Cierre \r\n" + ex.Message + "-" + ex.StackTrace);
+                return null;
+            }
+            
+        }
     }
 }

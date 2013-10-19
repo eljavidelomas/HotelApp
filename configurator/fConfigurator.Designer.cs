@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.baudrate = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.diasParaVencimientoPuntos = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.emisionTicketAsignar = new System.Windows.Forms.CheckBox();
@@ -55,7 +57,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.bytes = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.modSeñalizacion = new System.Windows.Forms.ComboBox();
+            this.modSenializacion = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.portSeñalOut = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -72,7 +74,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.nroHotelCodBarras = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.portSeñalIn = new System.Windows.Forms.ComboBox();
+            this.portSenialIn = new System.Windows.Forms.ComboBox();
             this.ImpresoraTickets = new System.Windows.Forms.ComboBox();
             this.ImpresoraCaja = new System.Windows.Forms.ComboBox();
             this.ImpresoraCocina = new System.Windows.Forms.ComboBox();
@@ -92,8 +94,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.nombreHotel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.baudrate = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.panelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,7 +128,7 @@
             this.panelPrincipal.Controls.Add(this.label23);
             this.panelPrincipal.Controls.Add(this.bytes);
             this.panelPrincipal.Controls.Add(this.label21);
-            this.panelPrincipal.Controls.Add(this.modSeñalizacion);
+            this.panelPrincipal.Controls.Add(this.modSenializacion);
             this.panelPrincipal.Controls.Add(this.label20);
             this.panelPrincipal.Controls.Add(this.portSeñalOut);
             this.panelPrincipal.Controls.Add(this.label19);
@@ -145,7 +145,7 @@
             this.panelPrincipal.Controls.Add(this.button1);
             this.panelPrincipal.Controls.Add(this.nroHotelCodBarras);
             this.panelPrincipal.Controls.Add(this.label16);
-            this.panelPrincipal.Controls.Add(this.portSeñalIn);
+            this.panelPrincipal.Controls.Add(this.portSenialIn);
             this.panelPrincipal.Controls.Add(this.ImpresoraTickets);
             this.panelPrincipal.Controls.Add(this.ImpresoraCaja);
             this.panelPrincipal.Controls.Add(this.ImpresoraCocina);
@@ -169,8 +169,26 @@
             this.panelPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(969, 750);
+            this.panelPrincipal.Size = new System.Drawing.Size(969, 742);
             this.panelPrincipal.TabIndex = 0;
+            // 
+            // baudrate
+            // 
+            this.baudrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.baudrate.Location = new System.Drawing.Point(328, 278);
+            this.baudrate.Name = "baudrate";
+            this.baudrate.Size = new System.Drawing.Size(90, 23);
+            this.baudrate.TabIndex = 97;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(114, 281);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(198, 17);
+            this.label32.TabIndex = 96;
+            this.label32.Text = "Baudios Port Señalización Ent";
             // 
             // diasParaVencimientoPuntos
             // 
@@ -437,18 +455,18 @@
             this.label21.TabIndex = 66;
             this.label21.Text = "Bytes";
             // 
-            // modSeñalizacion
+            // modSenializacion
             // 
-            this.modSeñalizacion.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.modSeñalizacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.modSeñalizacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modSeñalizacion.FormattingEnabled = true;
-            this.modSeñalizacion.Items.AddRange(new object[] {
+            this.modSenializacion.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.modSenializacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.modSenializacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.modSenializacion.FormattingEnabled = true;
+            this.modSenializacion.Items.AddRange(new object[] {
             "INTER"});
-            this.modSeñalizacion.Location = new System.Drawing.Point(330, 464);
-            this.modSeñalizacion.Name = "modSeñalizacion";
-            this.modSeñalizacion.Size = new System.Drawing.Size(118, 24);
-            this.modSeñalizacion.TabIndex = 65;
+            this.modSenializacion.Location = new System.Drawing.Point(330, 464);
+            this.modSenializacion.Name = "modSenializacion";
+            this.modSenializacion.Size = new System.Drawing.Size(118, 24);
+            this.modSenializacion.TabIndex = 65;
             // 
             // label20
             // 
@@ -613,19 +631,19 @@
             this.label16.TabIndex = 46;
             this.label16.Text = "Nro interno del hotel para codigo de barras";
             // 
-            // portSeñalIn
+            // portSenialIn
             // 
-            this.portSeñalIn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.portSeñalIn.DropDownHeight = 120;
-            this.portSeñalIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.portSeñalIn.DropDownWidth = 110;
-            this.portSeñalIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.portSeñalIn.IntegralHeight = false;
-            this.portSeñalIn.Location = new System.Drawing.Point(330, 243);
-            this.portSeñalIn.Name = "portSeñalIn";
-            this.portSeñalIn.Size = new System.Drawing.Size(170, 24);
-            this.portSeñalIn.TabIndex = 45;
-            this.portSeñalIn.DropDown += new System.EventHandler(this.AdjustWidthComboBox_DropDown);
+            this.portSenialIn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.portSenialIn.DropDownHeight = 120;
+            this.portSenialIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.portSenialIn.DropDownWidth = 110;
+            this.portSenialIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.portSenialIn.IntegralHeight = false;
+            this.portSenialIn.Location = new System.Drawing.Point(330, 243);
+            this.portSenialIn.Name = "portSenialIn";
+            this.portSenialIn.Size = new System.Drawing.Size(170, 24);
+            this.portSenialIn.TabIndex = 45;
+            this.portSenialIn.DropDown += new System.EventHandler(this.AdjustWidthComboBox_DropDown);
             // 
             // ImpresoraTickets
             // 
@@ -825,29 +843,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del Hotel";
             // 
-            // baudrate
-            // 
-            this.baudrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.baudrate.Location = new System.Drawing.Point(328, 278);
-            this.baudrate.Name = "baudrate";
-            this.baudrate.Size = new System.Drawing.Size(90, 23);
-            this.baudrate.TabIndex = 97;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(114, 281);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(198, 17);
-            this.label32.TabIndex = 96;
-            this.label32.Text = "Baudios Port Señalización Ent";
-            // 
             // fConfigurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 750);
+            this.ClientSize = new System.Drawing.Size(969, 742);
             this.Controls.Add(this.panelPrincipal);
             this.Name = "fConfigurator";
             this.Text = "HotelApp - Configurator";
@@ -880,7 +880,7 @@
         private System.Windows.Forms.ComboBox ImpresoraCocina;
         private System.Windows.Forms.ComboBox ImpresoraTickets;
         private System.Windows.Forms.ComboBox ImpresoraCaja;
-        private System.Windows.Forms.ComboBox portSeñalIn;
+        private System.Windows.Forms.ComboBox portSenialIn;
         private System.Windows.Forms.TextBox nroHotelCodBarras;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button1;
@@ -896,7 +896,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox portSeñalOut;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox modSeñalizacion;
+        private System.Windows.Forms.ComboBox modSenializacion;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox bytes;
         private System.Windows.Forms.Label label21;

@@ -79,7 +79,7 @@ namespace Administrador
                 this.categoriasTableAdapter.Fill(this.dsCategorias.categorias);
 
                 //int valSel = (int) ( listArtCompuestos.SelectedValue== null?0:listArtCompuestos.SelectedValue);
-                if(listArtCompuestos.SelectedValue != null)
+                if (listArtCompuestos.SelectedValue != null)
                     articulosCompuestos_getTableAdapter.Fill(dsCompuestoPor.articulosCompuestos_get, (int)listArtCompuestos.SelectedValue);
                 descuentos_ObtenerArticulosByDescuentoIdTableAdapter.Fill(spDescuentosObtenerArticulosByDescId.Descuentos_ObtenerArticulosByDescuentoId, (int)listPromociones.SelectedValue);
                 dgvCompuestoPor.ClearSelection();
@@ -125,13 +125,13 @@ namespace Administrador
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)// Salvar categoria
         {
             try
             {
                 categoriasTableAdapter.Update(dsCategorias);
                 categoriasTableAdapter.Fill(dsCategorias.categorias);
-                loadCategorias();                
+                loadCategorias();
                 lblCat_msjSalida.Visible = false;
             }
             catch (Exception ex)
@@ -148,7 +148,7 @@ namespace Administrador
             }
         }
 
-        private void btnTarj_save_Click(object sender, EventArgs e)
+        private void btnTarj_save_Click(object sender, EventArgs e)// Salvar medio de pago
         {
             try
             {
@@ -201,7 +201,7 @@ namespace Administrador
             }
             catch (Exception ex)
             {
-                
+
             }
             conserjesTableAdapter.Fill(dsConserjes.conserjes);
         }
@@ -212,11 +212,7 @@ namespace Administrador
             mucamasTableAdapter.Fill(dsMucamas.mucamas);
         }
 
-        private void btnGastos_save_Click(object sender, EventArgs e)
-        {
-            cuentasGastosTableAdapter.Update(dsCuentaGastos);
-            cuentasGastosTableAdapter.Fill(dsCuentaGastos.cuentasGastos);
-        }
+      
 
         private void btnSocios_save_Click(object sender, EventArgs e)
         {
@@ -244,18 +240,18 @@ namespace Administrador
             articulosCompuestos_getTableAdapter.articulosCompuestos_delete(Convert.ToInt32(e.Row.Cells[2].Value));
         }
 
-        private void btnArtSave_Click(object sender, EventArgs e)
-        {            
-            articulosTableAdapter.Update(dsArticulos);
-            articulosTableAdapter.Fill(dsArticulos.articulos);
-            articulosTableAdapter1.Fill(dsArticulosCombo.articulos);
-            comboBox1_SelectedIndexChanged(listArtCompuestos, EventArgs.Empty);
+        //private void btnArtSave_Click(object sender, EventArgs e)// Salvar articulo
+        //{            
+        //    articulosTableAdapter.Update(dsArticulos);
+        //    articulosTableAdapter.Fill(dsArticulos.articulos);
+        //    articulosTableAdapter1.Fill(dsArticulosCombo.articulos);
+        //    comboBox1_SelectedIndexChanged(listArtCompuestos, EventArgs.Empty);
 
-        }
+        //}
 
         private void articulosBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
-             try
+            try
             {
                 if (((BindingSource)sender).Current != null)
                 {
@@ -265,7 +261,7 @@ namespace Administrador
                         articulosTableAdapter1.Fill(dsArticulosCombo.articulos);
                     }
                 }
-             }
+            }
             catch (Exception ex)
             {
                 LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
@@ -278,16 +274,16 @@ namespace Administrador
             try
             {
                 articulosTableAdapter.Update(dsArticulos.articulos);
-                articulosTableAdapter1.Fill(dsArticulosCombo.articulos);                
+                articulosTableAdapter1.Fill(dsArticulosCombo.articulos);
             }
             catch (Exception ex)
             {
                 if (ex.Message.ToLower().Contains("null"))
                 {
-                    MessageBox.Show("\r\nLos campos \"Stock Actual\", \"Stock Recomendado\" y \"Precio\" no puede estar vacios, debe completarlos con Cero.\r\n", "Error al Grabar Datos");                    
+                    MessageBox.Show("\r\nLos campos \"Stock Actual\", \"Stock Recomendado\" y \"Precio\" no puede estar vacios, debe completarlos con Cero.\r\n", "Error al Grabar Datos");
                 }
             }
-            dgvCompuestoPor.ClearSelection();            
+            dgvCompuestoPor.ClearSelection();
         }
 
         private void btnArtComp_save_Click(object sender, EventArgs e)
@@ -306,19 +302,31 @@ namespace Administrador
                     if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
                     {
                         tarifasTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                        tarifasTableAdapter.Fill(dsTarifas.tarifas);
                     }
                 }
             }
             catch (Exception ex)
             {
                 LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                //tarifasTableAdapter.Update(dsTarifas);
+                //tarifasTableAdapter.Fill(dsTarifas.tarifas);
+                MessageBox.Show("Error al ingresar un dato. Verifique el siguiente mensaje: \r\n" + ex.Message);
             }
             dgvCompuestoPor.ClearSelection();
         }
 
         private void tarifasBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            tarifasTableAdapter.Update(dsTarifas.tarifas);
+            try
+            {
+                tarifasTableAdapter.Update(dsTarifas.tarifas);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                tarifasTableAdapter.Fill(dsTarifas.tarifas);
+            }
         }
 
         private void loadCategorias()
@@ -328,7 +336,7 @@ namespace Administrador
             adapter.Fill(ds);
             ds.Tables[0].Rows.Add(0, "Ninguna");
         }
-                
+
         private void listPromociones_SelectedIndexChanged(object sender, EventArgs e)
         {
             int valor;
@@ -365,18 +373,6 @@ namespace Administrador
             }
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            tiposCuentasGastosTableAdapter.Update(dsTiposCuentasGastos);
-            tiposCuentasGastosTableAdapter.Fill(dsTiposCuentasGastos.tiposCuentasGastos);
-        }
-
-        private void tpLavadero_BtnSave_Click(object sender, EventArgs e)
-        {
-            ropaHotelTableAdapter.Update(dsRopaHotel);
-            ropaHotelTableAdapter.Fill(dsRopaHotel.ropaHotel);
-        }
-
         private void habitacionesBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             try
@@ -400,9 +396,9 @@ namespace Administrador
             habitacionesTableAdapter.Update(dsHabitaciones.habitaciones);
         }
 
-      
+
         private void button4_Click(object sender, EventArgs e)
-        {            
+        {
             grillaImprimir = dataGridView8;
             prepararImpresion();
         }
@@ -516,7 +512,7 @@ namespace Administrador
                     {
                         if (bNewPage)
                         {
-                           
+
                             String strDate = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
                             //Draw Date
                             e.Graphics.DrawString(strDate, new Font(grillaImprimir.Font, FontStyle.Bold),
@@ -668,7 +664,7 @@ namespace Administrador
             DateTime fecha = dpFecha.Value;
             int idArticulo = (int)cbArticulo.SelectedValue;
             string descripcion = cbArticulo.Text;
-                        
+
             try
             {
                 SqlCommand comm = new SqlCommand("compras_insertar", FAdministrador.conn);
@@ -705,6 +701,345 @@ namespace Administrador
         private void nCompra_Enter(object sender, EventArgs e)
         {
             nCompra.ResetText();
+        }
+
+        private void categoriasBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {
+                        categoriasTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+
+                lblCat_msjSalida.Visible = true;
+                lblCat_msjSalida.ForeColor = Color.Red;
+                if (ex.Message.Contains("FK_habitaciones_categorias"))
+                {
+                    lblCat_msjSalida.Text = "No se puede Eliminar la categoria, ya que esta asignada a alguna Habitación.";
+                }
+                else
+                    lblCat_msjSalida.Text = ex.Message;
+                categoriasTableAdapter.Fill(dsCategorias.categorias);
+
+            }
+        }
+
+        private void categoriasBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                categoriasTableAdapter.Update(dsCategorias.categorias);
+                lblCat_msjSalida.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+
+                lblCat_msjSalida.Visible = true;
+                lblCat_msjSalida.ForeColor = Color.Red;
+                if (ex.Message.Contains("FK_habitaciones_categorias"))
+                {
+                    lblCat_msjSalida.Text = "No se puede Eliminar la categoria, ya que esta asignada a alguna Habitación.";
+                }
+                if (ex.Message.Contains("FK_tarifas_tarifas"))
+                {
+                    lblCat_msjSalida.Text = "No se puede Eliminar la categoria, ya que esta asignada a algun Turno. Debe eliminar primero el turno o cambiar la categoria del turno.";
+                }
+                else
+                    lblCat_msjSalida.Text = ex.Message;
+                categoriasTableAdapter.Fill(dsCategorias.categorias);
+            }
+        }
+
+        private void mediosDePagoBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {
+                        mediosDePagoTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                mediosDePagoTableAdapter.Fill(dsFormasDePago.mediosDePago);
+            }
+        }
+
+        private void mediosDePagoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                mediosDePagoTableAdapter.Update(dsFormasDePago.mediosDePago);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);                
+                if (ex.Message.Contains("FK_turnos_mediosDePago"))
+                    MessageBox.Show("No se puede borrar el medio de pago por que hay turnos que lo tienen asignado.", "Error");
+                else
+                    MessageBox.Show(ex.Message + "-" + ex.StackTrace);
+                mediosDePagoTableAdapter.Fill(dsFormasDePago.mediosDePago);
+            }
+        }
+
+        private void conserjesBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {
+                        conserjesTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                conserjesTableAdapter.Fill(dsConserjes.conserjes);
+            }
+        }
+
+        private void conserjesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                conserjesTableAdapter.Update(dsConserjes.conserjes);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                conserjesTableAdapter.Fill(dsConserjes.conserjes);
+                MessageBox.Show(ex.Message + "-" + ex.StackTrace);                
+            }
+        }
+
+        private void mucamasBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {
+                        mucamasTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                mucamasTableAdapter.Fill(dsMucamas.mucamas);
+            }
+        }
+
+        private void mucamasBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                mucamasTableAdapter.Update(dsMucamas.mucamas);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                mucamasTableAdapter.Fill(dsMucamas.mucamas);
+                MessageBox.Show(ex.Message + "-" + ex.StackTrace);
+            }
+        }
+
+        private void cuentasGastosBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {
+                        cuentasGastosTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                cuentasGastosTableAdapter.Fill(dsCuentaGastos.cuentasGastos);
+            }
+        }
+
+        private void cuentasGastosBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                cuentasGastosTableAdapter.Update(dsCuentaGastos.cuentasGastos);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                cuentasGastosTableAdapter.Fill(dsCuentaGastos.cuentasGastos);
+                MessageBox.Show(ex.Message + "-" + ex.StackTrace);
+            }
+        }
+
+        private void tiposCuentasGastosBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {
+                        tiposCuentasGastosTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                tiposCuentasGastosTableAdapter.Fill(dsTiposCuentasGastos.tiposCuentasGastos);
+            }
+        }
+
+        private void tiposCuentasGastosBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                tiposCuentasGastosTableAdapter.Update(dsTiposCuentasGastos.tiposCuentasGastos);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                tiposCuentasGastosTableAdapter.Fill(dsTiposCuentasGastos.tiposCuentasGastos);
+                MessageBox.Show(ex.Message + "-" + ex.StackTrace);
+            }
+        }
+
+        private void sociosBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {
+                        sociosTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                sociosTableAdapter.Fill(dsSocios.socios);
+            }
+        }
+
+        private void sociosBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                sociosTableAdapter.Update(dsSocios.socios);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                sociosTableAdapter.Fill(dsSocios.socios);
+                MessageBox.Show(ex.Message + "-" + ex.StackTrace);
+            }
+        }
+
+        private void descuentosBindingSource1_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {                        
+                        descuentosTableAdapter1.Update(((DataRowView)((BindingSource)sender).Current).Row);                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                descuentosTableAdapter.Fill(dsDescuentos.descuentos);
+                descuentosTableAdapter1.Fill(dsPromociones.descuentos);
+            }
+        }
+
+        private void descuentosBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                descuentosTableAdapter1.Update(dsPromociones);                
+                descuentosTableAdapter.Fill(dsDescuentos.descuentos);
+                listPromociones_SelectedIndexChanged(listPromociones, EventArgs.Empty);
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                descuentosTableAdapter.Fill(dsDescuentos.descuentos);
+                descuentosTableAdapter1.Fill(dsPromociones.descuentos);
+                MessageBox.Show(ex.Message + "-" + ex.StackTrace);
+            }
+        }
+
+        private void ropaHotelBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            try
+            {
+                if (((BindingSource)sender).Current != null)
+                {
+                    if (((BindingSource)sender).Current.GetType() == typeof(DataRowView))
+                    {
+                        ropaHotelTableAdapter.Update(((DataRowView)((BindingSource)sender).Current).Row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                ropaHotelTableAdapter.Fill(dsRopaHotel.ropaHotel);                
+            }
+        }
+
+        private void ropaHotelBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ropaHotelTableAdapter.Update(dsRopaHotel);               
+            }
+            catch (Exception ex)
+            {
+                LoggerProxy.ErrorSinBD(ex.Message + "-" + ex.StackTrace);
+                ropaHotelTableAdapter.Fill(dsRopaHotel.ropaHotel);                
+                MessageBox.Show(ex.Message + "-" + ex.StackTrace);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            grillaImprimir = dgvCompras;
+            prepararImpresion();
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (((TabControl)sender).SelectedTab.Text == "Art. de Bar")
+                articulosTableAdapter.Fill(dsArticulos.articulos);
         }
 
     }
