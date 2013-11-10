@@ -36,6 +36,8 @@ namespace Hoteles
             this.panelGlobal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvOpcionesElegidas = new System.Windows.Forms.DataGridView();
+            this.nroClave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelIngresoDatos = new System.Windows.Forms.FlowLayoutPanel();
@@ -45,8 +47,6 @@ namespace Hoteles
             this.hotelDataSet2 = new Hoteles.hotelDataSet2();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
-            this.nroClave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpcionesElegidas)).BeginInit();
@@ -135,6 +135,22 @@ namespace Hoteles
             this.dgvOpcionesElegidas.Size = new System.Drawing.Size(566, 404);
             this.dgvOpcionesElegidas.TabIndex = 8;
             // 
+            // nroClave
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nroClave.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nroClave.FillWeight = 20F;
+            this.nroClave.HeaderText = "Clave";
+            this.nroClave.Name = "nroClave";
+            this.nroClave.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.FillWeight = 80F;
+            this.descripcion.HeaderText = "Acción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
             // labelTitulo
             // 
             this.labelTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -197,7 +213,7 @@ namespace Hoteles
             this.tbNroHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tbNroHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNroHab.Location = new System.Drawing.Point(238, 33);
-            this.tbNroHab.MaxLength = 5;
+            this.tbNroHab.MaxLength = 8;
             this.tbNroHab.Name = "tbNroHab";
             this.tbNroHab.Size = new System.Drawing.Size(140, 35);
             this.tbNroHab.TabIndex = 2;
@@ -236,22 +252,6 @@ namespace Hoteles
             // opcionesAsignarHabitacionTableAdapter
             // 
             this.opcionesAsignarHabitacionTableAdapter.ClearBeforeFill = true;
-            // 
-            // nroClave
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nroClave.DefaultCellStyle = dataGridViewCellStyle2;
-            this.nroClave.FillWeight = 20F;
-            this.nroClave.HeaderText = "Clave";
-            this.nroClave.Name = "nroClave";
-            this.nroClave.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.FillWeight = 80F;
-            this.descripcion.HeaderText = "Acción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
             // 
             // FormClavesOpcionales
             // 

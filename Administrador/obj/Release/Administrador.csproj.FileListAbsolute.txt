@@ -1,10 +1,10 @@
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Release\Administrador.exe.config
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Release\Administrador.exe
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Release\Administrador.pdb
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Release\log4net.dll
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\ResolveAssemblyReference.cache
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\Administrador.FAdministrador.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\Administrador.Properties.Resources.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\Administrador.csproj.GenerateResource.Cache
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\Administrador.exe
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\obj\Release\Administrador.pdb
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Administrador\bin\Release\log4net.dll

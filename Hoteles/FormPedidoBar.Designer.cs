@@ -50,14 +50,14 @@ namespace Hoteles
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelPromos = new System.Windows.Forms.Panel();
             this.dgvPromos = new System.Windows.Forms.DataGridView();
-            this.opcionesAsignarHabitacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hotelDataSet2 = new Hoteles.hotelDataSet2();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opcionesAsignarHabitacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet2 = new Hoteles.hotelDataSet2();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -149,7 +149,7 @@ namespace Hoteles
             this.dgvOpcionesElegidas.AllowUserToResizeRows = false;
             this.dgvOpcionesElegidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,39 +298,6 @@ namespace Hoteles
             this.dgvPromos.Size = new System.Drawing.Size(567, 423);
             this.dgvPromos.TabIndex = 0;
             // 
-            // opcionesAsignarHabitacionBindingSource
-            // 
-            this.opcionesAsignarHabitacionBindingSource.DataMember = "OpcionesAsignarHabitacion";
-            this.opcionesAsignarHabitacionBindingSource.DataSource = this.hotelDataSet2;
-            // 
-            // hotelDataSet2
-            // 
-            this.hotelDataSet2.DataSetName = "hotelDataSet2";
-            this.hotelDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.834101F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.78188F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.62519F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.605223F));
-            this.tableLayoutPanel1.Controls.Add(this.panelGlobal, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.804124F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.8866F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.94845F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.773196F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 730);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // opcionesAsignarHabitacionTableAdapter
-            // 
-            this.opcionesAsignarHabitacionTableAdapter.ClearBeforeFill = true;
-            // 
             // nro
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
@@ -366,6 +333,39 @@ namespace Hoteles
             this.stock.HeaderText = "Stock";
             this.stock.Name = "stock";
             this.stock.ReadOnly = true;
+            // 
+            // opcionesAsignarHabitacionBindingSource
+            // 
+            this.opcionesAsignarHabitacionBindingSource.DataMember = "OpcionesAsignarHabitacion";
+            this.opcionesAsignarHabitacionBindingSource.DataSource = this.hotelDataSet2;
+            // 
+            // hotelDataSet2
+            // 
+            this.hotelDataSet2.DataSetName = "hotelDataSet2";
+            this.hotelDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.834101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.78188F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.62519F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.605223F));
+            this.tableLayoutPanel1.Controls.Add(this.panelGlobal, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.804124F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.8866F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.94845F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.773196F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 730);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // opcionesAsignarHabitacionTableAdapter
+            // 
+            this.opcionesAsignarHabitacionTableAdapter.ClearBeforeFill = true;
             // 
             // FormPedidoBar
             // 

@@ -71,6 +71,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="categoriasArticulosDs.cs">
+      <DependentUpon>categoriasArticulosDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="categoriasArticulosDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>categoriasArticulosDs.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controlador.cs" />
     <Compile Include="dsArticulos.cs">
       <DependentUpon>dsArticulos.xsd</DependentUpon>
@@ -205,6 +214,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.config" />
+    <None Include="categoriasArticulosDs.xsc">
+      <DependentUpon>categoriasArticulosDs.xsd</DependentUpon>
+    </None>
+    <None Include="categoriasArticulosDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>categoriasArticulosDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="categoriasArticulosDs.xss">
+      <DependentUpon>categoriasArticulosDs.xsd</DependentUpon>
+    </None>
     <None Include="dsArticulos.xsc">
       <DependentUpon>dsArticulos.xsd</DependentUpon>
     </None>

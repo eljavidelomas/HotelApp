@@ -48,14 +48,14 @@ namespace Hoteles
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelPromos = new System.Windows.Forms.Panel();
             this.dgvPromos = new System.Windows.Forms.DataGridView();
-            this.opcionesAsignarHabitacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hotelDataSet2 = new Hoteles.hotelDataSet2();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opcionesAsignarHabitacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet2 = new Hoteles.hotelDataSet2();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.opcionesAsignarHabitacionTableAdapter = new Hoteles.hotelDataSet2TableAdapters.OpcionesAsignarHabitacionTableAdapter();
             this.panelGlobal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -147,7 +147,7 @@ namespace Hoteles
             this.dgvOpcionesElegidas.AllowUserToResizeRows = false;
             this.dgvOpcionesElegidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOpcionesElegidas.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.dgvOpcionesElegidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Print", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,6 +296,36 @@ namespace Hoteles
             this.dgvPromos.Size = new System.Drawing.Size(567, 423);
             this.dgvPromos.TabIndex = 0;
             // 
+            // nro
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.nro.DefaultCellStyle = dataGridViewCellStyle5;
+            this.nro.FillWeight = 60F;
+            this.nro.HeaderText = "";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            // 
+            // Articulos
+            // 
+            this.Articulos.FillWeight = 230.8186F;
+            this.Articulos.HeaderText = "Artículo";
+            this.Articulos.Name = "Articulos";
+            this.Articulos.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // stock
+            // 
+            this.stock.FillWeight = 80F;
+            this.stock.HeaderText = "Stock";
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            // 
             // opcionesAsignarHabitacionBindingSource
             // 
             this.opcionesAsignarHabitacionBindingSource.DataMember = "OpcionesAsignarHabitacion";
@@ -328,36 +358,6 @@ namespace Hoteles
             // opcionesAsignarHabitacionTableAdapter
             // 
             this.opcionesAsignarHabitacionTableAdapter.ClearBeforeFill = true;
-            // 
-            // nro
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.nro.DefaultCellStyle = dataGridViewCellStyle5;
-            this.nro.FillWeight = 60F;
-            this.nro.HeaderText = "";
-            this.nro.Name = "nro";
-            this.nro.ReadOnly = true;
-            // 
-            // Articulos
-            // 
-            this.Articulos.FillWeight = 230.8186F;
-            this.Articulos.HeaderText = "Artículo";
-            this.Articulos.Name = "Articulos";
-            this.Articulos.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.FillWeight = 80F;
-            this.stock.HeaderText = "Stock";
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
             // 
             // FormAnularPedidoBar
             // 

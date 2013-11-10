@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -60,6 +60,22 @@
             this.dsHabitaciones = new Administrador.dsHabitaciones();
             this.tpCat = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dgvArtPorCat = new System.Windows.Forms.DataGridView();
+            this.nombreDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriasArticulosgetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriasArticulosDs = new Administrador.categoriasArticulosDs();
+            this.cat_ListCategorias = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cat_Cantidades = new System.Windows.Forms.TextBox();
+            this.cat_listArticulos = new System.Windows.Forms.ComboBox();
+            this.articulosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dsArticulosCombo = new Administrador.dsArticulosCombo();
+            this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.lblCat_msjSalida = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -84,8 +100,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.txtArt_Cant = new System.Windows.Forms.TextBox();
             this.listArtCompId = new System.Windows.Forms.ComboBox();
-            this.articulosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.dsArticulosCombo = new Administrador.dsArticulosCombo();
             this.btnArtComp_save = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.dgvCompuestoPor = new System.Windows.Forms.DataGridView();
@@ -210,7 +224,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvArtIncPromo = new System.Windows.Forms.DataGridView();
-            this.nombreDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descuentosObtenerArticulosByDescuentoIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spDescuentosObtenerArticulosByDescId = new Administrador.spDescuentosObtenerArticulosByDescId();
             this.listArtToInsertPromo = new System.Windows.Forms.ComboBox();
@@ -231,6 +244,7 @@
             this.ropaHotelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRopaHotel = new Administrador.dsRopaHotel();
             this.tpCompras = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.nPrecioUnit = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -280,7 +294,9 @@
             this.habitacionesTableAdapter = new Administrador.dsHabitacionesTableAdapters.habitacionesTableAdapter();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.comprasTableAdapter = new Administrador.dsComprasTableAdapters.comprasTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.categoriasArticulos_getTableAdapter = new Administrador.categoriasArticulosDsTableAdapters.categoriasArticulos_getTableAdapter();
+            this.nombreDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tpHabitaciones2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
@@ -290,6 +306,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsHabitaciones)).BeginInit();
             this.tpCat.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArtPorCat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasArticulosgetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasArticulosDs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articulosBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsArticulosCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tpArtBar.SuspendLayout();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -298,8 +319,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articulosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articulosBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsArticulosCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompuestoPor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articulosCompuestosgetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompuestoPor)).BeginInit();
@@ -595,6 +614,15 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.dgvArtPorCat);
+            this.panel1.Controls.Add(this.cat_ListCategorias);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.cat_Cantidades);
+            this.panel1.Controls.Add(this.cat_listArticulos);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.lblCat_msjSalida);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -605,9 +633,171 @@
             this.panel1.Size = new System.Drawing.Size(1062, 564);
             this.panel1.TabIndex = 0;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(440, 260);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(101, 23);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Categoria";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Lucida Sans Unicode", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(770, 230);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(207, 22);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Articulos por categoria";
+            // 
+            // dgvArtPorCat
+            // 
+            this.dgvArtPorCat.AllowUserToAddRows = false;
+            this.dgvArtPorCat.AllowUserToResizeColumns = false;
+            this.dgvArtPorCat.AllowUserToResizeRows = false;
+            this.dgvArtPorCat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvArtPorCat.AutoGenerateColumns = false;
+            this.dgvArtPorCat.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvArtPorCat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArtPorCat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreDataGridViewTextBoxColumn9,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn1});
+            this.dgvArtPorCat.DataSource = this.categoriasArticulosgetBindingSource;
+            this.dgvArtPorCat.Location = new System.Drawing.Point(737, 260);
+            this.dgvArtPorCat.MultiSelect = false;
+            this.dgvArtPorCat.Name = "dgvArtPorCat";
+            this.dgvArtPorCat.ReadOnly = true;
+            this.dgvArtPorCat.RowHeadersVisible = false;
+            this.dgvArtPorCat.RowTemplate.Height = 30;
+            this.dgvArtPorCat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvArtPorCat.Size = new System.Drawing.Size(293, 290);
+            this.dgvArtPorCat.TabIndex = 36;
+            this.dgvArtPorCat.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvArtPorCat_UserDeletingRow_1);
+            // 
+            // nombreDataGridViewTextBoxColumn9
+            // 
+            this.nombreDataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn9.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn9.FillWeight = 70F;
+            this.nombreDataGridViewTextBoxColumn9.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn9.Name = "nombreDataGridViewTextBoxColumn9";
+            this.nombreDataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn.FillWeight = 30F;
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // categoriasArticulosgetBindingSource
+            // 
+            this.categoriasArticulosgetBindingSource.DataMember = "categoriasArticulos_get";
+            this.categoriasArticulosgetBindingSource.DataSource = this.categoriasArticulosDs;
+            // 
+            // categoriasArticulosDs
+            // 
+            this.categoriasArticulosDs.DataSetName = "categoriasArticulosDs";
+            this.categoriasArticulosDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cat_ListCategorias
+            // 
+            this.cat_ListCategorias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cat_ListCategorias.DataSource = this.categoriasBindingSource;
+            this.cat_ListCategorias.DisplayMember = "nombre";
+            this.cat_ListCategorias.Enabled = false;
+            this.cat_ListCategorias.FormattingEnabled = true;
+            this.cat_ListCategorias.Location = new System.Drawing.Point(550, 260);
+            this.cat_ListCategorias.Name = "cat_ListCategorias";
+            this.cat_ListCategorias.Size = new System.Drawing.Size(170, 26);
+            this.cat_ListCategorias.TabIndex = 35;
+            this.cat_ListCategorias.ValueMember = "id";
+            this.cat_ListCategorias.SelectedIndexChanged += new System.EventHandler(this.cat_ListCategorias_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(440, 310);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 23);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Artículo";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(439, 360);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 23);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Cantidad";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cat_Cantidades
+            // 
+            this.cat_Cantidades.Location = new System.Drawing.Point(539, 357);
+            this.cat_Cantidades.Name = "cat_Cantidades";
+            this.cat_Cantidades.Size = new System.Drawing.Size(70, 31);
+            this.cat_Cantidades.TabIndex = 32;
+            // 
+            // cat_listArticulos
+            // 
+            this.cat_listArticulos.DataSource = this.articulosBindingSource2;
+            this.cat_listArticulos.DisplayMember = "nombre";
+            this.cat_listArticulos.FormattingEnabled = true;
+            this.cat_listArticulos.IntegralHeight = false;
+            this.cat_listArticulos.ItemHeight = 18;
+            this.cat_listArticulos.Location = new System.Drawing.Point(530, 310);
+            this.cat_listArticulos.Name = "cat_listArticulos";
+            this.cat_listArticulos.Size = new System.Drawing.Size(190, 26);
+            this.cat_listArticulos.TabIndex = 31;
+            this.cat_listArticulos.ValueMember = "id";
+            // 
+            // articulosBindingSource2
+            // 
+            this.articulosBindingSource2.DataMember = "articulos";
+            this.articulosBindingSource2.DataSource = this.dsArticulosCombo;
+            // 
+            // dsArticulosCombo
+            // 
+            this.dsArticulosCombo.DataSetName = "dsArticulosCombo";
+            this.dsArticulosCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button3.Location = new System.Drawing.Point(440, 406);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 30);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "Agregar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(500, 93);
+            this.button5.Location = new System.Drawing.Point(450, 93);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 40);
             this.button5.TabIndex = 29;
@@ -620,10 +810,10 @@
             this.lblCat_msjSalida.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCat_msjSalida.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCat_msjSalida.Location = new System.Drawing.Point(500, 150);
+            this.lblCat_msjSalida.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCat_msjSalida.Location = new System.Drawing.Point(570, 90);
             this.lblCat_msjSalida.Name = "lblCat_msjSalida";
-            this.lblCat_msjSalida.Size = new System.Drawing.Size(535, 195);
+            this.lblCat_msjSalida.Size = new System.Drawing.Size(470, 130);
             this.lblCat_msjSalida.TabIndex = 28;
             this.lblCat_msjSalida.Text = "msj Salida";
             this.lblCat_msjSalida.Visible = false;
@@ -649,7 +839,7 @@
             this.dataGridView1.ShowCellErrors = false;
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(440, 455);
+            this.dataGridView1.Size = new System.Drawing.Size(390, 455);
             this.dataGridView1.TabIndex = 2;
             // 
             // nombreDataGridViewTextBoxColumn
@@ -828,9 +1018,10 @@
             // 
             // label28
             // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(30, 370);
+            this.label28.Location = new System.Drawing.Point(30, 470);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(84, 23);
             this.label28.TabIndex = 10;
@@ -839,9 +1030,10 @@
             // 
             // label27
             // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(29, 420);
+            this.label27.Location = new System.Drawing.Point(29, 520);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(94, 23);
             this.label27.TabIndex = 9;
@@ -850,39 +1042,32 @@
             // 
             // txtArt_Cant
             // 
-            this.txtArt_Cant.Location = new System.Drawing.Point(129, 417);
+            this.txtArt_Cant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtArt_Cant.Location = new System.Drawing.Point(129, 517);
             this.txtArt_Cant.Name = "txtArt_Cant";
             this.txtArt_Cant.Size = new System.Drawing.Size(70, 31);
             this.txtArt_Cant.TabIndex = 8;
             // 
             // listArtCompId
             // 
+            this.listArtCompId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.listArtCompId.DataSource = this.articulosBindingSource2;
             this.listArtCompId.DisplayMember = "nombre";
             this.listArtCompId.FormattingEnabled = true;
             this.listArtCompId.IntegralHeight = false;
             this.listArtCompId.ItemHeight = 18;
-            this.listArtCompId.Location = new System.Drawing.Point(114, 370);
+            this.listArtCompId.Location = new System.Drawing.Point(114, 470);
             this.listArtCompId.Name = "listArtCompId";
             this.listArtCompId.Size = new System.Drawing.Size(236, 26);
             this.listArtCompId.TabIndex = 7;
             this.listArtCompId.ValueMember = "id";
             // 
-            // articulosBindingSource2
-            // 
-            this.articulosBindingSource2.DataMember = "articulos";
-            this.articulosBindingSource2.DataSource = this.dsArticulosCombo;
-            // 
-            // dsArticulosCombo
-            // 
-            this.dsArticulosCombo.DataSetName = "dsArticulosCombo";
-            this.dsArticulosCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // btnArtComp_save
             // 
+            this.btnArtComp_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnArtComp_save.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArtComp_save.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnArtComp_save.Location = new System.Drawing.Point(230, 416);
+            this.btnArtComp_save.Location = new System.Drawing.Point(230, 516);
             this.btnArtComp_save.Name = "btnArtComp_save";
             this.btnArtComp_save.Size = new System.Drawing.Size(120, 30);
             this.btnArtComp_save.TabIndex = 6;
@@ -905,6 +1090,8 @@
             this.dgvCompuestoPor.AllowUserToAddRows = false;
             this.dgvCompuestoPor.AllowUserToResizeColumns = false;
             this.dgvCompuestoPor.AllowUserToResizeRows = false;
+            this.dgvCompuestoPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvCompuestoPor.AutoGenerateColumns = false;
             this.dgvCompuestoPor.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvCompuestoPor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -920,7 +1107,7 @@
             this.dgvCompuestoPor.RowHeadersVisible = false;
             this.dgvCompuestoPor.RowTemplate.Height = 30;
             this.dgvCompuestoPor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCompuestoPor.Size = new System.Drawing.Size(320, 140);
+            this.dgvCompuestoPor.Size = new System.Drawing.Size(320, 260);
             this.dgvCompuestoPor.TabIndex = 3;
             this.dgvCompuestoPor.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvCompuestoPor_UserDeletingRow);
             // 
@@ -1911,9 +2098,9 @@
             // fechaAltaSocio
             // 
             this.fechaAltaSocio.DataPropertyName = "fechaAltaSocio";
-            dataGridViewCellStyle17.Format = "d";
-            dataGridViewCellStyle17.NullValue = null;
-            this.fechaAltaSocio.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle21.Format = "d";
+            dataGridViewCellStyle21.NullValue = null;
+            this.fechaAltaSocio.DefaultCellStyle = dataGridViewCellStyle21;
             this.fechaAltaSocio.FillWeight = 90F;
             this.fechaAltaSocio.HeaderText = "Fecha Alta";
             this.fechaAltaSocio.Name = "fechaAltaSocio";
@@ -1957,9 +2144,9 @@
             // fechaVencimientoPuntaje
             // 
             this.fechaVencimientoPuntaje.DataPropertyName = "fechaVencimientoPuntaje";
-            dataGridViewCellStyle18.Format = "d";
-            dataGridViewCellStyle18.NullValue = null;
-            this.fechaVencimientoPuntaje.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle22.Format = "d";
+            dataGridViewCellStyle22.NullValue = null;
+            this.fechaVencimientoPuntaje.DefaultCellStyle = dataGridViewCellStyle22;
             this.fechaVencimientoPuntaje.HeaderText = "Venc.Ptos";
             this.fechaVencimientoPuntaje.Name = "fechaVencimientoPuntaje";
             // 
@@ -2034,14 +2221,14 @@
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView5.CausesValidation = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn8,
@@ -2068,9 +2255,9 @@
             // descuentoFijoDataGridViewTextBoxColumn
             // 
             this.descuentoFijoDataGridViewTextBoxColumn.DataPropertyName = "descuentoFijo";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.descuentoFijoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.descuentoFijoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
             this.descuentoFijoDataGridViewTextBoxColumn.FillWeight = 15F;
             this.descuentoFijoDataGridViewTextBoxColumn.HeaderText = "$ Desc";
             this.descuentoFijoDataGridViewTextBoxColumn.Name = "descuentoFijoDataGridViewTextBoxColumn";
@@ -2078,9 +2265,9 @@
             // descuentoPorcentajeDataGridViewTextBoxColumn
             // 
             this.descuentoPorcentajeDataGridViewTextBoxColumn.DataPropertyName = "descuentoPorcentaje";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.descuentoPorcentajeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.descuentoPorcentajeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
             this.descuentoPorcentajeDataGridViewTextBoxColumn.FillWeight = 15F;
             this.descuentoPorcentajeDataGridViewTextBoxColumn.HeaderText = "% Desc";
             this.descuentoPorcentajeDataGridViewTextBoxColumn.Name = "descuentoPorcentajeDataGridViewTextBoxColumn";
@@ -2088,8 +2275,8 @@
             // cantidadArticulosDataGridViewTextBoxColumn
             // 
             this.cantidadArticulosDataGridViewTextBoxColumn.DataPropertyName = "cantidadArticulos";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidadArticulosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidadArticulosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
             this.cantidadArticulosDataGridViewTextBoxColumn.FillWeight = 15F;
             this.cantidadArticulosDataGridViewTextBoxColumn.HeaderText = "Cant.Art Gratis";
             this.cantidadArticulosDataGridViewTextBoxColumn.Name = "cantidadArticulosDataGridViewTextBoxColumn";
@@ -2172,7 +2359,8 @@
             this.dgvArtIncPromo.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvArtIncPromo.ColumnHeadersHeight = 40;
             this.dgvArtIncPromo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreDataGridViewTextBoxColumn7});
+            this.nombreDataGridViewTextBoxColumn7,
+            this.Column1});
             this.dgvArtIncPromo.DataSource = this.descuentosObtenerArticulosByDescuentoIdBindingSource;
             this.dgvArtIncPromo.Location = new System.Drawing.Point(260, 70);
             this.dgvArtIncPromo.MultiSelect = false;
@@ -2183,14 +2371,7 @@
             this.dgvArtIncPromo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArtIncPromo.Size = new System.Drawing.Size(250, 375);
             this.dgvArtIncPromo.TabIndex = 13;
-            // 
-            // nombreDataGridViewTextBoxColumn7
-            // 
-            this.nombreDataGridViewTextBoxColumn7.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn7.FillWeight = 80F;
-            this.nombreDataGridViewTextBoxColumn7.HeaderText = "Articulo";
-            this.nombreDataGridViewTextBoxColumn7.Name = "nombreDataGridViewTextBoxColumn7";
-            this.nombreDataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dgvArtIncPromo.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvArtIncPromo_UserDeletedRow);
             // 
             // descuentosObtenerArticulosByDescuentoIdBindingSource
             // 
@@ -2385,6 +2566,16 @@
             this.tpCompras.TabIndex = 12;
             this.tpCompras.Text = "Compras";
             this.tpCompras.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(190, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 27);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Imprimir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
@@ -2747,15 +2938,25 @@
             // 
             this.comprasTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // categoriasArticulos_getTableAdapter
             // 
-            this.button1.Location = new System.Drawing.Point(190, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 27);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Imprimir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.categoriasArticulos_getTableAdapter.ClearBeforeFill = true;
+            // 
+            // nombreDataGridViewTextBoxColumn7
+            // 
+            this.nombreDataGridViewTextBoxColumn7.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn7.FillWeight = 80F;
+            this.nombreDataGridViewTextBoxColumn7.HeaderText = "Articulo";
+            this.nombreDataGridViewTextBoxColumn7.Name = "nombreDataGridViewTextBoxColumn7";
+            this.nombreDataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "articuloId";
+            this.Column1.HeaderText = "id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // FAdministrador
             // 
@@ -2779,6 +2980,11 @@
             this.tpCat.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArtPorCat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasArticulosgetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasArticulosDs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articulosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsArticulosCombo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tpArtBar.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -2789,8 +2995,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articulosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articulosBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsArticulosCombo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompuestoPor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articulosCompuestosgetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompuestoPor)).EndInit();
@@ -3014,7 +3218,6 @@
         private dsPromociones dsPromociones;
         private System.Windows.Forms.BindingSource descuentosBindingSource1;
         private Administrador.dsPromocionesTableAdapters.descuentosTableAdapter descuentosTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn7;
         private dsTiposCuentasGastos dsTiposCuentasGastos;
         private System.Windows.Forms.BindingSource tiposCuentasGastosBindingSource;
         private Administrador.dsTiposCuentasGastosTableAdapters.tiposCuentasGastosTableAdapter tiposCuentasGastosTableAdapter;
@@ -3125,6 +3328,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn extensionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn extensionPrecio;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox cat_Cantidades;
+        private System.Windows.Forms.ComboBox cat_listArticulos;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dgvArtPorCat;
+        private System.Windows.Forms.ComboBox cat_ListCategorias;
+        private System.Windows.Forms.BindingSource categoriasArticulosgetBindingSource;
+        private categoriasArticulosDs categoriasArticulosDs;
+        private Administrador.categoriasArticulosDsTableAdapters.categoriasArticulos_getTableAdapter categoriasArticulos_getTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
 

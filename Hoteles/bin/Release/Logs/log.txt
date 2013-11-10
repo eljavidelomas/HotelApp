@@ -1,0 +1,788 @@
+2013-09-19 20:56:25,921 INFO  - Ingreso Cierre Caja
+2013-09-19 21:37:00,321 INFO  - Ingreso Cierre Caja
+2013-09-19 21:40:13,035 INFO  - Ingreso Cierre Caja
+2013-09-19 21:43:55,242 INFO  - Ingreso Cierre Caja
+2013-09-19 21:48:42,835 INFO  - Ingreso Cierre Caja
+2013-09-19 21:52:24,099 INFO  - Ingreso Cierre Caja
+2013-09-19 22:12:11,158 INFO  - Ingreso Cierre Caja
+2013-09-19 22:19:18,370 INFO  - Ingreso Cierre Caja
+2013-09-19 22:34:23,882 INFO  - Ingreso Cierre Caja
+2013-09-19 22:39:51,043 INFO  - Ingreso Cierre Caja
+2013-09-19 22:43:23,443 INFO  - Ingreso Cierre Caja
+2013-09-19 22:46:17,970 INFO  - Salir Cierre Caja
+2013-09-19 23:54:01,282 INFO  - Ingreso Cierre Caja
+2013-09-19 23:54:54,814 INFO  - Salir Cierre Caja
+2013-09-20 21:45:12,730 INFO  - Ingreso Cierre Caja
+2013-09-20 21:48:01,681 INFO  - Salir Cierre Caja
+2013-09-28 16:26:43,982 INFO  - Ingreso Estado Caja
+2013-09-28 16:26:57,159 INFO  - Salir Estado Caja
+2013-09-28 16:26:58,404 INFO  - Ingreso Cambiar Estado Habitación
+2013-09-28 16:27:02,158 INFO  - Salir Cambiar Estado
+2013-09-28 16:27:02,802 INFO  - Ingreso Extracción Dinero
+2013-09-28 16:27:03,458 INFO  - Salir Extracción Dinero
+2013-09-28 16:27:03,788 INFO  - Ingreso Cambiar Estado Habitación
+2013-09-28 16:27:10,830 INFO  - Salir Cambiar Estado
+2013-09-28 16:27:17,158 INFO  - Ingreso Cambiar Estado Habitación
+2013-09-28 16:27:23,981 INFO  - Salir Cambiar Estado
+2013-09-28 16:39:42,597 INFO  - Ingreso Cambiar Estado Habitación
+2013-09-28 16:39:43,861 INFO  - Salir Cambiar Estado
+2013-09-28 16:39:44,591 INFO  - Ingreso Claves Opcionales
+2013-09-28 16:40:03,717 INFO  - Salir Claves Opcionales
+2013-09-28 17:06:40,274 INFO  - Ingreso Asignar Habitación.
+2013-09-28 17:06:46,111 INFO  - Salio Asignar Habitación.
+2013-09-28 17:06:46,555 INFO  - Ingreso Cancelar Habitación
+2013-09-28 17:06:47,071 INFO  - Salir Cancelar Habitación
+2013-09-28 17:06:47,414 INFO  - Ingreso Adelanto Dinero
+2013-09-28 17:06:48,107 INFO  - Salir Adelanto de Dinero
+2013-09-28 17:06:49,396 INFO  - Ingreso Cerrar Turno
+2013-09-28 17:06:50,205 INFO  - Salir Cierre Turno
+2013-09-28 17:06:50,898 INFO  - Ingreso Pedido de Bar
+2013-09-28 17:06:51,840 INFO  - Salir Pedido de Bar
+2013-09-28 17:06:52,211 INFO  - Ingreso Anular Pedido Bar
+2013-09-28 17:06:52,915 INFO  - Salir Anular Pedido
+2013-09-28 17:06:54,115 INFO  - Ingreso Avisos Horarios
+2013-09-28 17:06:55,284 INFO  - Salir Avisos Horarios
+2013-09-28 17:06:55,632 INFO  - Ingreso Cambiar Estado Habitación
+2013-09-28 17:06:56,010 INFO  - Salir Cambiar Estado
+2013-09-28 17:06:56,422 INFO  - Ingreso Extracción Dinero
+2013-09-28 17:06:56,996 INFO  - Salir Extracción Dinero
+2013-09-28 17:06:57,463 INFO  - Ingreso Claves Opcionales
+2013-09-28 17:06:58,668 INFO  - Salir Claves Opcionales
+2013-09-28 17:06:59,084 INFO  - Ingreso Estado Caja
+2013-09-28 17:06:59,629 INFO  - Salir Estado Caja
+2013-09-28 17:06:59,910 INFO  - Ingreso Claves Opcionales
+2013-09-28 17:07:18,349 INFO  - Salir Lavadero
+2013-09-28 17:07:18,572 INFO  - Ingreso Asignar Habitación.
+2013-09-28 17:07:19,057 INFO  - Salio Asignar Habitación.
+2013-09-28 17:07:19,409 INFO  - Ingreso Cancelar Habitación
+2013-09-28 17:07:20,086 INFO  - Salir Cancelar Habitación
+2013-09-28 17:07:20,309 INFO  - Ingreso Adelanto Dinero
+2013-09-28 17:07:22,691 INFO  - Salir Adelanto de Dinero
+2013-09-28 17:07:22,891 INFO  - Ingreso Asignar Habitación.
+2013-09-28 17:07:24,839 INFO  - Salio Asignar Habitación.
+2013-09-28 17:11:02,065 INFO  - Ingreso Adelanto Dinero
+2013-09-28 17:11:03,146 INFO  - Salir Adelanto de Dinero
+2013-09-28 17:11:03,430 INFO  - Ingreso Asignar Habitación.
+2013-09-28 17:11:04,395 INFO  - Salio Asignar Habitación.
+2013-09-28 17:11:04,680 INFO  - Ingreso Cancelar Habitación
+2013-09-28 17:11:05,172 INFO  - Salir Cancelar Habitación
+2013-09-28 17:11:05,368 INFO  - Ingreso Adelanto Dinero
+2013-09-28 17:11:05,837 INFO  - Salir Adelanto de Dinero
+2013-09-28 17:11:06,059 INFO  - Ingreso Cerrar Turno
+2013-09-28 17:11:06,504 INFO  - Salir Cierre Turno
+2013-09-28 17:11:06,709 INFO  - Ingreso Pedido de Bar
+2013-09-28 17:11:07,028 INFO  - Salir Pedido de Bar
+2013-09-28 17:11:07,204 INFO  - Ingreso Anular Pedido Bar
+2013-09-28 17:11:07,614 INFO  - Salir Anular Pedido
+2013-09-28 17:11:07,868 INFO  - Ingreso Avisos Horarios
+2013-09-28 17:11:08,948 INFO  - Salir Avisos Horarios
+2013-09-28 17:11:09,263 INFO  - Ingreso Cambiar Estado Habitación
+2013-09-28 17:11:09,531 INFO  - Salir Cambiar Estado
+2013-09-28 17:11:09,980 INFO  - Ingreso Extracción Dinero
+2013-09-28 17:11:10,300 INFO  - Salir Extracción Dinero
+2013-09-28 17:11:10,668 INFO  - Ingreso Claves Opcionales
+2013-09-28 17:11:11,094 INFO  - Salir Claves Opcionales
+2013-09-28 17:11:11,346 INFO  - Ingreso Estado Caja
+2013-09-28 17:11:13,042 INFO  - Salir Estado Caja
+2013-09-28 17:11:13,326 INFO  - Ingreso Cierre Caja
+2013-09-28 17:11:14,534 INFO  - Salir Cierre Caja
+2013-09-28 17:11:14,692 INFO  - Ingreso Asignar Habitación.
+2013-09-28 17:11:15,321 INFO  - Salio Asignar Habitación.
+2013-09-28 17:11:15,602 INFO  - Ingreso Cierre Caja
+2013-09-28 17:13:12,009 INFO  - Salir Cierre Caja
+2013-09-28 17:13:13,012 INFO  - Ingreso Claves Opcionales
+2013-09-28 17:22:16,751 INFO  - Salir Claves Opcionales
+2013-09-28 17:59:57,574 INFO  - Ingreso Extracción Dinero
+2013-09-28 18:00:18,298 INFO  - Ejecuto Extraccion de Dinero - Cuenta:Confiteria/Panaderia  Monto:30 
+2013-09-28 18:00:18,301 INFO  - Salir Extracción Dinero
+2013-09-28 18:03:34,966 INFO  - Ingreso Extracción Dinero
+2013-09-28 18:03:43,732 INFO  - Ejecuto Extraccion de Dinero - Cuenta:Confiteria/Panaderia  Monto:350 
+2013-09-28 18:03:43,733 INFO  - Salir Extracción Dinero
+2013-09-28 18:05:05,923 INFO  - Ingreso Extracción Dinero
+2013-09-28 18:05:11,868 INFO  - Ejecuto Extraccion de Dinero - Cuenta:Confiteria/Panaderia  Monto:367 
+2013-09-28 18:05:11,869 INFO  - Salir Extracción Dinero
+2013-09-28 18:06:46,572 INFO  - Ingreso Extracción Dinero
+2013-09-28 18:07:02,520 INFO  - Ejecuto Extraccion de Dinero - Cuenta:Verduleria  Monto:346 
+2013-09-28 18:07:02,520 INFO  - Salir Extracción Dinero
+2013-09-28 18:18:11,989 INFO  - Ingreso Extracción Dinero
+2013-09-28 18:18:15,640 INFO  - Ejecuto Extraccion de Dinero - Cuenta:Confiteria/Panaderia  Monto:45 
+2013-09-28 18:18:15,641 INFO  - Salir Extracción Dinero
+2013-09-28 18:18:18,599 INFO  - Ingreso Extracción Dinero
+2013-09-28 18:18:24,882 INFO  - Ejecuto Extraccion de Dinero - Cuenta:Plomero  Monto:234 
+2013-09-28 18:18:24,883 INFO  - Salir Extracción Dinero
+2013-09-28 20:02:39,597 INFO  - Ingreso Asignar Habitación.
+2013-10-05 18:38:10,404 INFO  - Ingreso Cierre Caja
+2013-10-05 18:40:14,509 INFO  - Salir Cierre Caja
+2013-10-05 19:50:11,452 INFO  - Ingreso Cierre Caja
+2013-10-05 19:55:32,532 INFO  - Ingreso Cierre Caja
+2013-10-05 19:57:09,485 INFO  - Salir Cierre Caja
+2013-10-05 19:57:10,902 INFO  - Ingreso Cierre Caja
+2013-10-05 19:58:12,147 INFO  - Salir Cierre Caja
+2013-10-07 23:19:43,354 INFO  - Ingreso Asignar Habitación.
+2013-10-07 23:19:44,275 INFO  - Salio Asignar Habitación.
+2013-10-07 23:19:45,674 INFO  - Ingreso Cierre Caja
+2013-10-07 23:19:46,856 INFO  - Salir Cierre Caja
+2013-10-14 15:57:20,189 INFO  - Ingreso Asignar Habitación.
+2013-10-14 15:57:21,447 INFO  - Salio Asignar Habitación.
+2013-10-14 15:57:22,081 INFO  - Ingreso Asignar Habitación.
+2013-10-14 15:57:25,966 INFO  - Salio Asignar Habitación.
+2013-10-14 15:57:28,625 INFO  - Ingreso Asignar Habitación.
+2013-10-14 15:57:30,613 INFO  - Salio Asignar Habitación.
+2013-10-14 15:57:31,020 INFO  - Ingreso Cancelar Habitación
+2013-10-14 15:57:31,648 INFO  - Salir Cancelar Habitación
+2013-10-14 15:57:32,706 INFO  - Ingreso Adelanto Dinero
+2013-10-14 15:57:37,956 INFO  - Salir Adelanto de Dinero
+2013-10-14 15:57:38,486 INFO  - Ingreso Cancelar Habitación
+2013-10-14 15:57:44,795 INFO  - Salir Cancelar Habitación
+2013-10-14 15:57:45,129 INFO  - Ingreso Asignar Habitación.
+2013-10-14 15:57:49,469 INFO  - Salio Asignar Habitación.
+2013-10-14 15:57:49,783 INFO  - Ingreso Cancelar Habitación
+2013-10-14 15:57:50,363 INFO  - Salir Cancelar Habitación
+2013-10-14 15:57:50,661 INFO  - Ingreso Asignar Habitación.
+2013-10-14 15:57:52,849 INFO  - Salio Asignar Habitación.
+2013-10-14 15:57:53,232 INFO  - Ingreso Asignar Habitación.
+2013-10-14 15:57:53,833 INFO  - Salio Asignar Habitación.
+2013-10-14 15:57:54,116 INFO  - Ingreso Cancelar Habitación
+2013-10-14 15:57:54,524 INFO  - Salir Cancelar Habitación
+2013-10-14 15:57:54,737 INFO  - Ingreso Adelanto Dinero
+2013-10-14 15:57:55,219 INFO  - Salir Adelanto de Dinero
+2013-10-14 16:06:06,590 INFO  - Ingreso Cancelar Habitación
+2013-10-14 16:06:07,392 INFO  - Salir Cancelar Habitación
+2013-10-14 16:06:07,755 INFO  - Ingreso Adelanto Dinero
+2013-10-14 16:06:08,638 INFO  - Salir Adelanto de Dinero
+2013-10-14 16:06:09,098 INFO  - Ingreso Cerrar Turno
+2013-10-14 16:06:09,721 INFO  - Salir Cierre Turno
+2013-10-14 16:06:10,085 INFO  - Ingreso Asignar Habitación.
+2013-10-14 16:06:14,991 INFO  - Salio Asignar Habitación.
+2013-10-14 16:06:15,417 INFO  - Ingreso Cancelar Habitación
+2013-10-14 16:06:16,613 INFO  - Salir Cancelar Habitación
+2013-10-14 16:06:17,004 INFO  - Ingreso Asignar Habitación.
+2013-10-14 16:06:17,627 INFO  - Salio Asignar Habitación.
+2013-10-14 16:06:17,865 INFO  - Ingreso Cancelar Habitación
+2013-10-14 16:06:18,243 INFO  - Salir Cancelar Habitación
+2013-10-14 16:06:18,490 INFO  - Ingreso Adelanto Dinero
+2013-10-14 16:06:21,437 INFO  - Salir Adelanto de Dinero
+2013-10-14 16:06:21,756 INFO  - Ingreso Cerrar Turno
+2013-10-14 16:06:26,110 INFO  - Salir Cierre Turno
+2013-10-14 16:06:26,384 INFO  - Ingreso Pedido de Bar
+2013-10-14 16:06:28,574 INFO  - Salir Pedido de Bar
+2013-10-14 16:06:28,847 INFO  - Ingreso Anular Pedido Bar
+2013-10-14 16:06:29,464 INFO  - Salir Anular Pedido
+2013-10-14 16:06:29,761 INFO  - Ingreso Avisos Horarios
+2013-10-14 16:06:30,510 INFO  - Salir Avisos Horarios
+2013-10-14 16:06:30,947 INFO  - Ingreso Cambiar Estado Habitación
+2013-10-14 16:06:33,626 INFO  - Salir Cambiar Estado
+2013-10-14 16:06:34,208 INFO  - Ingreso Extracción Dinero
+2013-10-14 16:06:34,299 INFO  - Salir Extracción Dinero
+2013-10-14 16:06:35,096 INFO  - Ingreso Extracción Dinero
+2013-10-14 16:06:49,783 INFO  - Salir Extracción Dinero
+2013-10-14 16:06:50,397 INFO  - Ingreso Estado Caja
+2013-10-14 16:06:52,977 INFO  - Salir Estado Caja
+2013-10-14 16:06:53,177 INFO  - Ingreso Cierre Caja
+2013-10-14 16:06:54,162 INFO  - Salir Cierre Caja
+2013-10-14 16:21:40,208 INFO  - Ingreso Avisos Horarios
+2013-10-14 16:21:41,881 INFO  - Salir Avisos Horarios
+2013-10-14 16:21:46,358 INFO  - Ingreso Avisos Horarios
+2013-10-14 16:21:59,474 INFO  - Agrego Alarma Hab:
+2013-10-14 16:21:59,474 INFO  - Salir Avisos Horarios
+2013-10-14 16:22:56,524 INFO  - Ingreso Avisos Horarios
+2013-10-14 16:22:59,605 INFO  - Salir Avisos Horarios
+2013-10-19 12:00:35,929 INFO  - Ingreso Asignar Habitación.
+2013-10-19 12:01:12,814 INFO  - Ejecuto Asignar Habitación - Nro.Hab:1, Categoria:Común Express, Conserje:María Ines.
+2013-10-19 12:01:12,815 INFO  - Salio Asignar Habitación.
+2013-10-19 12:03:10,872 INFO  - Ingreso Cancelar Habitación
+2013-10-19 12:03:32,734 INFO  - Ejecuto Cancelar Habitación - Hab:1
+2013-10-19 12:03:32,735 INFO  - Salir Cancelar Habitación
+2013-10-19 12:03:35,111 INFO  - Ingreso Asignar Habitación.
+2013-10-19 12:04:43,539 INFO  - Ejecuto Asignar Habitación - Nro.Hab:1, Categoria:Común Express, Conserje:María Ines.
+2013-10-19 12:04:43,540 INFO  - Salio Asignar Habitación.
+2013-10-19 12:05:14,612 INFO  - Ingreso Cerrar Turno
+2013-10-19 12:05:20,373 INFO  - Ingreso Cierre Turno al Cliente
+2013-10-19 12:05:39,351 INFO  - Ejecuto Cierre de Turno - Hab:1
+2013-10-19 12:05:39,352 INFO  - Salir Cierre Turno Cliente
+2013-10-19 12:13:55,632 INFO  - Ingreso Cerrar Turno
+2013-10-19 12:13:59,292 INFO  - Ingreso Cierre Turno al Cliente
+2013-10-19 12:14:22,852 INFO  - Salir Cierre Turno Cliente
+2013-10-19 12:14:47,369 INFO  - Ingreso Asignar Habitación.
+2013-10-19 12:14:47,837 INFO  - Salio Asignar Habitación.
+2013-10-19 12:14:48,113 INFO  - Ingreso Cancelar Habitación
+2013-10-19 12:14:48,761 INFO  - Salir Cancelar Habitación
+2013-10-19 12:14:49,040 INFO  - Ingreso Adelanto Dinero
+2013-10-19 12:14:49,563 INFO  - Salir Adelanto de Dinero
+2013-10-19 12:14:49,755 INFO  - Ingreso Cerrar Turno
+2013-10-19 12:14:50,161 INFO  - Salir Cierre Turno
+2013-10-19 12:14:50,456 INFO  - Ingreso Pedido de Bar
+2013-10-19 12:14:50,964 INFO  - Salir Pedido de Bar
+2013-10-19 12:14:51,248 INFO  - Ingreso Anular Pedido Bar
+2013-10-19 12:14:51,780 INFO  - Salir Anular Pedido
+2013-10-19 12:14:52,055 INFO  - Ingreso Avisos Horarios
+2013-10-19 12:14:52,926 INFO  - Salir Avisos Horarios
+2013-10-19 12:14:53,322 INFO  - Ingreso Cambiar Estado Habitación
+2013-10-19 12:14:55,756 INFO  - Salir Cambiar Estado
+2013-10-19 12:14:56,245 INFO  - Ingreso Cambiar Estado Habitación
+2013-10-19 12:14:59,420 INFO  - Salir Cambiar Estado
+2013-10-19 12:14:59,804 INFO  - Ingreso Claves Opcionales
+2013-10-19 12:15:01,953 INFO  - Salir Claves Opcionales
+2013-10-19 12:15:02,342 INFO  - Ingreso Estado Caja
+2013-10-19 12:15:26,706 INFO  - Salir Estado Caja
+2013-10-19 12:15:27,166 INFO  - Ingreso Cierre Caja
+2013-10-19 12:15:32,122 INFO  - Salir Cierre Caja
+2013-10-19 17:10:06,311 INFO  - Ingreso Asignar Habitación.
+2013-10-19 17:12:16,378 INFO  - Salio Asignar Habitación.
+2013-10-19 17:12:17,723 INFO  - Ingreso Asignar Habitación.
+2013-10-19 17:12:35,426 INFO  - Ejecuto Asignar Habitación - Nro.Hab:3, Categoria:Común, Conserje:María Ines.
+2013-10-19 17:12:35,426 INFO  - Salio Asignar Habitación.
+2013-10-19 17:13:14,084 INFO  - Ingreso Cierre Caja
+2013-10-19 17:15:09,142 INFO  - Ejecuto Cierre Planilla de caja - Conserje:María Ines 
+2013-10-19 17:15:09,230 INFO  - Salir Cierre Caja
+2013-10-19 17:36:12,992 INFO  - Ingreso Asignar Habitación.
+2013-10-19 17:36:20,836 INFO  - Salio Asignar Habitación.
+2013-10-19 17:39:47,183 INFO  - Ingreso Asignar Habitación.
+2013-10-19 17:52:35,299 INFO  - Ingreso Asignar Habitación.
+2013-10-19 17:52:35,693 INFO  - Salio Asignar Habitación.
+2013-10-19 17:52:36,030 INFO  - Ingreso Cancelar Habitación
+2013-10-19 17:52:36,376 INFO  - Salir Cancelar Habitación
+2013-10-19 17:58:57,973 INFO  - Ingreso Asignar Habitación.
+2013-10-19 17:58:58,829 INFO  - Salio Asignar Habitación.
+2013-10-19 17:59:01,079 INFO  - Ingreso Asignar Habitación.
+2013-10-19 17:59:04,088 INFO  - Salio Asignar Habitación.
+2013-10-19 18:00:48,289 INFO  - Ingreso Asignar Habitación.
+2013-10-19 18:01:03,990 INFO  - Salio Asignar Habitación.
+2013-10-19 18:01:04,397 INFO  - Ingreso Cancelar Habitación
+2013-10-19 18:01:04,779 INFO  - Salir Cancelar Habitación
+2013-10-19 18:01:05,245 INFO  - Ingreso Adelanto Dinero
+2013-10-19 18:01:05,612 INFO  - Salir Adelanto de Dinero
+2013-10-19 18:01:13,690 INFO  - Ingreso Cerrar Turno
+2013-10-19 18:01:17,662 INFO  - Salir Cierre Turno
+2013-10-19 19:23:00,057 INFO  - Ingreso Pedido de Bar
+2013-10-19 19:23:06,592 INFO  - Ejecuto Pedido Bar - Hab:2
+2013-10-19 19:23:25,536 INFO  - Salir Pedido de Bar
+2013-10-19 19:31:52,319 INFO  - Ingreso Claves Opcionales
+2013-10-19 19:32:31,952 INFO  - Ejecuto Compras
+2013-10-19 19:32:31,953 INFO  - Salir Pedido de Bar
+2013-10-19 19:32:33,405 INFO  - Ingreso Claves Opcionales
+2013-10-19 19:33:18,150 INFO  - Ejecuto Compras
+2013-10-19 19:33:18,150 INFO  - Salir Pedido de Bar
+2013-10-19 19:33:20,651 INFO  - Ingreso Claves Opcionales
+2013-10-19 19:34:34,532 INFO  - Ingreso Claves Opcionales
+2013-10-19 19:35:56,583 INFO  - Ingreso Claves Opcionales
+2013-10-19 19:36:29,114 INFO  - Ejecuto Compras
+2013-10-19 19:36:29,115 INFO  - Salir Pedido de Bar
+2013-10-19 19:36:30,054 INFO  - Ingreso Claves Opcionales
+2013-10-19 19:36:40,256 INFO  - Salir Pedido de Bar
+2013-10-19 19:46:13,392 INFO  - Ingreso Asignar Habitación.
+2013-10-19 19:46:16,120 INFO  - Salio Asignar Habitación.
+2013-10-19 19:46:16,523 INFO  - Ingreso Cancelar Habitación
+2013-10-19 19:46:17,829 INFO  - Salir Cancelar Habitación
+2013-10-19 19:46:18,611 INFO  - Ingreso Cerrar Turno
+2013-10-19 19:46:19,481 INFO  - Salir Cierre Turno
+2013-10-19 19:46:19,851 INFO  - Ingreso Pedido de Bar
+2013-10-19 19:46:22,077 INFO  - Salir Pedido de Bar
+2013-10-31 20:07:37,774 INFO  - Ingreso Cerrar Turno
+2013-10-31 20:07:51,568 INFO  - Ingreso Cierre Turno al Cliente
+2013-10-31 20:07:59,146 INFO  - Salir Cierre Turno Cliente
+2013-11-03 14:34:17,649 INFO  - Ingreso Cerrar Turno
+2013-11-03 14:34:22,902 INFO  - Salir Cierre Turno
+2013-11-03 14:34:25,478 INFO  - Ingreso Cerrar Turno
+2013-11-03 14:34:28,678 INFO  - Salir Cierre Turno
+2013-11-03 14:34:41,054 INFO  - Ingreso Cerrar Turno
+2013-11-03 14:35:30,897 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-03 14:36:02,594 INFO  - Salir Cierre Turno Cliente
+2013-11-03 14:43:41,052 INFO  - Ingreso Cerrar Turno
+2013-11-03 14:43:49,135 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-03 14:50:25,798 INFO  - Ingreso Avisos Horarios
+2013-11-03 14:50:27,509 INFO  - Salir Avisos Horarios
+2013-11-03 14:50:31,778 INFO  - Ingreso Avisos Horarios
+2013-11-03 14:50:38,247 INFO  - Salir Avisos Horarios
+2013-11-03 14:51:00,782 INFO  - Ingreso Cerrar Turno
+2013-11-03 14:51:04,548 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-03 14:51:16,230 INFO  - Salir Cierre Turno Cliente
+2013-11-03 15:00:19,102 INFO  - Ingreso Cerrar Turno
+2013-11-03 15:00:23,332 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-03 15:00:37,464 INFO  - Salir Cierre Turno Cliente
+2013-11-03 15:00:39,699 INFO  - Ingreso Asignar Habitación.
+2013-11-03 15:02:52,331 INFO  - Ejecuto Asignar Habitación - Nro.Hab:1, Categoria:Común Express, Conserje:Ricardo.
+2013-11-03 15:02:52,332 INFO  - Salio Asignar Habitación.
+2013-11-03 15:03:34,809 INFO  - Ingreso Adelanto Dinero
+2013-11-03 15:03:43,221 INFO  - Salir Adelanto de Dinero
+2013-11-03 15:03:43,702 INFO  - Ingreso Cancelar Habitación
+2013-11-03 15:03:51,288 INFO  - Salir Cancelar Habitación
+2013-11-03 15:03:52,384 INFO  - Ingreso Cerrar Turno
+2013-11-03 15:04:03,447 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-03 15:04:08,615 INFO  - Salir Cierre Turno Cliente
+2013-11-03 15:04:10,608 INFO  - Ingreso Pedido de Bar
+2013-11-03 15:04:25,650 INFO  - Ejecuto Pedido Bar - Hab:1
+2013-11-03 15:04:28,649 INFO  - Salir Pedido de Bar
+2013-11-03 15:04:49,809 INFO  - Ingreso Cerrar Turno
+2013-11-03 15:04:52,959 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-03 15:06:33,830 INFO  - Salir Cierre Turno Cliente
+2013-11-03 15:06:37,474 INFO  - Ingreso Cerrar Turno
+2013-11-03 15:06:49,086 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-03 15:07:27,406 INFO  - Ejecuto Cierre de Turno - Hab:1
+2013-11-03 15:07:27,406 INFO  - Salir Cierre Turno Cliente
+2013-11-03 15:07:38,019 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:07:50,291 INFO  - Agrego Alarma Hab:
+2013-11-03 15:07:50,292 INFO  - Salir Avisos Horarios
+2013-11-03 15:26:04,617 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:26:22,365 INFO  - Agrego Alarma Hab:
+2013-11-03 15:26:22,365 INFO  - Salir Avisos Horarios
+2013-11-03 15:31:43,778 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:31:56,154 INFO  - Agrego Alarma Hab:
+2013-11-03 15:31:56,155 INFO  - Salir Avisos Horarios
+2013-11-03 15:32:00,601 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:32:09,749 INFO  - Elimino Alarma Hab:3
+2013-11-03 15:32:09,749 INFO  - Salir Avisos Horarios
+2013-11-03 15:32:12,759 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:32:18,494 INFO  - Agrego Alarma Hab:
+2013-11-03 15:32:18,494 INFO  - Salir Avisos Horarios
+2013-11-03 15:45:40,865 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:45:51,019 INFO  - Elimino Alarma Hab:3
+2013-11-03 15:45:51,020 INFO  - Salir Avisos Horarios
+2013-11-03 15:45:52,857 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:46:03,543 INFO  - Agrego Alarma Hab:
+2013-11-03 15:46:03,543 INFO  - Salir Avisos Horarios
+2013-11-03 15:46:05,873 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:46:11,475 INFO  - Elimino Alarma Hab:3
+2013-11-03 15:46:11,476 INFO  - Salir Avisos Horarios
+2013-11-03 15:46:12,786 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:46:18,956 INFO  - Agrego Alarma Hab:
+2013-11-03 15:46:18,956 INFO  - Salir Avisos Horarios
+2013-11-03 15:46:48,781 INFO  - Ingreso Avisos Horarios
+2013-11-03 15:46:55,413 INFO  - Salir Avisos Horarios
+2013-11-03 15:47:08,690 INFO  - Ingreso Claves Opcionales
+2013-11-03 15:47:16,868 INFO  - Salir Claves Opcionales
+2013-11-03 16:03:03,781 INFO  - Ingreso Asignar Habitación.
+2013-11-03 16:03:14,482 INFO  - Ejecuto Asignar Habitación - Nro.Hab:1, Categoria:Común Express, Conserje:Ricardo.
+2013-11-03 16:03:14,483 INFO  - Salio Asignar Habitación.
+2013-11-03 16:03:25,429 INFO  - Ingreso Avisos Horarios
+2013-11-03 16:03:34,160 INFO  - Agrego Alarma Hab:
+2013-11-03 16:03:34,161 INFO  - Salir Avisos Horarios
+2013-11-03 16:06:51,026 INFO  - Ingreso Avisos Horarios
+2013-11-03 16:06:59,471 INFO  - Elimino Alarma Hab:1
+2013-11-03 16:06:59,472 INFO  - Salir Avisos Horarios
+2013-11-03 16:07:00,496 INFO  - Ingreso Avisos Horarios
+2013-11-03 16:07:01,687 INFO  - Salir Avisos Horarios
+2013-11-03 16:07:05,593 INFO  - Ingreso Avisos Horarios
+2013-11-03 16:07:13,808 INFO  - Agrego Alarma Hab:
+2013-11-03 16:07:13,808 INFO  - Salir Avisos Horarios
+2013-11-03 16:08:22,561 INFO  - Ingreso Avisos Horarios
+2013-11-03 16:08:26,482 INFO  - Salir Avisos Horarios
+2013-11-03 23:33:45,671 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:33:46,560 INFO  - Salir Avisos Horarios
+2013-11-03 23:33:49,270 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:33:54,379 INFO  - Elimino Alarma Hab:2
+2013-11-03 23:33:54,379 INFO  - Salir Avisos Horarios
+2013-11-03 23:33:55,253 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:34:04,745 INFO  - Agrego Alarma Hab:
+2013-11-03 23:34:04,745 INFO  - Salir Avisos Horarios
+2013-11-03 23:35:35,419 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:35:44,931 INFO  - Agrego Alarma Hab:
+2013-11-03 23:35:44,932 INFO  - Salir Avisos Horarios
+2013-11-03 23:36:25,056 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:36:27,024 INFO  - Salir Avisos Horarios
+2013-11-03 23:36:28,187 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:36:29,074 INFO  - Salir Avisos Horarios
+2013-11-03 23:36:30,998 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:36:33,181 INFO  - Salir Avisos Horarios
+2013-11-03 23:37:16,734 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:37:17,455 INFO  - Salir Avisos Horarios
+2013-11-03 23:37:18,932 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:37:20,445 INFO  - Salir Avisos Horarios
+2013-11-03 23:38:46,163 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:38:52,427 INFO  - Elimino Alarma Hab:2
+2013-11-03 23:38:52,428 INFO  - Salir Avisos Horarios
+2013-11-03 23:38:54,052 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:38:57,239 INFO  - Salir Avisos Horarios
+2013-11-03 23:39:00,319 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:39:05,469 INFO  - Agrego Alarma Hab:
+2013-11-03 23:39:05,470 INFO  - Salir Avisos Horarios
+2013-11-03 23:40:07,868 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:40:11,401 INFO  - Salir Avisos Horarios
+2013-11-03 23:40:29,065 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:40:38,142 INFO  - Elimino Alarma Hab:3
+2013-11-03 23:40:38,143 INFO  - Salir Avisos Horarios
+2013-11-03 23:40:46,832 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:40:54,392 INFO  - Agrego Alarma Hab:
+2013-11-03 23:40:54,392 INFO  - Salir Avisos Horarios
+2013-11-03 23:52:57,073 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:53:04,781 INFO  - Agrego Alarma Hab:
+2013-11-03 23:53:04,782 INFO  - Salir Avisos Horarios
+2013-11-03 23:53:07,268 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:53:09,263 INFO  - Elimino Alarma Hab:2
+2013-11-03 23:53:09,263 INFO  - Salir Avisos Horarios
+2013-11-03 23:53:10,152 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:53:16,294 INFO  - Agrego Alarma Hab:
+2013-11-03 23:53:16,294 INFO  - Salir Avisos Horarios
+2013-11-03 23:54:42,650 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:54:45,179 INFO  - Salir Avisos Horarios
+2013-11-03 23:54:45,463 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:54:46,470 INFO  - Salir Avisos Horarios
+2013-11-03 23:59:41,869 INFO  - Ingreso Avisos Horarios
+2013-11-03 23:59:49,591 INFO  - Agrego Alarma Hab:
+2013-11-03 23:59:49,592 INFO  - Salir Avisos Horarios
+2013-11-04 00:00:58,072 INFO  - Ingreso Cerrar Turno
+2013-11-04 00:01:00,618 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-04 00:01:04,305 INFO  - Ejecuto Cierre de Turno - Hab:2
+2013-11-04 00:01:04,307 INFO  - Salir Cierre Turno Cliente
+2013-11-04 00:01:10,879 INFO  - Ingreso Avisos Horarios
+2013-11-04 00:01:22,790 INFO  - Salir Avisos Horarios
+2013-11-04 00:01:24,774 INFO  - Ingreso Avisos Horarios
+2013-11-04 00:01:29,263 INFO  - Salir Avisos Horarios
+2013-11-04 00:01:58,783 INFO  - Ingreso Avisos Horarios
+2013-11-04 00:02:01,072 INFO  - Elimino Alarma Hab:1
+2013-11-04 00:02:01,074 INFO  - Salir Avisos Horarios
+2013-11-04 00:02:04,024 INFO  - Ingreso Avisos Horarios
+2013-11-04 00:02:05,575 INFO  - Salir Avisos Horarios
+2013-11-04 00:02:07,386 INFO  - Ingreso Avisos Horarios
+2013-11-04 00:02:13,240 INFO  - Agrego Alarma Hab:
+2013-11-04 00:02:13,240 INFO  - Salir Avisos Horarios
+2013-11-04 00:22:22,126 INFO  - Ingreso Avisos Horarios
+2013-11-04 00:23:27,305 INFO  - Ingreso Avisos Horarios
+2013-11-04 00:23:32,706 INFO  - Elimino Alarma Hab:1
+2013-11-04 00:23:32,707 INFO  - Salir Avisos Horarios
+2013-11-04 00:23:36,595 INFO  - Ingreso Avisos Horarios
+2013-11-04 00:23:39,878 INFO  - Agrego Alarma Hab:
+2013-11-04 00:23:39,879 INFO  - Salir Avisos Horarios
+2013-11-06 21:18:54,922 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:18:57,891 INFO  - Salir Avisos Horarios
+2013-11-06 21:19:02,238 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:19:07,914 INFO  - Elimino Alarma Hab:1
+2013-11-06 21:19:07,914 INFO  - Salir Avisos Horarios
+2013-11-06 21:19:09,585 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:19:12,496 INFO  - Salir Avisos Horarios
+2013-11-06 21:19:14,030 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:19:17,575 INFO  - Agrego Alarma Hab:
+2013-11-06 21:19:17,575 INFO  - Salir Avisos Horarios
+2013-11-06 21:21:09,352 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:21:13,493 INFO  - Elimino Alarma Hab:3
+2013-11-06 21:21:13,493 INFO  - Salir Avisos Horarios
+2013-11-06 21:21:15,947 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:21:18,849 INFO  - Salir Avisos Horarios
+2013-11-06 21:21:21,084 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:21:28,194 INFO  - Agrego Alarma Hab:
+2013-11-06 21:21:28,194 INFO  - Salir Avisos Horarios
+2013-11-06 21:21:31,025 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:21:32,806 INFO  - Elimino Alarma Hab:1
+2013-11-06 21:21:32,807 INFO  - Salir Avisos Horarios
+2013-11-06 21:21:36,956 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:21:40,473 INFO  - Elimino Alarma Hab:3
+2013-11-06 21:21:40,473 INFO  - Salir Avisos Horarios
+2013-11-06 21:21:42,960 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:21:48,668 INFO  - Agrego Alarma Hab:
+2013-11-06 21:21:48,669 INFO  - Salir Avisos Horarios
+2013-11-06 21:22:35,442 INFO  - Ingreso Asignar Habitación.
+2013-11-06 21:22:56,444 INFO  - Ejecuto Asignar Habitación - Nro.Hab:2, Categoria:Común, Conserje:Ricardo.
+2013-11-06 21:22:56,444 INFO  - Salio Asignar Habitación.
+2013-11-06 21:22:59,951 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:23:12,364 INFO  - Salir Avisos Horarios
+2013-11-06 21:23:12,984 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:23:19,989 INFO  - Elimino Alarma Hab:2
+2013-11-06 21:23:19,989 INFO  - Salir Avisos Horarios
+2013-11-06 21:23:21,052 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:23:21,791 INFO  - Salir Avisos Horarios
+2013-11-06 21:23:24,383 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:23:29,491 INFO  - Agrego Alarma Hab:
+2013-11-06 21:23:29,491 INFO  - Salir Avisos Horarios
+2013-11-06 21:24:03,069 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:24:08,927 INFO  - Salir Avisos Horarios
+2013-11-06 21:24:22,979 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:24:29,663 INFO  - Salir Avisos Horarios
+2013-11-06 21:24:31,817 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:24:32,986 INFO  - Salir Avisos Horarios
+2013-11-06 21:24:38,823 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:24:45,153 INFO  - Salir Avisos Horarios
+2013-11-06 21:25:18,974 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:25:21,205 INFO  - Salir Avisos Horarios
+2013-11-06 21:25:29,907 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-06 21:30:07,866 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:30:17,261 INFO  - Salir Avisos Horarios
+2013-11-06 21:30:23,775 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:30:27,771 INFO  - Agrego Alarma Hab:
+2013-11-06 21:30:27,771 INFO  - Salir Avisos Horarios
+2013-11-06 21:41:12,947 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:41:26,465 INFO  - Agrego Alarma Hab:
+2013-11-06 21:41:26,466 INFO  - Salir Avisos Horarios
+2013-11-06 21:41:29,265 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:41:35,406 INFO  - Salir Avisos Horarios
+2013-11-06 21:41:36,959 INFO  - Ingreso Avisos Horarios
+2013-11-06 21:41:38,690 INFO  - Salir Avisos Horarios
+2013-11-06 21:41:41,431 INFO  - Ingreso Cambiar Estado Habitación
+2013-11-06 21:41:51,054 INFO  - Ejecuto Cambio Habitación - Hab:20 Opcion:Cambiar Estado
+2013-11-06 21:41:51,055 INFO  - Salir Cambiar Estado
+2013-11-06 22:57:19,366 INFO  - Ingreso Avisos Horarios
+2013-11-06 22:57:22,810 INFO  - Salir Avisos Horarios
+2013-11-06 22:57:28,660 INFO  - Ingreso Avisos Horarios
+2013-11-06 22:57:32,545 INFO  - Agrego Alarma Hab:
+2013-11-06 22:57:32,546 INFO  - Salir Avisos Horarios
+2013-11-06 23:10:30,579 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:10:38,747 INFO  - Salir Avisos Horarios
+2013-11-06 23:10:39,795 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:10:46,205 INFO  - Elimino Alarma Hab:1
+2013-11-06 23:10:46,205 INFO  - Salir Avisos Horarios
+2013-11-06 23:10:50,669 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:10:59,112 INFO  - Agrego Alarma Hab:
+2013-11-06 23:10:59,112 INFO  - Salir Avisos Horarios
+2013-11-06 23:11:01,435 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:11:04,658 INFO  - Elimino Alarma Hab:1
+2013-11-06 23:11:04,658 INFO  - Salir Avisos Horarios
+2013-11-06 23:11:05,541 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:11:11,430 INFO  - Agrego Alarma Hab:
+2013-11-06 23:11:11,430 INFO  - Salir Avisos Horarios
+2013-11-06 23:12:56,963 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:13:01,817 INFO  - Elimino Alarma Hab:3
+2013-11-06 23:13:01,820 INFO  - Salir Avisos Horarios
+2013-11-06 23:13:13,874 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:13:19,391 INFO  - Agrego Alarma Hab:
+2013-11-06 23:13:19,392 INFO  - Salir Avisos Horarios
+2013-11-06 23:14:24,582 INFO  - Ingreso Cerrar Turno
+2013-11-06 23:14:29,117 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-06 23:14:40,841 INFO  - Ejecuto Cierre de Turno - Hab:1
+2013-11-06 23:14:40,843 INFO  - Salir Cierre Turno Cliente
+2013-11-06 23:15:14,136 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:15:15,339 INFO  - Salir Avisos Horarios
+2013-11-06 23:15:16,601 INFO  - Ingreso Cerrar Turno
+2013-11-06 23:15:19,373 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-06 23:15:20,186 INFO  - Ejecuto Cierre de Turno - Hab:3
+2013-11-06 23:15:20,186 INFO  - Salir Cierre Turno Cliente
+2013-11-06 23:28:40,609 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:28:44,348 INFO  - Agrego Alarma Hab:
+2013-11-06 23:28:44,349 INFO  - Salir Avisos Horarios
+2013-11-06 23:30:25,696 INFO  - Ingreso Cerrar Turno
+2013-11-06 23:30:31,313 INFO  - Salir Cierre Turno
+2013-11-06 23:30:35,165 INFO  - Ingreso Cerrar Turno
+2013-11-06 23:30:41,741 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-06 23:30:49,267 INFO  - Ejecuto Cierre de Turno - Hab:2
+2013-11-06 23:30:49,269 INFO  - Salir Cierre Turno Cliente
+2013-11-06 23:31:47,586 INFO  - Ingreso Asignar Habitación.
+2013-11-06 23:31:56,752 INFO  - Ejecuto Asignar Habitación - Nro.Hab:1, Categoria:Común Express, Conserje:Ricardo.
+2013-11-06 23:31:56,754 INFO  - Salio Asignar Habitación.
+2013-11-06 23:31:58,880 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:32:03,106 INFO  - Salir Avisos Horarios
+2013-11-06 23:32:03,711 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:32:08,356 INFO  - Elimino Alarma Hab:1
+2013-11-06 23:32:08,356 INFO  - Salir Avisos Horarios
+2013-11-06 23:32:09,737 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:32:11,424 INFO  - Salir Avisos Horarios
+2013-11-06 23:32:14,748 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:32:19,629 INFO  - Agrego Alarma Hab:
+2013-11-06 23:32:19,629 INFO  - Salir Avisos Horarios
+2013-11-06 23:32:36,364 INFO  - Ingreso Cerrar Turno
+2013-11-06 23:32:40,388 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-06 23:36:54,578 INFO  - Ingreso Asignar Habitación.
+2013-11-06 23:37:01,709 INFO  - Ejecuto Asignar Habitación - Nro.Hab:1, Categoria:Común Express, Conserje:Ricardo.
+2013-11-06 23:37:01,710 INFO  - Salio Asignar Habitación.
+2013-11-06 23:37:10,987 INFO  - Ingreso Cerrar Turno
+2013-11-06 23:37:14,610 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-06 23:37:15,205 INFO  - Ejecuto Cierre de Turno - Hab:1
+2013-11-06 23:37:15,207 INFO  - Salir Cierre Turno Cliente
+2013-11-06 23:37:17,462 INFO  - Ingreso Asignar Habitación.
+2013-11-06 23:37:23,187 INFO  - Ejecuto Asignar Habitación - Nro.Hab:1, Categoria:Común Express, Conserje:Ricardo.
+2013-11-06 23:37:23,187 INFO  - Salio Asignar Habitación.
+2013-11-06 23:37:27,345 INFO  - Ingreso Avisos Horarios
+2013-11-06 23:37:32,833 INFO  - Agrego Alarma Hab:
+2013-11-06 23:37:32,834 INFO  - Salir Avisos Horarios
+2013-11-06 23:37:46,797 INFO  - Ingreso Cerrar Turno
+2013-11-06 23:37:50,219 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-06 23:37:57,280 INFO  - Ejecuto Cierre de Turno - Hab:1
+2013-11-06 23:37:57,280 INFO  - Salir Cierre Turno Cliente
+2013-11-07 19:20:11,112 INFO  - Ingreso Asignar Habitación.
+2013-11-07 19:20:13,088 INFO  - Salio Asignar Habitación.
+2013-11-07 19:20:14,548 INFO  - Ingreso Asignar Habitación.
+2013-11-07 19:20:15,078 INFO  - Salio Asignar Habitación.
+2013-11-07 19:20:16,719 INFO  - Ingreso Asignar Habitación.
+2013-11-07 19:20:28,196 INFO  - Ejecuto Asignar Habitación - Nro.Hab:2, Categoria:Común, Conserje:Ricardo.
+2013-11-07 19:20:28,197 INFO  - Salio Asignar Habitación.
+2013-11-07 19:20:31,069 INFO  - Ingreso Pedido de Bar
+2013-11-07 19:20:46,210 INFO  - Salir Pedido de Bar
+2013-11-07 19:20:49,392 INFO  - Ingreso Cerrar Turno
+2013-11-07 19:20:55,261 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-07 19:21:04,104 INFO  - Salir Cierre Turno Cliente
+2013-11-07 19:21:06,225 INFO  - Ingreso Adelanto Dinero
+2013-11-07 19:21:13,902 INFO  - Ejecuto Adelanto de Dinero - Hab:2  Monto:30
+2013-11-07 19:21:13,903 INFO  - Salir Adelanto de Dinero
+2013-11-07 19:21:15,776 INFO  - Ingreso Cerrar Turno
+2013-11-07 19:21:19,768 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-07 19:21:25,291 INFO  - Salir Cierre Turno Cliente
+2013-11-07 19:21:26,543 INFO  - Ingreso Pedido de Bar
+2013-11-07 19:21:34,060 INFO  - Ejecuto Pedido Bar - Hab:2
+2013-11-07 19:21:37,379 INFO  - Salir Pedido de Bar
+2013-11-07 19:21:42,250 INFO  - Ingreso Cerrar Turno
+2013-11-07 19:21:49,671 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-07 19:21:54,352 INFO  - Salir Cierre Turno Cliente
+2013-11-07 19:21:55,364 INFO  - Ingreso Cerrar Turno
+2013-11-07 19:22:07,469 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-07 19:22:12,608 INFO  - Ejecuto Cierre de Turno - Hab:2
+2013-11-07 19:22:12,608 INFO  - Salir Cierre Turno Cliente
+2013-11-07 19:38:53,884 INFO  - Ingreso Asignar Habitación.
+2013-11-07 19:39:13,779 INFO  - Salio Asignar Habitación.
+2013-11-07 19:40:53,875 INFO  - Ingreso Asignar Habitación.
+2013-11-07 19:41:13,981 INFO  - Ejecuto Asignar Habitación - Nro.Hab:1, Categoria:Común Express, Conserje:Ricardo.
+2013-11-07 19:41:13,982 INFO  - Salio Asignar Habitación.
+2013-11-07 19:41:17,931 INFO  - Ingreso Adelanto Dinero
+2013-11-07 19:42:01,383 INFO  - Salir Adelanto de Dinero
+2013-11-07 19:42:02,653 INFO  - Ingreso Cerrar Turno
+2013-11-07 19:42:08,082 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-07 19:43:16,868 INFO  - Salir Cierre Turno Cliente
+2013-11-07 20:15:50,121 INFO  - Ingreso Claves Opcionales
+2013-11-07 20:15:56,017 INFO  - Salir Claves Opcionales
+2013-11-07 20:20:28,061 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:21:15,036 INFO  - Salir Cancelar Habitación
+2013-11-07 20:22:18,809 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:22:37,259 INFO  - Salir Cancelar Habitación
+2013-11-07 20:22:40,957 INFO  - Ingreso Asignar Habitación.
+2013-11-07 20:31:58,886 INFO  - Salio Asignar Habitación.
+2013-11-07 20:31:59,314 INFO  - Ingreso Asignar Habitación.
+2013-11-07 20:32:00,328 INFO  - Salio Asignar Habitación.
+2013-11-07 20:32:02,121 INFO  - Ingreso Asignar Habitación.
+2013-11-07 20:32:03,226 INFO  - Salio Asignar Habitación.
+2013-11-07 20:32:03,920 INFO  - Ingreso Asignar Habitación.
+2013-11-07 20:32:30,061 INFO  - Salio Asignar Habitación.
+2013-11-07 20:32:30,399 INFO  - Ingreso Asignar Habitación.
+2013-11-07 20:33:34,594 INFO  - Salio Asignar Habitación.
+2013-11-07 20:36:02,856 INFO  - Ingreso Asignar Habitación.
+2013-11-07 20:36:37,160 INFO  - Ejecuto Asignar Habitación - Nro.Hab:2, Categoria:Común, Conserje:Ricardo.
+2013-11-07 20:36:37,161 INFO  - Salio Asignar Habitación.
+2013-11-07 20:36:40,710 INFO  - Ingreso Adelanto Dinero
+2013-11-07 20:36:43,467 INFO  - Salir Adelanto de Dinero
+2013-11-07 20:36:44,117 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:37:21,767 INFO  - Salir Cancelar Habitación
+2013-11-07 20:37:23,880 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:37:30,065 INFO  - Salir Cancelar Habitación
+2013-11-07 20:38:00,671 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:38:08,212 INFO  - Salir Cancelar Habitación
+2013-11-07 20:38:26,129 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:38:37,836 INFO  - Salir Cancelar Habitación
+2013-11-07 20:39:11,571 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:39:30,111 INFO  - Salir Cancelar Habitación
+2013-11-07 20:39:41,102 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:39:44,031 INFO  - Salir Cancelar Habitación
+2013-11-07 20:39:45,084 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:39:47,958 INFO  - Salir Cancelar Habitación
+2013-11-07 20:39:48,366 INFO  - Ingreso Cancelar Habitación
+2013-11-07 20:40:11,073 INFO  - Salir Cancelar Habitación
+2013-11-07 20:55:46,775 INFO  - Ingreso Adelanto Dinero
+2013-11-07 20:55:54,105 INFO  - Salir Adelanto de Dinero
+2013-11-07 20:55:54,478 INFO  - Ingreso Cerrar Turno
+2013-11-07 20:55:58,941 INFO  - Salir Cierre Turno
+2013-11-07 20:55:59,290 INFO  - Ingreso Pedido de Bar
+2013-11-07 20:56:02,459 INFO  - Salir Pedido de Bar
+2013-11-07 20:56:03,714 INFO  - Ingreso Avisos Horarios
+2013-11-07 20:56:08,667 INFO  - Salir Avisos Horarios
+2013-11-07 20:56:10,263 INFO  - Ingreso Adelanto Dinero
+2013-11-07 20:56:16,346 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:01:22,562 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:01:36,981 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:02:49,249 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:03:10,927 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:04:11,322 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:04:22,964 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:04:41,696 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:07:08,664 INFO  - Ejecuto Adelanto de Dinero - Hab:1  Monto:12
+2013-11-07 21:07:08,665 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:07:13,189 INFO  - Ingreso Asignar Habitación.
+2013-11-07 21:07:16,805 INFO  - Salio Asignar Habitación.
+2013-11-07 21:07:17,259 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:07:18,083 INFO  - Salir Cancelar Habitación
+2013-11-07 21:07:18,334 INFO  - Ingreso Asignar Habitación.
+2013-11-07 21:07:18,901 INFO  - Salio Asignar Habitación.
+2013-11-07 21:07:19,163 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:07:19,510 INFO  - Salir Cancelar Habitación
+2013-11-07 21:07:19,799 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:07:20,176 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:07:20,512 INFO  - Ingreso Cerrar Turno
+2013-11-07 21:07:21,028 INFO  - Salir Cierre Turno
+2013-11-07 21:07:21,403 INFO  - Ingreso Pedido de Bar
+2013-11-07 21:07:59,991 INFO  - Salir Pedido de Bar
+2013-11-07 21:08:40,854 INFO  - Ingreso Pedido de Bar
+2013-11-07 21:08:52,912 INFO  - Salir Pedido de Bar
+2013-11-07 21:12:32,854 INFO  - Ingreso Pedido de Bar
+2013-11-07 21:12:37,091 INFO  - Salir Pedido de Bar
+2013-11-07 21:12:37,400 INFO  - Ingreso Anular Pedido Bar
+2013-11-07 21:12:37,988 INFO  - Salir Anular Pedido
+2013-11-07 21:15:31,479 INFO  - Ingreso Pedido de Bar
+2013-11-07 21:15:42,079 INFO  - Salir Pedido de Bar
+2013-11-07 21:17:50,749 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:17:52,548 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:17:52,954 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:17:53,710 INFO  - Salir Cancelar Habitación
+2013-11-07 21:17:53,967 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:17:54,724 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:17:55,131 INFO  - Ingreso Asignar Habitación.
+2013-11-07 21:17:56,115 INFO  - Salio Asignar Habitación.
+2013-11-07 21:17:56,786 INFO  - Ingreso Cerrar Turno
+2013-11-07 21:17:59,673 INFO  - Salir Cierre Turno
+2013-11-07 21:18:00,116 INFO  - Ingreso Pedido de Bar
+2013-11-07 21:18:43,311 INFO  - Salir Pedido de Bar
+2013-11-07 21:18:43,769 INFO  - Ingreso Avisos Horarios
+2013-11-07 21:19:05,188 INFO  - Salir Avisos Horarios
+2013-11-07 21:19:05,713 INFO  - Ingreso Anular Pedido Bar
+2013-11-07 21:19:06,943 INFO  - Salir Anular Pedido
+2013-11-07 21:19:07,261 INFO  - Ingreso Pedido de Bar
+2013-11-07 21:19:17,244 INFO  - Salir Pedido de Bar
+2013-11-07 21:20:47,902 INFO  - Ingreso Anular Pedido Bar
+2013-11-07 21:20:53,965 INFO  - Salir Anular Pedido
+2013-11-07 21:20:55,336 INFO  - Ingreso Pedido de Bar
+2013-11-07 21:20:59,830 INFO  - Ejecuto Pedido Bar - Hab:2
+2013-11-07 21:21:03,031 INFO  - Salir Pedido de Bar
+2013-11-07 21:21:06,167 INFO  - Ingreso Anular Pedido Bar
+2013-11-07 21:21:32,625 INFO  - Salir Anular Pedido
+2013-11-07 21:21:56,550 INFO  - Ingreso Asignar Habitación.
+2013-11-07 21:22:03,696 INFO  - Salio Asignar Habitación.
+2013-11-07 21:22:04,205 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:22:05,577 INFO  - Salir Cancelar Habitación
+2013-11-07 21:22:05,791 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:22:08,266 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:22:08,503 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:22:09,277 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:22:09,551 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:22:30,218 INFO  - Salir Cancelar Habitación
+2013-11-07 21:22:30,658 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:22:43,761 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:22:44,130 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:22:44,835 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:22:45,536 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:26:58,015 INFO  - Salir Cancelar Habitación
+2013-11-07 21:26:58,499 INFO  - Ingreso Asignar Habitación.
+2013-11-07 21:26:59,251 INFO  - Salio Asignar Habitación.
+2013-11-07 21:26:59,580 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:27:00,237 INFO  - Salir Cancelar Habitación
+2013-11-07 21:27:00,425 INFO  - Ingreso Asignar Habitación.
+2013-11-07 21:27:00,942 INFO  - Salio Asignar Habitación.
+2013-11-07 21:27:01,133 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:27:03,311 INFO  - Salir Cancelar Habitación
+2013-11-07 21:27:04,529 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:27:07,584 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:27:07,943 INFO  - Ingreso Cerrar Turno
+2013-11-07 21:27:09,189 INFO  - Salir Cierre Turno
+2013-11-07 21:27:09,569 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:27:10,117 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:27:10,422 INFO  - Ingreso Cancelar Habitación
+2013-11-07 21:27:11,189 INFO  - Salir Cancelar Habitación
+2013-11-07 21:27:11,414 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:27:11,947 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:27:12,334 INFO  - Ingreso Cerrar Turno
+2013-11-07 21:27:15,242 INFO  - Salir Cierre Turno
+2013-11-07 21:27:17,069 INFO  - Ingreso Pedido de Bar
+2013-11-07 21:27:29,215 INFO  - Salir Pedido de Bar
+2013-11-07 21:27:29,507 INFO  - Ingreso Adelanto Dinero
+2013-11-07 21:27:57,053 INFO  - Salir Adelanto de Dinero
+2013-11-07 21:27:57,400 INFO  - Ingreso Avisos Horarios
+2013-11-07 21:27:58,563 INFO  - Salir Avisos Horarios
+2013-11-07 21:27:59,083 INFO  - Ingreso Cambiar Estado Habitación
+2013-11-07 21:27:59,692 INFO  - Salir Cambiar Estado
+2013-11-07 21:28:00,167 INFO  - Ingreso Extracción Dinero
+2013-11-07 21:28:02,659 INFO  - Salir Extracción Dinero
+2013-11-07 21:28:03,131 INFO  - Ingreso Claves Opcionales
+2013-11-07 21:28:05,198 INFO  - Salir Claves Opcionales
+2013-11-07 21:28:06,025 INFO  - Ingreso Estado Caja
+2013-11-07 21:28:08,790 INFO  - Salir Estado Caja
+2013-11-07 21:28:09,290 INFO  - Ingreso Cierre Caja
+2013-11-07 21:28:12,645 INFO  - Salir Cierre Caja
+2013-11-07 21:33:06,279 INFO  - Ingreso Avisos Horarios
+2013-11-07 21:33:24,536 INFO  - Salir Avisos Horarios
+2013-11-07 21:33:25,645 INFO  - Ingreso Cerrar Turno
+2013-11-07 21:33:28,187 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-07 21:34:02,590 INFO  - Salir Cierre Turno Cliente
+2013-11-07 21:35:02,339 INFO  - Ingreso Cerrar Turno
+2013-11-07 21:35:05,439 INFO  - Ingreso Cierre Turno al Cliente
+2013-11-07 21:36:02,213 INFO  - Salir Cierre Turno Cliente

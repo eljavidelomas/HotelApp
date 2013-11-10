@@ -1,0 +1,1302 @@
+2013-09-28 15:36:23,266 ERROR - Error de conexión con la base de datos - Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Proveedor de memoria compartida, error: 40 - No se pudo abrir una conexión con SQL Server)-   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en Hoteles.fPrincipal2.initConnection() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 112
+2013-09-28 15:36:23,313 ERROR - Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Proveedor de memoria compartida, error: 40 - No se pudo abrir una conexión con SQL Server)-   en Hoteles.fPrincipal2.initConnection() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 119
+   en Hoteles.fPrincipal2..ctor() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 45
+   en Hoteles.Program.Main() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Program.cs:línea 21
+2013-09-28 16:43:56,350 ERROR - Fallo Actualizar Hora
+2013-09-28 16:43:56,418 ERROR - Subproceso anulado.-   en System.Windows.Forms.SafeNativeMethods.GetWindowThreadProcessId(HandleRef hWnd, Int32& lpdwProcessId)
+   en System.Windows.Forms.Control.get_InvokeRequired()
+   en Hoteles.fPrincipal2.actualizarReloj() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 220
+2013-09-28 16:59:40,024 ERROR - Fallo Actualizar Hora
+2013-09-28 16:59:40,031 ERROR - Subproceso anulado.-   en System.Windows.Forms.SafeNativeMethods.GetWindowThreadProcessId(HandleRef hWnd, Int32& lpdwProcessId)
+   en System.Windows.Forms.Control.get_InvokeRequired()
+   en Hoteles.fPrincipal2.actualizarReloj() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 220
+2013-09-28 19:58:38,928 ERROR - Subproceso anulado. -    en System.Threading.WaitHandle.WaitOneNative(SafeWaitHandle waitHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   en System.Threading.WaitHandle.WaitOne(Int64 timeout, Boolean exitContext)
+   en System.Windows.Forms.Control.WaitForWaitHandle(WaitHandle waitHandle)
+   en System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   en System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   en Hoteles.fPrincipal2.timerParpadeo2_tick() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 320
+2013-10-01 19:37:59,412 ERROR - Error al Iniciar.
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 84
+   en Hoteles.fPrincipal2..ctor() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 59
+2013-10-01 23:44:28,603 ERROR - Error al Iniciar.
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 84
+   en Hoteles.fPrincipal2..ctor() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 59
+2013-10-01 23:46:03,520 ERROR - Error al Iniciar.
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 84
+   en Hoteles.fPrincipal2..ctor() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 59
+2013-10-01 23:46:48,805 ERROR - Error al Iniciar.
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 84
+   en Hoteles.fPrincipal2..ctor() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 59
+2013-10-01 23:49:54,153 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-01 23:52:31,740 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-05 16:50:11,940 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-05 16:51:01,282 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-05 16:53:18,762 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM7' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:06:49,526 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:06:57,416 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-07 23:06:57,507 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:07:07,519 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:07:17,530 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:07:27,542 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:07:37,552 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:09:29,174 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:09:35,586 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-07 23:09:35,647 ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 871
+2013-10-07 23:09:45,659 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:16:47,690 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:16:54,016 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-07 23:16:54,067 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:17:04,078 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:17:14,088 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:17:24,100 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:17:34,110 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:17:44,121 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:17:54,131 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:18:04,142 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:19:27,465 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:19:33,823 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-07 23:19:33,873 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:19:43,883 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:19:48,196 ERROR - Subproceso anulado. -    en System.Threading.WaitHandle.WaitOneNative(SafeWaitHandle waitHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   en System.Threading.WaitHandle.WaitOne(Int64 timeout, Boolean exitContext)
+   en System.Windows.Forms.Control.WaitForWaitHandle(WaitHandle waitHandle)
+   en System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   en System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   en Hoteles.fPrincipal2.timerParpadeo2_tick() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 326
+2013-10-07 23:20:56,890 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:21:02,397 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-07 23:21:02,441 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:21:12,452 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:21:22,462 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:24:51,464 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:24:57,736 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-07 23:24:57,804 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:25:07,815 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:25:17,826 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:25:27,836 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:25:37,844 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:25:47,855 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:25:57,865 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:27:36,075 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:27:42,035 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-07 23:27:42,080 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:27:52,091 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:28:41,342 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-07 23:28:47,067 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-07 23:28:47,148 ERROR - Referencia a objeto no establecida como instancia de un objeto. -    en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 871
+2013-10-07 23:28:57,160 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:29:07,172 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:29:17,183 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:29:27,190 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:29:37,201 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:29:47,212 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:29:57,224 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:30:07,234 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:30:17,245 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:30:27,256 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:30:37,266 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:30:47,277 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:30:57,288 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:31:07,301 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:31:17,311 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:31:27,323 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:31:37,334 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:31:47,344 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:31:57,355 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:32:07,368 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:32:17,380 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:32:27,390 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:32:37,401 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:32:47,414 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:32:57,424 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:33:07,437 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:33:17,449 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:33:27,460 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:33:37,471 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:33:47,483 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:33:57,494 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:34:07,504 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:34:17,516 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:34:27,524 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:34:37,535 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:34:47,546 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:34:57,556 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:35:07,568 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:35:17,578 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-07 23:35:27,590 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:16:31,736 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-09 23:16:40,000 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-09 23:16:40,095 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:16:50,105 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:17:00,117 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:17:10,126 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:17:20,137 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:17:30,149 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:24:31,029 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-09 23:24:38,977 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-09 23:24:39,026 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:24:49,037 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:25:50,034 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-09 23:25:56,669 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-09 23:25:56,740 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:27:03,058 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-09 23:27:08,092 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-09 23:27:08,134 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:27:18,144 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:30:38,371 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-09 23:30:45,099 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-09 23:30:45,147 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:30:55,158 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:31:05,169 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:31:15,181 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:31:25,191 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:31:35,201 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:36:02,699 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-09 23:36:09,644 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-09 23:36:09,713 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:36:19,725 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:36:29,736 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:36:39,746 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:36:49,757 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:36:59,768 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:37:09,780 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-09 23:37:19,489 ERROR - Subproceso anulado. -    en System.Threading.WaitHandle.WaitOneNative(SafeWaitHandle waitHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   en System.Threading.WaitHandle.WaitOne(Int64 timeout, Boolean exitContext)
+   en System.Windows.Forms.Control.WaitForWaitHandle(WaitHandle waitHandle)
+   en System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   en System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   en Hoteles.fPrincipal2.timerParpadeo2_tick() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 326
+2013-10-10 00:01:22,556 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 00:01:29,473 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 00:01:29,545 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:01:39,555 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:01:49,567 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:04:36,755 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 00:04:41,861 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 00:04:41,910 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:04:51,918 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:05:01,928 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:05:11,938 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:05:21,949 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:05:31,958 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:05:41,971 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:05:51,982 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:06:01,991 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:06:12,002 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:06:22,011 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:06:32,023 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:06:42,032 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:06:52,043 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:07:02,054 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:07:12,064 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:07:22,075 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:07:32,084 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:11:50,918 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 00:11:58,071 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 00:11:58,117 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:12:08,128 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:12:18,139 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:12:28,149 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:12:38,161 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:12:48,171 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:12:58,182 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:13:08,193 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:13:18,205 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:13:28,216 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:13:38,224 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:18:54,590 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 00:19:01,888 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 00:19:01,933 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:19:11,944 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:20:04,427 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 00:20:10,042 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 00:20:10,085 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:20:20,097 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:20:30,108 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:20:40,118 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:20:50,128 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:23:55,286 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 00:24:02,451 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 00:24:02,498 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:24:12,508 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:24:22,520 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:24:32,531 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:24:42,541 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:25:37,275 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 00:25:44,031 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 00:25:44,080 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:25:54,090 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:26:04,101 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:26:14,111 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:26:24,121 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:26:34,132 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:34:55,248 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 00:35:01,096 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 00:35:01,173 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:35:11,183 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:35:21,194 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:35:31,204 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:35:41,214 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:35:51,224 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 00:36:01,235 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:27:30,033 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 21:27:41,468 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 21:27:41,745 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:27:51,757 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:28:22,828 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 21:28:29,926 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 21:28:29,982 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:28:40,794 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:28:50,803 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:29:00,815 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:29:10,824 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:29:20,835 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:29:30,847 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:29:40,857 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:29:50,889 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:30:00,897 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:30:10,907 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:30:20,917 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:30:30,928 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:30:40,938 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:30:50,969 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:31:00,981 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:31:10,993 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:31:21,004 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:31:31,012 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:31:37,274 ERROR - Subproceso anulado. -    en System.Threading.WaitHandle.WaitOneNative(SafeWaitHandle waitHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   en System.Threading.WaitHandle.WaitOne(Int64 timeout, Boolean exitContext)
+   en System.Windows.Forms.Control.WaitForWaitHandle(WaitHandle waitHandle)
+   en System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   en System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   en Hoteles.fPrincipal2.timerParpadeo2_tick() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 326
+2013-10-10 21:38:14,254 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 21:38:21,046 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 21:38:21,095 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:38:31,123 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:38:41,134 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:38:51,146 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:39:01,157 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:39:11,168 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:39:21,178 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:39:31,188 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:39:41,218 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:39:51,229 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:40:01,241 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:40:11,251 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:40:20,534 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 21:40:27,129 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 21:40:27,189 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:40:37,199 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:40:47,229 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:40:57,240 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:43:36,932 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-10 21:43:43,754 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-10 21:43:43,835 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:43:53,846 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-10 21:44:03,855 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:50:55,120 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-14 15:51:02,771 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 15:51:03,246 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:51:13,256 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:51:22,934 ERROR - Subproceso anulado. -    en System.Threading.WaitHandle.WaitOneNative(SafeWaitHandle waitHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   en System.Threading.WaitHandle.WaitOne(Int64 timeout, Boolean exitContext)
+   en System.Windows.Forms.Control.WaitForWaitHandle(WaitHandle waitHandle)
+   en System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   en System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   en Hoteles.fPrincipal2.timerParpadeo2_tick() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 326
+2013-10-14 15:54:19,773 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-14 15:54:25,918 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 15:54:25,972 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:54:35,982 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:54:45,991 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:55:31,216 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-14 15:55:37,795 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 15:55:37,858 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:55:47,869 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:55:57,878 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:56:07,888 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:56:17,897 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:56:27,907 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:56:37,916 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:56:47,925 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:56:57,935 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:57:07,944 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:57:17,954 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:57:27,964 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:57:37,987 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:57:47,996 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:57:58,006 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:58:09,354 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:58:19,364 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:58:29,374 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:58:39,384 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:58:49,394 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:58:59,404 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:59:09,413 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 15:59:19,423 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:04:17,424 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 86
+2013-10-14 16:04:24,140 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:04:24,296 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:04:34,299 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:04:44,302 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:04:54,310 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:05:04,314 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:05:14,317 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:05:24,320 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:05:34,323 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:05:44,328 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:05:54,331 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:06:04,335 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:06:14,339 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:06:24,342 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:06:34,346 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:06:44,349 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:06:54,353 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 879
+2013-10-14 16:15:15,935 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-14 16:15:22,489 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:15:22,548 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:15:32,559 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:15:42,569 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:15:52,579 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:16:02,588 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:16:12,598 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:16:22,607 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:16:32,616 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:16:42,626 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:19:40,198 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-14 16:19:46,515 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:19:46,574 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:19:56,584 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:20:06,593 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:20:16,603 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:20:26,612 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:20:36,622 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:20:46,636 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:20:56,647 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:21:06,657 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:21:16,666 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:21:26,677 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:21:36,686 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:21:46,696 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:21:56,705 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:22:06,716 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:22:16,727 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:22:26,736 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:22:36,746 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:22:46,757 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:22:56,769 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:23:06,778 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:23:16,788 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:33:41,394 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-14 16:33:47,591 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:33:47,654 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:33:57,668 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:34:07,677 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:40:34,245 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-14 16:40:40,544 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:40:40,608 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:40:50,617 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:41:00,627 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:41:10,636 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:41:20,646 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:41:30,659 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:41:40,668 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:47:57,092 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-14 16:48:03,323 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:48:03,406 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:48:13,421 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:48:23,430 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:48:33,440 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:52:58,118 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-14 16:53:04,381 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:53:04,460 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:53:26,870 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-14 16:53:33,421 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:53:33,499 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:53:43,509 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:53:53,518 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:54:03,528 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:54:13,537 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:54:23,547 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-14 16:55:49,808 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-14 16:55:56,028 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-14 16:55:56,114 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:56:54,361 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-19 11:57:02,655 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 11:57:02,829 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:57:12,839 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:57:22,848 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:57:32,861 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:57:42,871 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:57:52,879 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:58:02,889 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:58:12,899 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:58:22,909 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:58:32,918 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:58:42,928 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:58:52,938 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:59:02,947 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:59:12,956 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:59:26,772 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-19 11:59:32,559 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 11:59:32,633 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:59:42,645 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 11:59:53,828 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-19 12:00:00,645 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 12:00:00,706 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:00:10,716 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:00:20,726 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:00:30,734 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:00:40,757 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:00:50,762 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:01:00,775 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:01:12,855 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:01:22,868 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:01:32,878 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:01:42,887 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:01:57,967 ERROR - Error en la configuracion de señalizacion 
+El puerto 'COM8' no existe.-   en System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   en System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   en System.IO.Ports.SerialPort.Open()
+   en Hoteles.fPrincipal2.configPortSerial() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 93
+2013-10-19 12:02:05,433 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 12:02:05,529 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:02:15,539 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:02:25,550 ERROR - La clave proporcionada no se encontró en el diccionario. -    en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 886
+2013-10-19 12:03:08,565 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 12:13:41,415 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 14:45:11,915 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 14:50:01,387 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 14:51:07,641 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 14:54:11,369 ERROR - No se puede reconocer la cadena como valor DateTime válido. -    en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.DateTime.Parse(String s)
+   en Hoteles.Entities.tools.actualizarListadoTurnos(DataGridView dgv1, DataGridView dgv2) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\tools.cs:línea 170
+2013-10-19 14:54:19,343 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 14:56:11,673 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 14:57:22,231 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 14:59:29,666 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 17:09:59,562 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 17:12:14,452 ERROR -  Habitacion.CS , metodo: Asignar -  Invalid object name 'categoriaArticulos'.    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en Hoteles.Entities.Habitacion.Asignar(fPrincipal2 fPrincipal, Int32 descuentoId, Int32 nroHab, Int32 pernocte, Int32 catId, Int32 conserjeId, Int32 socioId, Int32 puntos, Decimal montoApagar, Tarifa tarifaNoche, Decimal descTotalHabitacion, Decimal impExtra) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Habitacion.cs:línea 85
+2013-10-19 17:20:32,146 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 17:26:23,819 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 17:31:52,102 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 17:34:40,397 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 17:35:59,161 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 17:39:39,016 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-19 17:52:24,594 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-24 19:41:58,856 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-24 19:42:05,256 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-26 12:43:24,604 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-26 12:43:31,924 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:06:22,110 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:06:29,358 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:20:50,211 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:20:58,398 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:22:10,760 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:22:18,881 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:23:28,973 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:23:36,401 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:24:59,193 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:25:06,622 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:27:31,102 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:27:38,464 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:27:52,735 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:27:58,175 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:28:37,172 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:28:44,496 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:29:34,240 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:29:41,684 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:30:19,119 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:30:26,451 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:35:44,209 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:35:49,519 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 19:37:24,784 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 19:37:32,083 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-10-31 20:07:28,119 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-10-31 20:07:35,459 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 14:33:58,818 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 14:34:05,499 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 14:43:26,023 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 14:43:31,261 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 14:49:01,601 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 14:49:28,938 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 14:59:41,686 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 14:59:49,056 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 15:24:39,303 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 15:24:45,124 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 15:30:45,502 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 15:30:50,986 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 15:45:27,185 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 15:45:33,248 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 16:02:51,310 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 16:02:57,314 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 16:06:38,071 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 16:06:43,430 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 16:08:50,717 ERROR - Fallo Actualizar Hora
+2013-11-03 16:08:50,798 ERROR - Subproceso anulado.-   en System.Windows.Forms.SafeNativeMethods.GetWindowThreadProcessId(HandleRef hWnd, Int32& lpdwProcessId)
+   en System.Windows.Forms.Control.get_InvokeRequired()
+   en Hoteles.fPrincipal2.actualizarReloj() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 269
+2013-11-03 23:33:01,739 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 23:33:07,557 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 23:38:34,429 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 23:38:39,539 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 23:42:02,312 ERROR - Subproceso anulado. -    en System.Threading.WaitHandle.WaitOneNative(SafeWaitHandle waitHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   en System.Threading.WaitHandle.WaitOne(Int64 timeout, Boolean exitContext)
+   en System.Windows.Forms.Control.WaitForWaitHandle(WaitHandle waitHandle)
+   en System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   en System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   en Hoteles.fPrincipal2.actualizarTarifas() en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\fPrincipal2.cs:línea 905
+2013-11-03 23:52:42,263 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 23:52:47,528 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-03 23:59:31,455 ERROR - No se pudo recuperar la habitacion 2. Error en la definicion de tarifas.
+2013-11-03 23:59:36,396 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-04 00:22:22,416 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:32,174 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:33,671 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:34,523 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:39,960 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:40,389 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:41,107 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:42,244 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:43,299 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:43,993 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:44,275 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:44,578 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:44,958 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:45,563 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.fPrincipal2.timerValidarAlarmas_Tick(Object sender, EventArgs e)
+   en System.Windows.Forms.Timer.OnTick(EventArgs e)
+   en System.Windows.Forms.Timer.TimerNativeWindow.WndProc(Message& m)
+   en System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2013-11-04 00:22:48,728 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:57,753 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:58,474 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:58,826 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:22:59,064 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.FormAvisosHorarios.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.ProcessCmdKey(Message& msg, Keys keyData)
+   en System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   en System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   en System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+2013-11-04 00:23:00,571 ERROR - No se puede cargar el tipo 'Hoteles.Entities.Alarma' del ensamblado 'Hoteles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' porque el método 'LockWindowUpdate' no tiene implementación (no RVA). -    en Hoteles.fPrincipal2.timerValidarAlarmas_Tick(Object sender, EventArgs e)
+   en System.Windows.Forms.Timer.OnTick(EventArgs e)
+   en System.Windows.Forms.Timer.TimerNativeWindow.WndProc(Message& m)
+   en System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2013-11-06 21:18:38,905 ERROR - No se pudo recuperar la habitacion 1. Error en la definicion de tarifas.
+2013-11-06 21:18:45,321 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-06 21:28:51,208 ERROR - No se pudo recuperar la habitacion 1. Error en la definicion de tarifas.
+2013-11-06 21:28:56,260 ERROR - No se pudo recuperar la habitacion 3. Error en la definicion de tarifas.
+2013-11-06 22:57:02,319 ERROR - No se pudo recuperar la habitacion 1. Error en la definicion de tarifas.
+2013-11-07 20:23:03,669 ERROR - Socio - registrarYobtener = La columna 'id' no pertenece a la tabla Table.   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en Hoteles.Entities.Socio..ctor(DataRow dr) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Socio.cs:línea 26
+   en Hoteles.Entities.Socio.registrarYobtener(Int32 nroSocio) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Socio.cs:línea 49
+2013-11-07 20:23:50,286 ERROR - Socio - registrarYobtener = La columna 'id' no pertenece a la tabla Table.   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en Hoteles.Entities.Socio..ctor(DataRow dr) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Socio.cs:línea 26
+   en Hoteles.Entities.Socio.registrarYobtener(Int32 nroSocio) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Socio.cs:línea 49
+2013-11-07 20:24:49,149 ERROR - Socio - registrarYobtener = La columna 'id' no pertenece a la tabla Table.   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en Hoteles.Entities.Socio..ctor(DataRow dr) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Socio.cs:línea 26
+   en Hoteles.Entities.Socio.registrarYobtener(Int32 nroSocio) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Socio.cs:línea 49
+2013-11-07 20:31:48,509 ERROR - Socio - registrarYobtener = La columna 'id' no pertenece a la tabla Table.   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en Hoteles.Entities.Socio..ctor(DataRow dr) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Socio.cs:línea 26
+   en Hoteles.Entities.Socio.registrarYobtener(Int32 nroSocio) en C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\Entities\Socio.cs:línea 49

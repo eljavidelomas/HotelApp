@@ -62,17 +62,17 @@ SELECT idTipoCuenta, nombre FROM tiposCuentasGastos WHERE (idTipoCuenta = @idTip
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dsTiposCuentasGastos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsTiposCuentasGastos" msprop:Generator_UserDSName="dsTiposCuentasGastos" msprop:EnableTableAdapterManager="True">
+  <xs:element name="dsTiposCuentasGastos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTiposCuentasGastos" msprop:Generator_DataSetName="dsTiposCuentasGastos" msprop:EnableTableAdapterManager="True">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tiposCuentasGastos" msprop:Generator_UserTableName="tiposCuentasGastos" msprop:Generator_RowDeletedName="tiposCuentasGastosRowDeleted" msprop:Generator_TableClassName="tiposCuentasGastosDataTable" msprop:Generator_RowChangedName="tiposCuentasGastosRowChanged" msprop:Generator_RowClassName="tiposCuentasGastosRow" msprop:Generator_RowChangingName="tiposCuentasGastosRowChanging" msprop:Generator_RowEvArgName="tiposCuentasGastosRowChangeEvent" msprop:Generator_RowEvHandlerName="tiposCuentasGastosRowChangeEventHandler" msprop:Generator_TablePropName="tiposCuentasGastos" msprop:Generator_TableVarName="tabletiposCuentasGastos" msprop:Generator_RowDeletingName="tiposCuentasGastosRowDeleting">
+        <xs:element name="tiposCuentasGastos" msprop:Generator_UserTableName="tiposCuentasGastos" msprop:Generator_RowDeletedName="tiposCuentasGastosRowDeleted" msprop:Generator_RowChangedName="tiposCuentasGastosRowChanged" msprop:Generator_RowClassName="tiposCuentasGastosRow" msprop:Generator_RowChangingName="tiposCuentasGastosRowChanging" msprop:Generator_RowEvArgName="tiposCuentasGastosRowChangeEvent" msprop:Generator_RowEvHandlerName="tiposCuentasGastosRowChangeEventHandler" msprop:Generator_TableClassName="tiposCuentasGastosDataTable" msprop:Generator_TableVarName="tabletiposCuentasGastos" msprop:Generator_RowDeletingName="tiposCuentasGastosRowDeleting" msprop:Generator_TablePropName="tiposCuentasGastos">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idTipoCuenta" msprop:Generator_UserColumnName="idTipoCuenta" msprop:Generator_ColumnPropNameInRow="idTipoCuenta" msprop:Generator_ColumnVarNameInTable="columnidTipoCuenta" msprop:Generator_ColumnPropNameInTable="idTipoCuentaColumn" type="xs:int" />
-              <xs:element name="nombre" msprop:Generator_UserColumnName="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" minOccurs="0">
+              <xs:element name="idTipoCuenta" msprop:Generator_UserColumnName="idTipoCuenta" msprop:Generator_ColumnVarNameInTable="columnidTipoCuenta" msprop:Generator_ColumnPropNameInRow="idTipoCuenta" msprop:Generator_ColumnPropNameInTable="idTipoCuentaColumn" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_UserColumnName="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

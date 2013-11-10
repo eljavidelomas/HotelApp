@@ -230,7 +230,7 @@ namespace Hoteles
                                     dgvPromos.Visible = false;
                                     tbNroHab.Text = "";
                                     tbNroHab.Width += 50;
-                                    tbNroHab.MaxLength = 8;
+                                    tbNroHab.MaxLength = 9;
                                     pasoAsignacion = "leerTarjeta";
                                     puntosStr = dgvOpcionesElegidas.Rows[4].Cells[1].Value.ToString();
                                     break;
@@ -273,6 +273,7 @@ namespace Hoteles
                                 dgvOpcionesElegidas.Rows[3].Cells[1].Value = dgvOpcionesElegidas.Rows[3].Cells[1].Value.ToString() + " " + socio.nroSocio;
                                 dgvOpcionesElegidas.Rows[4].Cells[1].Value = dgvOpcionesElegidas.Rows[4].Cells[1].Value.ToString() + socio.puntaje;
                                 tbNroHab.Text = "0";
+                                tbNroHab.MaxLength = 7;
                                 labelNroHab.Text = "¿Cambiar puntos?";
                                 pasoAsignacion = "puntos";
                             }
@@ -391,13 +392,19 @@ namespace Hoteles
                             break;
 
                         case "medioPago":
+                            
                             medioPago = string.IsNullOrEmpty(tbNroHab.Text) ? 0 : int.Parse(tbNroHab.Text);
                             if (!dictMediosDePago.ContainsKey(medioPago))
                             {
+                                labelMensaje.Font = new Font("Microsoft Sans Serif", 15.25f, FontStyle.Bold);
                                 labelMensaje.Text = "* El medio de Pago no existe *";
                                 labelMensaje.Visible = true;
                                 return;
                             }
+                            
+                            labelMensaje.Text = String.Format("{0:C}", montoAPagar);
+                            labelMensaje.Font = new Font("Cooper Std", 38, FontStyle.Bold);
+
                             dgvOpcionesElegidas.Rows[6].Cells[1].Value = dgvOpcionesElegidas.Rows[6].Cells[1].Value + " " + dictMediosDePago[medioPago];
                             
                             pasoAsignacion = "adelanto";

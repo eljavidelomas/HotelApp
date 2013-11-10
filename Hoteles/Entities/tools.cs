@@ -95,7 +95,7 @@ namespace Hoteles.Entities
                     dgv.Rows[filaActual].Cells[2].Value = ((System.Drawing.Image)Resources.vacio);//bar
                     dgv.Rows[filaActual].Cells[3].Value = ((System.Drawing.Image)Resources.vacio);//acc
                     dgv.Rows[filaActual].Cells[4].Value = ((System.Drawing.Image)Resources.vacio);//alarma
-                    dgv.Rows[filaActual].Cells[5].Value = ((System.Drawing.Image)Resources.vacio);//luz
+                    dgv.Rows[filaActual].Cells[5].Value = ((System.Drawing.Image)Resources.luzOff3);//luz
                     dgv.Rows[filaActual].Cells[0].Style.BackColor = Color.Green;
 
                     /*--------------------------- Color de los Avisos  -------------------*/

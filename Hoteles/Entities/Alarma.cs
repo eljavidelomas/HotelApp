@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace Hoteles.Entities
 {
@@ -12,18 +13,19 @@ namespace Hoteles.Entities
         static Label lAviso;
         static Timer timer ;
         public static bool prendida = false;
-        
+        public static fPrincipal2 formP;
 
-        static public Label activar(fPrincipal2 fPrincipal,string mensaje)
-        {
+        static public void init(fPrincipal2 fPrincipal)
+        {            
             if (lAviso == null)
             {
+                formP = fPrincipal;
                 lAviso = new Label();
-                timer = new Timer();                
+                timer = new Timer();
                 timer.Tick += new EventHandler(timer_Tick); // Everytime timer ticks, timer_Tick will be called
-                timer.Interval = (800) * (1);              // Timer will tick evert second
+                timer.Interval = (600) * (1);              // Timer will tick evert second
                 timer.Enabled = true;                       // Enable the timer
-                timer.Start();
+                
                 lAviso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                    | System.Windows.Forms.AnchorStyles.Left)
                    | System.Windows.Forms.AnchorStyles.Right)));
@@ -31,7 +33,7 @@ namespace Hoteles.Entities
                 lAviso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                 lAviso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 lAviso.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                lAviso.ForeColor = System.Drawing.Color.Red;                
+                lAviso.ForeColor = System.Drawing.Color.Red;
                 lAviso.Margin = new System.Windows.Forms.Padding(3);
                 lAviso.Name = "lAviso";
                 lAviso.Size = new System.Drawing.Size(1, 1);
@@ -41,9 +43,14 @@ namespace Hoteles.Entities
                 fPrincipal.tableLayoutPanel1.Controls.Add(lAviso, 0, 0);
 
             }
-        
+        }
+
+        static public Label activar(fPrincipal2 fPrincipal,string mensaje)
+        {
+            init(fPrincipal);
             lAviso.Text = mensaje;
             prendida = true;
+            timer.Start();
 
             return lAviso;
         }
@@ -86,20 +93,21 @@ namespace Hoteles.Entities
             if (lAviso != null)
             {
                 timer.Stop();
-                timer.Dispose();
                 lAviso.Visible = false;
-                lAviso.Dispose();
-                lAviso = null;
+                //timer.Dispose();                
+                //lAviso.Dispose();
+                //lAviso = null;
                 prendida = false;
             }
         }
 
+        
         static void timer_Tick(object sender, EventArgs e)
-        {
+        {            
             if (lAviso.Visible)
                 lAviso.Visible = false;
             else
-                lAviso.Visible = true;
+                lAviso.Visible = true;            
         }
         
     }

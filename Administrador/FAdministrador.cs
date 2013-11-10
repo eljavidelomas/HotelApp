@@ -81,6 +81,8 @@ namespace Administrador
                 //int valSel = (int) ( listArtCompuestos.SelectedValue== null?0:listArtCompuestos.SelectedValue);
                 if (listArtCompuestos.SelectedValue != null)
                     articulosCompuestos_getTableAdapter.Fill(dsCompuestoPor.articulosCompuestos_get, (int)listArtCompuestos.SelectedValue);
+                if (cat_ListCategorias.SelectedValue != null)
+                    categoriasArticulos_getTableAdapter.Fill(categoriasArticulosDs.categoriasArticulos_get, int.Parse( cat_ListCategorias.SelectedValue.ToString()));
                 descuentos_ObtenerArticulosByDescuentoIdTableAdapter.Fill(spDescuentosObtenerArticulosByDescId.Descuentos_ObtenerArticulosByDescuentoId, (int)listPromociones.SelectedValue);
                 dgvCompuestoPor.ClearSelection();
             }
@@ -354,7 +356,9 @@ namespace Administrador
                 descuentos_ObtenerArticulosByDescuentoIdTableAdapter.Insert(int.Parse(listArtToInsertPromo.SelectedValue.ToString()), int.Parse(listPromociones.SelectedValue.ToString()));
                 descuentos_ObtenerArticulosByDescuentoIdTableAdapter.Fill(spDescuentosObtenerArticulosByDescId.Descuentos_ObtenerArticulosByDescuentoId, int.Parse(listPromociones.SelectedValue.ToString()));
             }
-            catch { }
+            catch (Exception ex)
+            {                
+            }
         }
 
         private void btnPromociones_savePromo_Click(object sender, EventArgs e)
@@ -1041,6 +1045,35 @@ namespace Administrador
             if (((TabControl)sender).SelectedTab.Text == "Art. de Bar")
                 articulosTableAdapter.Fill(dsArticulos.articulos);
         }
+       
 
+        private void dgvArtPorCat_UserDeletingRow_1(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            categoriasArticulos_getTableAdapter.categoriaArticulo_delete(Convert.ToInt32(e.Row.Cells[2].Value));            
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            categoriasArticulos_getTableAdapter.categoriaArticulo_Insert(int.Parse(cat_ListCategorias.SelectedValue.ToString()), int.Parse(cat_listArticulos.SelectedValue.ToString()), short.Parse(cat_Cantidades.Text));
+            categoriasArticulos_getTableAdapter.Fill(categoriasArticulosDs.categoriasArticulos_get, int.Parse(cat_ListCategorias.SelectedValue.ToString()));            
+            dgvArtPorCat.ClearSelection();
+        }
+
+        private void cat_ListCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {          
+            int valor;
+
+            if (((ComboBox)sender).SelectedValue != null)
+                if (int.TryParse(((ComboBox)sender).SelectedValue.ToString(), out valor))
+                    categoriasArticulos_getTableAdapter.Fill(categoriasArticulosDs.categoriasArticulos_get, valor);        
+        }
+
+      
+
+        private void dgvArtIncPromo_UserDeletedRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            descuentos_ObtenerArticulosByDescuentoIdTableAdapter.articulos_descuentos_Delete((int)e.Row.Cells[1].Value, int.Parse(listPromociones.SelectedValue.ToString()));
+        }
+      
     }
 }

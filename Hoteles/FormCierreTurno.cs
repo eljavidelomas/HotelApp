@@ -185,7 +185,7 @@ namespace Hoteles
                             break;
 
                         case "confirmar":
-                            FormCierreTurnoCliente formCliente = new FormCierreTurnoCliente();
+                            FormCierreTurnoCliente2 formCliente = new FormCierreTurnoCliente2();
                             formCliente.Owner = this;
                             formCliente.Show();
                             this.Hide();

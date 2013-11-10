@@ -112,6 +112,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCierreTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCierreTurno.Designer.cs">
+      <DependentUpon>FormCierreTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="dsCompras.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,17 +179,17 @@
       <DependentUpon>FormCierrePlanilla.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\Calendario.cs" />
-    <Compile Include="FormCierreTurnoCliente.cs">
+    <Compile Include="FormCierreTurnoCliente_BK.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCierreTurnoCliente.Designer.cs">
-      <DependentUpon>FormCierreTurnoCliente.cs</DependentUpon>
+    <Compile Include="FormCierreTurnoCliente_BK.Designer.cs">
+      <DependentUpon>FormCierreTurnoCliente_BK.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCierreTurno.cs">
+    <Compile Include="FormCierreTurnoCliente2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCierreTurno.Designer.cs">
-      <DependentUpon>FormCierreTurno.cs</DependentUpon>
+    <Compile Include="FormCierreTurnoCliente2.Designer.cs">
+      <DependentUpon>FormCierreTurnoCliente2.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\Aviso.cs" />
     <Compile Include="FormAvisosHorarios.cs">
@@ -271,6 +277,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCierreTurno.resx">
+      <DependentUpon>FormCierreTurno.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCompras.resx">
       <DependentUpon>FormCompras.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -299,12 +309,12 @@
       <DependentUpon>FormCierrePlanilla.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCierreTurnoCliente.resx">
-      <DependentUpon>FormCierreTurnoCliente.cs</DependentUpon>
+    <EmbeddedResource Include="FormCierreTurnoCliente_BK.resx">
+      <DependentUpon>FormCierreTurnoCliente_BK.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCierreTurno.resx">
-      <DependentUpon>FormCierreTurno.cs</DependentUpon>
+    <EmbeddedResource Include="FormCierreTurnoCliente2.resx">
+      <DependentUpon>FormCierreTurnoCliente2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAvisosHorarios.resx">

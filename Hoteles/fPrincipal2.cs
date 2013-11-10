@@ -14,11 +14,17 @@ using System.Collections;
 using WindowsFormsApplication1;
 using System.IO.Ports;
 using System.Configuration;
+using System.Runtime.InteropServices;
 
 namespace Hoteles
 {
-    public partial class fPrincipal2 : Form
+    
+    
+    public partial class fPrincipal2 : Form , IMessageFilter
     {
+        Rectangle OldRect = Rectangle.Empty;
+        Rectangle BoundRect;
+        
         static int contador = 0;
         public static object locker = new object();
         public static Mutex mut = new Mutex();
@@ -51,9 +57,10 @@ namespace Hoteles
                 DataTable dt = tools.listadoTurnos();
                 maxFilas = (int)Math.Ceiling(dt.Rows.Count * 0.5);
                 cantHab = dt.Rows.Count;
-                //this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-                //this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-                //this.SetStyle(ControlStyles.UserPaint, true);
+                SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+                this.DoubleBuffered = true;
+                
+                
 
                 InitializeComponent();
                 cargarImagenes();
@@ -168,7 +175,10 @@ namespace Hoteles
         }
 
         private void fPrincipal2_Load(object sender, EventArgs e)
-        {            
+        {
+                       
+            OcultarMouse();
+
             #region cargarListaTurnos
 
             int altoFila;
@@ -206,9 +216,10 @@ namespace Hoteles
 
             #endregion
 
-
+            #region ArrancarActualizacionHora
             thActualizarHora = new Thread(ActualizarLaHora);
             thActualizarHora.Start();
+            #endregion
 
             #region ActualizadorTarifaHabitacion
 
@@ -217,11 +228,38 @@ namespace Hoteles
 
             #endregion
 
+            #region ArrancarParpadeoSeñalizacionINTER
             thControlarParpadeo = new Thread(timerParpadeo2);
             thControlarParpadeo.Start();
+            #endregion
 
             if (textUsuario.Visible)
                 textUsuario.Focus();
+        }
+
+        private void OcultarMouse()
+        {
+            OldRect = Cursor.Clip;
+            // Arbitrary location.
+            BoundRect = new Rectangle(20, 20, 1, 1);
+            Cursor.Position = new Point(1,1);
+            Cursor.Clip = BoundRect;
+            Cursor.Hide();
+            Application.AddMessageFilter(this);
+        }
+
+        public bool PreFilterMessage(ref Message m)
+        {
+            if (m.Msg == 0x201 || m.Msg == 0x202 || m.Msg == 0x203) return true;
+            if (m.Msg == 0x204 || m.Msg == 0x205 || m.Msg == 0x206) return true;
+            return false;
+        }
+
+        private void EnableMouse()
+        {
+            Cursor.Clip = OldRect;
+            Cursor.Show();
+            Application.RemoveMessageFilter(this);
         }
 
         delegate void actualizarRelojCallback();
@@ -662,6 +700,22 @@ namespace Hoteles
                     textClave.Visible = false;
                     labelConserje.Text = "Conserje:" + conserjeActual.nombre;
                     panelDatosHotel_Paint(panelDatosHotel, new PaintEventArgs(panelDatosHotel.CreateGraphics(), panelDatosHotel.ClientRectangle));
+
+                    try
+                    {
+                        // Abro el cierre de caja para el conserje
+                        SqlCommand comm = new SqlCommand("cierresCajas_abrirCierre", conn);
+
+                        comm.CommandType = CommandType.StoredProcedure;
+                        comm.Parameters.AddWithValue("@efIni", 0);
+                        comm.Parameters.AddWithValue("@tarjIni", 0);
+                        comm.Parameters.AddWithValue("@conserjeId", conserjeActual.usuario);
+                        comm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        LoggerProxy.ErrorSinBD(ex.Message + " - " + ex.StackTrace);
+                    }
                 }
                 e.Handled = true;
             }
@@ -728,11 +782,11 @@ namespace Hoteles
                         continue;
 
                     redibujar = true;
-                    pb = new PictureBox();
-                    pb.Size = dataGridView1.GetCellDisplayRectangle(4, 0, true).Size;
-                    pb.Image = Resources.relojSonando_2;
-                    pb.SizeMode = PictureBoxSizeMode.Zoom;
-                    pb.BackColor = Color.Transparent;
+                    //pb = new PictureBox();
+                    //pb.Size = dataGridView1.GetCellDisplayRectangle(4, 0, true).Size;
+                    //pb.Image = Resources.relojSonando_2;
+                    //pb.SizeMode = PictureBoxSizeMode.Zoom;
+                    //pb.BackColor = Color.Transparent;
 
                     foreach (DataGridViewRow row in this.dataGridView1.Rows)
                     {
@@ -797,7 +851,7 @@ namespace Hoteles
                 contador++;
 
                 DataGridView dgv = (DataGridView)sender;
-                dgv.Controls.Find("as", true);
+                //dgv.Controls.Find("as", true);
 
                 foreach (DataGridViewRow dr in dgv.Rows)
                 {
@@ -837,7 +891,7 @@ namespace Hoteles
                     
                     if (dataGridView1.Rows.Count + dataGridView2.Rows.Count == cantHab)
                         actualizarTarifas();
-                    Thread.Sleep(10000);//Cada 10 seg
+                    Thread.Sleep(30000);//Cada 30 seg
                 }
                 catch { }
             }
@@ -939,6 +993,7 @@ namespace Hoteles
 
         private void fPrincipal2_FormClosed(object sender, FormClosedEventArgs e)
         {
+            EnableMouse();
             thActualizarHora.Abort();
             thControlarParpadeo.Abort();
             thControlarTarifaSalir = true;
@@ -991,7 +1046,21 @@ namespace Hoteles
                 mut.ReleaseMutex();
             }
         }
-              
+
+       
+        private void tableLayoutPanel1_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor.Position = new Point(1, 1);
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            dataGridView1.Rows[1].Selected = true;
+            dataGridView1.ClearSelection();
+            return;
+        }
+      
+                             
     }
 }
 

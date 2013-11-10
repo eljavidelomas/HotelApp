@@ -77,16 +77,16 @@ SELECT id, nombre, idTipoCuenta, impresion FROM cuentasGastos WHERE (id = @id)</
         <xs:element name="cuentasGastos" msprop:Generator_UserTableName="cuentasGastos" msprop:Generator_RowDeletedName="cuentasGastosRowDeleted" msprop:Generator_RowChangedName="cuentasGastosRowChanged" msprop:Generator_RowClassName="cuentasGastosRow" msprop:Generator_RowChangingName="cuentasGastosRowChanging" msprop:Generator_RowEvArgName="cuentasGastosRowChangeEvent" msprop:Generator_RowEvHandlerName="cuentasGastosRowChangeEventHandler" msprop:Generator_TableClassName="cuentasGastosDataTable" msprop:Generator_TableVarName="tablecuentasGastos" msprop:Generator_RowDeletingName="cuentasGastosRowDeleting" msprop:Generator_TablePropName="cuentasGastos">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="nombre" msprop:Generator_UserColumnName="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn">
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_UserColumnName="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInTable="nombreColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="idTipoCuenta" msprop:Generator_UserColumnName="idTipoCuenta" msprop:Generator_ColumnVarNameInTable="columnidTipoCuenta" msprop:Generator_ColumnPropNameInRow="idTipoCuenta" msprop:Generator_ColumnPropNameInTable="idTipoCuentaColumn" type="xs:int" />
-              <xs:element name="impresion" msprop:Generator_UserColumnName="impresion" msprop:Generator_ColumnVarNameInTable="columnimpresion" msprop:Generator_ColumnPropNameInRow="impresion" msprop:Generator_ColumnPropNameInTable="impresionColumn" type="xs:boolean" default="false" />
+              <xs:element name="idTipoCuenta" msprop:Generator_UserColumnName="idTipoCuenta" msprop:Generator_ColumnPropNameInRow="idTipoCuenta" msprop:Generator_ColumnVarNameInTable="columnidTipoCuenta" msprop:Generator_ColumnPropNameInTable="idTipoCuentaColumn" type="xs:int" />
+              <xs:element name="impresion" msprop:Generator_UserColumnName="impresion" msprop:Generator_ColumnPropNameInRow="impresion" msprop:Generator_ColumnVarNameInTable="columnimpresion" msprop:Generator_ColumnPropNameInTable="impresionColumn" type="xs:boolean" default="false" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

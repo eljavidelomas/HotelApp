@@ -5,6 +5,7 @@ C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\bin\Relea
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\bin\Release\Hoteles.pdb
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\bin\Release\log4net.dll
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\ResolveAssemblyReference.cache
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormCierreTurno.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormCompras.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormRopaSaliente.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormEstadoCaja.resources
@@ -13,7 +14,7 @@ C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Relea
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormExtraccionDinero.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormCierrePlanilla.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormCierreTurnoCliente.resources
-C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormCierreTurno.resources
+C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormCierreTurnoCliente2.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormAvisosHorarios.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormAnularPedidoBar.resources
 C:\Users\javier\Documents\Visual Studio 2008\Projects\HotelApp\Hoteles\obj\Release\Hoteles.FormPedidoBar.resources

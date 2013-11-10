@@ -131,7 +131,7 @@ namespace Hoteles
 
                     case "fecha":
 
-                        if (!DateTime.TryParseExact(tbNroHab.Text, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out fecha))
+                        if (!DateTime.TryParseExact(tbNroHab.Text, "yyyyMMdd", CultureInfo.CurrentCulture, DateTimeStyles.None, out fecha))
                         {
                             labelMensaje.Visible = true;
                             labelMensaje.Text = "* La fecha es incorrecta *";

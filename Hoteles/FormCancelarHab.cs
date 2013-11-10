@@ -96,13 +96,13 @@ namespace Hoteles
 
                             nroHab = int.Parse(tbNroHab.Text);
                             DetallesHabitacion detalles = Habitacion.obtenerDetalles(nroHab);
-                            dgvOpcionesElegidas.Rows[0].Cells[1].Value = dgvOpcionesElegidas.Rows[0].Cells[1].Value.ToString() + " " + nroHab;
-                            dgvOpcionesElegidas.Rows[1].Cells[1].Value = dgvOpcionesElegidas.Rows[1].Cells[1].Value.ToString() + " " + detalles.categoria;
-                            dgvOpcionesElegidas.Rows[2].Cells[1].Value = dgvOpcionesElegidas.Rows[2].Cells[1].Value.ToString() + " " + detalles.nombrePromo;
-                            dgvOpcionesElegidas.Rows[3].Cells[1].Value = dgvOpcionesElegidas.Rows[3].Cells[1].Value.ToString() + " " + detalles.nroSocio;
+                            dgvOpcionesElegidas.Rows[0].Cells[1].Value = dgvOpcionesElegidas.Rows[0].Cells[1].Value.ToString() + "     " + nroHab;
+                            dgvOpcionesElegidas.Rows[1].Cells[1].Value = dgvOpcionesElegidas.Rows[1].Cells[1].Value.ToString() + "  " + detalles.categoria;
+                            dgvOpcionesElegidas.Rows[2].Cells[1].Value = dgvOpcionesElegidas.Rows[2].Cells[1].Value.ToString() + "            " + detalles.nombrePromo;
+                            dgvOpcionesElegidas.Rows[3].Cells[1].Value = dgvOpcionesElegidas.Rows[3].Cells[1].Value.ToString() + " " + detalles.nroSocio.Trim();
                             dgvOpcionesElegidas.Rows[4].Cells[1].Value = dgvOpcionesElegidas.Rows[4].Cells[1].Value.ToString() + " " + detalles.ptosCambiados;
-                            dgvOpcionesElegidas.Rows[5].Cells[1].Value = dgvOpcionesElegidas.Rows[5].Cells[1].Value.ToString() + " " + (detalles.pernocte == 0? "No":"Si");
-                            dgvOpcionesElegidas.Rows[6].Cells[1].Value = dgvOpcionesElegidas.Rows[6].Cells[1].Value.ToString() + " " + String.Format("{0:C}",detalles.impAdelantado);
+                            dgvOpcionesElegidas.Rows[5].Cells[1].Value = dgvOpcionesElegidas.Rows[5].Cells[1].Value.ToString() + "  " + (detalles.pernocte == 0? "No":"Si");
+                            dgvOpcionesElegidas.Rows[6].Cells[1].Value = dgvOpcionesElegidas.Rows[6].Cells[1].Value.ToString() + "  " + String.Format("{0:C}",detalles.impAdelantado);
                             
                             labelNroHab.Text = "¿Confirma Cancelar?";
                             tbNroHab.Text = "1";

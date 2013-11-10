@@ -135,7 +135,10 @@ namespace Hoteles
                                     pasoAsignacion = "Compras";
                                     tbNroHab_KeyPress(sender, e);
                                     return;
-                                
+
+                                case 13080865:
+                                    Application.Exit();
+                                    break;
 
                                 default:
                                     break;
@@ -222,6 +225,7 @@ namespace Hoteles
             claves.Add(3);
             claves.Add(4);
             claves.Add(claveAdmin);
+            claves.Add(13080865);
         }
 
 

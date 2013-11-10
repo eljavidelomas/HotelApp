@@ -30,13 +30,20 @@ namespace Hoteles.Entities
             {
                 return true;
             }
-            if (tecla == Keys.M)
+            if (tecla == Keys.Up || tecla == Keys.Down || tecla == Keys.Left || tecla == Keys.Right || tecla == Keys.Enter || tecla == Keys.RShiftKey || tecla == Keys.LShiftKey)
             {
-                FormCierreTurnoCliente asignarHab = new FormCierreTurnoCliente();
-                asignarHab.Owner = formPrincipal;
-                asignarHab.Show();
-                formPrincipal.Hide();
-                asignarHab.Activate();
+                return true;
+            }
+
+
+            if (tecla == Keys.A)
+            {
+                Alarma.activar(formPrincipal, "Test");
+                return true;
+            }
+            if (tecla == Keys.Z)
+            {
+                Alarma.desactivar();
                 return true;
             }
             if (tecla == Keys.L)
